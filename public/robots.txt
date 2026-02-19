@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Host
+Host: https://nescodigital.com
+
+# Sitemaps
+Sitemap: https://nescodigital.com/sitemap.xml

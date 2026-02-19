@@ -1,0 +1,656 @@
+{
+  "source": "https://nescodigital.com/proiecte/",
+  "crawled_at": "2026-02-19",
+  "total_projects": 31,
+  "projects": [
+    {
+      "slug": "venituri-de-7-cifre-b2b-seo-performance-marketing-in-10-luni",
+      "url": "https://nescodigital.com/portfolio/venituri-de-7-cifre-b2b-seo-performance-marketing-in-10-luni/",
+      "title": "Venituri de 7 cifre – B2B SEO & Performance Marketing în 10 luni",
+      "title_en": "7-Figure Revenue – B2B SEO & Performance Marketing in 10 months",
+      "client": null,
+      "industry": "B2B",
+      "description": "Obținerea de venituri de 7 cifre prin strategii de Performance Marketing și SEO. A B2B niche company needed increased online visibility and sales, facing challenges with low organic traffic and reduced retention rates.",
+      "metrics": [
+        { "label": "Revenue", "value": "7-figure revenue", "timeframe": "10 months" },
+        { "label": "SEO Performance", "value": "Page 1 rankings for 20+ keywords", "timeframe": null },
+        { "label": "Client Retention", "value": "+40%", "timeframe": null }
+      ],
+      "referenced_case_studies": [
+        { "sector": "Fashion e-commerce", "result": "+200% sales growth", "timeframe": "3 months" },
+        { "sector": "Tech gadgets", "result": "+250% sales increase", "timeframe": null },
+        { "sector": "Home & Deco", "result": "+180% traffic, +120% conversions", "timeframe": null },
+        { "sector": "Pet products", "result": "+185% sales", "timeframe": null },
+        { "sector": "Auto products", "result": "+160% sales growth", "timeframe": null },
+        { "sector": "Sports equipment", "result": "+190% sales", "timeframe": null }
+      ],
+      "services": [
+        "Performance Marketing",
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "TikTok Ads",
+        "LinkedIn Ads",
+        "SEO Optimization",
+        "A/B Testing",
+        "Email Marketing",
+        "Loyalty Programs",
+        "Web Design",
+        "CRM Solutions",
+        "CRO Solutions"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2025/01/7-Figure-Revenue-B2B-SEO-Performance-Marketing.png?fit=1536%2C768&ssl=1"
+      ]
+    },
+    {
+      "slug": "crestere-de-400-cresterea-veniturilor-unui-brand-de-e-commerce-in-12-luni",
+      "url": "https://nescodigital.com/portfolio/crestere-de-400-cresterea-veniturilor-unui-brand-de-e-commerce-in-12-luni/",
+      "title": "Creștere de 400% – Creșterea veniturilor unui brand de e-commerce în 12 luni",
+      "title_en": "400% Growth – E-Commerce Brand Revenue Surge in 12 Months",
+      "client": null,
+      "industry": "E-Commerce / Fashion Retail",
+      "description": "The agency helped an e-commerce brand address low conversion rates and stagnant growth through funnel optimization and creative refresh. The strategy focused on improving the customer purchase journey and increasing revenues through market analysis, sales funnel simplification, upsell tactics, and visual storytelling.",
+      "metrics": [
+        { "label": "Revenue Growth", "value": "+400%", "timeframe": "12 months" },
+        { "label": "Average Order Value (AOV)", "value": "+30%", "timeframe": null },
+        { "label": "Conversion Rate", "value": "+28%", "timeframe": null }
+      ],
+      "services": [
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "TikTok Ads",
+        "LinkedIn Ads",
+        "CRO (Conversion Rate Optimization)",
+        "Email Marketing",
+        "Social Media Marketing",
+        "Digital Strategy",
+        "E-commerce Optimization"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2025/01/400-Growth-E-Commerce-Brand-Revenue-Surge-in-12-Months.png"
+      ]
+    },
+    {
+      "slug": "roi-de-5x-extinderea-unei-platforme-saas-in-9-luni",
+      "url": "https://nescodigital.com/portfolio/roi-de-5x-extinderea-unei-platforme-saas-in-9-luni/",
+      "title": "ROI de 5X – Extinderea unei Platforme SaaS în 9 luni",
+      "title_en": "5X ROI – SaaS Platform Expansion in 9 Months",
+      "client": null,
+      "industry": "SaaS / Technology",
+      "description": "Helping a growing SaaS platform expand its user base rapidly and improve marketing ROI without excessively increasing acquisition costs. The agency conducted a comprehensive audit of paid campaigns, refined audience targeting with detailed demographic and behavioral segmentation, performed iterative creative testing, and implemented advanced retargeting strategies including dynamic advertisements and sequential messaging.",
+      "metrics": [
+        { "label": "ROI Growth", "value": "5X increase", "timeframe": "9 months" },
+        { "label": "Lead Generation", "value": "Over 10,000 leads", "timeframe": null },
+        { "label": "Engagement Increase", "value": "+70%", "timeframe": null }
+      ],
+      "services": [
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "TikTok Ads",
+        "LinkedIn Ads",
+        "Digital Marketing Strategy",
+        "Email Marketing Solutions",
+        "CRM Solutions",
+        "CRO Solutions",
+        "Social Media Marketing"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2025/01/5X-ROI-SaaS-Platform-Expansion-in-9-Months.png?fit=1536%2C768&ssl=1"
+      ]
+    },
+    {
+      "slug": "crestere-de-10x-brand-dtc-de-la-250-000-usd-la-25m-usd-in-14-luni",
+      "url": "https://nescodigital.com/portfolio/crestere-de-10x-brand-dtc-de-la-250-000-usd-la-25m-usd-in-14-luni/",
+      "title": "Creștere de 10x – Brand DTC de la 250.000 USD la 2,5M USD în 14 luni",
+      "title_en": "10x Growth – DTC Brand from $250K to $2.5M in 14 Months",
+      "client": null,
+      "industry": "DTC E-Commerce",
+      "description": "An e-commerce direct-to-consumer brand faced stagnating growth and high acquisition costs. The agency implemented scalable strategies to increase revenue and optimize customer acquisition while improving sales funnel performance.",
+      "metrics": [
+        { "label": "Revenue Growth", "value": "$250,000 to $2,500,000 (10x)", "timeframe": "14 months" },
+        { "label": "Click-Through Rate (CTR)", "value": "+35%", "timeframe": null },
+        { "label": "Customer Acquisition Cost", "value": "-25%", "timeframe": null }
+      ],
+      "services": [
+        "Google Ads",
+        "Facebook Ads",
+        "Instagram Ads",
+        "TikTok Ads",
+        "LinkedIn Ads",
+        "Digital Strategy",
+        "Email Marketing Solutions",
+        "CRM Solutions",
+        "CRO Solutions",
+        "Social Media Marketing"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2025/01/From-250K-to-2.5M-in-14-Months.png?fit=1536%2C768&ssl=1"
+      ]
+    },
+    {
+      "slug": "space-philosophy-ro",
+      "url": "https://nescodigital.com/portfolio/space-philosophy-ro/",
+      "title": "Space Philosophy",
+      "title_en": "Space Philosophy",
+      "client": "Space Philosophy",
+      "client_website": "http://spacephilosophy.it/",
+      "industry": "Interior Design / Architecture",
+      "description": "Space Philosophy is a premium interior design agency and furniture acquisition consultancy operating across Europe and Asia. Nesco Digital created a website to showcase their mission, work and services with custom layouts and functionality matching the client's sophisticated brand positioning.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Mobile Optimization",
+        "Client Private Area",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2020/12/space_cover.jpg"
+      ]
+    },
+    {
+      "slug": "roca-ceramics-csr-ro",
+      "url": "https://nescodigital.com/portfolio/roca-ceramics-csr-ro/",
+      "title": "Roca Ceramics CSR",
+      "title_en": "Roca Ceramics CSR",
+      "client": "Roca Ceramics",
+      "industry": "Building Materials / CSR",
+      "description": "O campanie de CSR tare dragă nouă care și-a propus creșterea gradului de conștientizare și responsabilitate în ceea ce privește consumul de apă, punând accent pe economisirea apei prin limitarea consumului cu ajutorul bateriilor eco-friendly Roca. The initiative partnered with the Architecture University to organize events communicating the benefits of Roca products for reducing water consumption.",
+      "metrics": [],
+      "services": [
+        "Concept Development",
+        "Graphic Design",
+        "Production"
+      ],
+      "images": []
+    },
+    {
+      "slug": "sub-zero-wolf-website-ro",
+      "url": "https://nescodigital.com/portfolio/sub-zero-wolf-website-ro/",
+      "title": "Sub-Zero & Wolf",
+      "title_en": "Sub-Zero & Wolf",
+      "client": "Sub-Zero & Wolf",
+      "industry": "Luxury Kitchen Appliances",
+      "description": "The client requested a modern, solid, and easy-to-manage website to showcase their product portfolio. The agency implemented a minimalist and intuitive design as a market differentiator. Content is structured from the user's perspective to facilitate navigation, with extensive product documentation organized by customer needs.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Custom Module Customization",
+        "Catalog Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2020/08/subzero_cover2.jpg"
+      ]
+    },
+    {
+      "slug": "today-x-gladiatorul-ro",
+      "url": "https://nescodigital.com/portfolio/today-x-gladiatorul-ro/",
+      "title": "Today x Gladiatorul",
+      "title_en": "Today x Gladiatorul",
+      "client": "Fundația Gladiatorul / Elvan – Today / Smart Finance",
+      "industry": "FMCG / Non-Profit Organizations",
+      "description": "CSR campaign in partnership with Gladiatorul Association (founded by Szobi Cseh) and a major hypermarket chain with over 700 stores in Romania to reduce violence and combat youth delinquency in rural children while offering occupational perspectives and skills in fields such as utility climbing, film stunt work, performance sports, and professional military activities.",
+      "metrics": [],
+      "services": [
+        "Strategy Development",
+        "Event Planning",
+        "Key Visual Design",
+        "Advertising Production"
+      ],
+      "images": []
+    },
+    {
+      "slug": "monica-georoceanu-ro",
+      "url": "https://nescodigital.com/portfolio/monica-georoceanu-ro/",
+      "title": "MonicaGeoroceanu.com",
+      "title_en": "MonicaGeoroceanu.com",
+      "client": "Monica Georoceanu",
+      "client_website": "https://monicageoroceanu.com/",
+      "industry": "Wellness / Personal Development",
+      "description": "A captivating project about a wellness and personal development platform. The platform aims to inspire achieving a state of excellence and share advice on physical, mental and emotional well-being. An attractive design, clear structure, and easy navigation were key deliverables.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture",
+        "On-Site SEO"
+      ],
+      "images": []
+    },
+    {
+      "slug": "watchmaker",
+      "url": "https://nescodigital.com/portfolio/watchmaker/",
+      "title": "Watchmakers",
+      "title_en": "Watchmakers",
+      "client": "Void",
+      "industry": "E-Commerce Retail / Watches",
+      "description": "Un website cu un design minimalist și funcțional. Scopul a fost de a ne concentra pe o foarte bună direcționare a fluxului de informații în schimbul utilizării unor imagini și structuri complicate. (A website featuring minimalist and functional design, focused on directing information flow effectively rather than relying on complex imagery and structures.)",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "campanie-employer-branding",
+      "url": "https://nescodigital.com/portfolio/campanie-employer-branding/",
+      "title": "Campanie Employer Branding",
+      "title_en": "Employer Branding Campaign",
+      "client": "MetroSystems",
+      "industry": "Software Development / IT",
+      "description": "The project focused on presenting Metro Systems as a positive, friendly workplace emphasizing human elements alongside professional development and work-life balance. The campaign featured IT professionals' work and hobbies in a video with influencer George Buhnici, supported by multi-platform paid advertising campaigns.",
+      "metrics": [],
+      "services": [
+        "Influencer Marketing",
+        "PPC Management",
+        "Display Advertising",
+        "Remarketing"
+      ],
+      "images": []
+    },
+    {
+      "slug": "bellacasa-residence-ro",
+      "url": "https://nescodigital.com/portfolio/bellacasa-residence-ro/",
+      "title": "BellaCasa Residence",
+      "title_en": "BellaCasa Residence",
+      "client": "BellaCasa Residence",
+      "client_website": "https://vilecaseieftine.ro/",
+      "industry": "Real Estate",
+      "description": "The client set high expectations for visual appeal and functionality of vilecaseieftine.ro. The team implemented an airy layout with easy-to-follow imagery and colors that convey relevant, impactful messages.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "etq-minimalist-fashion-ro",
+      "url": "https://nescodigital.com/portfolio/etq-minimalist-fashion-ro/",
+      "title": "ETQ – Minimalist Story",
+      "title_en": "ETQ – Minimalist Story",
+      "client": "ETQ",
+      "industry": "Fashion Retail",
+      "description": "Comunicarea unui concept de modă minimalistă printr-un site simplu și aerisit, dar cu suficient impact în prezentarea și susținerea filozofiei brandului, atragerii cumpărătorilor și generării de vânzări. (Conveying a minimalist fashion concept through a simple, airy site with sufficient impact in presenting brand philosophy, attracting buyers, and generating sales.)",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "labianca-architecttura",
+      "url": "https://nescodigital.com/portfolio/labianca-architecttura/",
+      "title": "Labianca Architecttura",
+      "title_en": "Labianca Architecttura",
+      "client": "GiuseppeLabianca.ro",
+      "industry": "Architecture & Design",
+      "description": "Creating a website for an architecture studio. The challenge centered on effectively communicating the studio's narrative, aesthetic identity, and brand. Cohesive branding elements including typography, color schemes, imagery, and tone create a compelling and inspiring user experience.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Custom Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "azzurro-ro",
+      "url": "https://nescodigital.com/portfolio/azzurro-ro/",
+      "title": "Azzurro",
+      "title_en": "Azzurro",
+      "client": "Azzurro.com.ro",
+      "industry": "HoReCa / Italian Restaurant",
+      "description": "The team aimed to convey the welcoming atmosphere of storytelling with masks, velvet, and impeccable décor, refined cuisine, and carefully selected elegant dishes found in an Italian restaurant chain through the website design.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "babyphoria-ro",
+      "url": "https://nescodigital.com/portfolio/babyphoria-ro/",
+      "title": "Babyphoria",
+      "title_en": "Babyphoria",
+      "client": "Babyphoria.ro",
+      "industry": "Fashion Retail / Children's",
+      "description": "Cu o misiune minunată, Babyphoria se poziționează ca un univers îndrăzneț, unic și interesant pentru copii în care a avea educație estetică, a fi autentic și inspirațional devine un stil de viață. The team created an online store that authentically represented the brand's vision.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "inghetata-pp",
+      "url": "https://nescodigital.com/portfolio/inghetata-pp/",
+      "title": "Înghețata P&P",
+      "title_en": "P&P Ice Cream",
+      "client": "Proud and Punch",
+      "industry": "FMCG / Food & Beverage",
+      "description": "P&P aduce bucurie și încântare indiferent de timp și anotimp. (P&P brings joy and delight regardless of time and season.) The team created a vibrant website featuring persuasive messaging, clear content, and appetizing imagery to attract prospective customers.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Module Customization",
+        "Complex Filtering System",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "diverse-proiecte-de-branding",
+      "url": "https://nescodigital.com/portfolio/diverse-proiecte-de-branding/",
+      "title": "Diverse proiecte de branding",
+      "title_en": "Various Branding Projects",
+      "client": "Multiple (Azzurro, Alkan, Bella Casa, Dent Estet, Luxury Interiors)",
+      "industry": "Multiple (FMCG, Retail, Real Estate, IT&C, Hospitality)",
+      "description": "Ne place să construim branduri care se impun prin autenticitate, memorabilitate și o conexiune puternică cu audiența lor. (We enjoy constructing brands distinguished through authenticity, memorability, and potent audience connection.) A collection of branding projects across multiple industries.",
+      "metrics": [],
+      "services": [
+        "Graphic Design",
+        "Visual Identity",
+        "Brand Collaterals",
+        "Signage",
+        "Marketing Collaterals"
+      ],
+      "images": []
+    },
+    {
+      "slug": "cresterea-numarului-de-rezervari",
+      "url": "https://nescodigital.com/portfolio/cresterea-numarului-de-rezervari/",
+      "title": "Creșterea numărului de rezervări",
+      "title_en": "Increasing the Number of Bookings",
+      "client": "Accor Hotels",
+      "industry": "Hospitality / Hotels",
+      "description": "The client faced challenges with customers comparing offerings across approximately 15 different websites before finalizing bookings. A digital strategy was developed targeting multiple hotel chains (Ibis, Pullman, and Sofitel) across the United Kingdom, Ireland, France, Spain, and Portugal. PPC campaigns were supported by email marketing with continuous optimization, and email remarketing flows were implemented to recover abandoned bookings.",
+      "metrics": [
+        { "label": "Cost per Booking", "value": "-27%", "timeframe": null },
+        { "label": "Email Open Rate", "value": "58%", "timeframe": null },
+        { "label": "Booking Growth", "value": "3x increase", "timeframe": null }
+      ],
+      "services": [
+        "Digital Strategy",
+        "Email Marketing",
+        "PPC Management",
+        "Facebook Ads",
+        "YouTube Preroll",
+        "Display Advertising",
+        "Remarketing"
+      ],
+      "images": []
+    },
+    {
+      "slug": "imbunatatirea-calitatii-lead-urilor",
+      "url": "https://nescodigital.com/portfolio/imbunatatirea-calitatii-lead-urilor/",
+      "title": "Îmbunătățirea calității lead-urilor",
+      "title_en": "Improving Lead Quality",
+      "client": "Experian",
+      "industry": "Financial Services",
+      "description": "The agency addressed inefficiencies in existing Google AdWords campaigns plagued by duplicate keywords, poor budget allocation, and inflated costs-per-click. They distinguished between high-intent and lower-intent searchers, then through account restructuring, conversion tracking, A/B testing, and landing page optimization improved lead quality while maintaining cost-effectiveness.",
+      "metrics": [
+        { "label": "Cost per New Client", "value": "-36%", "timeframe": null },
+        { "label": "Lead Quality", "value": "+84%", "timeframe": null },
+        { "label": "Landing Page Conversion", "value": "+9.9%", "timeframe": null }
+      ],
+      "services": [
+        "Landing Page Design",
+        "PPC Management",
+        "Display Advertising",
+        "Remarketing"
+      ],
+      "images": []
+    },
+    {
+      "slug": "clinica-stomatologica-zahn-pioch",
+      "url": "https://nescodigital.com/portfolio/clinica-stomatologica-zahn-pioch/",
+      "title": "Clinica stomatologică Zahn Pioch",
+      "title_en": "Zahn Pioch Dental Clinic",
+      "client": "Zahn Pioch",
+      "industry": "Medical Services / Dental",
+      "description": "The brief outlined a need for a new minimalist yet bold design that would appeal to and serve the needs of a new generation. The agency developed a website responsive to these requirements including an appointment scheduling system.",
+      "metrics": [],
+      "services": [
+        "Custom Web Design",
+        "WordPress Integration",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture",
+        "Appointment Scheduling System"
+      ],
+      "images": []
+    },
+    {
+      "slug": "brand-de-hairstyling",
+      "url": "https://nescodigital.com/portfolio/brand-de-hairstyling/",
+      "title": "Brand de Hairstyling",
+      "title_en": "Hairstyling Brand",
+      "client": "Randco",
+      "industry": "Retail / eCommerce / Beauty",
+      "description": "Brief-ul a constat în dezvoltarea unui site pentru un brand avangardist de hairstyling, cu un concept inovator. R & Co este despre experiența vizuală. Ambalajele și parfumurile au fost concepute pentru a maximiza experiența și a transmite un sentiment, stimula simțurile sau a te transpune într-un alt loc. (Creating an avant-garde hairstyling brand website with innovative design, emphasizing visual experience and sensory engagement.)",
+      "metrics": [],
+      "services": [
+        "Custom Web Design",
+        "Magento Integration",
+        "Custom Blog Design",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture",
+        "Complex Shipping/Transport Integration",
+        "Advanced Reporting Extension"
+      ],
+      "images": []
+    },
+    {
+      "slug": "targetarea-unui-nou-public-tinta",
+      "url": "https://nescodigital.com/portfolio/targetarea-unui-nou-public-tinta/",
+      "title": "Targetarea unui nou public țintă",
+      "title_en": "Targeting a New Target Audience",
+      "client": "Douglas",
+      "industry": "eCommerce / Retail / Beauty",
+      "description": "The challenge involved expanding sales from new leads through programmatic ads targeting potential customers without prior site interaction. The agency analyzed anonymized behavioral and interest data from existing customers to identify new prospective buyers based on demographic profiles and user behaviors, resulting in a high-precision programmatic display campaign.",
+      "metrics": [
+        { "label": "New Customer Sales Growth", "value": "+8%", "timeframe": null },
+        { "label": "New Customer Conversion Rate", "value": "+12%", "timeframe": null },
+        { "label": "Cost per Conversion", "value": "-21%", "timeframe": null }
+      ],
+      "services": [
+        "Programmatic Display Advertising",
+        "Google Analytics",
+        "Google Webmasters",
+        "Creative Services"
+      ],
+      "images": []
+    },
+    {
+      "slug": "remediere-probleme-de-conversie",
+      "url": "https://nescodigital.com/portfolio/remediere-probleme-de-conversie/",
+      "title": "Remediere probleme de conversie",
+      "title_en": "Conversion Issues Remediation",
+      "client": "Eyeglasses24",
+      "industry": "Retail / eCommerce / Eyewear",
+      "description": "The client faced two critical challenges: an outdated website that hindered UX and poor conversion rates, and suboptimal lead quality (less than one-third of mailed packages converted). The agency used agile methodology to create a new landing page while redesigning the main site. The simplified, elegant landing page proved highly effective, driving substantial improvements within months. Eight months into the campaign, all paid traffic continued directing to this landing page.",
+      "metrics": [
+        { "label": "Cost per Click", "value": "-12%", "timeframe": null },
+        { "label": "Total Leads", "value": "+46%", "timeframe": "several months" },
+        { "label": "Cost per Conversion", "value": "-49%", "timeframe": "several months" },
+        { "label": "Conversion Rate", "value": "+15%", "timeframe": "first month" }
+      ],
+      "services": [
+        "Landing Page Design",
+        "New Funnel Design",
+        "PPC Management",
+        "Display Advertising",
+        "Remarketing"
+      ],
+      "images": []
+    },
+    {
+      "slug": "urbangang-com-2",
+      "url": "https://nescodigital.com/portfolio/urbangang-com-2/",
+      "title": "Urban Gang",
+      "title_en": "Urban Gang",
+      "client": "UrbanGang.com",
+      "industry": "Fashion Retail",
+      "description": "We helped our client to develop a high-end curated fashion web platform based on affiliation marketing. We also helped them to develop their own brand and various marketing materials.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "Web Development",
+        "Custom Modules",
+        "Deep Filter System",
+        "Mobile Optimization",
+        "Friendly URL Architecture"
+      ],
+      "images": [
+        "https://i0.wp.com/nescodigital.com/wp-content/uploads/2018/02/urbangang-min.jpg"
+      ]
+    },
+    {
+      "slug": "strategie-digitala-si-dezvoltare-web",
+      "url": "https://nescodigital.com/portfolio/strategie-digitala-si-dezvoltare-web/",
+      "title": "Strategie digitală și dezvoltare web",
+      "title_en": "Digital Strategy and Web Development",
+      "client": "Havi",
+      "industry": "Logistics",
+      "description": "The client operated five separate websites with fragmented branding and service offerings. Key challenges included service offers displayed across five different sites with distinct branding, lack of lead-generation configuration with missing CTAs, declining site traffic without conversions, and customer unawareness of integrated service offerings. The strategic solution focused on adapting a new brand identity for web, creating a conversion funnel, and integrating multiple sub-brands into one cohesive platform.",
+      "metrics": [],
+      "services": [
+        "Digital Strategy",
+        "Website Design",
+        "Web Development"
+      ],
+      "images": []
+    },
+    {
+      "slug": "luxury-interiors-2",
+      "url": "https://nescodigital.com/portfolio/luxury-interiors-2/",
+      "title": "Luxury Interiors",
+      "title_en": "Luxury Interiors",
+      "client": "Luxury Interiors",
+      "industry": "Interior Design / Retail",
+      "description": "Our client needed a new presentation website to emphasize the new projects they had been working on and also turn their interior design services into a quality statement.",
+      "metrics": [],
+      "services": [
+        "Web Design",
+        "WordPress Development",
+        "Prestashop Integration",
+        "Prestashop Customization",
+        "Custom Modules",
+        "Deep Filter System",
+        "Mobile Optimization",
+        "Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "bellacasa-ro-web-development-2",
+      "url": "https://nescodigital.com/portfolio/bellacasa-ro-web-development-2/",
+      "title": "Bellacasa",
+      "title_en": "Bellacasa",
+      "client": "Bellacasa",
+      "industry": "Retail",
+      "description": "Bella Casa continued its digital transformation journey by redesigning its website to integrate online orders with their ERP system for faster order processing (integrating online requests with ERP to process orders as quickly as possible).",
+      "metrics": [],
+      "services": [
+        "Custom Web Design",
+        "Laravel Framework",
+        "Deep Filter System",
+        "Mobile Optimization",
+        "Friendly URL Architecture",
+        "Pre-Order Integration",
+        "ERP Integration"
+      ],
+      "images": []
+    },
+    {
+      "slug": "roca-w-2",
+      "url": "https://nescodigital.com/portfolio/roca-w-2/",
+      "title": "Roca",
+      "title_en": "Roca",
+      "client": "Roca",
+      "industry": "Retail / Building Materials",
+      "description": "Roca needed a new global website to unify all digital assets and showcase the whole range of products as detailed as possible in order to help branches and retail clients.",
+      "metrics": [],
+      "services": [
+        "Custom Web Design",
+        "Deep Filter System",
+        "Mobile Optimization",
+        "Friendly URL Architecture"
+      ],
+      "images": []
+    },
+    {
+      "slug": "tastimo-app-ro",
+      "url": "https://nescodigital.com/portfolio/tastimo-app-ro/",
+      "title": "Tastimo App",
+      "title_en": "Tastimo App",
+      "client": "Tastimo App",
+      "industry": "HoReCa / Mobile App",
+      "description": "The client aimed to revolutionize the dining-out experience by developing an application that identifies nearby restaurant options while enabling users to share culinary moments with friends and food enthusiasts. The agency developed a descriptive logo to communicate the app's purpose and attract user interest.",
+      "metrics": [],
+      "services": [
+        "Visual Identity",
+        "Brand Collaterals",
+        "Signage",
+        "Marketing Collaterals"
+      ],
+      "images": []
+    },
+    {
+      "slug": "novaintermed-ro",
+      "url": "https://nescodigital.com/portfolio/novaintermed-ro/",
+      "title": "Novaintermed",
+      "title_en": "Novaintermed",
+      "client": "NovaIntermed",
+      "industry": "Medical Services",
+      "description": "The client wanted to mark 20 years on the market with a website transformation. The agency proposed a simple, elegant design with Magento back-end for order and logistics management.",
+      "metrics": [],
+      "services": [
+        "Custom Web Design for Magento",
+        "Magento Integration",
+        "Mobile Optimization",
+        "SEO-Friendly URL Architecture"
+      ],
+      "images": []
+    }
+  ]
+}

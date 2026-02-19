@@ -1,0 +1,618 @@
+import type { ServicePageData } from "@/components/sections/ServicePage";
+
+// ─── Google Ads ───────────────────────────────────────────────────────────────
+export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
+  ro: {
+    locale: "ro",
+    hero: {
+      badge: "Google Ads",
+      title: "Reclame pe Google Ads",
+      subtitle:
+        "Creștem performanța campaniilor tale Google Ads cu strategii avansate și o abordare data-driven. CPA cu 38% mai mic față de media industriei.",
+    },
+    problems: [
+      { title: "Trafic irelevant", desc: "Clicuri scumpe de la utilizatori care nu convertesc" },
+      { title: "Strategie de bidding greșită", desc: "Buget irosit pe cuvinte cheie nepotrivite" },
+      { title: "Rate de conversie slabe", desc: "Vizitatorii nu finalizează acțiunile dorite" },
+      { title: "ROAS sub obiectiv", desc: "Cheltuieli mari, venituri mici" },
+    ],
+    solutions: [
+      { title: "Analiză avansată de cuvinte cheie", desc: "Identificăm cuvintele cheie cu cel mai mare potențial de conversie pentru afacerea ta." },
+      { title: "Optimizare continuă a performanței", desc: "Ajustăm campaniile zilnic pe baza datelor reale." },
+      { title: "Strategii data-driven", desc: "Decizii bazate pe date, nu pe presupuneri." },
+      { title: "Remarketing avansat", desc: "Reconectăm vizitatorii care nu au convertit." },
+      { title: "Landing pages optimizate", desc: "Paginile de destinație convertesc la maxim." },
+      { title: "Raportare transparentă", desc: "Știi exact ce se întâmplă cu bugetul tău." },
+    ],
+    cases: [
+      { metric: "38% mai mic", label: "Cost per achiziție (CPA)", industry: "E-commerce" },
+      { metric: "+30%", label: "Creștere conversii în 3 luni", industry: "Retail" },
+      { metric: "+200%", label: "Creștere vânzări în 6 luni", industry: "E-commerce" },
+      { metric: "25% redus", label: "Cost per achiziție", industry: "B2B" },
+      { metric: "+150%", label: "Lead-uri calificate", industry: "Educație" },
+      { metric: "5x ROAS", label: "Return on Ad Spend", industry: "Fashion" },
+    ],
+    omnichannelServices: ["Facebook Ads", "Instagram Ads", "TikTok Ads", "SEO", "Email Marketing", "CRO"],
+    faq: [
+      { q: "Cât de repede văd rezultate cu Google Ads?", a: "Primele rezultate apar în 24-48 ore de la lansare. Optimizarea completă durează 2-4 săptămâni în care algoritmul învață audiența ta." },
+      { q: "Care este bugetul minim recomandat?", a: "Recomandăm minimum 500€/lună în buget de reclame pentru rezultate măsurabile. Sub această sumă, datele sunt insuficiente pentru optimizare corectă." },
+      { q: "Cum măsurați succesul campaniilor?", a: "Urmărim ROAS (return on ad spend), CPL (cost per lead), rata de conversie și revenue generat direct din campanii — nu doar clicuri sau impresii." },
+      { q: "Lucrați și cu conturi Google Ads existente?", a: "Da, facem audit complet al contului existent, identificăm ce pierde bani și restructurăm campaniile. Majoritatea clienților văd îmbunătățiri în primele 30 de zile." },
+      { q: "Ce se întâmplă dacă nu suntem mulțumiți de rezultate?", a: "Avem o politică clară de transparență — rapoarte săptămânale cu toate datele. Dacă obiectivele nu sunt atinse în 60 de zile, discutăm deschis strategia și ajustăm sau găsim soluții alternative." },
+    ],
+    testimonial: { quote: "În 3 luni, costul per lead a scăzut cu 40% și volumul de leads a crescut de 2x. Echipa Nesco a restructurat complet contul nostru și a schimbat abordarea de targeting.", name: "Mihai D.", role: "CEO, companie de software B2B, București" },
+    tools: ["Google Ads", "Google Analytics 4", "Google Tag Manager", "Google Merchant Center", "Looker Studio"],
+    toolsSectionTitle: "INSTRUMENTELE PE CARE LE FOLOSIM",
+    freeAuditBadge: "Audit Google Ads Gratuit Inclus",
+  },
+  en: {
+    locale: "en",
+    hero: {
+      badge: "Google Ads",
+      title: "Google Ads Campaigns That Drive Revenue",
+      subtitle:
+        "Boost the performance of your Google Ads campaigns with advanced strategies and a data-driven approach. 38% lower CPA than industry average.",
+    },
+    problems: [
+      { title: "Irrelevant traffic", desc: "Expensive clicks from users who don't convert" },
+      { title: "Wrong bidding strategy", desc: "Budget wasted on wrong keywords" },
+      { title: "Low conversion rates", desc: "Visitors don't complete desired actions" },
+      { title: "Below-target ROAS", desc: "High spend, low revenue" },
+    ],
+    solutions: [
+      { title: "Advanced keyword analysis", desc: "We identify keywords with the highest conversion potential for your business." },
+      { title: "Continuous performance optimization", desc: "We adjust campaigns daily based on real data." },
+      { title: "Data-driven strategies", desc: "Decisions based on data, not guesswork." },
+      { title: "Advanced remarketing", desc: "We reconnect visitors who didn't convert." },
+      { title: "Optimized landing pages", desc: "Destination pages that convert at maximum." },
+      { title: "Transparent reporting", desc: "You know exactly what happens with your budget." },
+    ],
+    cases: [
+      { metric: "38% lower", label: "Cost per acquisition (CPA)", industry: "E-commerce" },
+      { metric: "+30%", label: "Conversion increase in 3 months", industry: "Retail" },
+      { metric: "+200%", label: "Sales increase in 6 months", industry: "E-commerce" },
+      { metric: "25% reduced", label: "Cost per acquisition", industry: "B2B" },
+      { metric: "+150%", label: "Qualified leads", industry: "Education" },
+      { metric: "5x ROAS", label: "Return on Ad Spend", industry: "Fashion" },
+    ],
+    omnichannelServices: ["Facebook Ads", "Instagram Ads", "TikTok Ads", "SEO", "Email Marketing", "CRO"],
+    faq: [
+      { q: "How quickly will I see results with Google Ads?", a: "First results appear within 24-48 hours of launch. Full optimization takes 2-4 weeks as the algorithm learns your audience." },
+      { q: "What is the minimum recommended budget?", a: "We recommend a minimum of €500/month in ad spend for measurable results. Below this amount, data is insufficient for proper optimization." },
+      { q: "How do you measure campaign success?", a: "We track ROAS (return on ad spend), CPL (cost per lead), conversion rate, and revenue generated directly from campaigns — not just clicks or impressions." },
+      { q: "Do you work with existing Google Ads accounts?", a: "Yes, we do a complete audit of the existing account, identify what's wasting money, and restructure campaigns. Most clients see improvements within the first 30 days." },
+      { q: "What happens if we're not happy with the results?", a: "We have a clear transparency policy — weekly reports with all data. If objectives aren't met within 60 days, we openly discuss strategy and adjust or find alternative solutions." },
+    ],
+    testimonial: { quote: "In 3 months, cost per lead dropped 40% and lead volume doubled. Nesco completely restructured our account and changed our targeting approach.", name: "Michael D.", role: "CEO, B2B Software Company, London" },
+    tools: ["Google Ads", "Google Analytics 4", "Google Tag Manager", "Google Merchant Center", "Looker Studio"],
+    toolsSectionTitle: "TOOLS WE USE",
+    freeAuditBadge: "Free Google Ads Audit Included",
+  },
+  de: {
+    locale: "de",
+    hero: {
+      badge: "Google Ads",
+      title: "Google Ads Kampagnen mit messbaren Ergebnissen",
+      subtitle:
+        "Steigern Sie die Leistung Ihrer Google Ads-Kampagnen mit fortschrittlichen Strategien und einem datengetriebenen Ansatz. 38% niedrigere CPA als der Branchendurchschnitt.",
+    },
+    problems: [
+      { title: "Irrelevanter Traffic", desc: "Teure Klicks von Nutzern, die nicht konvertieren" },
+      { title: "Falsche Bietstrategie", desc: "Budget für falsche Keywords verschwendet" },
+      { title: "Niedrige Konversionsraten", desc: "Besucher schließen gewünschte Aktionen nicht ab" },
+      { title: "ROAS unter Ziel", desc: "Hohe Ausgaben, geringe Einnahmen" },
+    ],
+    solutions: [
+      { title: "Erweiterte Keyword-Analyse", desc: "Wir identifizieren Keywords mit dem höchsten Konversionspotenzial." },
+      { title: "Kontinuierliche Leistungsoptimierung", desc: "Wir passen Kampagnen täglich basierend auf echten Daten an." },
+      { title: "Datengetriebene Strategien", desc: "Entscheidungen basierend auf Daten, nicht auf Vermutungen." },
+      { title: "Erweitertes Remarketing", desc: "Wir verbinden Besucher wieder, die nicht konvertiert haben." },
+      { title: "Optimierte Landing Pages", desc: "Zielseiten, die maximal konvertieren." },
+      { title: "Transparentes Reporting", desc: "Sie wissen genau, was mit Ihrem Budget passiert." },
+    ],
+    cases: [
+      { metric: "38% niedriger", label: "Cost per Acquisition (CPA)", industry: "E-Commerce" },
+      { metric: "+30%", label: "Conversion-Steigerung in 3 Monaten", industry: "Einzelhandel" },
+      { metric: "+200%", label: "Umsatzsteigerung in 6 Monaten", industry: "E-Commerce" },
+      { metric: "25% reduziert", label: "Cost per Acquisition", industry: "B2B" },
+      { metric: "+150%", label: "Qualifizierte Leads", industry: "Bildung" },
+      { metric: "5x ROAS", label: "Return on Ad Spend", industry: "Mode" },
+    ],
+    omnichannelServices: ["Facebook Ads", "Instagram Ads", "TikTok Ads", "SEO", "E-Mail-Marketing", "CRO"],
+    faq: [
+      { q: "Wie schnell sehe ich Ergebnisse mit Google Ads?", a: "Erste Ergebnisse erscheinen innerhalb von 24-48 Stunden nach dem Start. Die vollständige Optimierung dauert 2-4 Wochen, während der Algorithmus Ihre Zielgruppe kennenlernt." },
+      { q: "Was ist das empfohlene Mindestbudget?", a: "Wir empfehlen mindestens 500 €/Monat an Werbeausgaben für messbare Ergebnisse. Unterhalb dieses Betrags sind die Daten für eine ordnungsgemäße Optimierung unzureichend." },
+      { q: "Wie messen Sie den Kampagnenerfolg?", a: "Wir verfolgen ROAS, CPL, Konversionsrate und direkt aus Kampagnen generierten Umsatz — nicht nur Klicks oder Impressionen." },
+      { q: "Arbeiten Sie auch mit bestehenden Google Ads-Konten?", a: "Ja, wir führen ein vollständiges Audit des bestehenden Kontos durch, identifizieren, was Geld verschwendet, und restrukturieren Kampagnen. Die meisten Kunden sehen Verbesserungen innerhalb der ersten 30 Tage." },
+      { q: "Was passiert, wenn wir mit den Ergebnissen nicht zufrieden sind?", a: "Wir haben eine klare Transparenzpolitik — wöchentliche Berichte mit allen Daten. Wenn Ziele innerhalb von 60 Tagen nicht erreicht werden, besprechen wir offen die Strategie und passen an." },
+    ],
+    testimonial: { quote: "In 3 Monaten sank der Cost-per-Lead um 40% und das Lead-Volumen verdoppelte sich. Das Nesco-Team hat unser Konto komplett restrukturiert.", name: "Michael D.", role: "CEO, B2B-Softwareunternehmen" },
+    tools: ["Google Ads", "Google Analytics 4", "Google Tag Manager", "Google Merchant Center", "Looker Studio"],
+    toolsSectionTitle: "UNSERE TOOLS",
+    freeAuditBadge: "Kostenloser Google Ads Audit Inklusive",
+  },
+};
+
+// ─── Facebook Ads ─────────────────────────────────────────────────────────────
+export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
+  ro: {
+    locale: "ro",
+    hero: {
+      badge: "Facebook Ads",
+      title: "Reclame pe Facebook Ads",
+      subtitle:
+        "Maximizăm impactul campaniilor tale Facebook Ads cu strategii high-performance. Generăm lead-uri, creștem vânzările și consolidăm imaginea brandului tău.",
+    },
+    problems: [
+      { title: "Audiențe greșite", desc: "Reclamele ajung la persoane care nu sunt interesate" },
+      { title: "Creative oboseală", desc: "Reclamele și-au pierdut eficiența" },
+      { title: "CPM ridicat", desc: "Costul per impresie crește constant" },
+      { title: "Atribuire incorectă", desc: "Nu știi care campanii generează vânzări reale" },
+    ],
+    solutions: [
+      { title: "Audiențe personalizate avansate", desc: "Targetăm exact persoanele care au cel mai mare potențial de conversie." },
+      { title: "Creatives performante", desc: "Design și copy optimizate pentru click-uri și conversii." },
+      { title: "Funnel complet", desc: "Strategii de top, middle și bottom of funnel." },
+      { title: "Retargeting precis", desc: "Reconectăm vizitatorii cu mesaje relevante." },
+      { title: "A/B Testing continuu", desc: "Testăm constant pentru a găsi combinația câștigătoare." },
+      { title: "Rapoarte clare", desc: "Dashboard personalizat cu toate metricile importante." },
+    ],
+    cases: [
+      { metric: "30% mai mic", label: "Cost per Lead față de medie", industry: "B2B" },
+      { metric: "+45%", label: "ROAS în 60 de zile", industry: "E-commerce Fashion" },
+      { metric: "3x leads", label: "Volume de lead-uri calificate", industry: "Imobiliare" },
+      { metric: "-40%", label: "Cost per Achiziție", industry: "Retail" },
+      { metric: "+120%", label: "Conversii din Retargeting", industry: "Cosmetice" },
+      { metric: "2.5x ROAS", label: "Return on Ad Spend", industry: "Sports" },
+    ],
+    omnichannelServices: ["Google Ads", "Instagram Ads", "TikTok Ads", "CRO", "Email Marketing"],
+    faq: [
+      { q: "Cât de precis puteți targeta audiența mea?", a: "Foarte precis. Targetăm după vârstă, locație, interese, comportamente, venituri estimate, și cel mai important — lookalike audiences bazate pe clienții tăi existenți." },
+      { q: "Funcționează Facebook Ads pentru B2B?", a: "Da, dar LinkedIn poate fi mai eficient pentru anumite industrii B2B. Facem o analiză înainte să recomandăm platforma potrivită pentru business-ul tău." },
+      { q: "Ce tip de conținut performează cel mai bine?", a: "Video scurt (15-30 secunde) și imagini cu text minim. Conținut autentic, nu stock photos. Testăm minimum 3-5 variante per campanie și scalăm ce funcționează." },
+      { q: "Cum gestionați o campanie care nu performează?", a: "Monitorizăm zilnic în primele 2 săptămâni. Dacă un ad set nu atinge KPIs în 7 zile cu suficiente impresii, îl oprim și testăm alternative." },
+    ],
+    testimonial: { quote: "ROAS de 6.2x pe campaniile de Black Friday. Nesco a creat o strategie completă de funnel care a funcționat mult mai bine decât ce făceam noi intern.", name: "Bogdan R.", role: "Fondator, brand de cosmetice naturale" },
+    tools: ["Meta Ads Manager", "Meta Pixel", "Meta Business Suite", "Google Analytics 4", "Klaviyo"],
+    toolsSectionTitle: "INSTRUMENTELE PE CARE LE FOLOSIM",
+    freeAuditBadge: "Audit Facebook Ads Gratuit Inclus",
+  },
+  en: {
+    locale: "en",
+    hero: {
+      badge: "Facebook Ads",
+      title: "Facebook Ads That Generate Real Results",
+      subtitle:
+        "Maximize the impact of your Facebook Ads campaigns with high-performance strategies. We generate leads, increase sales, and strengthen your brand image.",
+    },
+    problems: [
+      { title: "Wrong audiences", desc: "Ads reaching people who aren't interested" },
+      { title: "Creative fatigue", desc: "Ads have lost their effectiveness" },
+      { title: "High CPM", desc: "Cost per impression keeps rising" },
+      { title: "Wrong attribution", desc: "You don't know which campaigns generate real sales" },
+    ],
+    solutions: [
+      { title: "Advanced custom audiences", desc: "We target exactly the people with the highest conversion potential." },
+      { title: "High-performing creatives", desc: "Design and copy optimized for clicks and conversions." },
+      { title: "Full funnel", desc: "Top, middle, and bottom of funnel strategies." },
+      { title: "Precise retargeting", desc: "We reconnect visitors with relevant messages." },
+      { title: "Continuous A/B testing", desc: "We constantly test to find the winning combination." },
+      { title: "Clear reports", desc: "Custom dashboard with all important metrics." },
+    ],
+    cases: [
+      { metric: "30% lower", label: "Cost per lead vs. average", industry: "B2B" },
+      { metric: "+45%", label: "ROAS in 60 days", industry: "E-commerce Fashion" },
+      { metric: "3x leads", label: "Qualified lead volume", industry: "Real Estate" },
+      { metric: "-40%", label: "Cost per Acquisition", industry: "Retail" },
+      { metric: "+120%", label: "Retargeting conversions", industry: "Cosmetics" },
+      { metric: "2.5x ROAS", label: "Return on Ad Spend", industry: "Sports" },
+    ],
+    omnichannelServices: ["Google Ads", "Instagram Ads", "TikTok Ads", "CRO", "Email Marketing"],
+    faq: [
+      { q: "How precisely can you target my audience?", a: "Very precisely. We target by age, location, interests, behaviors, estimated income, and most importantly — lookalike audiences based on your existing customers." },
+      { q: "Does Facebook Ads work for B2B?", a: "Yes, but LinkedIn can be more effective for certain B2B industries. We do an analysis before recommending the right platform for your business." },
+      { q: "What type of content performs best?", a: "Short video (15-30 seconds) and images with minimal text. Authentic content, not stock photos. We test a minimum of 3-5 variants per campaign and scale what works." },
+      { q: "How do you manage a campaign that isn't performing?", a: "We monitor daily in the first 2 weeks. If an ad set doesn't hit KPIs in 7 days with sufficient impressions, we stop it and test alternatives." },
+    ],
+    testimonial: { quote: "6.2x ROAS on our Black Friday campaigns. Nesco created a complete funnel strategy that worked far better than what we were doing in-house.", name: "Bogdan R.", role: "Founder, natural cosmetics brand" },
+    tools: ["Meta Ads Manager", "Meta Pixel", "Meta Business Suite", "Google Analytics 4", "Klaviyo"],
+    toolsSectionTitle: "TOOLS WE USE",
+    freeAuditBadge: "Free Facebook Ads Audit Included",
+  },
+  de: {
+    locale: "de",
+    hero: {
+      badge: "Facebook Ads",
+      title: "Facebook Ads mit nachweisbaren Ergebnissen",
+      subtitle:
+        "Maximieren Sie den Impact Ihrer Facebook Ads-Kampagnen mit Hochleistungsstrategien. Wir generieren Leads, steigern den Umsatz und stärken Ihr Markenimage.",
+    },
+    problems: [
+      { title: "Falsche Zielgruppen", desc: "Anzeigen erreichen nicht interessierte Personen" },
+      { title: "Creative-Erschöpfung", desc: "Anzeigen haben ihre Effektivität verloren" },
+      { title: "Hoher CPM", desc: "Kosten pro Impression steigen ständig" },
+      { title: "Falsche Attribution", desc: "Unklar, welche Kampagnen echte Verkäufe generieren" },
+    ],
+    solutions: [
+      { title: "Erweiterte Custom Audiences", desc: "Wir targetieren genau die Personen mit dem höchsten Konversionspotenzial." },
+      { title: "Hochleistende Creatives", desc: "Design und Copy für maximale Klicks und Conversions." },
+      { title: "Kompletter Funnel", desc: "Top-, Middle- und Bottom-of-Funnel-Strategien." },
+      { title: "Präzises Retargeting", desc: "Besucher mit relevanten Botschaften erneut ansprechen." },
+      { title: "Kontinuierliches A/B-Testing", desc: "Wir testen ständig, um die Gewinnerkombination zu finden." },
+      { title: "Klare Berichte", desc: "Benutzerdefiniertes Dashboard mit allen wichtigen Metriken." },
+    ],
+    cases: [
+      { metric: "30% niedriger", label: "Cost per Lead vs. Durchschnitt", industry: "B2B" },
+      { metric: "+45%", label: "ROAS in 60 Tagen", industry: "E-Commerce Fashion" },
+      { metric: "3x Leads", label: "Qualifiziertes Lead-Volumen", industry: "Immobilien" },
+      { metric: "-40%", label: "Cost per Acquisition", industry: "Einzelhandel" },
+      { metric: "+120%", label: "Retargeting-Conversions", industry: "Kosmetik" },
+      { metric: "2.5x ROAS", label: "Return on Ad Spend", industry: "Sport" },
+    ],
+    omnichannelServices: ["Google Ads", "Instagram Ads", "TikTok Ads", "CRO", "E-Mail-Marketing"],
+    faq: [
+      { q: "Wie präzise können Sie meine Zielgruppe ansprechen?", a: "Sehr präzise. Wir targetieren nach Alter, Standort, Interessen, Verhaltensweisen, geschätztem Einkommen und am wichtigsten — Lookalike Audiences basierend auf Ihren bestehenden Kunden." },
+      { q: "Funktioniert Facebook Ads für B2B?", a: "Ja, aber LinkedIn kann für bestimmte B2B-Branchen effektiver sein. Wir führen eine Analyse durch, bevor wir die richtige Plattform für Ihr Unternehmen empfehlen." },
+      { q: "Welcher Inhaltstyp performt am besten?", a: "Kurze Videos (15-30 Sekunden) und Bilder mit minimalem Text. Authentischer Inhalt, keine Stock-Fotos. Wir testen mindestens 3-5 Varianten pro Kampagne und skalieren, was funktioniert." },
+      { q: "Wie managen Sie eine Kampagne, die nicht performt?", a: "Wir überwachen täglich in den ersten 2 Wochen. Wenn ein Ad-Set KPIs in 7 Tagen mit ausreichenden Impressionen nicht erreicht, stoppen wir ihn und testen Alternativen." },
+    ],
+    testimonial: { quote: "6,2x ROAS bei unseren Black-Friday-Kampagnen. Nesco hat eine komplette Funnel-Strategie erstellt, die viel besser funktionierte als das, was wir intern taten.", name: "Bogdan R.", role: "Gründer, Naturkosmetik-Marke" },
+    tools: ["Meta Ads Manager", "Meta Pixel", "Meta Business Suite", "Google Analytics 4", "Klaviyo"],
+    toolsSectionTitle: "UNSERE TOOLS",
+    freeAuditBadge: "Kostenloser Facebook Ads Audit Inklusive",
+  },
+};
+
+// ─── E-commerce Stores ────────────────────────────────────────────────────────
+export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
+  ro: {
+    locale: "ro",
+    hero: {
+      badge: "Magazine Online",
+      title: "Magazine Online care vând",
+      subtitle:
+        "Platforme de vânzări perfect adaptate care transformă vizitatorii în clienți fideli și cresc vânzările. Shopify, WooCommerce, Magento.",
+    },
+    problems: [
+      { title: "Navigare complicată", desc: "Utilizatorii abandonează din cauza experienței slabe" },
+      { title: "Design neatractiv", desc: "Site-ul nu reflectă calitatea produselor tale" },
+      { title: "Încărcare lentă", desc: "Fiecare secundă în plus = conversii pierdute" },
+      { title: "Checkout complicat", desc: "Coșuri abandonate la pasul final" },
+    ],
+    solutions: [
+      { title: "Analiză și planificare", desc: "Înțelegem nevoile afacerii și comportamentul cumpărătorilor." },
+      { title: "Design custom", desc: "Experiență vizuală unică, adaptată brandului tău." },
+      { title: "Platforme top", desc: "Shopify, WooCommerce, Magento, alegem platforma potrivită." },
+      { title: "Integrare completă", desc: "Plăți, livrări, CRM, ERP, totul integrat perfect." },
+      { title: "Optimizare SEO", desc: "Structura site-ului optimizată pentru Google din zi 1." },
+      { title: "Instrumente business", desc: "Raportare avansată, email marketing, retargeting." },
+    ],
+    cases: [
+      { metric: "+80% MoM", label: "Creștere vânzări", industry: "Fashion Store" },
+      { metric: "+50% MoM", label: "Creștere vânzări", industry: "Bio Cosmetics" },
+      { metric: "+40% MoM", label: "Creștere conversii", industry: "Sports Equipment" },
+      { metric: "-35%", label: "Rata de abandon coș", industry: "Electronics" },
+      { metric: "400%", label: "Creștere revenue în 12 luni", industry: "E-commerce Brand" },
+      { metric: "10x", label: "Revenue de la $250K la $2.5M", industry: "DTC Brand" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "Email Marketing", "CRO", "SEO"],
+  },
+  en: {
+    locale: "en",
+    hero: {
+      badge: "E-commerce Stores",
+      title: "E-commerce Stores that sell",
+      subtitle:
+        "Perfectly adapted online sales platforms that turn visitors into loyal customers and boost sales. Shopify, WooCommerce, Magento.",
+    },
+    problems: [
+      { title: "Complicated navigation", desc: "Users abandon due to poor experience" },
+      { title: "Unattractive design", desc: "Site doesn't reflect product quality" },
+      { title: "Slow loading", desc: "Every extra second = lost conversions" },
+      { title: "Difficult checkout", desc: "Carts abandoned at the final step" },
+    ],
+    solutions: [
+      { title: "Analysis & planning", desc: "We understand business needs and buyer behavior." },
+      { title: "Custom design", desc: "Unique visual experience, adapted to your brand." },
+      { title: "Top platforms", desc: "Shopify, WooCommerce, Magento, we choose the right platform." },
+      { title: "Complete integration", desc: "Payments, shipping, CRM, ERP, everything integrated." },
+      { title: "SEO optimization", desc: "Site structure optimized for Google from day 1." },
+      { title: "Business tools", desc: "Advanced reporting, email marketing, retargeting." },
+    ],
+    cases: [
+      { metric: "+80% MoM", label: "Sales growth", industry: "Fashion Store" },
+      { metric: "+50% MoM", label: "Sales growth", industry: "Bio Cosmetics" },
+      { metric: "+40% MoM", label: "Conversion rate growth", industry: "Sports Equipment" },
+      { metric: "-35%", label: "Cart abandonment rate", industry: "Electronics" },
+      { metric: "400%", label: "Revenue growth in 12 months", industry: "E-commerce Brand" },
+      { metric: "10x", label: "Revenue from $250K to $2.5M", industry: "DTC Brand" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "Email Marketing", "CRO", "SEO"],
+  },
+  de: {
+    locale: "de",
+    hero: {
+      badge: "E-Commerce-Shops",
+      title: "E-Commerce-Shops, die verkaufen",
+      subtitle:
+        "Perfekt angepasste Online-Verkaufsplattformen, die Besucher in treue Kunden verwandeln und den Umsatz steigern. Shopify, WooCommerce, Magento.",
+    },
+    problems: [
+      { title: "Komplizierte Navigation", desc: "Nutzer verlassen aufgrund schlechter Erfahrung" },
+      { title: "Unattraktives Design", desc: "Website spiegelt Produktqualität nicht wider" },
+      { title: "Langsame Ladezeiten", desc: "Jede extra Sekunde = verlorene Conversions" },
+      { title: "Schwieriger Checkout", desc: "Warenkörbe im letzten Schritt abgebrochen" },
+    ],
+    solutions: [
+      { title: "Analyse & Planung", desc: "Wir verstehen Geschäftsbedürfnisse und Käuferverhalten." },
+      { title: "Custom-Design", desc: "Einzigartiges visuelles Erlebnis, angepasst an Ihre Marke." },
+      { title: "Top-Plattformen", desc: "Shopify, WooCommerce, Magento, wir wählen die richtige Plattform." },
+      { title: "Komplette Integration", desc: "Zahlungen, Versand, CRM, ERP, alles integriert." },
+      { title: "SEO-Optimierung", desc: "Site-Struktur von Tag 1 für Google optimiert." },
+      { title: "Business-Tools", desc: "Erweitertes Reporting, E-Mail-Marketing, Retargeting." },
+    ],
+    cases: [
+      { metric: "+80% MoM", label: "Umsatzwachstum", industry: "Fashion-Shop" },
+      { metric: "+50% MoM", label: "Umsatzwachstum", industry: "Bio-Kosmetik" },
+      { metric: "+40% MoM", label: "Conversion-Rate-Wachstum", industry: "Sportausrüstung" },
+      { metric: "-35%", label: "Warenkorbabbruchrate", industry: "Elektronik" },
+      { metric: "400%", label: "Umsatzwachstum in 12 Monaten", industry: "E-Commerce-Marke" },
+      { metric: "10x", label: "Umsatz von 250K$ auf 2,5M$", industry: "DTC-Marke" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "E-Mail-Marketing", "CRO", "SEO"],
+  },
+};
+
+// ─── Email Marketing ──────────────────────────────────────────────────────────
+export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
+  ro: {
+    locale: "ro",
+    hero: {
+      badge: "Email Marketing",
+      title: "Email Marketing cu ROI 42:1",
+      subtitle:
+        "Construiește relații durabile cu clienții și crește vânzările prin campanii de email marketing eficiente și personalizate.",
+    },
+    problems: [
+      { title: "Rate de deschidere mici", desc: "Emailurile nu sunt citite de destinatari" },
+      { title: "Rate de click scăzute", desc: "Conținutul nu motivează acțiunea" },
+      { title: "Dezabonări frecvente", desc: "Lista de contacte se micșorează constant" },
+      { title: "Lipsă personalizare", desc: "Mesaje generice care nu rezonează cu audiența" },
+    ],
+    solutions: [
+      { title: "Segmentare avansată", desc: "Grupăm audiența în segmente precise pentru mesaje relevante." },
+      { title: "Crearea conținutului", desc: "Copy și design care captează atenția și motivează acțiunea." },
+      { title: "Personalizare mesaje", desc: "Fiecare email este adaptat comportamentului destinatarului." },
+      { title: "Automatizări email", desc: "Secvențe automate care lucrează 24/7 pentru tine." },
+      { title: "A/B Testing", desc: "Testăm subiecte, copy și design pentru rezultate maxime." },
+      { title: "Raportare și analiză", desc: "Date clare despre ce funcționează și ce trebuie îmbunătățit." },
+    ],
+    cases: [
+      { metric: "42:1 ROI", label: "Return pe investiție", industry: "Medie industrie" },
+      { metric: "+25%", label: "Creștere comenzi repetate", industry: "Fashion (Ecommerce)" },
+      { metric: "+50%", label: "Creștere MQL", industry: "IT Services (B2C)" },
+      { metric: "+20%", label: "Creștere rezervări", industry: "Hotel (B2C)" },
+      { metric: "+35%", label: "Rată de deschidere", industry: "SaaS Platform" },
+      { metric: "-60%", label: "Reducere dezabonări", industry: "Retail" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "CRM Solutions", "CRO", "Social Media"],
+    faq: [
+      { q: "Ce rată de deschidere pot să mă aștept?", a: "Media industriei este 20-25%. Clienții noștri obțin în medie 35-45% open rate prin segmentare corectă și subiecte testate." },
+      { q: "Funcționează email marketing în 2025?", a: "Email-ul are cel mai mare ROI din toate canalele de marketing — 42:1 în medie. Nu este mort, este subutilizat de majoritatea business-urilor." },
+      { q: "De câte emailuri am nevoie pe lună?", a: "Minimum 4 emailuri/lună pentru a rămâne relevant. Recomandăm 8-12 pentru o strategie completă cu nurturing, promotional și educational." },
+    ],
+    testimonial: { quote: "Lista noastră de 8000 de abonați genera aproape nimic. Acum generează 15% din totalul revenue-ului lunar prin secvențele pe care le-a construit Nesco.", name: "Thomas K.", role: "Owner, lanț de retail Germania" },
+    tools: ["Klaviyo", "Mailchimp", "ActiveCampaign", "Google Analytics 4", "Zapier"],
+    toolsSectionTitle: "INSTRUMENTELE PE CARE LE FOLOSIM",
+    freeAuditBadge: "Audit Email Marketing Gratuit Inclus",
+  },
+  en: {
+    locale: "en",
+    hero: {
+      badge: "Email Marketing",
+      title: "Email Marketing with 42:1 ROI",
+      subtitle:
+        "Build lasting relationships with your customers and increase your sales through efficient and personalized email marketing campaigns.",
+    },
+    problems: [
+      { title: "Low open rates", desc: "Emails not read by recipients" },
+      { title: "Low click rates", desc: "Content doesn't motivate action" },
+      { title: "Frequent unsubscribes", desc: "Contact list constantly shrinking" },
+      { title: "Lack of personalization", desc: "Generic messages that don't resonate" },
+    ],
+    solutions: [
+      { title: "Advanced segmentation", desc: "We group the audience into precise segments for relevant messages." },
+      { title: "Content creation", desc: "Copy and design that capture attention and motivate action." },
+      { title: "Message personalization", desc: "Each email is adapted to the recipient's behavior." },
+      { title: "Email automation", desc: "Automatic sequences that work 24/7 for you." },
+      { title: "A/B Testing", desc: "We test subjects, copy and design for maximum results." },
+      { title: "Reporting & analysis", desc: "Clear data about what works and what needs improvement." },
+    ],
+    cases: [
+      { metric: "42:1 ROI", label: "Return on investment", industry: "Industry average" },
+      { metric: "+25%", label: "Repeat orders increase", industry: "Fashion (Ecommerce)" },
+      { metric: "+50%", label: "MQL increase", industry: "IT Services (B2C)" },
+      { metric: "+20%", label: "Bookings increase", industry: "Hotel (B2C)" },
+      { metric: "+35%", label: "Open rate increase", industry: "SaaS Platform" },
+      { metric: "-60%", label: "Unsubscribe reduction", industry: "Retail" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "CRM Solutions", "CRO", "Social Media"],
+    faq: [
+      { q: "What open rate can I expect?", a: "The industry average is 20-25%. Our clients achieve an average 35-45% open rate through proper segmentation and tested subject lines." },
+      { q: "Does email marketing still work in 2025?", a: "Email has the highest ROI of all marketing channels — 42:1 on average. It's not dead, it's underutilized by most businesses." },
+      { q: "How many emails do I need per month?", a: "Minimum 4 emails/month to stay relevant. We recommend 8-12 for a complete strategy with nurturing, promotional, and educational content." },
+    ],
+    testimonial: { quote: "Our list of 8,000 subscribers was generating almost nothing. Now it generates 15% of total monthly revenue through the sequences Nesco built.", name: "Thomas K.", role: "Owner, retail chain Germany" },
+    tools: ["Klaviyo", "Mailchimp", "ActiveCampaign", "Google Analytics 4", "Zapier"],
+    toolsSectionTitle: "TOOLS WE USE",
+    freeAuditBadge: "Free Email Marketing Audit Included",
+  },
+  de: {
+    locale: "de",
+    hero: {
+      badge: "E-Mail-Marketing",
+      title: "E-Mail-Marketing mit 42:1 ROI",
+      subtitle:
+        "Bauen Sie dauerhafte Beziehungen zu Ihren Kunden auf und steigern Sie Ihren Umsatz durch effiziente und personalisierte E-Mail-Marketing-Kampagnen.",
+    },
+    problems: [
+      { title: "Niedrige Öffnungsraten", desc: "E-Mails werden von Empfängern nicht gelesen" },
+      { title: "Niedrige Klickraten", desc: "Inhalt motiviert keine Aktion" },
+      { title: "Häufige Abmeldungen", desc: "Kontaktliste schrumpft ständig" },
+      { title: "Mangelnde Personalisierung", desc: "Generische Nachrichten, die nicht resonieren" },
+    ],
+    solutions: [
+      { title: "Erweiterte Segmentierung", desc: "Wir gruppieren die Zielgruppe in präzise Segmente für relevante Nachrichten." },
+      { title: "Inhaltserstellung", desc: "Copy und Design, die Aufmerksamkeit erregen und zur Aktion motivieren." },
+      { title: "Nachrichtenpersonalisierung", desc: "Jede E-Mail ist dem Verhalten des Empfängers angepasst." },
+      { title: "E-Mail-Automatisierung", desc: "Automatische Sequenzen, die 24/7 für Sie arbeiten." },
+      { title: "A/B-Testing", desc: "Wir testen Betreffzeilen, Copy und Design für maximale Ergebnisse." },
+      { title: "Reporting & Analyse", desc: "Klare Daten darüber, was funktioniert und was verbessert werden muss." },
+    ],
+    cases: [
+      { metric: "42:1 ROI", label: "Return on Investment", industry: "Branchendurchschnitt" },
+      { metric: "+25%", label: "Steigerung Wiederholungsbestellungen", industry: "Fashion (E-Commerce)" },
+      { metric: "+50%", label: "MQL-Steigerung", industry: "IT-Services (B2C)" },
+      { metric: "+20%", label: "Buchungssteigerung", industry: "Hotel (B2C)" },
+      { metric: "+35%", label: "Öffnungsratensteigerung", industry: "SaaS-Plattform" },
+      { metric: "-60%", label: "Abmeldungsreduzierung", industry: "Einzelhandel" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "CRM-Lösungen", "CRO", "Social Media"],
+    faq: [
+      { q: "Welche Öffnungsrate kann ich erwarten?", a: "Der Branchendurchschnitt liegt bei 20-25%. Unsere Kunden erzielen durchschnittlich 35-45% Öffnungsrate durch korrekte Segmentierung und getestete Betreffzeilen." },
+      { q: "Funktioniert E-Mail-Marketing im Jahr 2025 noch?", a: "E-Mail hat den höchsten ROI aller Marketing-Kanäle — durchschnittlich 42:1. Es ist nicht tot, es wird von den meisten Unternehmen zu wenig genutzt." },
+      { q: "Wie viele E-Mails brauche ich pro Monat?", a: "Mindestens 4 E-Mails/Monat, um relevant zu bleiben. Wir empfehlen 8-12 für eine vollständige Strategie mit Nurturing, Promotions und edukativen Inhalten." },
+    ],
+    testimonial: { quote: "Unsere Liste mit 8.000 Abonnenten generierte fast nichts. Jetzt generiert sie 15% des monatlichen Gesamtumsatzes durch die Sequenzen, die Nesco aufgebaut hat.", name: "Thomas K.", role: "Inhaber, Einzelhandelskette Deutschland" },
+    tools: ["Klaviyo", "Mailchimp", "ActiveCampaign", "Google Analytics 4", "Zapier"],
+    toolsSectionTitle: "UNSERE TOOLS",
+    freeAuditBadge: "Kostenloses E-Mail-Marketing-Audit Inklusive",
+  },
+};
+
+// ─── CRO Solutions ────────────────────────────────────────────────────────────
+export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
+  ro: {
+    locale: "ro",
+    hero: {
+      badge: "CRO Solutions",
+      title: "CRO, Mai multe conversii, același buget",
+      subtitle:
+        "Transformăm mai mulți vizitatori în clienți plătitori și maximizăm profitul prin optimizarea continuă a site-ului tău.",
+    },
+    problems: [
+      { title: "Trafic mare, vânzări mici", desc: "Mii de vizitatori care nu cumpără" },
+      { title: "Rata mare de abandon coș", desc: "Clienții pleacă înainte de finalizare" },
+      { title: "Lead-uri necalificate", desc: "Formulare completate de oameni nepotriviți" },
+      { title: "CPA ridicat", desc: "Costul per achiziție depășește bugetul" },
+    ],
+    solutions: [
+      { title: "Analiză performanță", desc: "Identificăm exact unde și de ce pleacă utilizatorii." },
+      { title: "Audit UX/UI", desc: "Evaluăm experiența utilizatorului și identificăm blocajele." },
+      { title: "A/B și Testare multivariată", desc: "Testăm variante pentru a găsi ce convertește mai bine." },
+      { title: "Optimizare landing page", desc: "Paginile de destinație construite pentru conversii maxime." },
+      { title: "Personalizare conținut", desc: "Mesaje adaptate pentru fiecare segment de audiență." },
+      { title: "Monitorizare & Raportare", desc: "Urmărim progresul și ajustăm continuu." },
+    ],
+    cases: [
+      { metric: "35% mai mic", label: "Rata de abandon coș", industry: "Electronics (Ecommerce)" },
+      { metric: "+50%", label: "Creștere demo-uri programate", industry: "SaaS (Software)" },
+      { metric: "+135%", label: "Creștere abonați", industry: "Blog (Cooking)" },
+      { metric: "+40%", label: "Creștere rata de conversie", industry: "Lead Gen Website" },
+      { metric: "2x", label: "Rata de conversie în 1 an", industry: "Medie industrie" },
+      { metric: "+25%", label: "Creștere AOV", industry: "E-commerce Fashion" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "Email Marketing", "Web Design"],
+    faq: [
+      { q: "Cum știți ce trebuie optimizat pe site-ul meu?", a: "Începem cu analiza datelor — heatmaps, session recordings, funnel analysis în Google Analytics. Datele dictează ce testăm, nu opinia noastră." },
+      { q: "Cât de mult poate crește rata de conversie?", a: "Îmbunătățiri de 20-50% sunt realiste în primele 90 de zile. Am obținut și creșteri de 200%+ pentru clienți cu site-uri cu probleme majore de UX." },
+      { q: "Ce este un A/B test și cât durează?", a: "Rulăm simultan două versiuni ale aceleiași pagini pentru a vedea care convertește mai bine. Durata: minimum 2 săptămâni sau 1000 vizitatori per variantă." },
+    ],
+    testimonial: { quote: "Am trecut de la 1.2% la 3.8% rată de conversie pe pagina de produs în 60 de zile. Simplu matematică: același trafic, de 3x mai multe vânzări.", name: "Sarah L.", role: "E-commerce Manager, echipamente sportive" },
+    tools: ["Hotjar", "Microsoft Clarity", "Google Optimize", "Google Analytics 4", "VWO"],
+    toolsSectionTitle: "INSTRUMENTELE PE CARE LE FOLOSIM",
+    freeAuditBadge: "Audit CRO Gratuit Inclus",
+  },
+  en: {
+    locale: "en",
+    hero: {
+      badge: "CRO Solutions",
+      title: "CRO, More conversions, same budget",
+      subtitle:
+        "Turn more visitors into paying customers and maximize your profit through continuous optimization of your website.",
+    },
+    problems: [
+      { title: "High traffic, low sales", desc: "Thousands of visitors who don't buy" },
+      { title: "High cart abandonment", desc: "Customers leave before completing purchase" },
+      { title: "Unqualified leads", desc: "Forms completed by wrong people" },
+      { title: "High CPA", desc: "Cost per acquisition exceeds budget" },
+    ],
+    solutions: [
+      { title: "Performance analysis", desc: "We identify exactly where and why users leave." },
+      { title: "UX/UI audit", desc: "We evaluate user experience and identify blockers." },
+      { title: "A/B & multivariate testing", desc: "We test variants to find what converts better." },
+      { title: "Landing page optimization", desc: "Destination pages built for maximum conversions." },
+      { title: "Content personalization", desc: "Messages adapted for each audience segment." },
+      { title: "Monitoring & Reporting", desc: "We track progress and adjust continuously." },
+    ],
+    cases: [
+      { metric: "35% lower", label: "Cart abandonment rate", industry: "Electronics (Ecommerce)" },
+      { metric: "+50%", label: "Demo bookings increase", industry: "SaaS (Software)" },
+      { metric: "+135%", label: "Subscriber increase", industry: "Blog (Cooking)" },
+      { metric: "+40%", label: "Conversion rate increase", industry: "Lead Gen Website" },
+      { metric: "2x", label: "Conversion rate in 1 year", industry: "Industry average" },
+      { metric: "+25%", label: "AOV increase", industry: "E-commerce Fashion" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "Email Marketing", "Web Design"],
+    faq: [
+      { q: "How do you know what needs to be optimized on my site?", a: "We start with data analysis — heatmaps, session recordings, funnel analysis in Google Analytics. Data dictates what we test, not our opinion." },
+      { q: "How much can the conversion rate increase?", a: "Improvements of 20-50% are realistic in the first 90 days. We've also achieved 200%+ increases for clients with sites that had major UX issues." },
+      { q: "What is an A/B test and how long does it take?", a: "We run two versions of the same page simultaneously to see which converts better. Duration: minimum 2 weeks or 1,000 visitors per variant." },
+    ],
+    testimonial: { quote: "We went from 1.2% to 3.8% conversion rate on the product page in 60 days. Simple math: same traffic, 3x more sales.", name: "Sarah L.", role: "E-commerce Manager, sports equipment" },
+    tools: ["Hotjar", "Microsoft Clarity", "Google Optimize", "Google Analytics 4", "VWO"],
+    toolsSectionTitle: "TOOLS WE USE",
+    freeAuditBadge: "Free CRO Audit Included",
+  },
+  de: {
+    locale: "de",
+    hero: {
+      badge: "CRO-Lösungen",
+      title: "CRO, Mehr Conversions, gleiches Budget",
+      subtitle:
+        "Verwandeln Sie mehr Besucher in zahlende Kunden und maximieren Sie Ihren Gewinn durch kontinuierliche Optimierung Ihrer Website.",
+    },
+    problems: [
+      { title: "Hoher Traffic, niedrige Verkäufe", desc: "Tausende Besucher, die nicht kaufen" },
+      { title: "Hohe Warenkorbabbruchrate", desc: "Kunden verlassen vor dem Abschluss" },
+      { title: "Unkqualifizierte Leads", desc: "Formulare von falschen Personen ausgefüllt" },
+      { title: "Hohe CPA", desc: "Cost per Acquisition überschreitet Budget" },
+    ],
+    solutions: [
+      { title: "Leistungsanalyse", desc: "Wir identifizieren genau, wo und warum Nutzer abspringen." },
+      { title: "UX/UI-Audit", desc: "Wir bewerten die Nutzererfahrung und identifizieren Blockaden." },
+      { title: "A/B- & Multivariates Testing", desc: "Wir testen Varianten, um zu finden, was besser konvertiert." },
+      { title: "Landing-Page-Optimierung", desc: "Zielseiten für maximale Conversions gebaut." },
+      { title: "Inhaltspersonalisierung", desc: "Nachrichten für jedes Zielgruppensegment angepasst." },
+      { title: "Monitoring & Reporting", desc: "Wir verfolgen den Fortschritt und passen kontinuierlich an." },
+    ],
+    cases: [
+      { metric: "35% niedriger", label: "Warenkorbabbruchrate", industry: "Elektronik (E-Commerce)" },
+      { metric: "+50%", label: "Demo-Buchungssteigerung", industry: "SaaS (Software)" },
+      { metric: "+135%", label: "Abonnentensteigerung", industry: "Blog (Kochen)" },
+      { metric: "+40%", label: "Conversion-Rate-Steigerung", industry: "Lead-Gen-Website" },
+      { metric: "2x", label: "Conversion-Rate in 1 Jahr", industry: "Branchendurchschnitt" },
+      { metric: "+25%", label: "AOV-Steigerung", industry: "E-Commerce Fashion" },
+    ],
+    omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "E-Mail-Marketing", "Webdesign"],
+    faq: [
+      { q: "Woher wissen Sie, was auf meiner Website optimiert werden muss?", a: "Wir beginnen mit der Datenanalyse — Heatmaps, Session-Recordings, Funnel-Analyse in Google Analytics. Daten bestimmen, was wir testen, nicht unsere Meinung." },
+      { q: "Wie stark kann die Conversion-Rate steigen?", a: "Verbesserungen von 20-50% sind in den ersten 90 Tagen realistisch. Wir haben auch 200%+ Steigerungen für Kunden mit Websites mit schwerwiegenden UX-Problemen erzielt." },
+      { q: "Was ist ein A/B-Test und wie lange dauert er?", a: "Wir führen zwei Versionen derselben Seite gleichzeitig aus, um zu sehen, welche besser konvertiert. Dauer: mindestens 2 Wochen oder 1.000 Besucher pro Variante." },
+    ],
+    testimonial: { quote: "Wir sind von 1,2% auf 3,8% Conversion-Rate auf der Produktseite in 60 Tagen gegangen. Einfache Mathematik: gleicher Traffic, 3x mehr Verkäufe.", name: "Sarah L.", role: "E-Commerce-Managerin, Sportausrüstung" },
+    tools: ["Hotjar", "Microsoft Clarity", "Google Optimize", "Google Analytics 4", "VWO"],
+    toolsSectionTitle: "UNSERE TOOLS",
+    freeAuditBadge: "Kostenloses CRO-Audit Inklusive",
+  },
+};
