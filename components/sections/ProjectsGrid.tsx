@@ -81,9 +81,10 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
 
       {/* Projects */}
       <div className="page-container" style={{ paddingTop: 0, paddingBottom: "100px" }}>
+        <div className="flex flex-col gap-5">
         {/* Featured grid */}
         {featured.length > 0 && (
-          <div className={`grid gap-5 ${featured.length === 4 ? "grid-cols-1 sm:grid-cols-2 mb-20" : "grid-cols-1 md:grid-cols-3 mb-14"}`}>
+          <div className={`grid gap-5 ${featured.length === 4 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 md:grid-cols-3"}`}>
             {featured.map((p, i) => {
               const lp = getLocalizedProject(p, locale);
               return (
@@ -293,6 +294,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
             {EMPTY[locale]}
           </div>
         )}
+        </div>
       </div>
     </>
   );
