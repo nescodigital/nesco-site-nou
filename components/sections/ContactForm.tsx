@@ -1,7 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { ArrowRight, X, CheckCircle, Loader2 } from "lucide-react";
-import Image from "next/image";
 
 type Locale = "ro" | "en" | "de";
 
@@ -252,15 +251,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
               <CheckCircle size={28} style={{ color: "#56db84" }} />
             </div>
 
-            <div style={{ marginBottom: "20px" }}>
-              <Image
-                src="/logo mare Nesco.avif"
-                alt="Nesco Digital"
-                width={100}
-                height={40}
-                style={{ filter: "invert(1) hue-rotate(180deg) contrast(1.8) brightness(2)", opacity: 0.7, margin: "0 auto 16px" }}
-              />
-            </div>
+
 
             <h3
               className="font-black text-white"
