@@ -41,25 +41,6 @@ export default async function ProjectPage({ params }: Props) {
       <Header locale="ro" />
       <main style={{ backgroundColor: "#050505" }}>
 
-        {/* ── Breadcrumb ── */}
-        <div
-          style={{
-            backgroundColor: "#050505",
-            paddingTop: "100px",
-            paddingBottom: "0",
-          }}
-        >
-          <div className="page-container">
-            <nav style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.8125rem", color: "rgba(255,255,255,0.3)" }}>
-              <Link href="/" style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none", transition: "color 0.2s" }}>Acasă</Link>
-              <span>/</span>
-              <Link href="/proiecte/" style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none", transition: "color 0.2s" }}>Proiecte</Link>
-              <span>/</span>
-              <span style={{ color: "rgba(255,255,255,0.6)" }}>{lp.shortTitle}</span>
-            </nav>
-          </div>
-        </div>
-
         {/* ── Hero ── */}
         <section
           className="relative overflow-hidden"

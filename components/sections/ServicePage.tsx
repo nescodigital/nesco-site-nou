@@ -122,22 +122,15 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           style={{ background: "linear-gradient(to top, #050505, transparent)" }}
         />
         <div className="relative page-container">
-          {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 mb-8 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-            <Link href={r.home} style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }} className="hover:text-white transition-colors">
-              {homeLabel}
+          {categoryInfo ? (
+            <Link href={categoryInfo.href} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+              ← {categoryInfo.label}
             </Link>
-            {categoryInfo && (
-              <>
-                <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
-                <Link href={categoryInfo.href} style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }} className="hover:text-white transition-colors">
-                  {categoryInfo.label}
-                </Link>
-              </>
-            )}
-            <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
-            <span style={{ color: "#ffffff" }}>{hero.badge}</span>
-          </nav>
+          ) : (
+            <Link href={r.home} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+              ← {homeLabel}
+            </Link>
+          )}
           <h1
             className="font-black"
             style={{
