@@ -717,7 +717,6 @@ export default function GrowthSprintEducatiePage() {
                     Plătit înainte de start. Cel mai bun raport calitate-preț.
                   </p>
                   <GrowthSprintApplyButton
-                    source="growth-sprint-educatie"
                     planLabel="4.500 € — Plată integrală"
                     variant="primary"
                   />
@@ -749,7 +748,6 @@ export default function GrowthSprintEducatiePage() {
                     Angajamentul complet de 6 săptămâni inclus.
                   </p>
                   <GrowthSprintApplyButton
-                    source="growth-sprint-educatie"
                     planLabel="5.500 € — Rate în 2 tranșe"
                     variant="ghost"
                   />

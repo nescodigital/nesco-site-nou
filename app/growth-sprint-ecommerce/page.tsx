@@ -726,7 +726,6 @@ export default function GrowthSprintEcommercePage() {
                     Plată integrală înainte de kick-off. Cea mai bună valoare.
                   </p>
                   <GrowthSprintApplyButton
-                    source="growth-sprint-ecommerce"
                     planLabel="5.500 € — Plată integrală"
                     variant="primary"
                   />
@@ -758,7 +757,6 @@ export default function GrowthSprintEcommercePage() {
                     Angajamentul complet de 6 săptămâni inclus.
                   </p>
                   <GrowthSprintApplyButton
-                    source="growth-sprint-ecommerce"
                     planLabel="6.500 € — Rate în 2 tranșe"
                     variant="ghost"
                   />
