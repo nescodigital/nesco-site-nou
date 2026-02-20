@@ -10,12 +10,12 @@ interface ContactFormProps {
 
 const labels = {
   ro: {
-    firstName: "Prenume", firstPlaceholder: "Ion",
-    lastName: "Nume", lastPlaceholder: "Popescu",
-    company: "Companie", companyPlaceholder: "Compania Ta",
-    email: "Email *", emailPlaceholder: "ion@companie.ro",
-    phone: "Telefon", phonePlaceholder: "+40 7xx xxx xxx",
-    website: "Website", websitePlaceholder: "nescodigital.ro",
+    firstName: "Prenume", firstPlaceholder: "Prenume",
+    lastName: "Nume", lastPlaceholder: "Nume",
+    company: "Companie", companyPlaceholder: "Companie",
+    email: "Email *", emailPlaceholder: "Email",
+    phone: "Telefon", phonePlaceholder: "Telefon",
+    website: "Website", websitePlaceholder: "Website (opțional)",
     services: "Servicii necesare *",
     serviceOptions: ["Reclame Plătite", "Social Media", "Email Marketing", "SEO", "Strategie Digitală", "Webdesign", "Magazin Online", "Mentenanță Website"],
     budget: "Buget lunar de marketing", budgetDefault: "Selectează bugetul",
@@ -30,12 +30,12 @@ const labels = {
     errorServices: "Selectează cel puțin un serviciu.",
   },
   en: {
-    firstName: "First Name", firstPlaceholder: "John",
-    lastName: "Last Name", lastPlaceholder: "Smith",
-    company: "Company", companyPlaceholder: "Your Company",
-    email: "Email *", emailPlaceholder: "john@company.com",
-    phone: "Phone", phonePlaceholder: "+44 7xx xxx xxx",
-    website: "Website", websitePlaceholder: "yourwebsite.com",
+    firstName: "First Name", firstPlaceholder: "First name",
+    lastName: "Last Name", lastPlaceholder: "Last name",
+    company: "Company", companyPlaceholder: "Company",
+    email: "Email *", emailPlaceholder: "Email",
+    phone: "Phone", phonePlaceholder: "Phone",
+    website: "Website", websitePlaceholder: "Website (optional)",
     services: "Services needed *",
     serviceOptions: ["Paid Ads", "Social Media", "Email Marketing", "SEO", "Digital Strategy", "Webdesign", "E-commerce", "Website Maintenance"],
     budget: "Monthly marketing budget", budgetDefault: "Select budget",
@@ -50,12 +50,12 @@ const labels = {
     errorServices: "Please select at least one service.",
   },
   de: {
-    firstName: "Vorname", firstPlaceholder: "Hans",
-    lastName: "Nachname", lastPlaceholder: "Müller",
-    company: "Unternehmen", companyPlaceholder: "Ihr Unternehmen",
-    email: "E-Mail *", emailPlaceholder: "hans@unternehmen.de",
-    phone: "Telefon", phonePlaceholder: "+49 7xx xxx xxx",
-    website: "Website", websitePlaceholder: "ihrewebsite.de",
+    firstName: "Vorname", firstPlaceholder: "Vorname",
+    lastName: "Nachname", lastPlaceholder: "Nachname",
+    company: "Unternehmen", companyPlaceholder: "Unternehmen",
+    email: "E-Mail *", emailPlaceholder: "E-Mail",
+    phone: "Telefon", phonePlaceholder: "Telefon",
+    website: "Website", websitePlaceholder: "Website (optional)",
     services: "Benötigte Leistungen *",
     serviceOptions: ["Bezahlte Werbung", "Social Media", "E-Mail-Marketing", "SEO", "Digitale Strategie", "Webdesign", "E-Commerce", "Website-Wartung"],
     budget: "Monatliches Marketingbudget", budgetDefault: "Budget auswählen",
@@ -277,7 +277,6 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }} noValidate>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
-            <label style={labelStyle}>{l.firstName}</label>
             <input
               type="text" name="first_name" value={fields.first_name}
               onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
@@ -286,7 +285,6 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
             />
           </div>
           <div>
-            <label style={labelStyle}>{l.lastName}</label>
             <input
               type="text" name="last_name" value={fields.last_name}
               onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
@@ -296,19 +294,15 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
           </div>
         </div>
 
-        <div>
-          <label style={labelStyle}>{l.company}</label>
-          <input
-            type="text" name="company" value={fields.company}
-            onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
-            placeholder={l.companyPlaceholder}
-            style={{ ...inputStyle, borderColor: fieldBorder("company") }}
-          />
-        </div>
+        <input
+          type="text" name="company" value={fields.company}
+          onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
+          placeholder={l.companyPlaceholder}
+          style={{ ...inputStyle, borderColor: fieldBorder("company") }}
+        />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div ref={errors.email ? firstErrorRef : null}>
-            <label style={labelStyle}>{l.email}</label>
             <input
               type="email" name="email" value={fields.email}
               onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
@@ -318,7 +312,6 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
             {errors.email && <div style={errorStyle}>{errors.email}</div>}
           </div>
           <div>
-            <label style={labelStyle}>{l.phone}</label>
             <input
               type="text" name="phone" value={fields.phone}
               onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
@@ -328,15 +321,12 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
           </div>
         </div>
 
-        <div>
-          <label style={labelStyle}>{l.website}</label>
-          <input
-            type="text" name="website" value={fields.website}
-            onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
-            placeholder={l.websitePlaceholder}
-            style={{ ...inputStyle, borderColor: fieldBorder("website") }}
-          />
-        </div>
+        <input
+          type="text" name="website" value={fields.website}
+          onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
+          placeholder={l.websitePlaceholder}
+          style={{ ...inputStyle, borderColor: fieldBorder("website") }}
+        />
 
         {/* ── Services checkbox group ── */}
         <div ref={errors.services ? firstErrorRef : null}>
