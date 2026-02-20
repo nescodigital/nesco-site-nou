@@ -317,44 +317,41 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
                 >
                   Date de contact
                 </h2>
-                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", marginBottom: "32px", lineHeight: 1.6 }}>
+                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", marginBottom: "20px", lineHeight: 1.6 }}>
                   Completează datele și te contactăm în 24 de ore.
                 </p>
 
-                <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   <div>
-                    <label style={labelStyle}>Nume complet *</label>
                     <input
                       type="text" name="name" value={fields.name}
-                      onChange={handleChange} placeholder="Ion Popescu"
+                      onChange={handleChange} placeholder="Nume complet *"
                       style={{ ...inputStyle, borderColor: errors.name ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.name && <div style={errorStyle}>{errors.name}</div>}
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Email *</label>
                     <input
                       type="email" name="email" value={fields.email}
-                      onChange={handleChange} placeholder="ion@companie.ro"
+                      onChange={handleChange} placeholder="Email *"
                       style={{ ...inputStyle, borderColor: errors.email ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.email && <div style={errorStyle}>{errors.email}</div>}
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Telefon *</label>
                     <input
                       type="text" name="phone" value={fields.phone}
-                      onChange={handleChange} placeholder="+40 7xx xxx xxx"
+                      onChange={handleChange} placeholder="Telefon *"
                       style={{ ...inputStyle, borderColor: errors.phone ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.phone && <div style={errorStyle}>{errors.phone}</div>}
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Cum preferi să fii contactat?</label>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", marginTop: "2px" }}>
+                    <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "6px" }}>Cum preferi să fii contactat?</p>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
                       {["Telefon", "WhatsApp", "Email"].map((opt) => {
                         const checked = contactPrefs.includes(opt);
                         return (
@@ -399,12 +396,11 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
                   </div>
 
                   <div>
-                    <label style={labelStyle}>Mesaj scurt (opțional)</label>
                     <textarea
                       name="message" value={fields.message}
                       onChange={handleChange}
-                      placeholder="Spune-ne ceva despre situația ta actuală..."
-                      rows={3}
+                      placeholder="Mesaj scurt (opțional)"
+                      rows={2}
                       style={{
                         ...inputStyle,
                         resize: "vertical",
@@ -415,7 +411,7 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
                   </div>
                 </div>
 
-                <div style={{ marginTop: "28px", display: "flex", flexDirection: "column", gap: "12px" }}>
+                <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "10px" }}>
                   <button
                     type="submit"
                     disabled={submitting}
