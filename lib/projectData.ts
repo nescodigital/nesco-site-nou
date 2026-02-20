@@ -51,12 +51,12 @@ export const projects: Project[] = [
     featured: true,
     i18n: {
       ro: {
-        title: "Venituri de 7 Cifre – B2B SEO & Performance Marketing în 10 luni",
+        title: "Full-funnel B2B — de la vizibilitate la venituri de 7 cifre",
         shortTitle: "B2B SEO & Performance Marketing",
         metricMain: "7 Cifre",
         metricSub: "Revenue în 10 luni",
         industry: "B2B",
-        description: "Strategie full-funnel SEO + performance marketing pentru o companie B2B de nișă care dorea să atingă venituri de 7 cifre prin canale digitale.",
+        description: "SEO organic + Google Ads + LinkedIn Ads pentru o companie B2B de nișă. 10 luni, rezultate măsurabile.",
         challenge: "Compania se confrunta cu trafic organic scăzut și rate de retenție reduse, necesitând vizibilitate online îmbunătățită și creștere accelerată a vânzărilor.",
         solution: "Am implementat o strategie combinată de SEO strategic cu cuvinte cheie cu intenție ridicată, campanii PPC pe Google și canale sociale pentru trafic imediat, testare A/B sistematică și programe de loialitate prin email marketing pentru achiziții repetate.",
         metrics: [
@@ -70,12 +70,12 @@ export const projects: Project[] = [
         metaDescription: "Cum am ajutat o companie B2B să atingă venituri de 7 cifre în 10 luni prin SEO strategic și performance marketing omnichannel.",
       },
       en: {
-        title: "7-Figure Revenue – B2B SEO & Performance Marketing in 10 months",
+        title: "Full-funnel B2B — from visibility to 7-figure revenue",
         shortTitle: "B2B SEO & Performance Marketing",
         metricMain: "7 Figures",
         metricSub: "Revenue in 10 months",
         industry: "B2B",
-        description: "Full-funnel SEO + performance marketing strategy for a niche B2B company aiming to reach 7-figure revenue through digital channels.",
+        description: "Organic SEO + Google Ads + LinkedIn Ads for a niche B2B company. 10 months, measurable results.",
         challenge: "The company faced low organic traffic and reduced retention rates, requiring improved online visibility and accelerated sales growth.",
         solution: "We implemented a combined strategy of strategic SEO with high-intent keywords, PPC campaigns on Google and social channels for immediate traffic, systematic A/B testing, and loyalty programs through email marketing for repeat purchases.",
         metrics: [
@@ -89,12 +89,12 @@ export const projects: Project[] = [
         metaDescription: "How we helped a B2B company reach 7-figure revenue in 10 months through strategic SEO and omnichannel performance marketing.",
       },
       de: {
-        title: "7-stelliger Umsatz – B2B SEO & Performance Marketing in 10 Monaten",
+        title: "Full-Funnel B2B — von der Sichtbarkeit zu 7-stelligen Umsätzen",
         shortTitle: "B2B SEO & Performance Marketing",
         metricMain: "7-stellig",
         metricSub: "Umsatz in 10 Monaten",
         industry: "B2B",
-        description: "Full-Funnel-SEO + Performance-Marketing-Strategie für ein Nischen-B2B-Unternehmen mit dem Ziel, 7-stellige Umsätze über digitale Kanäle zu erzielen.",
+        description: "Organisches SEO + Google Ads + LinkedIn Ads für ein Nischen-B2B-Unternehmen. 10 Monate, messbare Ergebnisse.",
         challenge: "Das Unternehmen hatte niedrigen organischen Traffic und geringe Retentionsraten und benötigte verbesserte Online-Sichtbarkeit sowie beschleunigtes Umsatzwachstum.",
         solution: "Wir implementierten eine kombinierte Strategie aus strategischem SEO mit High-Intent-Keywords, PPC-Kampagnen auf Google und sozialen Kanälen für sofortigen Traffic, systematisches A/B-Testing und Kundenbindungsprogramme durch E-Mail-Marketing.",
         metrics: [
