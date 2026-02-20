@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "paidAds",
   hero: { badge: "LinkedIn Ads", title: "LinkedIn Ads", subtitle: "Cea mai puternică platformă de publicitate B2B. Te ajutăm să ajungi la factorii de decizie și să generezi lead-uri B2B calificate." },
   problems: [
     { title: "Lead-uri B2B de slabă calitate", desc: "Lead-uri care nu se potrivesc cu ICP-ul tău" },

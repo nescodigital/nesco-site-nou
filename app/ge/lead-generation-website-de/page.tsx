@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "Lead-Gen
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "webdesign",
   hero: { badge: "Lead-Generation-Website", title: "Lead-Generation-Website", subtitle: "Besucher in wertvolle potenzielle Kunden umwandeln. Wir bauen hochkonvertierende Websites, die rund um die Uhr qualifizierte Leads generieren." },
   problems: [{ title: "Hoher Traffic, niedrige Conversions", desc: "Tausende Besucher werden keine Leads" }, { title: "Unattraktives oder veraltetes Design", desc: "Website spiegelt Servicequalität nicht wider" }, { title: "Keine klare Botschaft", desc: "Besucher verstehen nicht, was Sie anbieten" }, { title: "Zu komplexe Formulare", desc: "Potenzielle Kunden geben vor dem Absenden auf" }],
   solutions: [{ title: "Analyse & Recherche", desc: "Wir verstehen Ihre Zielgruppe und ihr Kaufverhalten." }, { title: "Lead-Gen-Strategie", desc: "Klarer Plan zur Gewinnung und Konvertierung qualifizierter Leads." }, { title: "Ansprechender Content", desc: "Copy und Design, die Besucher zum Handeln überzeugen." }, { title: "Optimierte Formulare", desc: "Einfache Formulare, die Ausfüllungen maximieren." }, { title: "Conversion-Landing-Pages", desc: "Seiten, die ausschließlich für maximale Conversions gebaut sind." }, { title: "Tracking & Optimierung", desc: "Jede Conversion verfolgen und kontinuierlich optimieren." }],

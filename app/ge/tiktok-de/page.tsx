@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "TikTok A
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "paidAds",
   hero: { badge: "TikTok Ads", title: "TikTok Ads", subtitle: "Erreichen Sie Gen Z und Millennials mit authentischen, kreativen Kampagnen, die schnellst wachsende Plattform für die nächste Generation." },
   problems: [{ title: "Fehlen auf der schnellst wachsenden Plattform", desc: "Wettbewerber sind bereits auf TikTok" }, { title: "Geringes Brand-Bewusstsein bei jungen Zielgruppen", desc: "Die nächste Generation von Käufern wird nicht erreicht" }, { title: "Creative-Content-Herausforderungen", desc: "TikTok erfordert nativen, authentischen Content" }, { title: "Unklarer ROI aus TikTok", desc: "Schwierig zu messen und zu optimieren" }],
   solutions: [{ title: "TikTok-Strategie", desc: "Plattformspezifische Strategie für maximalen Impact." }, { title: "Native Creative-Produktion", desc: "Content, der organisch wirkt, nicht wie Werbung." }, { title: "Spark Ads", desc: "Besten organischen Content mit bezahlter Reichweite verstärken." }, { title: "In-Feed & TopView", desc: "Maximale Sichtbarkeitsformate für Markteinführungen." }, { title: "Audience-Targeting", desc: "Präzises Verhaltens- und Interessen-Targeting." }, { title: "Performance-Tracking", desc: "Vollständige Attribution und ROAS-Messung." }],

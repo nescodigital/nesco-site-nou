@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "paidAds",
   hero: { badge: "Instagram Ads", title: "Instagram Ads", subtitle: "Vizual, impactant, convertibil. Creăm campanii Instagram care opresc scroll-ul, construiesc dorința de brand și generează conversii reale." },
   problems: [
     { title: "Targetare vizuală greșită", desc: "Reclamele ajung la audiențe greșite, bugetul se irosește" },

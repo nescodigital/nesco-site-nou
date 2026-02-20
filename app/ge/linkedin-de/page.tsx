@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "LinkedIn
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "paidAds",
   hero: { badge: "LinkedIn Ads", title: "LinkedIn Ads", subtitle: "Die leistungsstärkste B2B-Werbeplattform. Wir helfen Ihnen, Entscheidungsträger zu erreichen, qualifizierte Leads zu generieren und enterprise-weite Pipelines aufzubauen." },
   problems: [{ title: "Niedrige B2B-Lead-Qualität", desc: "Leads, die nicht zum ICP passen" }, { title: "Hohe Kosten pro Enterprise-Lead", desc: "Teure Leads durch falsches Targeting" }, { title: "Falsches Audience-Targeting", desc: "Entscheidungsträger werden nicht erreicht" }, { title: "Kein C-Suite-Zugang", desc: "Kann nicht die richtige Führungsebene erreichen" }],
   solutions: [{ title: "Entscheidungsträger-Targeting", desc: "Job-Titel, Seniorität, Unternehmensgröße, präzises B2B-Targeting." }, { title: "Sponsored Content", desc: "Thought-Leadership-Content, der Vertrauen bei der Zielgruppe aufbaut." }, { title: "InMail-Kampagnen", desc: "Direktes Outreach an Entscheidungsträger." }, { title: "Lead-Gen-Forms", desc: "Native LinkedIn-Formulare für reibungslose Lead-Erfassung." }, { title: "Account-Based Marketing", desc: "Wunschunternehmen nach Namen targetieren." }, { title: "LinkedIn-Retargeting", desc: "Website-Besucher und Video-Viewer erneut ansprechen." }],

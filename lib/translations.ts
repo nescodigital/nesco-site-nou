@@ -81,7 +81,7 @@ export const translations = {
       badge: "Portofoliu",
       headline: "Rezultate reale pentru clienți reali",
       subheadline: "Iată câteva dintre proiectele cu care suntem mândri.",
-      cta: "Toate proiectele",
+      cta: "Vezi toate proiectele",
     },
     testimonials: {
       badge: "Testimoniale",

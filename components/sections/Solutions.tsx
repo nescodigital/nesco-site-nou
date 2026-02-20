@@ -30,10 +30,10 @@ export function Solutions({ locale }: SolutionsProps) {
 
       <div className="page-container">
         {/* Header */}
-        <div className="text-center">
+        <div>
           <span className="badge mb-6">{s.badge}</span>
           <h2
-            className="font-black text-white"
+            className="font-black text-white mb-10"
             style={{
               fontSize: "clamp(2rem, 4vw, 3.25rem)",
               lineHeight: 1.05,

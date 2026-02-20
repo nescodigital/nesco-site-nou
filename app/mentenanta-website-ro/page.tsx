@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "webdesign",
   hero: { badge: "Mentenanță Website", title: "Mentenanță Website", subtitle: "Menținem site-ul tău rapid, sigur și mereu la performanță maximă. Gestionăm aspectul tehnic ca tu să te poți concentra pe afacere." },
   problems: [
     { title: "Vulnerabilități de securitate", desc: "Plugin-uri și CMS depășite creează riscuri de hacking" },

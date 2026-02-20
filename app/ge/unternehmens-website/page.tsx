@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "Unterneh
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "webdesign",
   hero: { badge: "Unternehmens-Website", title: "Unternehmens-Website", subtitle: "Ihre professionelle Website, maßgeschneidert für die Bedürfnisse Ihres Unternehmens und Ihre Markenwerte. Digitale Präsenz, die Vertrauen aufbaut." },
   problems: [{ title: "Keine Online-Glaubwürdigkeit", desc: "Potenzielle Kunden vertrauen ohne professionelle Präsenz nicht" }, { title: "Schwer zu navigieren", desc: "Besucher finden nicht, was sie brauchen" }, { title: "Unprofessionelles Erscheinungsbild", desc: "Veraltetes Design schadet der Markenwahrnehmung" }, { title: "Schwache Lead-Generierung", desc: "Website bekommt Traffic, generiert aber kein Geschäft" }],
   solutions: [{ title: "Persönliche Beratung", desc: "Wir verstehen Ihre Geschäftsziele und Zielgruppe." }, { title: "Strategische Architektur", desc: "Site-Struktur für UX und SEO konzipiert." }, { title: "Einzigartiges Design", desc: "Custom-Design, das Ihre Markenidentität widerspiegelt." }, { title: "Funktionale Entwicklung", desc: "Schnelle, sichere, mobile-first Entwicklung." }, { title: "Mobile-Optimierung", desc: "Perfekte Erfahrung auf allen Geräten." }, { title: "Business-Tool-Integration", desc: "CRM, E-Mail, Analytics, alles verbunden." }],

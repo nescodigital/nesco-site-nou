@@ -106,26 +106,18 @@ export function Testimonials({ locale }: TestimonialsProps) {
                 style={{ background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.4), transparent)" }}
               />
 
-              {/* Quote icon */}
-              <Quote
-                size={18}
-                style={{ color: "rgba(86,219,132,0.25)", marginBottom: "20px", flexShrink: 0 }}
-              />
-
-              {/* Stars */}
-              <div className="flex gap-0.5 mb-5">
-                {Array.from({ length: t.rating }).map((_, i) => (
-                  <Star key={i} size={13} className="text-brand-green fill-brand-green" />
-                ))}
+              {/* Quote icon + Stars row */}
+              <div className="flex items-center justify-between mb-5">
+                <Quote
+                  size={18}
+                  style={{ color: "rgba(86,219,132,0.25)", flexShrink: 0 }}
+                />
+                <div className="flex gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} size={13} style={{ color: "#ffffff", fill: "#ffffff" }} />
+                  ))}
+                </div>
               </div>
-
-              {/* Content */}
-              <p
-                className="flex-1 mb-6"
-                style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}
-              >
-                &ldquo;{t.content}&rdquo;
-              </p>
 
               {/* Metric badge */}
               <div
@@ -140,17 +132,22 @@ export function Testimonials({ locale }: TestimonialsProps) {
                   fontWeight: 600,
                   color: "#56db84",
                   letterSpacing: "0.03em",
-                  marginBottom: "20px",
+                  marginBottom: "16px",
                 }}
               >
                 {t.metric}
               </div>
 
-              {/* Author */}
-              <div
-                className="flex items-center gap-3 pt-5"
-                style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+              {/* Content */}
+              <p
+                className="flex-1 mb-6"
+                style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.7 }}
               >
+                &ldquo;{t.content}&rdquo;
+              </p>
+
+              {/* Author */}
+              <div className="flex items-center gap-3">
                 <div
                   style={{
                     width: 36,

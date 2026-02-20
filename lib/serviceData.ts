@@ -4,6 +4,7 @@ import type { ServicePageData } from "@/components/sections/ServicePage";
 export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   ro: {
     locale: "ro",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Google Ads",
       title: "Reclame pe Google Ads",
@@ -47,6 +48,7 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   en: {
     locale: "en",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Google Ads",
       title: "Google Ads Campaigns That Drive Revenue",
@@ -90,6 +92,7 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   de: {
     locale: "de",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Google Ads",
       title: "Google Ads Kampagnen mit messbaren Ergebnissen",
@@ -137,6 +140,7 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
 export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   ro: {
     locale: "ro",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Facebook Ads",
       title: "Reclame pe Facebook Ads",
@@ -179,6 +183,7 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   en: {
     locale: "en",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Facebook Ads",
       title: "Facebook Ads That Generate Real Results",
@@ -221,6 +226,7 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   de: {
     locale: "de",
+    breadcrumbCategory: "paidAds",
     hero: {
       badge: "Facebook Ads",
       title: "Facebook Ads mit nachweisbaren Ergebnissen",
@@ -267,6 +273,7 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
 export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
   ro: {
     locale: "ro",
+    breadcrumbCategory: "webdesign",
     hero: {
       badge: "Magazine Online",
       title: "Magazine Online care vând",
@@ -299,6 +306,7 @@ export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   en: {
     locale: "en",
+    breadcrumbCategory: "webdesign",
     hero: {
       badge: "E-commerce Stores",
       title: "E-commerce Stores that sell",
@@ -331,6 +339,7 @@ export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   de: {
     locale: "de",
+    breadcrumbCategory: "webdesign",
     hero: {
       badge: "E-Commerce-Shops",
       title: "E-Commerce-Shops, die verkaufen",
@@ -367,6 +376,7 @@ export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
 export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
   ro: {
     locale: "ro",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "Email Marketing",
       title: "Email Marketing cu ROI 42:1",
@@ -408,6 +418,7 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   en: {
     locale: "en",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "Email Marketing",
       title: "Email Marketing with 42:1 ROI",
@@ -449,6 +460,7 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   de: {
     locale: "de",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "E-Mail-Marketing",
       title: "E-Mail-Marketing mit 42:1 ROI",
@@ -494,6 +506,7 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
 export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
   ro: {
     locale: "ro",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "CRO Solutions",
       title: "CRO, Mai multe conversii, același buget",
@@ -535,6 +548,7 @@ export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   en: {
     locale: "en",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "CRO Solutions",
       title: "CRO, More conversions, same budget",
@@ -576,6 +590,7 @@ export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
   },
   de: {
     locale: "de",
+    breadcrumbCategory: "digitalMarketing",
     hero: {
       badge: "CRO-Lösungen",
       title: "CRO, Mehr Conversions, gleiches Budget",

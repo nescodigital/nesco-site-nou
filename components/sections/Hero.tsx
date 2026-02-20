@@ -83,11 +83,10 @@ export function Hero({ locale }: HeroProps) {
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
-          right: "-30%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: 300,
-          height: 300,
+          right: "-50%",
+          top: "100px",
+          width: 500,
+          height: 500,
           zIndex: 1,
         }}
       >
@@ -95,7 +94,7 @@ export function Hero({ locale }: HeroProps) {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: "linear-gradient(to right, #050505 0%, transparent 45%)",
+            background: "linear-gradient(to right, #050505 0%, transparent 40%)",
             zIndex: 2,
           }}
         />
@@ -205,7 +204,7 @@ export function Hero({ locale }: HeroProps) {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row gap-6 mb-12">
               <Link href={r.contact} className="btn-primary group">
                 {h.cta1}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
@@ -216,7 +215,7 @@ export function Hero({ locale }: HeroProps) {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 mt-8">
+            <div className="grid grid-cols-3 gap-3 mt-8 md:mt-10 lg:mt-12">
               {[
                 { value: h.stat1Value, label: h.stat1Label },
                 { value: h.stat2Value, label: h.stat2Label },

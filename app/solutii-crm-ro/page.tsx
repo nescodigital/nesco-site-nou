@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "digitalMarketing",
   hero: { badge: "Soluții CRM", title: "Soluții CRM", subtitle: "Optimizează relațiile cu clienții, eficientizează procesele de vânzare și crește veniturile cu implementări CRM personalizate pentru afacerea ta." },
   problems: [
     { title: "Date dispersate despre clienți", desc: "Fără o sursă unică de adevăr pentru informațiile clienților" },

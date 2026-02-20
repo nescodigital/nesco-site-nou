@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "digitalMarketing",
   hero: { badge: "Social Media", title: "Soluții Social Media", subtitle: "Creștem vizibilitatea brandului tău, construim comunități și generăm vânzări prin strategii de social media personalizate." },
   problems: [
     { title: "Strategie neclară", desc: "Postezi fără plan, fără rezultate" },

@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "SEO-Lös
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "digitalMarketing",
   hero: { badge: "SEO-Lösungen", title: "SEO-Lösungen", subtitle: "Höher bei Google ranken, qualitätsorientierter organischer Traffic und nachhaltiges langfristiges Wachstum, ohne für jeden Klick zu bezahlen." },
   problems: [{ title: "Keine Google-Sichtbarkeit", desc: "Ideale Kunden können Sie online nicht finden" }, { title: "Von Wettbewerbern überholt", desc: "Konkurrenten nehmen Traffic, der Ihnen gehören sollte" }, { title: "Niedriger organischer Traffic", desc: "Abhängigkeit von bezahlten Anzeigen ohne organische Basis" }, { title: "Schlechtes technisches SEO", desc: "Site-Probleme verhindern korrektes Google-Ranking" }],
   solutions: [{ title: "Technisches SEO-Audit", desc: "Vollständiger Crawl zur Identifizierung und Behebung jedes technischen Problems." }, { title: "Keyword-Recherche", desc: "Keywords mit hoher Kaufabsicht, nach denen Ihre Käufer suchen." }, { title: "On-Page-Optimierung", desc: "Jede Seite für Rankings und Conversions optimiert." }, { title: "Link Building", desc: "Hochautoritäre Backlinks, die den Unterschied machen." }, { title: "Content-Strategie", desc: "SEO-Content, der rankt und konvertiert." }, { title: "Lokales SEO", desc: "Lokale Suche in Ihrer Region dominieren." }],

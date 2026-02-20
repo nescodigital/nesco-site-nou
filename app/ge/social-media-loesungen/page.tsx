@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "Social-M
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "digitalMarketing",
   hero: { badge: "Social Media", title: "Social-Media-Lösungen", subtitle: "Wir steigern die Sichtbarkeit Ihrer Marke, bauen Communities auf und steigern den Umsatz durch maßgeschneiderte Social-Media-Strategien mit messbaren Ergebnissen." },
   problems: [{ title: "Unklare Strategie", desc: "Posting ohne Plan, keine Ergebnisse" }, { title: "Schlechte Inhaltsqualität", desc: "Content, der nicht engagiert oder konvertiert" }, { title: "Niedriges Engagement", desc: "Follower, die nicht interagieren oder kaufen" }, { title: "Schwache Social-Anzeigen", desc: "Paid-Social-Ausgaben ohne klaren ROI" }],
   solutions: [{ title: "Analyse & Strategie", desc: "Maßgeschneiderte Social-Media-Strategie basierend auf Zielgruppe und Zielen." }, { title: "Ansprechenden Content erstellen", desc: "Visueller und geschriebener Content, der den Scroll stoppt." }, { title: "Account-Management", desc: "Professionelle und konsistente Verwaltung Ihrer Konten." }, { title: "Bezahlte Kampagnen", desc: "Social-Ads, die konvertieren, nicht nur Impressions." }, { title: "Monitoring & Analyse", desc: "Wöchentliches Reporting, was funktioniert." }, { title: "Community-Wachstum", desc: "Aufbau einer treuen Community rund um Ihre Marke." }],

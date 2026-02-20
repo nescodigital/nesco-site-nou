@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "paidAds",
   hero: { badge: "TikTok Ads", title: "TikTok Ads", subtitle: "Ajunge la Gen Z și Millennials cu campanii autentice, creative, care generează creștere virală și conversii măsurabile." },
   problems: [
     { title: "Lipsești de pe platforma cu cea mai rapidă creștere", desc: "Concurenții tăi sunt deja pe TikTok" },

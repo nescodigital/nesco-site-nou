@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "en",
+  breadcrumbCategory: "digitalMarketing",
   hero: {
     badge: "Social Media",
     title: "Social Media Solutions",

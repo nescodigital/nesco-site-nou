@@ -6,6 +6,28 @@ import { routes } from "@/lib/routes";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
 
+type BreadcrumbCategory = "paidAds" | "webdesign" | "digitalMarketing";
+
+function getBreadcrumbCategory(category: BreadcrumbCategory, locale: Locale): { label: string; href: string } {
+  const r = routes[locale];
+  if (category === "paidAds") {
+    return {
+      label: locale === "ro" ? "Reclame Plătite" : locale === "de" ? "Bezahlte Anzeigen" : "Paid Ads",
+      href: r.googleAds,
+    };
+  }
+  if (category === "webdesign") {
+    return {
+      label: "Webdesign",
+      href: r.leadGenWebsite,
+    };
+  }
+  return {
+    label: locale === "ro" ? "Marketing Digital" : locale === "de" ? "Digitales Marketing" : "Digital Marketing",
+    href: r.digitalStrategy,
+  };
+}
+
 export interface ServiceCase {
   label: string;
   metric: string;
@@ -25,6 +47,7 @@ export interface ServiceTestimonial {
 
 export interface ServicePageData {
   locale: Locale;
+  breadcrumbCategory?: BreadcrumbCategory;
   hero: {
     badge: string;
     title: string;
@@ -55,9 +78,11 @@ const RESULT_ACCENTS = [
 ];
 
 export function ServicePageTemplate({ data }: ServicePageProps) {
-  const { locale, hero, problems, solutions, cases, omnichannelServices, faq, testimonial, tools, toolsSectionTitle, freeAuditBadge } = data;
+  const { locale, breadcrumbCategory, hero, problems, solutions, cases, omnichannelServices, faq, testimonial, tools, toolsSectionTitle, freeAuditBadge } = data;
   const tr = t(locale);
   const r = routes[locale];
+  const homeLabel = locale === "ro" ? "Acasă" : locale === "de" ? "Startseite" : "Home";
+  const categoryInfo = breadcrumbCategory ? getBreadcrumbCategory(breadcrumbCategory, locale) : null;
 
   const freeAuditSubtitle =
     locale === "ro"
@@ -97,7 +122,22 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           style={{ background: "linear-gradient(to top, #050505, transparent)" }}
         />
         <div className="relative page-container">
-          <span className="badge mb-6">{hero.badge}</span>
+          {/* Breadcrumb */}
+          <nav className="flex items-center gap-2 mb-8 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <Link href={r.home} style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }} className="hover:text-white transition-colors">
+              {homeLabel}
+            </Link>
+            {categoryInfo && (
+              <>
+                <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
+                <Link href={categoryInfo.href} style={{ color: "rgba(255,255,255,0.4)", textDecoration: "none" }} className="hover:text-white transition-colors">
+                  {categoryInfo.label}
+                </Link>
+              </>
+            )}
+            <span style={{ color: "rgba(255,255,255,0.2)" }}>→</span>
+            <span style={{ color: "#ffffff" }}>{hero.badge}</span>
+          </nav>
           <h1
             className="font-black"
             style={{

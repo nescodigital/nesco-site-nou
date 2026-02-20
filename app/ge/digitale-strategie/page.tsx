@@ -8,6 +8,7 @@ export const metadata: Metadata = buildMetadata({ locale: "de", title: "Digitale
 
 const data: ServicePageData = {
   locale: "de",
+  breadcrumbCategory: "digitalMarketing",
   hero: { badge: "Digitale Strategie", title: "Digitale Strategie", subtitle: "Wir bauen eine starke und kohärente Online-Präsenz auf, die messbare Ergebnisse generiert und Ihr Unternehmen auf die nächste Stufe bringt." },
   problems: [{ title: "Keine klare Online-Richtung", desc: "Unklar, auf welche Kanäle man sich konzentrieren soll" }, { title: "Schlechte Kampagnenergebnisse", desc: "Investiertes Geld ohne konkrete Ergebnisse" }, { title: "Schwierigkeiten bei der Neukundengewinnung", desc: "Wachstum ist langsam oder stagniert" }, { title: "Inkonsistente Online-Präsenz", desc: "Verschiedene Botschaften auf verschiedenen Kanälen" }],
   solutions: [{ title: "Analyse & Beratung", desc: "Wir verstehen Ihr Unternehmen, Ihren Markt und Ihre Wettbewerber." }, { title: "Zieldefinition", desc: "SMART-Ziele, die mit Ihrer Geschäftsvision übereinstimmen." }, { title: "Zielgruppenidentifikation", desc: "Detaillierte Buyer-Persona-Profile." }, { title: "Kanalauswahl", desc: "Wir wählen Kanäle mit dem größten Potenzial für Sie." }, { title: "Aktionsplan", desc: "Klare Roadmap mit Schritten, Fristen und KPIs." }, { title: "Monitoring & Optimierung", desc: "Wir verfolgen den Fortschritt und passen kontinuierlich an." }],

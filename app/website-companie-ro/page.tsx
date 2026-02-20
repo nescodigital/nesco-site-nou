@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "webdesign",
   hero: { badge: "Website Companie", title: "Website Companie", subtitle: "Website-ul tău profesional, adaptat la nevoile companiei și valorile brandului tău. Prezență digitală care inspiră încredere și generează business." },
   problems: [
     { title: "Fără credibilitate online", desc: "Potențialii clienți nu au încredere fără o prezență profesională" },

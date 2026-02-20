@@ -14,6 +14,7 @@ export const metadata: Metadata = buildMetadata({
 
 const data: ServicePageData = {
   locale: "ro",
+  breadcrumbCategory: "webdesign",
   hero: { badge: "Website Lead Generation", title: "Website Lead Generation", subtitle: "Transformăm vizitatorii în clienți valoroși. Construim website-uri cu conversie ridicată care generează lead-uri calificate 24/7." },
   problems: [
     { title: "Trafic mare, conversii mici", desc: "Mii de vizitatori care nu devin lead-uri" },

@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/Button";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
 
@@ -79,7 +78,7 @@ export function Portfolio({ locale }: PortfolioProps) {
 
       <div className="page-container">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20">
           <div>
             <span className="badge mb-6">{tr.portfolio.badge}</span>
             <h2
@@ -99,14 +98,38 @@ export function Portfolio({ locale }: PortfolioProps) {
               {tr.portfolio.subheadline}
             </p>
           </div>
-          <Button href={r.projects} variant="outline" size="md" className="shrink-0">
+          <Link
+            href={r.projects}
+            className="inline-flex items-center gap-2 group shrink-0"
+            style={{
+              padding: "9px 20px",
+              background: "#56db84",
+              borderRadius: "9999px",
+              fontSize: "0.875rem",
+              fontWeight: 600,
+              color: "#000",
+              textDecoration: "none",
+              transition: "all 0.2s ease",
+              boxShadow: "0 0 0 0 rgba(86,219,132,0)",
+            }}
+            onMouseEnter={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "scale(1.02)";
+              el.style.boxShadow = "0 0 20px rgba(86,219,132,0.3)";
+            }}
+            onMouseLeave={(e) => {
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.transform = "scale(1)";
+              el.style.boxShadow = "0 0 0 0 rgba(86,219,132,0)";
+            }}
+          >
             {tr.portfolio.cta}
-            <ArrowRight size={15} />
-          </Button>
+            <ArrowRight size={13} />
+          </Link>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
           {projects.map((project, idx) => (
             <div
               key={idx}

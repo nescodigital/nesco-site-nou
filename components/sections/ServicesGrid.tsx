@@ -66,7 +66,7 @@ export function ServicesGrid({ locale }: ServicesGridProps) {
 
       <div className="page-container">
         {/* Header */}
-        <div style={{ textAlign: "center", maxWidth: "42rem", marginLeft: "auto", marginRight: "auto" }}>
+        <div>
           <span className="badge mb-6">{tr.services.badge}</span>
           <h2
             className="font-black text-white"
@@ -75,14 +75,13 @@ export function ServicesGrid({ locale }: ServicesGridProps) {
               lineHeight: 1.05,
               letterSpacing: "-0.025em",
               fontFeatureSettings: '"kern" 1, "liga" 1',
-              textAlign: "center",
               marginTop: "20px",
               marginBottom: "20px",
             }}
           >
             {tr.services.headline}
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem", lineHeight: 1.7, letterSpacing: "0.01em", textAlign: "center", maxWidth: "36rem", marginLeft: "auto", marginRight: "auto" }}>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem", lineHeight: 1.7, letterSpacing: "0.01em", maxWidth: "36rem" }}>
             {tr.services.subheadline}
           </p>
         </div>

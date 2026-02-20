@@ -54,6 +54,7 @@ export function GlobeCanvas() {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(w, h);
     renderer.setClearColor(0x000000, 0); // transparent background — CSS glow shows through
+    renderer.domElement.style.background = "transparent";
     container.appendChild(renderer.domElement);
 
     // ── Scene / Camera ────────────────────────────────────────────────────────
@@ -226,7 +227,7 @@ export function GlobeCanvas() {
       ref={containerRef}
       className="w-full h-full"
       style={{
-        background: "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 60%)",
+        background: "transparent",
       }}
     />
   );
