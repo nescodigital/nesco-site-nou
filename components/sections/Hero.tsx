@@ -9,7 +9,7 @@ import { StatsCounter } from "@/components/ui/StatsCounter";
 
 const GlobeCanvas = dynamic(
   () => import("@/components/sections/GlobeCanvas").then((m) => ({ default: m.GlobeCanvas })),
-  { ssr: false }
+  { ssr: false, loading: () => null }
 );
 
 interface HeroProps {
@@ -80,7 +80,7 @@ export function Hero({ locale }: HeroProps) {
       />
 
 
-      {/* Mobile globe — partially visible on right side as background */}
+      {/* Mobile globe — static glow only, no Three.js on mobile */}
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
@@ -89,11 +89,14 @@ export function Hero({ locale }: HeroProps) {
           width: 500,
           height: 500,
           zIndex: 1,
-          WebkitMaskImage: "linear-gradient(to left, white 30%, transparent 100%)",
-          maskImage: "linear-gradient(to left, white 30%, transparent 100%)",
         }}
       >
-        <GlobeCanvas />
+        <div style={{
+          width: "100%",
+          height: "300px",
+          background: "radial-gradient(ellipse at center, rgba(86,219,132,0.15) 0%, transparent 70%)",
+          borderRadius: "50%",
+        }} />
       </div>
 
       {/* Bottom fade */}
