@@ -2,31 +2,98 @@
 import { useState } from "react";
 import { X, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 
+type Locale = "ro" | "en" | "de";
+
 interface GrowthSprintPopupProps {
-  source: "growth-sprint-educatie" | "growth-sprint-ecommerce";
+  source: string;
   onClose: () => void;
   selectedPlan?: string;
+  locale?: Locale;
 }
 
-const QUESTIONS = [
-  {
-    id: "revenue",
-    label: "Care sunt veniturile lunare actuale?",
-    options: ["Sub 10.000€", "10.000–50.000€", "50.000–100.000€", "Peste 100.000€"],
+const T = {
+  ro: {
+    questions: [
+      { id: "revenue", label: "Care sunt veniturile lunare actuale?", options: ["Sub 10.000€", "10.000–50.000€", "50.000–100.000€", "Peste 100.000€"] },
+      { id: "problem", label: "Ce problemă principală vrei să rezolvi?", options: ["Creștere vânzări", "Optimizare costuri ads", "Automatizare vânzări", "Altele"] },
+      { id: "timeline", label: "Când vrei să începi?", options: ["Imediat", "În 30 de zile", "Explorez opțiunile"] },
+    ],
+    step1Title: "Spune-ne mai multe despre tine",
+    step1Sub: "3 întrebări rapide pentru a personaliza apelul de discovery.",
+    continueBtn: "Continuă",
+    step2Title: "Date de contact",
+    step2Sub: "Completează datele și te contactăm în 24 de ore.",
+    namePlaceholder: "Nume complet *",
+    contactPrefLabel: "Cum preferi să fii contactat?",
+    contactPrefs: ["Telefon", "WhatsApp", "Email"],
+    msgPlaceholder: "Mesaj scurt (opțional)",
+    submitBtn: "Programează Discovery Call",
+    back: "← Înapoi",
+    sending: "Se trimite...",
+    successTitle: "Mulțumim!",
+    successText: "Te contactăm în maximum 24 de ore.",
+    closeBtn: "Închide",
+    planBadgeLabel: "Opțiunea aleasă:",
+    errRequired: "Câmp obligatoriu.",
+    errEmail: "Email invalid.",
+    errGeneral: "Ceva nu a mers. Te rugăm să încerci din nou.",
   },
-  {
-    id: "problem",
-    label: "Ce problemă principală vrei să rezolvi?",
-    options: ["Creștere vânzări", "Optimizare costuri ads", "Automatizare vânzări", "Altele"],
+  en: {
+    questions: [
+      { id: "revenue", label: "What are your current monthly revenues?", options: ["Under €10K", "€10K–€50K", "€50K–€100K", "Over €100K"] },
+      { id: "problem", label: "What's the main problem to solve?", options: ["Grow sales", "Optimize ad costs", "Automate sales", "Other"] },
+      { id: "timeline", label: "When do you want to start?", options: ["Immediately", "Within 30 days", "Just exploring"] },
+    ],
+    step1Title: "Tell us more about you",
+    step1Sub: "3 quick questions to personalize the discovery call.",
+    continueBtn: "Continue",
+    step2Title: "Contact details",
+    step2Sub: "Fill in your details and we'll contact you within 24 hours.",
+    namePlaceholder: "Full name *",
+    contactPrefLabel: "How do you prefer to be contacted?",
+    contactPrefs: ["Phone", "WhatsApp", "Email"],
+    msgPlaceholder: "Short message (optional)",
+    submitBtn: "Schedule Discovery Call",
+    back: "← Back",
+    sending: "Sending...",
+    successTitle: "Thank you!",
+    successText: "We'll contact you within 24 hours.",
+    closeBtn: "Close",
+    planBadgeLabel: "Selected option:",
+    errRequired: "Required field.",
+    errEmail: "Invalid email.",
+    errGeneral: "Something went wrong. Please try again.",
   },
-  {
-    id: "timeline",
-    label: "Când vrei să începi?",
-    options: ["Imediat", "În 30 de zile", "Explorez opțiunile"],
+  de: {
+    questions: [
+      { id: "revenue", label: "Was sind Ihre aktuellen monatlichen Einnahmen?", options: ["Unter 10.000€", "10.000–50.000€", "50.000–100.000€", "Über 100.000€"] },
+      { id: "problem", label: "Was ist das Hauptproblem, das Sie lösen möchten?", options: ["Umsatz steigern", "Werbekosten optimieren", "Verkauf automatisieren", "Sonstiges"] },
+      { id: "timeline", label: "Wann möchten Sie starten?", options: ["Sofort", "In 30 Tagen", "Ich erkunde Optionen"] },
+    ],
+    step1Title: "Erzählen Sie uns mehr über sich",
+    step1Sub: "3 schnelle Fragen zur Personalisierung des Discovery Calls.",
+    continueBtn: "Weiter",
+    step2Title: "Kontaktdaten",
+    step2Sub: "Füllen Sie die Daten aus und wir melden uns innerhalb von 24 Stunden.",
+    namePlaceholder: "Vollständiger Name *",
+    contactPrefLabel: "Wie möchten Sie kontaktiert werden?",
+    contactPrefs: ["Telefon", "WhatsApp", "E-Mail"],
+    msgPlaceholder: "Kurze Nachricht (optional)",
+    submitBtn: "Discovery-Call vereinbaren",
+    back: "← Zurück",
+    sending: "Wird gesendet...",
+    successTitle: "Danke!",
+    successText: "Wir melden uns innerhalb von 24 Stunden.",
+    closeBtn: "Schließen",
+    planBadgeLabel: "Gewählte Option:",
+    errRequired: "Pflichtfeld.",
+    errEmail: "Ungültige E-Mail.",
+    errGeneral: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
   },
-];
+};
 
-export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprintPopupProps) {
+export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro" }: GrowthSprintPopupProps) {
+  const t = T[locale];
   const [step, setStep] = useState<1 | 2>(1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [fields, setFields] = useState({ name: "", email: "", phone: "", message: "" });
@@ -36,7 +103,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
   const [success, setSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const allAnswered = QUESTIONS.every((q) => answers[q.id]);
+  const allAnswered = t.questions.every((q) => answers[q.id]);
 
   function handleAnswer(id: string, option: string) {
     setAnswers((prev) => ({ ...prev, [id]: option }));
@@ -50,10 +117,10 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
 
   function validate() {
     const e: Record<string, string> = {};
-    if (!fields.name.trim()) e.name = "Câmp obligatoriu.";
-    if (!fields.email.trim()) e.email = "Câmp obligatoriu.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) e.email = "Email invalid.";
-    if (!fields.phone.trim()) e.phone = "Câmp obligatoriu.";
+    if (!fields.name.trim()) e.name = t.errRequired;
+    if (!fields.email.trim()) e.email = t.errRequired;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) e.email = t.errEmail;
+    if (!fields.phone.trim()) e.phone = t.errRequired;
     return e;
   }
 
@@ -95,7 +162,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
       }
       setSuccess(true);
     } catch {
-      setSubmitError("Ceva nu a mers. Te rugăm să încerci din nou.");
+      setSubmitError(t.errGeneral);
     } finally {
       setSubmitting(false);
     }
@@ -110,16 +177,6 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
     color: "#ffffff",
     fontSize: "0.875rem",
     outline: "none",
-  };
-
-  const labelStyle: React.CSSProperties = {
-    display: "block",
-    fontSize: "0.6875rem",
-    color: "rgba(255,255,255,0.35)",
-    fontWeight: 600,
-    marginBottom: "6px",
-    textTransform: "uppercase",
-    letterSpacing: "0.1em",
   };
 
   const errorStyle: React.CSSProperties = {
@@ -183,7 +240,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
               marginBottom: "20px",
             }}
           >
-            <span style={{ opacity: 0.6 }}>Opțiunea aleasă:</span> {selectedPlan}
+            <span style={{ opacity: 0.6 }}>{t.planBadgeLabel}</span> {selectedPlan}
           </div>
         )}
 
@@ -196,7 +253,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
             color: "rgba(255,255,255,0.3)", padding: 4,
             display: "flex", alignItems: "center", justifyContent: "center",
           }}
-          aria-label="Închide"
+          aria-label={t.closeBtn}
         >
           <X size={18} />
         </button>
@@ -219,13 +276,13 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
               className="font-black text-white"
               style={{ fontSize: "1.5rem", letterSpacing: "-0.02em", marginBottom: "12px" }}
             >
-              Mulțumim!
+              {t.successTitle}
             </h3>
             <p style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "28px" }}>
-              Te contactăm în maximum 24 de ore.
+              {t.successText}
             </p>
-            <button onClick={onClose} className="btn-primary" style={{ margin: "0 auto", justifyContent: "center" }}>
-              Închide
+            <button onClick={onClose} className="btn-primary" style={{ margin: "0 auto", justifyContent: "center", border: "none", cursor: "pointer" }}>
+              {t.closeBtn}
             </button>
           </div>
         ) : (
@@ -271,14 +328,14 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                   className="font-black text-white"
                   style={{ fontSize: "1.375rem", letterSpacing: "-0.02em", marginBottom: "8px" }}
                 >
-                  Spune-ne mai multe despre tine
+                  {t.step1Title}
                 </h2>
                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", marginBottom: "32px", lineHeight: 1.6 }}>
-                  3 întrebări rapide pentru a personaliza apelul de discovery.
+                  {t.step1Sub}
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
-                  {QUESTIONS.map((q) => (
+                  {t.questions.map((q) => (
                     <div key={q.id}>
                       <p style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.8)", fontWeight: 600, marginBottom: "12px" }}>
                         {q.label}
@@ -324,7 +381,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                       border: "none",
                     }}
                   >
-                    Continuă
+                    {t.continueBtn}
                     <ArrowRight size={16} />
                   </button>
                 </div>
@@ -338,17 +395,17 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                   className="font-black text-white"
                   style={{ fontSize: "1.375rem", letterSpacing: "-0.02em", marginBottom: "8px" }}
                 >
-                  Date de contact
+                  {t.step2Title}
                 </h2>
                 <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", marginBottom: "20px", lineHeight: 1.6 }}>
-                  Completează datele și te contactăm în 24 de ore.
+                  {t.step2Sub}
                 </p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   <div>
                     <input
                       type="text" name="name" value={fields.name}
-                      onChange={handleChange} placeholder="Nume complet *"
+                      onChange={handleChange} placeholder={t.namePlaceholder}
                       style={{ ...inputStyle, borderColor: errors.name ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.name && <div style={errorStyle}>{errors.name}</div>}
@@ -366,16 +423,18 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                   <div>
                     <input
                       type="text" name="phone" value={fields.phone}
-                      onChange={handleChange} placeholder="Telefon *"
+                      onChange={handleChange} placeholder={locale === "de" ? "Telefon *" : locale === "en" ? "Phone *" : "Telefon *"}
                       style={{ ...inputStyle, borderColor: errors.phone ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.phone && <div style={errorStyle}>{errors.phone}</div>}
                   </div>
 
                   <div>
-                    <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "6px" }}>Cum preferi să fii contactat?</p>
+                    <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "6px" }}>
+                      {t.contactPrefLabel}
+                    </p>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px" }}>
-                      {["Telefon", "WhatsApp", "Email"].map((opt) => {
+                      {t.contactPrefs.map((opt) => {
                         const checked = contactPrefs.includes(opt);
                         return (
                           <div
@@ -422,7 +481,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                     <textarea
                       name="message" value={fields.message}
                       onChange={handleChange}
-                      placeholder="Mesaj scurt (opțional)"
+                      placeholder={t.msgPlaceholder}
                       rows={2}
                       style={{
                         ...inputStyle,
@@ -450,11 +509,11 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                     {submitting ? (
                       <>
                         <Loader2 size={16} style={{ animation: "spin 1s linear infinite" }} />
-                        Se trimite...
+                        {t.sending}
                       </>
                     ) : (
                       <>
-                        Programează Discovery Call
+                        {t.submitBtn}
                         <ArrowRight size={16} />
                       </>
                     )}
@@ -471,7 +530,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprin
                       padding: "4px",
                     }}
                   >
-                    ← Înapoi
+                    {t.back}
                   </button>
                   {submitError && (
                     <p style={{ fontSize: "0.8125rem", color: "#f87171", textAlign: "center", margin: 0 }}>

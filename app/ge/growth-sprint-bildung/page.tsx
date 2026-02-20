@@ -6,7 +6,9 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata } from "@/lib/seo";
-import { ArrowRight, Zap, CheckCircle, XCircle } from "lucide-react";
+import { CheckCircle, XCircle, ArrowRight, Zap } from "lucide-react";
+import { GrowthSprintCta } from "@/components/GrowthSprintCta";
+import { GrowthSprintApplyButton } from "@/components/GrowthSprintApplyButton";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
@@ -192,16 +194,7 @@ export default function GrowthSprintBildungPage() {
               in dem wir direkt in Ihrem Unternehmen arbeiten. Keine Berichte. Ausführung.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-16">
-              <Link href="/ge/lass-uns-reden/" className="btn-primary">
-                <Zap size={16} />
-                Discovery-Call buchen
-                <ArrowRight size={16} />
-              </Link>
-              <a href="#investition" className="btn-ghost">
-                Preise ansehen
-              </a>
-            </div>
+            <GrowthSprintCta source="growth-sprint-bildung" locale="de" />
 
             {/* Stats */}
             <div
@@ -736,13 +729,11 @@ export default function GrowthSprintBildungPage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Vor Kick-off bezahlt. Bestes Preis-Leistungs-Verhältnis.
                   </p>
-                  <Link
-                    href="/ge/lass-uns-reden/"
-                    className="btn-primary"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Für diese Option bewerben
-                  </Link>
+                  <GrowthSprintApplyButton
+                    planLabel="4.500 € — Vollzahlung"
+                    variant="primary"
+                    label="Für diese Option bewerben"
+                  />
                 </div>
               </FadeInSection>
 
@@ -782,13 +773,11 @@ export default function GrowthSprintBildungPage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Vollständiges 6-Wochen-Engagement inklusive.
                   </p>
-                  <Link
-                    href="/ge/lass-uns-reden/"
-                    className="btn-ghost"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Für diese Option bewerben
-                  </Link>
+                  <GrowthSprintApplyButton
+                    planLabel="5.500 € — Ratenzahlung"
+                    variant="ghost"
+                    label="Für diese Option bewerben"
+                  />
                 </div>
               </FadeInSection>
             </div>

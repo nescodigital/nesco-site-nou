@@ -6,7 +6,9 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata } from "@/lib/seo";
-import { ArrowRight, ShoppingBag, Zap, CheckCircle, XCircle } from "lucide-react";
+import { ShoppingBag, CheckCircle, XCircle, ArrowRight, Zap } from "lucide-react";
+import { GrowthSprintCta } from "@/components/GrowthSprintCta";
+import { GrowthSprintApplyButton } from "@/components/GrowthSprintApplyButton";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -195,16 +197,7 @@ export default function GrowthSprintEcommercePage() {
               where we operate directly inside your e-commerce business, auditing every revenue system and implementing the highest-impact fixes. We don&apos;t produce reports. We implement.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-16">
-              <Link href="/en/lets-talk/" className="btn-primary">
-                <Zap size={16} />
-                Book a Discovery Call
-                <ArrowRight size={16} />
-              </Link>
-              <a href="#investment" className="btn-ghost">
-                See pricing
-              </a>
-            </div>
+            <GrowthSprintCta source="growth-sprint-ecommerce" locale="en" />
 
             {/* Stats */}
             <div
@@ -739,13 +732,11 @@ export default function GrowthSprintEcommercePage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Paid before kick-off. Best value.
                   </p>
-                  <Link
-                    href="/en/lets-talk/"
-                    className="btn-primary"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Apply for this option
-                  </Link>
+                  <GrowthSprintApplyButton
+                    planLabel="€5,500 — Full payment"
+                    variant="primary"
+                    label="Apply for this option"
+                  />
                 </div>
               </FadeInSection>
 
@@ -785,13 +776,11 @@ export default function GrowthSprintEcommercePage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Full 6-week engagement included.
                   </p>
-                  <Link
-                    href="/en/lets-talk/"
-                    className="btn-ghost"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Apply for this option
-                  </Link>
+                  <GrowthSprintApplyButton
+                    planLabel="€6,500 — Split payment"
+                    variant="ghost"
+                    label="Apply for this option"
+                  />
                 </div>
               </FadeInSection>
             </div>

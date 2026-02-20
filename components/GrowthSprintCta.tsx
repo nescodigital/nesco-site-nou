@@ -3,13 +3,23 @@ import { useState, useEffect } from "react";
 import { Zap, ArrowRight } from "lucide-react";
 import { GrowthSprintPopup } from "./GrowthSprintPopup";
 
+type Locale = "ro" | "en" | "de";
+
 interface GrowthSprintCtaProps {
-  source: "growth-sprint-educatie" | "growth-sprint-ecommerce";
+  source: string;
+  locale?: Locale;
 }
 
-export function GrowthSprintCta({ source }: GrowthSprintCtaProps) {
+const CTA_TEXT: Record<Locale, { btn: string; pricing: string; pricingHref: string }> = {
+  ro: { btn: "Programează un Apel", pricing: "Vezi prețuri", pricingHref: "#investitie" },
+  en: { btn: "Book a Discovery Call", pricing: "See pricing", pricingHref: "#investment" },
+  de: { btn: "Discovery-Call buchen", pricing: "Preise ansehen", pricingHref: "#investition" },
+};
+
+export function GrowthSprintCta({ source, locale = "ro" }: GrowthSprintCtaProps) {
   const [open, setOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<string | undefined>();
+  const c = CTA_TEXT[locale];
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -35,11 +45,11 @@ export function GrowthSprintCta({ source }: GrowthSprintCtaProps) {
           style={{ border: "none", cursor: "pointer" }}
         >
           <Zap size={16} />
-          Programează un Apel
+          {c.btn}
           <ArrowRight size={16} />
         </button>
-        <a href="#investitie" className="btn-ghost">
-          Vezi prețuri
+        <a href={c.pricingHref} className="btn-ghost">
+          {c.pricing}
         </a>
       </div>
 
@@ -47,6 +57,7 @@ export function GrowthSprintCta({ source }: GrowthSprintCtaProps) {
         <GrowthSprintPopup
           source={source}
           selectedPlan={selectedPlan}
+          locale={locale}
           onClose={handleClose}
         />
       )}
