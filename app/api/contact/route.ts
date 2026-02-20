@@ -5,10 +5,14 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
-    const { first_name, last_name, company, email, phone, website, services, budget, locale, source } = body;
+    const { first_name, firstName, last_name, lastName, company, email, phone, website, services, budget, locale, source, qualification, qualifications, message } = body;
 
+    const resolvedFirst = first_name || firstName || "";
+    const resolvedLast = last_name || lastName || "";
     const companyDisplay = company || "Necunoscută";
-    const subject = `Cerere nouă de ofertă - ${companyDisplay}`;
+    const subject = source?.startsWith("growth-sprint-")
+      ? `Growth Sprint Discovery Call - ${resolvedFirst} ${resolvedLast}`.trim()
+      : `Cerere nouă de ofertă - ${companyDisplay}`;
 
     const htmlBody = `
 <!DOCTYPE html>
@@ -22,15 +26,27 @@ export async function POST(request: Request) {
     </div>
     <div style="padding: 32px;">
       <table style="width: 100%; border-collapse: collapse;">
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; width: 160px; font-size: 14px;">Prenume</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${first_name || "—"}</td></tr>
-        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Nume</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${last_name || "—"}</td></tr>
+        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; width: 160px; font-size: 14px;">Prenume</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${resolvedFirst || "—"}</td></tr>
+        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Nume</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${resolvedLast || "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Companie</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${company || "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Email</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; font-weight: 500;"><a href="mailto:${email}" style="color: #56db84;">${email}</a></td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Telefon</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${phone || "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Website</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; font-weight: 500;">${website ? `<a href="${website}" style="color: #56db84;">${website}</a>` : "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Servicii</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${services || "—"}</td></tr>
         <tr><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Buget lunar</td><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #111; font-size: 14px; font-weight: 500;">${budget || "—"}</td></tr>
-        ${source ? `<tr><td style="padding: 10px 0; color: #666; font-size: 14px;">Sursă</td><td style="padding: 10px 0; color: #56db84; font-size: 14px; font-weight: 500;">${source}</td></tr>` : ""}
+        ${source ? `<tr><td style="padding: 10px 0; ${qualification || message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Sursă</td><td style="padding: 10px 0; ${qualification || message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #56db84; font-size: 14px; font-weight: 500;">${source}</td></tr>` : ""}
+        ${qualification ? `
+        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Venituri lunare</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualification.venituri || "—"}</td></tr>
+        <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Problemă principală</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualification.problema || "—"}</td></tr>
+        <tr><td style="padding: 10px 0; ${message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Când vrea să înceapă</td><td style="padding: 10px 0; ${message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #111; font-size: 14px; font-weight: 500;">${qualification.start || "—"}</td></tr>
+        ` : ""}
+        ${message ? `<tr><td style="padding: 10px 0; ${qualifications ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Mesaj</td><td style="padding: 10px 0; ${qualifications ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #111; font-size: 14px; font-weight: 500;">${message}</td></tr>` : ""}
+        ${qualifications ? `
+        <tr><td colspan="2" style="padding: 16px 0 8px; color: #56db84; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">— Calificări Growth Sprint —</td></tr>
+        <tr><td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Venituri lunare</td><td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualifications.revenue || "—"}</td></tr>
+        <tr><td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Problemă principală</td><td style="padding: 8px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualifications.problem || "—"}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666; font-size: 14px;">Când vor să înceapă</td><td style="padding: 8px 0; color: #111; font-size: 14px; font-weight: 500;">${qualifications.timeline || "—"}</td></tr>
+        ` : ""}
       </table>
     </div>
     <div style="background: #f9f9f9; padding: 16px 32px; border-top: 1px solid #f0f0f0;">

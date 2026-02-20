@@ -7,6 +7,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata } from "@/lib/seo";
 import { ArrowRight, Zap, CheckCircle, XCircle } from "lucide-react";
+import { GrowthSprintCta } from "@/components/GrowthSprintCta";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
@@ -207,16 +208,7 @@ export default function GrowthSprintEcommercePage() {
               în care Nesco Digital operează direct în afacerea ta.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 mb-16">
-              <Link href="/contact/" className="btn-primary">
-                <Zap size={16} />
-                Programează un Apel
-                <ArrowRight size={16} />
-              </Link>
-              <a href="#investitie" className="btn-ghost">
-                Vezi prețuri
-              </a>
-            </div>
+            <GrowthSprintCta source="growth-sprint-ecommerce" />
 
             {/* Stats */}
             <div
