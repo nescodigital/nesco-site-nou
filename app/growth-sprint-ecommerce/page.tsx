@@ -10,45 +10,44 @@ import { ArrowRight, Zap, CheckCircle, XCircle } from "lucide-react";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Growth Sprint pentru Educație Online | Rezolvăm Scurgerile de Venituri | Nesco Digital",
+  title: "Growth Sprint E-commerce | Scalare Profitabilă 50k–500k+/lună | Nesco Digital",
   description:
-    "Un angajament de 6 săptămâni pentru branduri de educație online cu venituri de 10k–100k+/lună. Audităm întregul sistem de venituri și implementăm soluțiile cu cel mai mare impact. Nu rapoarte, execuție.",
-  path: "/growth-sprint-educatie/",
-  routeKey: "growthSprintEducation",
+    "Un angajament de 6 săptămâni pentru branduri e-commerce cu vânzări de 50k–500k+/lună. Audităm fiecare sistem de revenue și implementăm fix-urile cu cel mai mare impact în achiziție, conversie, retenție și operațiuni.",
+  path: "/growth-sprint-ecommerce/",
+  routeKey: "growthSprintEcommerce",
 });
 
-const included = {
-  audit: [
-    ["Revizuirea arhitecturii funnel-ului", "Unde se pierd lead-urile și de ce"],
-    ["Analiza sistemului de email", "Rate de deschidere, click-uri, venituri per abonat"],
-    ["Revizuirea ofertei și prețurilor", "Lași bani pe masă?"],
-    ["Eficiența achiziției plătite", "Reclamele generează profit sau doar trafic?"],
-    ["Blocaje operaționale", "Ce încetinește creșterea?"],
-    ["Maparea KPI", "Ai cifrele corecte în față?"],
-  ],
-  impl: [
-    ["Rezolvarea scurgerilor de venituri", "Cele mai importante găsite în audit"],
-    ["Reconstruirea etapelor de funnel", "Optimizare etape cu performanță slabă"],
-    ["Restructurarea secvențelor de email", "Pentru venituri mai mari"],
-    ["Implementarea structurii de tracking", "Raportare pe care poți acționa"],
-    ["Curățarea proceselor operaționale", "Eliminăm fricțiunea din execuție"],
-  ],
-};
+const auditItems = [
+  "Audit achiziție plătită — ROAS, CPM, eficiența funnel-ului, alocarea bugetului",
+  "Analiza conversiei pe pagini de produs și checkout — unde pierzi cumpărători",
+  "Audit revenue email și SMS — flow-uri, secvențe, revenue per subscriber",
+  "Structura AOV și LTV — upsell-uri, bundle-uri, rate de reachizitie",
+  "Review operațional — fricțiune fulfillment, blocaje echipă, gaps de proces",
+  "Structura KPI și tracking — măsori ce contează cu adevărat?",
+];
+
+const implItems = [
+  "Rezolvăm cele mai importante leak-uri de conversie și retenție din audit",
+  "Reconstruim sau optimizăm flow-urile de email și SMS cu performanță slabă",
+  "Restructurăm strategia de achiziție pentru profitabilitate, nu doar volum",
+  "Implementăm îmbunătățiri AOV și LTV — flow-uri upsell, structuri bundle",
+  "Configurăm tracking KPI curat și sisteme de raportare",
+];
 
 const forList = [
-  "Creatori de cursuri online și afaceri bazate pe cunoaștere cu o audiență existentă",
-  "Personal branduri care generează venituri și vor să scaleze fără complexitate adăugată",
-  "Antreprenori care sunt sătui de recomandări și vor execuție",
-  "Operațiuni deja existente — ai nevoie de ceva de optimizat, nu de construit de la zero",
+  "Branduri e-commerce la 50k–500k+/lună cu buget real de ads și operațiuni existente",
+  "Fondatori care simt că creșterea s-a oprit deși cheltuielile de marketing cresc",
+  "Business owners care vor un operator, nu un alt vendor",
+  "Branduri cu tech stack existent — Shopify, Klaviyo, Meta, Google — gata de optimizat",
 ];
 
 const notForList = [
-  "Afaceri care nu au realizat încă prima vânzare",
-  "Fondatori care vor să fie convinși, nu provocați",
-  "Oricine caută un partener de creștere complet pasiv",
+  "Branduri fără revenue lunar consistent",
+  "Businesses care caută pe cineva să le gestioneze ads-urile zilnic",
+  "Fondatori care vor slide-uri de strategie, nu implementare",
 ];
 
-export default function GrowthSprintEducatiePage() {
+export default function GrowthSprintEcommercePage() {
   return (
     <>
       <Header locale="ro" />
@@ -120,8 +119,8 @@ export default function GrowthSprintEducatiePage() {
           />
 
           <div className="relative page-container" style={{ zIndex: 1 }}>
-            <div className="flex items-center gap-3 mb-6">
-              <span className="badge">Growth Sprint · Educație Online</span>
+            <div className="flex items-center flex-wrap gap-2 mb-6">
+              <span className="badge">Growth Sprint</span>
               <span
                 style={{
                   fontSize: "0.6875rem",
@@ -135,7 +134,22 @@ export default function GrowthSprintEducatiePage() {
                   textTransform: "uppercase",
                 }}
               >
-                Locuri limitate
+                E-Commerce
+              </span>
+              <span
+                style={{
+                  fontSize: "0.6875rem",
+                  fontWeight: 600,
+                  padding: "4px 12px",
+                  borderRadius: "9999px",
+                  background: "rgba(96,165,250,0.08)",
+                  border: "1px solid rgba(96,165,250,0.2)",
+                  color: "#60a5fa",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Scalare Profitabilă
               </span>
             </div>
 
@@ -160,7 +174,7 @@ export default function GrowthSprintEducatiePage() {
                   backgroundClip: "text",
                 }}
               >
-                Educație Online.
+                E-commerce.
               </span>
             </h1>
 
@@ -174,9 +188,9 @@ export default function GrowthSprintEducatiePage() {
                 marginBottom: "12px",
               }}
             >
-              Pentru branduri de educație online cu venituri de{" "}
-              <strong style={{ color: "#ffffff", fontWeight: 700 }}>10k–100k+/lună</strong>{" "}
-              care lasă bani pe masă.
+              Pentru branduri de e-commerce cu vânzări de{" "}
+              <strong style={{ color: "#ffffff", fontWeight: 700 }}>50k–500k+/lună</strong>{" "}
+              care scalează cheltuielile de ads dar nu scalează profitul.
             </p>
             <p
               style={{
@@ -187,9 +201,9 @@ export default function GrowthSprintEducatiePage() {
                 marginBottom: "40px",
               }}
             >
-              Un angajament concentrat de{" "}
+              Un engagement concentrat de{" "}
               <strong style={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}>6 săptămâni</strong>{" "}
-              în care operăm direct în afacerea ta. Nu rapoarte. Execuție.
+              în care Nesco Digital operează direct în afacerea ta.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-16">
@@ -215,9 +229,9 @@ export default function GrowthSprintEducatiePage() {
               }}
             >
               {[
-                { value: "6 săptămâni", label: "Angajament fix" },
-                { value: "10k–100k+", label: "Venituri lunare" },
-                { value: "100%", label: "Execuție directă" },
+                { value: "6 săptămâni", label: "implementare directă" },
+                { value: "50k–500k+", label: "venituri lunare target" },
+                { value: "100%", label: "executat, nu prezentat" },
               ].map((s, i) => (
                 <div key={i}>
                   <div
@@ -263,15 +277,15 @@ export default function GrowthSprintEducatiePage() {
                     marginBottom: "32px",
                   }}
                 >
-                  Ai audiența. Ai oferta.{" "}
-                  <span style={{ color: "rgba(255,255,255,0.35)" }}>Ceva se scurge.</span>
+                  Rulezi ads. Ai trafic.{" "}
+                  <span style={{ color: "rgba(255,255,255,0.35)" }}>Profitul nu crește.</span>
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Ai o audiență. Ai o ofertă. Generezi venituri. Dar undeva între funnel-ul tău, sistemul de email, structura de prețuri și operațiuni, există scurgeri de venituri.
+                    Rulezi campanii. Procesezi comenzi. Dar marginile sunt mai mici decât ar trebui, ROAS-ul scade constant, și cu cât cheltuiești mai mult, cu atât pare mai puțin profitabil.
                   </p>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Le simți. Creșterea a stagnat. Ratele de conversie nu sunt unde ar trebui. Cheltuiești pe reclame, dar cifrele nu se adună. Lista de email nu generează ce ar putea.
+                    Ai optimizat ce poți vedea — reclamele, poate homepage-ul. Dar pierderile reale sunt ascunse: în drop-off-urile din funnel, în performanța slabă a emailului și SMS-ului, în gap-urile de AOV și LTV, și în fricțiunea operațională care îți mănâncă eficiența.
                   </p>
                   <p
                     style={{
@@ -281,8 +295,8 @@ export default function GrowthSprintEducatiePage() {
                       fontWeight: 500,
                     }}
                   >
-                    Problema reală nu e efortul. E că ai nevoie de cineva care să intre în mașinărie, să identifice exact ce e stricat și să repare.{" "}
-                    <span style={{ color: "#56db84" }}>Să repare efectiv.</span>
+                    Nu ai nevoie de o altă agenție care să-ți gestioneze campaniile. Ai nevoie de cineva care să intre în business, să găsească unde se pierd banii și să{" "}
+                    <span style={{ color: "#56db84" }}>închidă găurile.</span>
                   </p>
                 </div>
               </div>
@@ -335,7 +349,7 @@ export default function GrowthSprintEducatiePage() {
                   Nu îți oferim un plan de acțiune și dispărem.
                 </h2>
                 <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Un angajament concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta, auditând întregul sistem de venituri și implementând cele mai importante soluții în funnel, email, structura ofertei și operațiuni.
+                  Un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta e-commerce — auditând fiecare sistem de revenue și implementând cele mai importante fix-uri în achiziție, conversie, retenție și operațiuni.
                 </p>
                 <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600 }}>
                   Acesta nu este consultanță. Noi executăm.
@@ -368,7 +382,7 @@ export default function GrowthSprintEducatiePage() {
                   6 săptămâni de implementare directă
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "1rem" }}>
-                  Două faze clare. Un singur obiectiv: mai mult revenue.
+                  Două faze clare. Un singur obiectiv: mai mult profit.
                 </p>
               </div>
             </FadeInSection>
@@ -408,16 +422,13 @@ export default function GrowthSprintEducatiePage() {
                     className="font-black text-white"
                     style={{ fontSize: "1.25rem", letterSpacing: "-0.01em", marginBottom: "24px" }}
                   >
-                    Audit Complet al Veniturilor
+                    Audit Complet al Revenue-ului
                   </h3>
                   <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                    {included.audit.map(([title, desc], i) => (
+                    {auditItems.map((item, i) => (
                       <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                        <CheckCircle size={15} style={{ color: "#56db84", marginTop: "2px", flexShrink: 0 }} />
-                        <div>
-                          <span style={{ color: "#ffffff", fontSize: "0.875rem", fontWeight: 600 }}>{title}</span>
-                          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8125rem" }}>, {desc}</span>
-                        </div>
+                        <CheckCircle size={15} style={{ color: "#56db84", marginTop: "3px", flexShrink: 0 }} />
+                        <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.875rem", lineHeight: 1.6 }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -475,13 +486,10 @@ export default function GrowthSprintEducatiePage() {
                     Implementare Directă
                   </h3>
                   <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                    {included.impl.map(([title, desc], i) => (
+                    {implItems.map((item, i) => (
                       <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                        <ArrowRight size={15} style={{ color: "#56db84", marginTop: "2px", flexShrink: 0 }} />
-                        <div>
-                          <span style={{ color: "#ffffff", fontSize: "0.875rem", fontWeight: 600 }}>{title}</span>
-                          <span style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8125rem" }}>, {desc}</span>
-                        </div>
+                        <ArrowRight size={15} style={{ color: "#56db84", marginTop: "3px", flexShrink: 0 }} />
+                        <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.875rem", lineHeight: 1.6 }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -519,7 +527,7 @@ export default function GrowthSprintEducatiePage() {
                     Livrabil Final
                   </div>
                   <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>
-                    Un sistem de venituri mai curat, cu conversie mai bună, complet implementat, documentat și pregătit să funcționeze fără noi.{" "}
+                    Un sistem de revenue mai profitabil și mai bine convertit — implementat, documentat și pregătit să scaleze.{" "}
                     <strong style={{ color: "#ffffff" }}>Păstrezi tot ce construim.</strong>
                   </p>
                 </div>
@@ -668,7 +676,7 @@ export default function GrowthSprintEducatiePage() {
                   Prețuri simple și transparente
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "1rem" }}>
-                  Două opțiuni. Același angajament de 6 săptămâni.
+                  Două opțiuni. Același engagement de 6 săptămâni.
                 </p>
               </div>
             </FadeInSection>
@@ -718,11 +726,11 @@ export default function GrowthSprintEducatiePage() {
                     className="font-black tabular-nums"
                     style={{ fontSize: "3.5rem", lineHeight: 1, color: "#ffffff", letterSpacing: "-0.04em", marginBottom: "4px" }}
                   >
-                    4.500{" "}
+                    5.500{" "}
                     <span style={{ fontSize: "1.75rem", color: "rgba(255,255,255,0.4)" }}>€</span>
                   </div>
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
-                    Plătit înainte de start. Cel mai bun raport calitate-preț.
+                    Plată integrală înainte de kick-off. Cea mai bună valoare.
                   </p>
                   <Link
                     href="/contact/"
@@ -749,11 +757,11 @@ export default function GrowthSprintEducatiePage() {
                     className="font-black tabular-nums"
                     style={{ fontSize: "3.5rem", lineHeight: 1, color: "#ffffff", letterSpacing: "-0.04em", marginBottom: "4px" }}
                   >
-                    5.500{" "}
+                    6.500{" "}
                     <span style={{ fontSize: "1.75rem", color: "rgba(255,255,255,0.4)" }}>€</span>
                   </div>
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "8px", lineHeight: 1.6 }}>
-                    2.750 € la semnare + 2.750 € în Săptămâna 3
+                    3.250 € + 3.250 €. Prima tranșă la semnare, a doua la săptămâna 3.
                   </p>
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Angajamentul complet de 6 săptămâni inclus.
@@ -771,7 +779,7 @@ export default function GrowthSprintEducatiePage() {
           </div>
         </section>
 
-        {/* ── CTA / Cum Începi ── */}
+        {/* ── CTA ── */}
         <CtaBanner locale="ro" />
 
       </main>

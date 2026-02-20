@@ -1,5 +1,8 @@
 import type { Locale } from "./translations";
 
+export type NavChild = { label: string; href: string; desc?: string };
+export type NavItem = { label: string; href: string; children?: NavChild[]; accent?: boolean };
+
 // Exact URL structure matching the existing nescodigital.com site
 export const routes = {
   ro: {
@@ -26,7 +29,7 @@ export const routes = {
     about: "/despre-nesco-digital/",
     contact: "/contact/",
     growthSprintEducation: "/growth-sprint-educatie/",
-    growthSprintEcommerce: "/growth-sprint-ecommerce-ro/",
+    growthSprintEcommerce: "/growth-sprint-ecommerce/",
     privacy: "/politica-de-confidentialitate/",
     terms: "/termeni-si-conditii/",
   },
@@ -102,7 +105,7 @@ export function getHreflangAlternates(
 }
 
 // Navigation structure for Header component
-export function getNavLinks(locale: Locale) {
+export function getNavLinks(locale: Locale): NavItem[] {
   const r = routes[locale];
   return [
     {
@@ -310,6 +313,38 @@ export function getNavLinks(locale: Locale) {
               : locale === "en"
                 ? "Community and engagement"
                 : "Community und Engagement",
+        },
+      ],
+    },
+    {
+      label: "Growth Sprint",
+      href: r.growthSprintEducation,
+      accent: true,
+      children: [
+        {
+          label:
+            locale === "ro"
+              ? "Educație Online"
+              : locale === "en"
+                ? "Online Education"
+                : "Online-Bildung",
+          href: r.growthSprintEducation,
+          desc:
+            locale === "ro"
+              ? "10k–100k+/lună · 6 săptămâni"
+              : locale === "en"
+                ? "10k–100k+/month · 6 weeks"
+                : "10k–100k+/Monat · 6 Wochen",
+        },
+        {
+          label: "E-commerce",
+          href: r.growthSprintEcommerce,
+          desc:
+            locale === "ro"
+              ? "50k–500k+/lună · 6 săptămâni"
+              : locale === "en"
+                ? "50k–500k+/month · 6 weeks"
+                : "50k–500k+/Monat · 6 Wochen",
         },
       ],
     },

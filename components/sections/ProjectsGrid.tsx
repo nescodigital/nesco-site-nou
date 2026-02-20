@@ -14,8 +14,13 @@ const EMPTY: Record<Locale, string> = {
   en: "No projects in this category.",
   de: "Keine Projekte in dieser Kategorie.",
 };
+const PROJECT_BASE: Record<Locale, string> = {
+  ro: "/proiecte/",
+  en: "/en/projects/",
+  de: "/ge/projekte/",
+};
 
-const ALL_CATEGORIES: ProjectCategory[] = ["E-commerce", "B2B", "SaaS", "DTC", "Sănătate", "Performance Marketing"];
+const ALL_CATEGORIES: ProjectCategory[] = ["E-commerce", "B2B", "SaaS", "DTC", "Sănătate", "Performance Marketing", "Online Education", "Growth Sprint"];
 
 interface ProjectsGridProps {
   locale: Locale;
@@ -83,7 +88,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
               const lp = getLocalizedProject(p, locale);
               return (
                 <FadeInSection key={p.slug} delay={i * 80}>
-                  <Link href={`/proiecte/${p.slug}/`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
+                  <Link href={`${PROJECT_BASE[locale]}${p.slug}/`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
                     <div
                       className="group card-hover"
                       style={{
@@ -158,7 +163,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
               const lp = getLocalizedProject(p, locale);
               return (
                 <FadeInSection key={p.slug} delay={i * 80}>
-                  <Link href={`/proiecte/${p.slug}/`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
+                  <Link href={`${PROJECT_BASE[locale]}${p.slug}/`} style={{ display: "block", textDecoration: "none", height: "100%" }}>
                     <div
                       className="group card-hover"
                       style={{

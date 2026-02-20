@@ -5,7 +5,7 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
-    const { first_name, last_name, company, email, phone, website, services, budget, locale } = body;
+    const { first_name, last_name, company, email, phone, website, services, budget, locale, source } = body;
 
     const companyDisplay = company || "Necunoscută";
     const subject = `Cerere nouă de ofertă - ${companyDisplay}`;
@@ -29,7 +29,8 @@ export async function POST(request: Request) {
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Telefon</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${phone || "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Website</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; font-size: 14px; font-weight: 500;">${website ? `<a href="${website}" style="color: #56db84;">${website}</a>` : "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Servicii</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${services || "—"}</td></tr>
-        <tr><td style="padding: 10px 0; color: #666; font-size: 14px;">Buget lunar</td><td style="padding: 10px 0; color: #111; font-size: 14px; font-weight: 500;">${budget || "—"}</td></tr>
+        <tr><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Buget lunar</td><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #111; font-size: 14px; font-weight: 500;">${budget || "—"}</td></tr>
+        ${source ? `<tr><td style="padding: 10px 0; color: #666; font-size: 14px;">Sursă</td><td style="padding: 10px 0; color: #56db84; font-size: 14px; font-weight: 500;">${source}</td></tr>` : ""}
       </table>
     </div>
     <div style="background: #f9f9f9; padding: 16px 32px; border-top: 1px solid #f0f0f0;">

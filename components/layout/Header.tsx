@@ -119,15 +119,23 @@ export function Header({ locale }: HeaderProps) {
                       className="flex items-center gap-1.5 px-4 py-2 rounded-lg transition-colors"
                       style={{
                         fontSize: "0.875rem",
-                        fontWeight: 500,
-                        color: openDropdown === idx ? "#fff" : "rgba(255,255,255,0.5)",
-                        background: openDropdown === idx ? "rgba(255,255,255,0.06)" : "transparent",
+                        fontWeight: item.accent ? 600 : 500,
+                        color: item.accent
+                          ? (openDropdown === idx ? "#56db84" : "rgba(86,219,132,0.75)")
+                          : (openDropdown === idx ? "#fff" : "rgba(255,255,255,0.5)"),
+                        background: openDropdown === idx
+                          ? (item.accent ? "rgba(86,219,132,0.07)" : "rgba(255,255,255,0.06)")
+                          : "transparent",
                       }}
                       onMouseEnter={(e) => {
-                        if (openDropdown !== idx) (e.currentTarget as HTMLButtonElement).style.color = "#fff";
+                        if (openDropdown !== idx)
+                          (e.currentTarget as HTMLButtonElement).style.color = item.accent ? "#56db84" : "#fff";
                       }}
                       onMouseLeave={(e) => {
-                        if (openDropdown !== idx) (e.currentTarget as HTMLButtonElement).style.color = "rgba(255,255,255,0.5)";
+                        if (openDropdown !== idx)
+                          (e.currentTarget as HTMLButtonElement).style.color = item.accent
+                            ? "rgba(86,219,132,0.75)"
+                            : "rgba(255,255,255,0.5)";
                       }}
                     >
                       {item.label}
@@ -136,7 +144,7 @@ export function Header({ locale }: HeaderProps) {
                         style={{
                           transition: "transform 0.2s ease",
                           transform: openDropdown === idx ? "rotate(180deg)" : "rotate(0deg)",
-                          color: openDropdown === idx ? "#56db84" : "currentcolor",
+                          color: "#56db84",
                         }}
                       />
                     </button>
@@ -159,35 +167,41 @@ export function Header({ locale }: HeaderProps) {
                       style={{
                         minWidth: "260px",
                         background: "#0a0a0a",
-                        border: "1px solid rgba(255,255,255,0.08)",
+                        border: item.accent
+                          ? "1px solid rgba(86,219,132,0.2)"
+                          : "1px solid rgba(255,255,255,0.08)",
                         borderRadius: "16px",
                         boxShadow: "0 24px 48px rgba(0,0,0,0.7)",
                         overflow: "hidden",
                       }}
                     >
                       <div style={{ padding: "12px" }}>
-                        {/* "See all" hub link */}
-                        <Link
-                          href={item.href}
-                          onClick={() => setOpenDropdown(null)}
-                          className="group flex items-center gap-2 rounded-xl"
-                          style={{
-                            padding: "10px 14px",
-                            textDecoration: "none",
-                            transition: "background 0.15s ease",
-                            marginBottom: "4px",
-                          }}
-                          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(86,219,132,0.06)"; }}
-                          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
-                        >
-                          <span
-                            className="font-semibold group-hover:text-brand-green transition-colors"
-                            style={{ fontSize: "0.8125rem", color: "rgba(86,219,132,0.7)", flex: 1 }}
-                          >
-                            {locale === "ro" ? "Toate serviciile" : locale === "en" ? "All services" : "Alle Leistungen"} →
-                          </span>
-                        </Link>
-                        <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "4px 0 8px" }} />
+                        {/* "See all" hub link — hidden for accent groups (no hub page) */}
+                        {!item.accent && (
+                          <>
+                            <Link
+                              href={item.href}
+                              onClick={() => setOpenDropdown(null)}
+                              className="group flex items-center gap-2 rounded-xl"
+                              style={{
+                                padding: "10px 14px",
+                                textDecoration: "none",
+                                transition: "background 0.15s ease",
+                                marginBottom: "4px",
+                              }}
+                              onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(86,219,132,0.06)"; }}
+                              onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
+                            >
+                              <span
+                                className="font-semibold group-hover:text-brand-green transition-colors"
+                                style={{ fontSize: "0.8125rem", color: "rgba(86,219,132,0.7)", flex: 1 }}
+                              >
+                                {locale === "ro" ? "Toate serviciile" : locale === "en" ? "All services" : "Alle Leistungen"} →
+                              </span>
+                            </Link>
+                            <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "4px 0 8px" }} />
+                          </>
+                        )}
                         {item.children.map((child, cidx) => (
                           <div key={cidx}>
                             {cidx > 0 && (
@@ -377,7 +391,7 @@ export function Header({ locale }: HeaderProps) {
                         padding: "16px 24px",
                         fontSize: "1rem",
                         fontWeight: 500,
-                        color: "#ffffff",
+                        color: item.accent ? "#56db84" : "#ffffff",
                         textDecoration: "none",
                       }}
                     >

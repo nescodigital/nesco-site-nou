@@ -20,25 +20,25 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
-  const lp = getLocalizedProject(project, "ro");
+  const lp = getLocalizedProject(project, "en");
   return buildMetadata({
-    locale: "ro",
+    locale: "en",
     title: lp.metaTitle,
     description: lp.metaDescription,
-    path: `/proiecte/${project.slug}/`,
+    path: `/en/projects/${project.slug}/`,
     routeKey: "projects",
   });
 }
 
-export default async function ProjectPage({ params }: Props) {
+export default async function ProjectEnPage({ params }: Props) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) notFound();
-  const lp = getLocalizedProject(project, "ro");
+  const lp = getLocalizedProject(project, "en");
 
   return (
     <>
-      <Header locale="ro" />
+      <Header locale="en" />
       <main style={{ backgroundColor: "#050505" }}>
 
         {/* ── Hero ── */}
@@ -111,12 +111,12 @@ export default async function ProjectPage({ params }: Props) {
                   {lp.description}
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                  <Link href={`/contact/?source=proiect-${project.slug}`} className="btn-primary">
-                    Discută despre proiect
+                  <Link href={`/en/lets-talk/?source=project-${project.slug}`} className="btn-primary">
+                    Discuss this project
                     <ArrowRight size={16} />
                   </Link>
                   <Link
-                    href="/proiecte/"
+                    href="/en/projects/"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: Props) {
                     }}
                   >
                     <ArrowLeft size={14} />
-                    Toate proiectele
+                    All projects
                   </Link>
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default async function ProjectPage({ params }: Props) {
                       marginBottom: "20px",
                     }}
                   >
-                    Provocarea
+                    The challenge
                   </div>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
                     {lp.challenge}
@@ -289,7 +289,7 @@ export default async function ProjectPage({ params }: Props) {
                       marginBottom: "20px",
                     }}
                   >
-                    Soluția noastră
+                    Our solution
                   </div>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
                     {lp.solution}
@@ -309,7 +309,7 @@ export default async function ProjectPage({ params }: Props) {
           <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Rezultate</span>
+                <span className="badge mb-6">Results</span>
                 <h2
                   className="font-black text-white"
                   style={{
@@ -319,7 +319,7 @@ export default async function ProjectPage({ params }: Props) {
                     marginTop: "20px",
                   }}
                 >
-                  Rezultate obținute
+                  Results achieved
                 </h2>
               </div>
             </FadeInSection>
@@ -372,7 +372,7 @@ export default async function ProjectPage({ params }: Props) {
           <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
-                <span className="badge mb-6">Servicii utilizate</span>
+                <span className="badge mb-6">Services used</span>
                 <h2
                   className="font-black text-white"
                   style={{
@@ -383,7 +383,7 @@ export default async function ProjectPage({ params }: Props) {
                     marginBottom: "32px",
                   }}
                 >
-                  Ce am implementat
+                  What we implemented
                 </h2>
                 <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "10px" }}>
                   {project.services.map((s) => (
@@ -412,9 +412,9 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </section>
 
-        <CtaBanner locale="ro" />
+        <CtaBanner locale="en" />
       </main>
-      <Footer locale="ro" />
+      <Footer locale="en" />
     </>
   );
 }

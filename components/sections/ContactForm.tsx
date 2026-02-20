@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ArrowRight, X, CheckCircle, Loader2 } from "lucide-react";
 import Image from "next/image";
 
@@ -89,7 +89,14 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [source, setSource] = useState("");
   const firstErrorRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const s = params.get("source");
+    if (s) setSource(s);
+  }, []);
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
@@ -170,6 +177,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
         ...fields,
         website: normalizeUrl(fields.website),
         locale,
+        source,
       };
       const res = await fetch("/api/contact", {
         method: "POST",

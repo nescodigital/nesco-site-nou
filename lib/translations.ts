@@ -94,7 +94,7 @@ export const translations = {
       cta: "Programează un apel",
     },
     footer: {
-      tagline: "Partener premium de execuție digitală.",
+      tagline: "De la strategie la execuție. 15 ani, 36M€ administrați.",
       services: "Servicii",
       company: "Companie",
       contact: "Contact",
@@ -219,7 +219,7 @@ export const translations = {
       cta: "Schedule a call",
     },
     footer: {
-      tagline: "Premium digital execution partner.",
+      tagline: "From strategy to execution. 15 years, €36M managed.",
       services: "Services",
       company: "Company",
       contact: "Contact",
@@ -344,7 +344,7 @@ export const translations = {
       cta: "Call vereinbaren",
     },
     footer: {
-      tagline: "Premium Digital-Ausführungspartner.",
+      tagline: "Von der Strategie zur Umsetzung. 15 Jahre, 36M€ verwaltet.",
       services: "Leistungen",
       company: "Unternehmen",
       contact: "Kontakt",
