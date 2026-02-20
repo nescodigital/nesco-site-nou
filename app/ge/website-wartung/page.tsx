@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Website-Wartung | Ihre Website immer schnell, sicher und online | Nesco Digital", description: "Halten Sie Ihre Website schnell, sicher und immer auf Hochleistung. Wir kümmern uns um die technische Seite, damit Sie sich auf das Geschäft konzentrieren können.", path: "/ge/website-wartung/", routeKey: "websiteMaintenance" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Website Wartung | Technischer Support | Nesco Digital", description: "Website-Wartungsservices: Updates, Sicherheit, Backup, Geschwindigkeitsoptimierung. Ihre Website sicher und leistungsfähig.", path: "/ge/website-wartung/", routeKey: "websiteMaintenance" });
 
 const data: ServicePageData = {
   locale: "de",

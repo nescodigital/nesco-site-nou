@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Digitale Strategie | Starke und kohärente Online-Präsenz aufbauen | Nesco Digital", description: "Wir erstellen maßgeschneiderte digitale Strategien, die ROI maximieren. Unternehmen mit einer klar definierten digitalen Strategie haben doppelt so gute Chancen, ihren Umsatz zu steigern.", path: "/ge/digitale-strategie/", routeKey: "digitalStrategy" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Digitale Strategie | Online Marketing Beratung | Nesco Digital", description: "Individuelle digitale Strategie für Ihre Unternehmensziele. Vollständiges Audit, Aktionsplan, Implementierung und kontinuierliche Optimierung.", path: "/ge/digitale-strategie/", routeKey: "digitalStrategy" });
 
 const data: ServicePageData = {
   locale: "de",

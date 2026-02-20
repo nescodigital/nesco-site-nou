@@ -7,9 +7,9 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Email Marketing Solutions | Build lasting relationships and increase sales | Nesco Digital",
+  title: "Email Marketing Agency | Email Automation | Nesco Digital",
   description:
-    "Build lasting relationships with your customers and increase your sales through efficient and personalized email marketing campaigns. 42:1 ROI proven.",
+    "Email marketing services: strategy, automations, nurturing sequences. We grow revenue from your email list with targeted campaigns.",
   path: "/en/email-marketing-solutions/",
   routeKey: "emailMarketing",
 });

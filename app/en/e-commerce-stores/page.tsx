@@ -7,9 +7,9 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "E-commerce Stores | Perfectly adapted online sales platforms | Nesco Digital",
+  title: "E-commerce Development | Online Store Agency | Nesco Digital",
   description:
-    "Perfectly adapted online sales platforms that turn visitors into loyal customers and boost sales. Shopify, WooCommerce, Magento.",
+    "High-performance e-commerce development. Shopify, WooCommerce, custom solutions. Conversion-optimized UX with full payment and delivery integrations.",
   path: "/en/e-commerce-stores/",
   routeKey: "ecommerceStores",
 });

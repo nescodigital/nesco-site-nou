@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Social Media Solutions | Increase brand visibility through social media | Nesco Digital",
-  description: "We increase your brand visibility, build communities, and drive sales through social media. 4.7 billion people use social media, are you reaching them?",
+  title: "Social Media Marketing | Social Media Management | Nesco Digital",
+  description: "Social media services: strategy, content creation, community management. We build solid presence on Facebook, Instagram, TikTok, LinkedIn.",
   path: "/en/social-media-solutions/",
   routeKey: "socialMedia",
 });

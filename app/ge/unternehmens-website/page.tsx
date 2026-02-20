@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Unternehmens-Website | Ihre professionelle Website nach Maß | Nesco Digital", description: "Ihre professionelle Website, maßgeschneidert für die Bedürfnisse Ihres Unternehmens und Ihre Markenwerte.", path: "/ge/unternehmens-website/", routeKey: "companyWebsite" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Unternehmenswebsite | Premium Business Website | Nesco Digital", description: "Premium Unternehmenswebsites, die den Wert Ihrer Marke widerspiegeln. Modernes Design, hohe Performance, konversionsoptimiert.", path: "/ge/unternehmens-website/", routeKey: "companyWebsite" });
 
 const data: ServicePageData = {
   locale: "de",

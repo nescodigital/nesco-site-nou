@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Soluții CRO | Transformă mai mulți vizitatori în clienți plătitori | Nesco Digital",
-  description: "Transformăm mai mulți vizitatori în clienți și maximizăm profitul prin optimizarea continuă a site-ului. Mai multe conversii fără buget extra.",
+  title: "CRO | Optimizarea Ratei de Conversie | Nesco Digital",
+  description: "Servicii CRO: audit UX, A/B testing, optimizare landing pages. Creștem rata de conversie a site-ului tău fără să crești bugetul de ads.",
   path: "/solutii-cro-ro/",
   routeKey: "croSolutions",
 });

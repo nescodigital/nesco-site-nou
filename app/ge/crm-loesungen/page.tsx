@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "CRM-Lösungen | Kundenbeziehungen als Erfolgsfaktor | Nesco Digital", description: "Kundenbeziehungen als Erfolgsfaktor, maßgeschneiderte CRM-Implementierungen für nachhaltiges Wachstum.", path: "/ge/crm-loesungen/", routeKey: "crmSolutions" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "CRM Lösungen | CRM Implementierung | Nesco Digital", description: "CRM-Implementierung und -Optimierung für Ihr Unternehmen. HubSpot, Salesforce, individuelle Lösungen.", path: "/ge/crm-loesungen/", routeKey: "crmSolutions" });
 
 const data: ServicePageData = {
   locale: "de",

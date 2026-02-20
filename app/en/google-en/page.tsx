@@ -7,9 +7,9 @@ import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema } from "@/lib/
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Google Ads Campaigns | We grow your business sales fast and efficiently | Nesco Digital",
+  title: "Google Ads Agency | PPC Management | Nesco Digital",
   description:
-    "Boost the performance of your Google Ads campaigns with advanced strategies. 38% lower CPA than industry average. Specialized Google Ads management.",
+    "ROI-focused Google Ads management. Search, Display, Shopping, YouTube campaigns. 15 years experience, 36M€+ managed. Request a free audit.",
   path: "/en/google-en/",
   routeKey: "googleAds",
 });

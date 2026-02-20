@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Instagram Ads | Visual impact campaigns that convert | Nesco Digital",
-  description: "Visual, impactful, convertible. We create Instagram Ads campaigns that stop the scroll and drive real results. +45% ROAS, -30% CPL.",
+  title: "Instagram Ads | Instagram Advertising Agency | Nesco Digital",
+  description: "Instagram Ads campaigns for ambitious brands. Stories, Reels, Feed. We grow awareness and drive direct sales from Instagram.",
   path: "/en/instagram-en/",
   routeKey: "instagramAds",
 });

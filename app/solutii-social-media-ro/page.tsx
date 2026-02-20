@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Soluții Social Media | Creștem vizibilitatea brandului pe social media | Nesco Digital",
-  description: "Creștem vizibilitatea brandului tău, construim comunități și generăm vânzări prin social media. 4.7 miliarde de oameni folosesc social media.",
+  title: "Social Media Marketing | Gestionare Rețele Sociale | Nesco Digital",
+  description: "Servicii social media: strategie, content creation, community management. Construim prezență solidă pe Facebook, Instagram, TikTok, LinkedIn.",
   path: "/solutii-social-media-ro/",
   routeKey: "socialMedia",
 });

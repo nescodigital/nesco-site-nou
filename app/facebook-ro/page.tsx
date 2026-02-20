@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Reclame Facebook Ads | Maximizăm impactul campaniilor tale | Nesco Digital",
-  description: "Creăm campanii Facebook Ads care generează lead-uri, cresc vânzările și consolidează imaginea brandului. Cost per lead cu 30% mai mic.",
+  title: "Facebook Ads România | Meta Ads Agency | Nesco Digital",
+  description: "Campanii Facebook și Instagram Ads care convertesc. Targeting precis, creative performant, optimizare continuă. Agenție Meta cu experiență dovedită.",
   path: "/facebook-ro/",
   routeKey: "facebookAds",
 });

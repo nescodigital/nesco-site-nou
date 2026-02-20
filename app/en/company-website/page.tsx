@@ -6,8 +6,8 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Company Website | Your professional website tailored to your company | Nesco Digital",
-  description: "A professional website tailored to your company needs and brand values. +70% appointments, attracted new investors, +60% quote requests.",
+  title: "Company Website | Premium Business Website | Nesco Digital",
+  description: "Premium company websites that reflect your brand's value. Modern design, high performance, conversion-optimized.",
   path: "/en/company-website/",
   routeKey: "companyWebsite",
 });

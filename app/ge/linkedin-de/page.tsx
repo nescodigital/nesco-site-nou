@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "LinkedIn Ads | B2B-Lead-Generierung im großen Maßstab | Nesco Digital", description: "Die leistungsstärkste B2B-Werbeplattform. Entscheidungsträger erreichen, qualifizierte Leads generieren und Enterprise-Deals abschließen.", path: "/ge/linkedin-de/", routeKey: "linkedinAds" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "LinkedIn Ads Agentur | B2B Werbung | Nesco Digital", description: "LinkedIn Ads Kampagnen für B2B-Unternehmen. Lead-Generierung, Brand Awareness, Retargeting. Wir erreichen Entscheidungsträger.", path: "/ge/linkedin-de/", routeKey: "linkedinAds" });
 
 const data: ServicePageData = {
   locale: "de",

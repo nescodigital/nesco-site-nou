@@ -7,9 +7,9 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "CRO Solutions | Turn more visitors into paying customers | Nesco Digital",
+  title: "CRO Services | Conversion Rate Optimization | Nesco Digital",
   description:
-    "Turn more visitors into paying customers and maximize your profit through continuous website optimization. More conversions without increasing your marketing budget.",
+    "CRO services: UX audit, A/B testing, landing page optimization. Increase your conversion rate without increasing ad spend.",
   path: "/en/cro-solutions/",
   routeKey: "croSolutions",
 });

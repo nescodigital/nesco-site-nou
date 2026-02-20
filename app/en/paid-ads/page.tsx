@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Paid Ads Services | Google Ads, Facebook Ads, TikTok & LinkedIn | Nesco Digital",
-  description: "Full-service paid advertising: Google Ads, Facebook Ads, Instagram Ads, TikTok Ads and LinkedIn Ads. We maximize your ROAS with proven campaign strategies.",
+  title: "Paid Ads | Google Ads, Meta Ads, TikTok Ads | Nesco Digital",
+  description: "We don't manage budgets — we build profitable acquisition systems. Google Ads, Meta Ads, TikTok Ads and LinkedIn Ads for ambitious companies.",
   path: "/en/paid-ads/",
   routeKey: "paidAdsHub",
 });
@@ -24,8 +24,8 @@ export default function PaidAdsEnPage() {
           data={{
             locale: "en",
             badge: "Paid Ads",
-            title: "Paid campaigns that generate real revenue",
-            subtitle: "From Google Ads to TikTok, we manage all paid advertising channels with a focus on maximum ROAS and minimum cost per conversion.",
+            title: "Paid Ads that generate real revenue",
+            subtitle: "We don't manage budgets. We build profitable acquisition systems for ambitious companies.",
             services: [
               {
                 label: "Google Ads",

@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Social-Media-Lösungen | Markensichtbarkeit durch Social Media steigern | Nesco Digital", description: "Wir steigern die Sichtbarkeit Ihrer Marke, bauen Communities auf und steigern den Umsatz durch maßgeschneiderte Social-Media-Strategien.", path: "/ge/social-media-loesungen/", routeKey: "socialMedia" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Social Media Marketing | Social Media Management | Nesco Digital", description: "Social Media Services: Strategie, Content-Erstellung, Community Management. Facebook, Instagram, TikTok, LinkedIn.", path: "/ge/social-media-loesungen/", routeKey: "socialMedia" });
 
 const data: ServicePageData = {
   locale: "de",

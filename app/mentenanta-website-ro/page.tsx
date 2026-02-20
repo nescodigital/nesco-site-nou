@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Mentenanță Website | Site-ul tău mereu rapid, sigur și online | Nesco Digital",
-  description: "Mentenanță website profesională, securitate, performanță, backup și suport tehnic. Uptime 99.9% garantat.",
+  title: "Mentenanță Website | Suport Tehnic WordPress | Nesco Digital",
+  description: "Servicii de mentenanță website: actualizări, securitate, backup, optimizare viteză. Site-ul tău în siguranță și la performanță maximă.",
   path: "/mentenanta-website-ro/",
   routeKey: "websiteMaintenance",
 });

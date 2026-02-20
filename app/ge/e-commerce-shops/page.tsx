@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "E-Commerce-Shops | Perfekt angepasste Online-Verkaufsplattformen | Nesco Digital",
-  description: "Perfekt angepasste Online-Verkaufsplattformen, die Besucher in treue Kunden verwandeln. Shopify, WooCommerce, Magento. +80% Umsatzwachstum MoM.",
+  title: "E-Commerce Entwicklung | Online Shop Agentur | Nesco Digital",
+  description: "Hochperformante E-Commerce-Entwicklung. Shopify, WooCommerce, individuelle Lösungen. Konversionsoptimiertes UX mit vollständigen Integrationen.",
   path: "/ge/e-commerce-shops/",
   routeKey: "ecommerceStores",
 });

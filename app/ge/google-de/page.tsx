@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "Google Ads Kampagnen | Wir steigern Ihren Umsatz schnell und effizient | Nesco Digital",
-  description: "Steigern Sie die Leistung Ihrer Google Ads Kampagnen mit fortschrittlichen Strategien. 38% niedrigere CPA als Branchendurchschnitt.",
+  title: "Google Ads Agentur | PPC Management | Nesco Digital",
+  description: "ROI-orientiertes Google Ads Management. Search, Display, Shopping, YouTube. 15 Jahre Erfahrung, 36M€+ verwaltet. Kostenloses Audit anfragen.",
   path: "/ge/google-de/",
   routeKey: "googleAds",
 });

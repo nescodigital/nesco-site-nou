@@ -6,8 +6,8 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Lead Generation Website | Turn visitors into valuable potential customers | Nesco Digital",
-  description: "An effective lead generation website increases your conversion rate by up to 40%, generating more qualified leads.",
+  title: "Lead Generation Website | Converting Landing Pages | Nesco Digital",
+  description: "Strategically built lead generation websites. Optimized landing pages, contact forms, CRM integrations. We turn visitors into qualified leads.",
   path: "/en/lead-generation-website-en/",
   routeKey: "leadGenWebsite" as any,
 });

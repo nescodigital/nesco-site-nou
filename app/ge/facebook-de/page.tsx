@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "Facebook Ads | Maximieren Sie den Impact Ihrer Kampagnen | Nesco Digital",
-  description: "Maximieren Sie den Impact Ihrer Facebook Ads Kampagnen mit Hochleistungsstrategien. 30% niedrigere Kosten pro Lead im Vergleich zum Branchendurchschnitt.",
+  title: "Facebook Ads Agentur | Meta Advertising | Nesco Digital",
+  description: "Facebook und Instagram Ads, die konvertieren. Präzises Targeting, leistungsstarke Creatives, kontinuierliche Optimierung.",
   path: "/ge/facebook-de/",
   routeKey: "facebookAds",
 });

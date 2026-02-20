@@ -6,8 +6,8 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Digital Strategy | We build a strong and coherent online presence | Nesco Digital",
-  description: "Customized digital strategies that maximize ROI. Companies with a well-defined digital strategy are twice as likely to increase revenues.",
+  title: "Digital Strategy | Online Marketing Consulting | Nesco Digital",
+  description: "Custom digital strategy for your business goals. Complete audit, action plan, implementation and continuous optimization.",
   path: "/en/digital-strategy/",
   routeKey: "digitalStrategy" as any,
 });

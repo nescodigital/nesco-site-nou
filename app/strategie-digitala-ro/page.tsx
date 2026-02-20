@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Strategie Digitală | Construim o prezență online coerentă și eficientă | Nesco Digital",
-  description: "Creăm strategii digitale personalizate care maximizează ROI. Companiile cu o strategie digitală bine definită au de 2x mai multe șanse să crească veniturile.",
+  title: "Strategie Digitală | Consultanță Marketing Online | Nesco Digital",
+  description: "Strategie digitală personalizată pentru obiectivele tale de business. Audit complet, plan de acțiune, implementare și optimizare continuă.",
   path: "/strategie-digitala-ro/",
   routeKey: "digitalStrategy",
 });

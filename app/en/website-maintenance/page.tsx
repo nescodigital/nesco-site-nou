@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Website Maintenance | Keep your site fast, secure and always online | Nesco Digital",
-  description: "Keep your website fast, secure, and always performing at its peak. 99.9% uptime guaranteed. We handle the technical side so you can focus on business.",
+  title: "Website Maintenance | Technical Support | Nesco Digital",
+  description: "Website maintenance services: updates, security, backup, speed optimization. Your site safe and performing at its best.",
   path: "/en/website-maintenance/",
   routeKey: "websiteMaintenance",
 });

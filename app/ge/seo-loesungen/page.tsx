@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "SEO-Lösungen | Höher bei Google ranken und organischen Traffic steigern | Nesco Digital", description: "Höher bei Google ranken und qualitätsorientierter organischer Traffic. Top-3-Rankings in 90 Tagen mit bewährten White-Hat-SEO-Strategien.", path: "/ge/seo-loesungen/", routeKey: "seoSolutions" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "SEO Agentur | Suchmaschinenoptimierung | Nesco Digital", description: "Vollständige SEO-Services: technisches Audit, On-Page-Optimierung, Linkaufbau, lokales SEO. Wir steigern organischen Traffic.", path: "/ge/seo-loesungen/", routeKey: "seoSolutions" });
 
 const data: ServicePageData = {
   locale: "de",

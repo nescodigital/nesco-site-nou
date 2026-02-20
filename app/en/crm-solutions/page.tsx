@@ -6,8 +6,8 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "CRM Solutions | Customer relationships as a success factor | Nesco Digital",
-  description: "Customer relationships as a success factor. Optimize CRM, streamline sales, increase revenue. +25% MQLs, +15% retention, +20% efficiency.",
+  title: "CRM Solutions | CRM Implementation | Nesco Digital",
+  description: "CRM implementation and optimization for your business. HubSpot, Salesforce, custom solutions. Organize your sales process and customer relationships.",
   path: "/en/crm-solutions/",
   routeKey: "crmSolutions",
 });

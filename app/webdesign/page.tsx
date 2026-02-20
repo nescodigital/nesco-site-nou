@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Webdesign | Website Lead Generation, Companie, Magazine Online | Nesco Digital",
-  description: "Servicii complete de webdesign: website lead generation, website companie, magazine online și mentenanță website. Construim site-uri care convertesc.",
+  title: "Webdesign & Dezvoltare Web | Site-uri Premium | Nesco Digital",
+  description: "Site-uri construite strategic, nu doar frumoase. Webdesign și dezvoltare web pentru companii ambițioase — lead generation, magazine online, website-uri de companie.",
   path: "/webdesign/",
   routeKey: "webdesignHub",
 });
@@ -24,8 +24,8 @@ export default function WebdesignPage() {
           data={{
             locale: "ro",
             badge: "Webdesign",
-            title: "Webdesign premium care convertește vizitatorii în clienți",
-            subtitle: "Construim site-uri rapide, moderne și optimizate pentru conversii — de la landing pages până la magazine online complete.",
+            title: "Webdesign care convertește vizitatori în clienți",
+            subtitle: "Site-uri construite strategic — nu doar frumoase. Fiecare element servește un obiectiv de business.",
             services: [
               {
                 label: "Website Lead Generation",

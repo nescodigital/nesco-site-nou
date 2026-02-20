@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Reclame Plătite | Google Ads, Facebook Ads, TikTok & LinkedIn | Nesco Digital",
-  description: "Servicii complete de reclame plătite: Google Ads, Facebook Ads, Instagram Ads, TikTok Ads și LinkedIn Ads. Maximizăm ROAS-ul campaniilor tale cu strategii dovedite.",
+  title: "Reclame Plătite | Google Ads, Meta Ads, TikTok Ads | Nesco Digital",
+  description: "Nu gestionăm bugete — construim sisteme de achiziție profitabile. Google Ads, Meta Ads, TikTok Ads și LinkedIn Ads pentru companii ambițioase.",
   path: "/reclame-platite/",
   routeKey: "paidAdsHub",
 });
@@ -24,8 +24,8 @@ export default function ReclamePlatitePage() {
           data={{
             locale: "ro",
             badge: "Reclame Plătite",
-            title: "Campanii plătite care generează revenue real",
-            subtitle: "De la Google Ads la TikTok, gestionăm toate canalele de publicitate plătită cu focus pe ROAS maxim și costuri minime per conversie.",
+            title: "Reclame Plătite care generează revenue real",
+            subtitle: "Nu gestionăm bugete. Construim sisteme de achiziție profitabile pentru companii ambițioase.",
             services: [
               {
                 label: "Google Ads",

@@ -7,9 +7,9 @@ import { buildMetadata, buildServiceSchema, buildBreadcrumbSchema } from "@/lib/
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "Facebook Ads | Maximize the impact of your Facebook Ads campaigns | Nesco Digital",
+  title: "Facebook Ads Agency | Meta Advertising | Nesco Digital",
   description:
-    "Maximize the impact of your Facebook Ads campaigns with high-performance strategies. 30% lower cost per lead compared to industry average.",
+    "Facebook and Instagram Ads that convert. Precise targeting, high-performing creatives, continuous optimization. Proven Meta agency.",
   path: "/en/facebook-en/",
   routeKey: "facebookAds",
 });

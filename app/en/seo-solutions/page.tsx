@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "SEO Solutions | Rank higher on Google and drive quality organic traffic | Nesco Digital",
-  description: "Rank higher on Google and drive quality organic traffic. Top 3 rankings in 90 days with proven white-hat SEO strategies. Zero paid clicks needed.",
+  title: "SEO Agency | Search Engine Optimization | Nesco Digital",
+  description: "Full SEO services: technical audit, on-page optimization, link building, local SEO. We grow organic traffic and Google visibility.",
   path: "/en/seo-solutions/",
   routeKey: "seoSolutions",
 });

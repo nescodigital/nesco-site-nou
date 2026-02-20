@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Lead-Generation-Website | Besucher in wertvolle potenzielle Kunden umwandeln | Nesco Digital", description: "Eine effektive Lead-Generation-Website erhöht Ihre Conversion-Rate um bis zu 40% und generiert mehr qualifizierte Leads.", path: "/ge/lead-generation-website-de/", routeKey: "leadGenWebsite" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Lead Generation Website | Konvertierende Landingpages | Nesco Digital", description: "Strategisch aufgebaute Lead-Generation-Websites. Optimierte Landingpages, Kontaktformulare, CRM-Integrationen.", path: "/ge/lead-generation-website-de/", routeKey: "leadGenWebsite" });
 
 const data: ServicePageData = {
   locale: "de",

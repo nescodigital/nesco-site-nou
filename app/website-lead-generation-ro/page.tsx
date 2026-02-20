@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Website Lead Generation | Transformă vizitatorii în clienți valoroși | Nesco Digital",
-  description: "Un website eficient de lead generation crește rata de conversie cu până la 40%, generând mai multe lead-uri calificate. Investiție pe termen lung.",
+  title: "Site Lead Generation | Website care Convertește | Nesco Digital",
+  description: "Site-uri de lead generation construite strategic. Landing pages optimizate, formulare de contact, integrări CRM. Transformăm vizitatorii în lead-uri calificate.",
   path: "/website-lead-generation-ro/",
   routeKey: "leadGenWebsite",
 });

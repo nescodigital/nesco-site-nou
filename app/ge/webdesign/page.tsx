@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "Webdesign | Lead-Generation-Websites, Unternehmensseiten & E-Commerce | Nesco Digital",
-  description: "Komplette Webdesign-Dienstleistungen: Lead-Generation-Websites, Unternehmenswebsites, E-Commerce-Shops und Website-Wartung. Wir bauen Websites, die konvertieren.",
+  title: "Webdesign & Webentwicklung | Premium-Websites | Nesco Digital",
+  description: "Strategisch entwickelte Websites — nicht nur schöne. Webdesign und Webentwicklung für ambitionierte Unternehmen — Lead-Generation, Online-Shops, Unternehmenswebsites.",
   path: "/ge/webdesign/",
   routeKey: "webdesignHub",
 });
@@ -24,8 +24,8 @@ export default function WebdesignDePage() {
           data={{
             locale: "de",
             badge: "Webdesign",
-            title: "Premium Webdesign, das Besucher in Kunden verwandelt",
-            subtitle: "Wir entwickeln schnelle, moderne Websites, die für Conversions optimiert sind — von Landing Pages bis hin zu vollständigen Online-Shops.",
+            title: "Webdesign, das Besucher in Kunden verwandelt",
+            subtitle: "Strategisch entwickelte Websites — nicht nur schöne. Jedes Element dient einem Business-Ziel.",
             services: [
               {
                 label: "Lead-Generation-Website",

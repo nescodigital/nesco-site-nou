@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Soluții CRM | Relațiile cu clienții ca factor de succes | Nesco Digital",
-  description: "Optimizează relațiile cu clienții, eficientizează procesele de vânzare și crește veniturile cu implementări CRM personalizate.",
+  title: "Soluții CRM | Implementare și Integrare CRM | Nesco Digital",
+  description: "Implementare și optimizare CRM pentru afacerea ta. HubSpot, Salesforce, soluții custom. Organizăm procesele de vânzare și relația cu clienții.",
   path: "/solutii-crm-ro/",
   routeKey: "crmSolutions",
 });

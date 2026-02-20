@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Website Companie | Website-ul tău profesional adaptat la valorile brandului | Nesco Digital",
-  description: "Un website profesional adaptat nevoilor companiei și valorilor brandului tău. +70% programări, +60% cereri de ofertă.",
+  title: "Website Companie | Site de Prezentare Premium | Nesco Digital",
+  description: "Website-uri de companie premium care reflectă valoarea brandului tău. Design modern, performanță ridicată, optimizat pentru conversii.",
   path: "/website-companie-ro/",
   routeKey: "companyWebsite",
 });

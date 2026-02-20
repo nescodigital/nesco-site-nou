@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Soluții Email Marketing | Construiește relații durabile cu clienții | Nesco Digital",
-  description: "Construiește relații durabile cu clienții și crește vânzările prin campanii de email marketing eficiente. ROI 42:1 dovedit.",
+  title: "Email Marketing România | Automatizări Email | Nesco Digital",
+  description: "Servicii email marketing: strategii, automatizări, secvențe de nurturing. Creștem revenue din lista ta de email cu campanii targetate.",
   path: "/solutii-email-marketing-ro/",
   routeKey: "emailMarketing",
 });

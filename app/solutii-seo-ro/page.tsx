@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Soluții SEO | Clasează-te mai sus pe Google și atrage trafic organic de calitate | Nesco Digital",
-  description: "Clasează-te mai sus pe Google și atrage trafic organic de calitate. Top 3 clasamente în 90 zile cu strategii SEO white-hat dovedite.",
+  title: "SEO România | Optimizare Motoare de Căutare | Nesco Digital",
+  description: "Servicii SEO complete: audit tehnic, optimizare on-page, link building, SEO local. Creștem traficul organic și vizibilitatea în Google.",
   path: "/solutii-seo-ro/",
   routeKey: "seoSolutions",
 });

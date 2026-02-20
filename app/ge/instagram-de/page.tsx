@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "Instagram Ads | Visuell wirkungsvolle Kampagnen | Nesco Digital", description: "Visuell, wirkungsvoll, konvertierend. Wir erstellen Instagram-Kampagnen, die den Scroll stoppen und echte Ergebnisse liefern.", path: "/ge/instagram-de/", routeKey: "instagramAds" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "Instagram Ads Agentur | Instagram Werbung | Nesco Digital", description: "Instagram Ads Kampagnen für ambitionierte Marken. Stories, Reels, Feed. Wir steigern Awareness und treiben direkte Verkäufe.", path: "/ge/instagram-de/", routeKey: "instagramAds" });
 
 const data: ServicePageData = {
   locale: "de",

@@ -7,8 +7,8 @@ import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Campanii Google Ads | Creștem vânzările afacerii tale rapid și eficient | Nesco Digital",
-  description: "Creștem performanța campaniilor tale Google Ads cu strategii avansate. CPA cu 38% mai mic față de media industriei. Management Google Ads specializat.",
+  title: "Google Ads România | Campanii PPC Profitabile | Nesco Digital",
+  description: "Servicii Google Ads cu ROI măsurabil. Search, Display, Shopping, YouTube. 15 ani experiență, 36M€+ bugete gestionate. Solicită audit gratuit.",
   path: "/google-ro/",
   routeKey: "googleAds",
 });

@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
-  title: "TikTok Ads | Reach Gen Z and Millennials with creative campaigns | Nesco Digital",
-  description: "Reach Gen Z and Millennials with authentic, creative TikTok campaigns that drive viral growth and measurable conversions. +300% brand awareness.",
+  title: "TikTok Ads Agency | TikTok Advertising | Nesco Digital",
+  description: "TikTok Ads for brands reaching new audiences. Native creatives, advanced targeting, measurable results.",
   path: "/en/tiktok-en/",
   routeKey: "tiktokAds",
 });

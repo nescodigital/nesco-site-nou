@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "E-Mail-Marketing-Lösungen | Bauen Sie dauerhafte Kundenbeziehungen auf | Nesco Digital",
-  description: "Bauen Sie dauerhafte Beziehungen zu Ihren Kunden auf und steigern Sie Ihren Umsatz. Bewährtes 42:1 ROI im E-Mail-Marketing.",
+  title: "E-Mail Marketing Agentur | E-Mail Automatisierung | Nesco Digital",
+  description: "E-Mail Marketing Services: Strategie, Automatisierungen, Nurturing-Sequenzen. Wir steigern den Umsatz aus Ihrer E-Mail-Liste.",
   path: "/ge/email-marketing-loesungen/",
   routeKey: "emailMarketing",
 });

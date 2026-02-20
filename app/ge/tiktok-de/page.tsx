@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = buildMetadata({ locale: "de", title: "TikTok Ads | Gen Z und Millennials kreativ erreichen | Nesco Digital", description: "Erreichen Sie Gen Z und Millennials mit authentischen, kreativen TikTok-Kampagnen, die virales Wachstum und messbare Conversions generieren.", path: "/ge/tiktok-de/", routeKey: "tiktokAds" });
+export const metadata: Metadata = buildMetadata({ locale: "de", title: "TikTok Ads Agentur | TikTok Werbung | Nesco Digital", description: "TikTok Ads für Marken, die neue Zielgruppen erreichen wollen. Native Creatives, erweitertes Targeting, messbare Ergebnisse.", path: "/ge/tiktok-de/", routeKey: "tiktokAds" });
 
 const data: ServicePageData = {
   locale: "de",

@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
-  title: "Bezahlte Werbung | Google Ads, Facebook Ads, TikTok & LinkedIn | Nesco Digital",
-  description: "Vollständige Dienstleistungen für bezahlte Werbung: Google Ads, Facebook Ads, Instagram Ads, TikTok Ads und LinkedIn Ads. Wir maximieren Ihren ROAS mit bewährten Kampagnenstrategien.",
+  title: "Bezahlte Werbung | Google Ads, Meta Ads, TikTok Ads | Nesco Digital",
+  description: "Wir verwalten keine Budgets — wir bauen profitable Akquisitionssysteme. Google Ads, Meta Ads, TikTok Ads und LinkedIn Ads für ambitionierte Unternehmen.",
   path: "/ge/bezahlte-werbung/",
   routeKey: "paidAdsHub",
 });
@@ -24,8 +24,8 @@ export default function BezahlteWerbungDePage() {
           data={{
             locale: "de",
             badge: "Bezahlte Werbung",
-            title: "Bezahlte Kampagnen, die echten Umsatz generieren",
-            subtitle: "Von Google Ads bis TikTok — wir verwalten alle bezahlten Werbekanäle mit Fokus auf maximalen ROAS und minimale Kosten pro Conversion.",
+            title: "Bezahlte Werbung, die echten Umsatz generiert",
+            subtitle: "Wir verwalten keine Budgets. Wir bauen profitable Akquisitionssysteme für ambitionierte Unternehmen.",
             services: [
               {
                 label: "Google Ads",

@@ -7,8 +7,8 @@ import { routes } from "@/lib/routes";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Marketing Digital | Strategie, SEO, Email, CRM, CRO, Social Media | Nesco Digital",
-  description: "Servicii complete de marketing digital: strategie digitală, SEO, email marketing, CRM, CRO și social media. Creștem brandul tău online cu rezultate măsurabile.",
+  title: "Marketing Digital | SEO, Email Marketing, Social Media | Nesco Digital",
+  description: "Strategie, execuție și optimizare continuă — toate sub același acoperiș. SEO, email marketing, social media și CRO pentru creștere măsurabilă.",
   path: "/marketing-digital/",
   routeKey: "digitalMarketingHub",
 });
@@ -24,8 +24,8 @@ export default function MarketingDigitalPage() {
           data={{
             locale: "ro",
             badge: "Marketing Digital",
-            title: "Strategie digitală 360° pentru creștere sustenabilă",
-            subtitle: "De la strategie la execuție — acoperim toate canalele de marketing digital pentru a-ți crește brandul, traficul și revenue-ul.",
+            title: "Marketing Digital orientat spre rezultate",
+            subtitle: "Strategie, execuție și optimizare continuă — toate sub același acoperiș.",
             services: [
               {
                 label: "Strategie Digitală",

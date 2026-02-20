@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "TikTok Ads | Ajungi la Gen Z cu campanii creative | Nesco Digital",
-  description: "Ajunge la Gen Z și Millennials cu campanii TikTok autentice care generează creștere virală și conversii măsurabile. +300% brand awareness.",
+  title: "TikTok Ads România | Campanii TikTok | Nesco Digital",
+  description: "TikTok Ads pentru branduri care vor să ajungă la audiențe noi. Creative native, targeting avansat, rezultate măsurabile.",
   path: "/tiktok-ro/",
   routeKey: "tiktokAds",
 });

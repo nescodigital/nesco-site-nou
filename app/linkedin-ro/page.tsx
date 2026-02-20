@@ -6,8 +6,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "LinkedIn Ads | Generare Lead-uri B2B la scară | Nesco Digital",
-  description: "Cea mai puternică platformă de publicitate B2B. Ajunge la factorii de decizie, generează lead-uri calificate și construiești pipeline enterprise.",
+  title: "LinkedIn Ads România | B2B Advertising | Nesco Digital",
+  description: "Campanii LinkedIn Ads pentru companii B2B. Lead generation, brand awareness, retargeting. Ajungem la decidenți și profesioniști.",
   path: "/linkedin-ro/",
   routeKey: "linkedinAds",
 });

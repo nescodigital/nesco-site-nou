@@ -7,8 +7,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
-  title: "Magazine Online | Platforme de vânzări care transformă vizitatorii în clienți | Nesco Digital",
-  description: "Platforme de vânzări perfect adaptate care transformă vizitatorii în clienți fideli. Shopify, WooCommerce, Magento. +80% creștere vânzări MoM.",
+  title: "Magazine Online | E-commerce Development | Nesco Digital",
+  description: "Dezvoltare magazine online performante. Shopify, WooCommerce, soluții custom. UX optimizat pentru conversii și integrări complete de plată și livrare.",
   path: "/magazine-online-ro/",
   routeKey: "ecommerceStores",
 });
