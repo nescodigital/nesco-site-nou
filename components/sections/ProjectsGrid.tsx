@@ -117,7 +117,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                           <div
                             style={{
                               position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
-                              background: "linear-gradient(to right, #0a0a0a 28%, transparent 62%)",
+                              background: "linear-gradient(to right, #0a0a0a 28%, rgba(10,10,10,0) 62%)",
                             }}
                           />
                         </>
@@ -211,7 +211,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                           <div
                             style={{
                               position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
-                              background: "linear-gradient(to right, #0a0a0a 30%, transparent 65%)",
+                              background: "linear-gradient(to right, #0a0a0a 30%, rgba(10,10,10,0) 65%)",
                             }}
                           />
                         </>
