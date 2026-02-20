@@ -1129,7 +1129,7 @@ export const projects: Project[] = [
     categories: ["Online Education", "Performance Marketing"],
     tags: ["Online Education", "Performance Marketing"],
     services: ["Meta Ads", "TikTok Ads", "Email Marketing", "SMS Marketing", "Funnel Design", "Strategie Digitală"],
-    heroImage: "/proiecte/sistem-vanzare-educatie-online/hero.jpg",
+    heroImage: "/proiecte/sistem-vanzare-educatie-online/hero.png",
     accentColor: "rgba(86,219,132,0.1)",
     accentText: "#56db84",
     featured: false,
