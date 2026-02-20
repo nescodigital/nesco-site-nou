@@ -210,7 +210,6 @@ export default function GrowthSprintEducatiePage() {
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: "16px",
                 paddingTop: "40px",
-                borderTop: "1px solid rgba(255,255,255,0.06)",
                 maxWidth: "520px",
               }}
             >

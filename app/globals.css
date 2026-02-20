@@ -104,12 +104,13 @@ section h2 + .subtitle {
   font-size: 0.9375rem;
   border-radius: 9999px;
   text-decoration: none;
-  transition: all 0.2s ease;
-  box-shadow: 0 0 0 0 rgba(86, 219, 132, 0);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: btnGlowPulse 3s ease-in-out infinite;
 }
 .btn-primary:hover {
   transform: scale(1.02);
   box-shadow: 0 0 24px rgba(86, 219, 132, 0.35);
+  animation-play-state: paused;
 }
 
 .btn-ghost {
@@ -219,6 +220,16 @@ section h2 + .subtitle {
   0%, 100% { opacity: 0.5; transform: scale(1) translate(0, 0); }
   33%       { opacity: 0.7; transform: scale(1.08) translate(-1.5%, 2%); }
   66%       { opacity: 0.45; transform: scale(0.96) translate(2%, -1.5%); }
+}
+
+@keyframes heroBlobPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1);    opacity: 1; }
+  50%       { transform: translate(-50%, -50%) scale(1.15); opacity: 0.75; }
+}
+
+@keyframes btnGlowPulse {
+  0%, 100% { box-shadow: 0 0 0px rgba(86,219,132,0); }
+  50%       { box-shadow: 0 0 20px rgba(86,219,132,0.4); }
 }
 
 @keyframes float {

@@ -165,7 +165,8 @@ export default function GrowthSprintEcommercePage() {
                 maxWidth: "820px",
               }}
             >
-              Growth Sprint{" "}
+              Growth Sprint
+              <br />
               <span
                 style={{
                   background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
@@ -224,7 +225,6 @@ export default function GrowthSprintEcommercePage() {
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: "16px",
                 paddingTop: "40px",
-                borderTop: "1px solid rgba(255,255,255,0.06)",
                 maxWidth: "520px",
               }}
             >
