@@ -85,7 +85,10 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error("failed");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || `HTTP ${res.status}`);
+      }
       setSuccess(true);
     } catch {
       setSubmitError("Ceva nu a mers. Te rugăm să încerci din nou.");

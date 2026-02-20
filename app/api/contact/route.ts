@@ -56,9 +56,10 @@ export async function POST(request: Request) {
 </body>
 </html>`;
 
+    const isDev = process.env.NODE_ENV === "development";
     const { error } = await resend.emails.send({
-      from: "Nesco Digital <onboarding@resend.dev>",
-      to: ["hello@nescodigital.com"],
+      from: "hello@nescodigital.com",
+      to: [isDev ? email : "hello@nescodigital.com"],
       replyTo: email,
       subject,
       html: htmlBody,
