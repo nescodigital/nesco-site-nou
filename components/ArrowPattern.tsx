@@ -82,7 +82,7 @@ export function ArrowPattern() {
                 width: 80,
                 height: 80,
                 display: "block",
-                filter: "invert(1)",
+                filter: "grayscale(1) invert(1) brightness(0.5)",
                 opacity: isLaunching ? undefined : baseOpacities.current[i],
               } as React.CSSProperties}
             />

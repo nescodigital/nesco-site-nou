@@ -9,7 +9,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Facebook Ads România | Meta Ads Agency | Nesco Digital",
   description: "Campanii Facebook și Instagram Ads care convertesc. Targeting precis, creative performant, optimizare continuă. Agenție Meta cu experiență dovedită.",
-  path: "/facebook-ro/",
+  path: "/reclame-platite/facebook-ads/",
   routeKey: "facebookAds",
 });
 

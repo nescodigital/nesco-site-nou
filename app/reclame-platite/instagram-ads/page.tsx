@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Instagram Ads România | Reclame Instagram | Nesco Digital",
   description: "Campanii Instagram Ads pentru branduri ambițioase. Stories, Reels, Feed. Creștem awareness și generăm vânzări direct din Instagram.",
-  path: "/instagram-ro/",
+  path: "/reclame-platite/instagram-ads/",
   routeKey: "instagramAds",
 });
 

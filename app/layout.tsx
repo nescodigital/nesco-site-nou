@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LazyArrowPattern } from "@/components/ui/LazyArrowPattern";
 import { CookieConsent } from "@/components/CookieConsent";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -111,6 +113,8 @@ export default function RootLayout({
         <LazyArrowPattern />
         <CookieConsent />
         {children}
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );

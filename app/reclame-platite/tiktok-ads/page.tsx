@@ -8,7 +8,7 @@ export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "TikTok Ads România | Campanii TikTok | Nesco Digital",
   description: "TikTok Ads pentru branduri care vor să ajungă la audiențe noi. Creative native, targeting avansat, rezultate măsurabile.",
-  path: "/tiktok-ro/",
+  path: "/reclame-platite/tiktok-ads/",
   routeKey: "tiktokAds",
 });
 

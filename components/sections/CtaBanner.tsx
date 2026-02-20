@@ -1,7 +1,8 @@
-import Link from "next/link";
+"use client";
+import { useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 import { type Locale, t } from "@/lib/translations";
-import { routes } from "@/lib/routes";
+import { GrowthSprintPopup } from "../GrowthSprintPopup";
 
 interface CtaBannerProps {
   locale: Locale;
@@ -9,7 +10,7 @@ interface CtaBannerProps {
 
 export function CtaBanner({ locale }: CtaBannerProps) {
   const tr = t(locale);
-  const r = routes[locale];
+  const [popupOpen, setPopupOpen] = useState(false);
 
   return (
     <section
@@ -87,16 +88,24 @@ export function CtaBanner({ locale }: CtaBannerProps) {
         </p>
 
         <div style={{ display: "flex", justifyContent: "center", marginBottom: "64px" }}>
-          <Link
-            href={r.contact}
+          <button
+            onClick={() => setPopupOpen(true)}
             className="group inline-flex items-center gap-3 btn-primary"
-            style={{ fontSize: "1rem", padding: "18px 40px" }}
+            style={{ fontSize: "1rem", padding: "18px 40px", border: "none", cursor: "pointer" }}
           >
             <Calendar size={18} />
             {tr.cta.cta}
             <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          </button>
         </div>
+
+        {popupOpen && (
+          <GrowthSprintPopup
+            source="cta-banner"
+            locale={locale}
+            onClose={() => setPopupOpen(false)}
+          />
+        )}
 
         {/* Trust badges */}
         <div

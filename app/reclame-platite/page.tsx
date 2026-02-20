@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, XCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FadeInSection } from "@/components/ui/FadeInSection";
@@ -22,14 +22,35 @@ const painPoints = [
   {
     title: "Ai mai lucrat cu o agenție și nu a mers",
     desc: "Rapoarte frumoase, rezultate slabe. O agenție care nu a înțeles business-ul tău și a aplicat același template ca la toți clienții.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="120" height="120" style={{position:"absolute", top:"-10px", right:"-10px", opacity:0.12}} aria-hidden="true">
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#ef4444" strokeWidth="6"/>
+        <line x1="30" y1="30" x2="70" y2="70" stroke="#ef4444" strokeWidth="6" strokeLinecap="round"/>
+        <line x1="70" y1="30" x2="30" y2="70" stroke="#ef4444" strokeWidth="6" strokeLinecap="round"/>
+      </svg>
+    ),
   },
   {
     title: "Vrei să angajezi un specialist dar...",
     desc: "Un om bun pe paid ads costă 2.000-3.500€/lună + beneficii + risc că pleacă în 12 luni. Și nu acoperă Google Ads, Meta Ads, TikTok și LinkedIn simultan.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="120" height="120" style={{position:"absolute", top:"-10px", right:"-10px", opacity:0.12}} aria-hidden="true">
+        <circle cx="35" cy="30" r="15" fill="#ef4444"/>
+        <path d="M5 80 Q5 55 35 55 Q65 55 65 80" fill="#ef4444"/>
+        <circle cx="68" cy="25" r="12" fill="#ef4444"/>
+        <path d="M45 80 Q48 60 68 60 Q88 60 88 80" fill="#ef4444"/>
+      </svg>
+    ),
   },
   {
     title: "Bugetul tău de ads nu lucrează eficient",
     desc: "Simți că plătești mult și obții puțin. ROAS-ul stagnează, CPA-ul crește, iar agenția ta spune că 'piața e dificilă'.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="120" height="120" style={{position:"absolute", top:"-10px", right:"-10px", opacity:0.12}} aria-hidden="true">
+        <polyline points="10,80 30,50 50,65 70,20 90,35" fill="none" stroke="#ef4444" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+        <polyline points="70,20 90,20 90,35" fill="none" stroke="#ef4444" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
   },
 ];
 
@@ -37,14 +58,44 @@ const differentiators = [
   {
     title: "Îți spunem din prima dacă te putem ajuta",
     desc: "Nu pierdem timpul tău sau al nostru. După o discuție de 30 de minute știm dacă există potențial real de colaborare.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="140" height="140" style={{position:"absolute", top:"50%", right:"-20px", transform:"translateY(-50%)", opacity:0.1}} aria-hidden="true">
+        <path d="M10 20 Q10 10 20 10 L70 10 Q80 10 80 20 L80 55 Q80 65 70 65 L45 65 L30 80 L30 65 L20 65 Q10 65 10 55 Z" fill="#56db84"/>
+        <path d="M55 45 Q55 38 62 38 L85 38 Q92 38 92 45 L92 65 Q92 72 85 72 L78 72 L78 82 L68 72 L62 72 Q55 72 55 65 Z" fill="#56db84"/>
+      </svg>
+    ),
   },
   {
     title: "Înțelegem business-ul, nu doar platforma",
     desc: "Nu rulăm campanii. Construim sisteme de achiziție care se integrează cu vânzările, retenția și marja ta reală.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="140" height="140" style={{position:"absolute", top:"50%", right:"-20px", transform:"translateY(-50%)", opacity:0.1}} aria-hidden="true">
+        <circle cx="50" cy="50" r="10" fill="#56db84"/>
+        <circle cx="20" cy="25" r="8" fill="#56db84"/>
+        <circle cx="80" cy="25" r="8" fill="#56db84"/>
+        <circle cx="20" cy="75" r="8" fill="#56db84"/>
+        <circle cx="80" cy="75" r="8" fill="#56db84"/>
+        <line x1="50" y1="50" x2="20" y2="25" stroke="#56db84" strokeWidth="3"/>
+        <line x1="50" y1="50" x2="80" y2="25" stroke="#56db84" strokeWidth="3"/>
+        <line x1="50" y1="50" x2="20" y2="75" stroke="#56db84" strokeWidth="3"/>
+        <line x1="50" y1="50" x2="80" y2="75" stroke="#56db84" strokeWidth="3"/>
+        <line x1="20" y1="25" x2="80" y2="25" stroke="#56db84" strokeWidth="2"/>
+        <line x1="20" y1="75" x2="80" y2="75" stroke="#56db84" strokeWidth="2"/>
+      </svg>
+    ),
   },
   {
     title: "Experiență pe bani reali, nu bugete de test",
     desc: "36M€+ bugete gestionate. 23.000+ campanii. Știm ce funcționează și ce nu — pe piața românească și internațională.",
+    icon: (
+      <svg viewBox="0 0 100 100" width="140" height="140" style={{position:"absolute", top:"50%", right:"-20px", transform:"translateY(-50%)", opacity:0.1}} aria-hidden="true">
+        <path d="M35 10 L65 10 L65 55 Q65 75 50 80 Q35 75 35 55 Z" fill="#56db84"/>
+        <path d="M35 25 L20 25 Q10 25 10 35 Q10 50 30 55" fill="none" stroke="#56db84" strokeWidth="5"/>
+        <path d="M65 25 L80 25 Q90 25 90 35 Q90 50 70 55" fill="none" stroke="#56db84" strokeWidth="5"/>
+        <rect x="38" y="80" width="24" height="6" fill="#56db84"/>
+        <rect x="30" y="86" width="40" height="8" rx="2" fill="#56db84"/>
+      </svg>
+    ),
   },
 ];
 
@@ -55,8 +106,11 @@ const services = [
     href: r.googleAds,
     accent: "#4285F4",
     icon: (
-      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
-        <path d="M22.54 11.23L12.77 1.46a1.63 1.63 0 00-2.31 0L8.23 3.69l2.95 2.95a1.94 1.94 0 012.45 2.48l2.84 2.84a1.94 1.94 0 11-1.16 1.16l-2.65-2.65v6.97a1.94 1.94 0 11-1.6-.05V10.1a1.94 1.94 0 01-1.05-2.55L7.07 4.62 1.46 10.23a1.63 1.63 0 000 2.31l10.31 10.31a1.63 1.63 0 002.31 0l8.46-8.46a1.63 1.63 0 000-2.31z" fill="#4285F4" />
+      <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true">
+        <path fill="#4285F4" d="M47 24.5c0-1.57-.15-3.09-.42-4.55H24v8.61h12.91c-.58 2.96-2.26 5.48-4.78 7.12l7.73 6C43.92 37.5 47 31.45 47 24.5z" />
+        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.13 1.44-4.87 2.28-8.16 2.28-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.16C6.51 42.68 14.62 48 24 48z" />
+        <path fill="#FBBC04" d="M10.53 29.56C10.19 28.5 10 27.27 10 26s.19-2.5.53-3.56l-7.98-6.16A23.93 23.93 0 001 26c0 3.85.86 7.5 2.55 10.72l7.98-7.16z" />
+        <path fill="#EA4335" d="M24 10.64c3.5 0 6.63 1.2 9.1 3.57l6.83-6.83C35.93 3.38 30.47 1 24 1 14.62 1 6.51 6.32 2.55 14.28l7.98 6.16C12.43 14.86 17.74 10.64 24 10.64z" />
       </svg>
     ),
   },
@@ -79,15 +133,14 @@ const services = [
     icon: (
       <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
         <defs>
-          <radialGradient id="ig-grad" cx="30%" cy="107%">
-            <stop offset="0%" stopColor="#fdf497" />
-            <stop offset="5%" stopColor="#fdf497" />
-            <stop offset="45%" stopColor="#fd5949" />
-            <stop offset="60%" stopColor="#d6249f" />
-            <stop offset="90%" stopColor="#285AEB" />
-          </radialGradient>
+          <linearGradient id="ig-lin" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0%" stopColor="#FFD600" />
+            <stop offset="30%" stopColor="#FD5949" />
+            <stop offset="60%" stopColor="#D6249F" />
+            <stop offset="100%" stopColor="#4F5BD5" />
+          </linearGradient>
         </defs>
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="url(#ig-grad)" />
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="url(#ig-lin)" />
       </svg>
     ),
   },
@@ -216,6 +269,8 @@ export default function ReclamePlatitePage() {
                   <div
                     className="card-hover"
                     style={{
+                      position: "relative",
+                      overflow: "hidden",
                       padding: "28px 24px",
                       background: "#0a0a0a",
                       border: "1px solid rgba(255,255,255,0.06)",
@@ -224,11 +279,7 @@ export default function ReclamePlatitePage() {
                       height: "100%",
                     }}
                   >
-                    <div
-                      style={{ width: 36, height: 36, borderRadius: "10px", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}
-                    >
-                      <XCircle size={16} style={{ color: "#f87171" }} />
-                    </div>
+                    {item.icon}
                     <h3 className="font-bold text-white" style={{ fontSize: "0.9375rem", letterSpacing: "-0.01em", marginBottom: "8px" }}>
                       {item.title}
                     </h3>
@@ -262,13 +313,9 @@ export default function ReclamePlatitePage() {
                 <FadeInSection key={idx} delay={idx * 80}>
                   <div
                     className="group card-hover"
-                    style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", height: "100%" }}
+                    style={{ position: "relative", overflow: "hidden", padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", height: "100%" }}
                   >
-                    <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: "rgba(86,219,132,0.08)", border: "1px solid rgba(86,219,132,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}
-                    >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#56db84" }} />
-                    </div>
+                    {item.icon}
                     <h3 className="font-bold text-white" style={{ fontSize: "1rem", letterSpacing: "-0.01em", marginBottom: "10px" }}>
                       {item.title}
                     </h3>
