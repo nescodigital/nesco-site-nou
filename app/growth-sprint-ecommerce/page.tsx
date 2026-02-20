@@ -8,6 +8,7 @@ import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata } from "@/lib/seo";
 import { ArrowRight, Zap, CheckCircle, XCircle } from "lucide-react";
 import { GrowthSprintCta } from "@/components/GrowthSprintCta";
+import { GrowthSprintApplyButton } from "@/components/GrowthSprintApplyButton";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
@@ -724,13 +725,11 @@ export default function GrowthSprintEcommercePage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Plată integrală înainte de kick-off. Cea mai bună valoare.
                   </p>
-                  <Link
-                    href="/contact/"
-                    className="btn-primary"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Aplică pentru această opțiune
-                  </Link>
+                  <GrowthSprintApplyButton
+                    source="growth-sprint-ecommerce"
+                    planLabel="5.500 € — Plată integrală"
+                    variant="primary"
+                  />
                 </div>
               </FadeInSection>
 
@@ -758,13 +757,11 @@ export default function GrowthSprintEcommercePage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Angajamentul complet de 6 săptămâni inclus.
                   </p>
-                  <Link
-                    href="/contact/"
-                    className="btn-ghost"
-                    style={{ width: "100%", justifyContent: "center" }}
-                  >
-                    Aplică pentru această opțiune
-                  </Link>
+                  <GrowthSprintApplyButton
+                    source="growth-sprint-ecommerce"
+                    planLabel="6.500 € — Rate în 2 tranșe"
+                    variant="ghost"
+                  />
                 </div>
               </FadeInSection>
             </div>

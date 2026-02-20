@@ -5,6 +5,7 @@ import { X, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
 interface GrowthSprintPopupProps {
   source: "growth-sprint-educatie" | "growth-sprint-ecommerce";
   onClose: () => void;
+  selectedPlan?: string;
 }
 
 const QUESTIONS = [
@@ -25,7 +26,7 @@ const QUESTIONS = [
   },
 ];
 
-export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
+export function GrowthSprintPopup({ source, onClose, selectedPlan }: GrowthSprintPopupProps) {
   const [step, setStep] = useState<1 | 2>(1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [fields, setFields] = useState({ name: "", email: "", phone: "", message: "" });
@@ -76,6 +77,7 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
         message: fields.message,
         contactPrefs,
         source,
+        selectedPlan,
         qualifications: {
           revenue: answers.revenue,
           problem: answers.problem,
@@ -163,6 +165,27 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
             borderRadius: "20px 20px 0 0",
           }}
         />
+
+        {/* Selected plan badge */}
+        {selectedPlan && (
+          <div
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "6px",
+              padding: "5px 14px",
+              background: "rgba(86,219,132,0.08)",
+              border: "1px solid rgba(86,219,132,0.2)",
+              borderRadius: "9999px",
+              fontSize: "0.75rem",
+              fontWeight: 600,
+              color: "#56db84",
+              marginBottom: "20px",
+            }}
+          >
+            <span style={{ opacity: 0.6 }}>Opțiunea aleasă:</span> {selectedPlan}
+          </div>
+        )}
 
         {/* Close button */}
         <button
