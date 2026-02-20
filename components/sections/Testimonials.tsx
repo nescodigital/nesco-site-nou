@@ -106,19 +106,6 @@ export function Testimonials({ locale }: TestimonialsProps) {
                 style={{ background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.4), transparent)" }}
               />
 
-              {/* Quote icon + Stars row */}
-              <div className="flex items-center justify-between mb-5">
-                <Quote
-                  size={18}
-                  style={{ color: "rgba(86,219,132,0.25)", flexShrink: 0 }}
-                />
-                <div className="flex gap-0.5">
-                  {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} size={13} style={{ color: "#ffffff", fill: "#ffffff" }} />
-                  ))}
-                </div>
-              </div>
-
               {/* Metric badge */}
               <div
                 style={{
@@ -136,6 +123,19 @@ export function Testimonials({ locale }: TestimonialsProps) {
                 }}
               >
                 {t.metric}
+              </div>
+
+              {/* Quote icon + Stars row */}
+              <div className="flex items-center justify-between mb-5">
+                <Quote
+                  size={18}
+                  style={{ color: "rgba(86,219,132,0.25)", flexShrink: 0 }}
+                />
+                <div className="flex gap-0.5">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} size={13} style={{ color: "#ffffff", fill: "#ffffff" }} />
+                  ))}
+                </div>
               </div>
 
               {/* Content */}

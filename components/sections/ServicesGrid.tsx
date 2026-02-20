@@ -136,14 +136,14 @@ export function ServicesGrid({ locale }: ServicesGridProps) {
                   </div>
 
                   {/* Service items */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "4px", paddingLeft: 0 }}>
                     {service.items.map((item, iidx) => (
                       <Link
                         key={iidx}
                         href={item.href}
                         className="group/item flex items-center justify-between"
                         style={{
-                          padding: "10px 12px",
+                          padding: "4px 0",
                           borderRadius: "8px",
                           transition: "background 0.15s ease",
                           textDecoration: "none",

@@ -25,7 +25,7 @@ body {
   background-color: #050505;
   color: #ffffff;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3, h4, h5 {
@@ -37,6 +37,16 @@ h1, h2 {
   overflow: visible !important;
   line-height: 1.15;
   padding-bottom: 0.1em;
+}
+
+section h2 {
+  margin-bottom: 1.25rem !important;
+}
+section h2 + p {
+  margin-bottom: 2rem !important;
+}
+section h2 + .subtitle {
+  margin-bottom: 2rem !important;
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -217,3 +227,24 @@ h1, h2 {
 }
 
 .glow-green { box-shadow: 0 0 40px rgba(86, 219, 132, 0.12); }
+
+@keyframes rocketLaunch {
+  0% {
+    opacity: var(--base-opacity);
+    transform: translate(0, 0);
+    filter: brightness(1);
+  }
+  15% {
+    opacity: 0.7;
+    filter: brightness(3) sepia(1) saturate(5) hue-rotate(80deg);
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(180px, -180px);
+  }
+}
+
+.launching {
+  animation: rocketLaunch 900ms ease-in forwards;
+}

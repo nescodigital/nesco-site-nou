@@ -4,6 +4,9 @@ import type { Locale } from "./translations";
 export const routes = {
   ro: {
     home: "/",
+    paidAdsHub: "/reclame-platite/",
+    webdesignHub: "/webdesign/",
+    digitalMarketingHub: "/marketing-digital/",
     googleAds: "/google-ro/",
     facebookAds: "/facebook-ro/",
     instagramAds: "/instagram-ro/",
@@ -27,6 +30,9 @@ export const routes = {
   },
   en: {
     home: "/en/",
+    paidAdsHub: "/en/paid-ads/",
+    webdesignHub: "/en/webdesign/",
+    digitalMarketingHub: "/en/digital-marketing/",
     googleAds: "/en/google-en/",
     facebookAds: "/en/facebook-en/",
     instagramAds: "/en/instagram-en/",
@@ -50,6 +56,9 @@ export const routes = {
   },
   de: {
     home: "/ge/",
+    paidAdsHub: "/ge/bezahlte-werbung/",
+    webdesignHub: "/ge/webdesign/",
+    digitalMarketingHub: "/ge/digitales-marketing/",
     googleAds: "/ge/google-de/",
     facebookAds: "/ge/facebook-de/",
     instagramAds: "/ge/instagram-de/",
@@ -97,7 +106,7 @@ export function getNavLinks(locale: Locale) {
           : locale === "en"
             ? "Paid Ads"
             : "Bezahlte Anzeigen",
-      href: r.googleAds,
+      href: r.paidAdsHub,
       children: [
         {
           label: "Google Ads",
@@ -153,7 +162,7 @@ export function getNavLinks(locale: Locale) {
     },
     {
       label: "Webdesign",
-      href: r.leadGenWebsite,
+      href: r.webdesignHub,
       children: [
         {
           label:
@@ -224,7 +233,7 @@ export function getNavLinks(locale: Locale) {
           : locale === "en"
             ? "Digital Marketing"
             : "Digitales Marketing",
-      href: r.digitalStrategy,
+      href: r.digitalMarketingHub,
       children: [
         {
           label:

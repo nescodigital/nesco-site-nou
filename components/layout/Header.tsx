@@ -159,6 +159,28 @@ export function Header({ locale }: HeaderProps) {
                       }}
                     >
                       <div style={{ padding: "12px" }}>
+                        {/* "See all" hub link */}
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpenDropdown(null)}
+                          className="group flex items-center gap-2 rounded-xl"
+                          style={{
+                            padding: "10px 14px",
+                            textDecoration: "none",
+                            transition: "background 0.15s ease",
+                            marginBottom: "4px",
+                          }}
+                          onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(86,219,132,0.06)"; }}
+                          onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; }}
+                        >
+                          <span
+                            className="font-semibold group-hover:text-brand-green transition-colors"
+                            style={{ fontSize: "0.8125rem", color: "rgba(86,219,132,0.7)", flex: 1 }}
+                          >
+                            {locale === "ro" ? "Toate serviciile" : locale === "en" ? "All services" : "Alle Leistungen"} →
+                          </span>
+                        </Link>
+                        <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "4px 0 8px" }} />
                         {item.children.map((child, cidx) => (
                           <div key={cidx}>
                             {cidx > 0 && (
@@ -385,19 +407,23 @@ export function Header({ locale }: HeaderProps) {
             <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "16px" }}>
               {navLinks.filter(i => i.children).map((item, idx) => (
                 <div key={idx} style={{ marginBottom: "16px" }}>
-                  <div
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
                     style={{
+                      display: "block",
                       padding: "4px 12px",
                       fontSize: "0.625rem",
                       fontWeight: 700,
-                      color: "rgba(255,255,255,0.25)",
+                      color: "rgba(255,255,255,0.35)",
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",
                       marginBottom: "2px",
+                      textDecoration: "none",
                     }}
                   >
-                    {item.label}
-                  </div>
+                    {item.label} →
+                  </Link>
                   {item.children!.map((child, cidx) => (
                     <Link
                       key={cidx}

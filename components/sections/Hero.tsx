@@ -34,7 +34,7 @@ export function Hero({ locale }: HeroProps) {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center"
       style={{ backgroundColor: "#050505" }}
     >
       {/* Subtle grid */}
@@ -47,8 +47,8 @@ export function Hero({ locale }: HeroProps) {
           top: "50%",
           right: "-10%",
           transform: "translateY(-50%)",
-          width: 700,
-          height: 700,
+          width: 800,
+          height: 800,
           borderRadius: "50%",
           background: "radial-gradient(circle, rgba(86,219,132,0.07) 0%, transparent 70%)",
           animation: "heroGlow 14s ease-in-out infinite",
@@ -258,7 +258,7 @@ export function Hero({ locale }: HeroProps) {
           <div
             className="relative hidden lg:flex items-center justify-center opacity-0"
             style={{
-              height: "min(520px, 46vw)",
+              height: "min(578px, 49vw)",
               animation: "fadeUp 1.1s ease forwards 0.35s",
             }}
           >

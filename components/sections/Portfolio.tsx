@@ -78,9 +78,13 @@ export function Portfolio({ locale }: PortfolioProps) {
 
       <div className="page-container">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 mb-20">
-          <div>
-            <span className="badge mb-6">{tr.portfolio.badge}</span>
+        <div className="mb-20">
+          <span className="badge mb-6">{tr.portfolio.badge}</span>
+          {/* h2 + button in a flex row */}
+          <div
+            className="flex items-center justify-between mb-8"
+            style={{ marginTop: "20px" }}
+          >
             <h2
               className="font-black text-white"
               style={{
@@ -88,44 +92,43 @@ export function Portfolio({ locale }: PortfolioProps) {
                 lineHeight: 1.05,
                 letterSpacing: "-0.025em",
                 fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "20px",
-                marginBottom: "12px",
+                marginBottom: 0,
               }}
             >
               {tr.portfolio.headline}
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem", lineHeight: 1.6 }}>
-              {tr.portfolio.subheadline}
-            </p>
+            <Link
+              href={r.projects}
+              className="inline-flex items-center gap-2 group shrink-0"
+              style={{
+                padding: "9px 20px",
+                background: "#56db84",
+                borderRadius: "9999px",
+                fontSize: "0.875rem",
+                fontWeight: 600,
+                color: "#000",
+                textDecoration: "none",
+                transition: "all 0.2s ease",
+                boxShadow: "0 0 0 0 rgba(86,219,132,0)",
+              }}
+              onMouseEnter={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.transform = "scale(1.02)";
+                el.style.boxShadow = "0 0 20px rgba(86,219,132,0.3)";
+              }}
+              onMouseLeave={(e) => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.transform = "scale(1)";
+                el.style.boxShadow = "0 0 0 0 rgba(86,219,132,0)";
+              }}
+            >
+              {tr.portfolio.cta}
+              <ArrowRight size={13} />
+            </Link>
           </div>
-          <Link
-            href={r.projects}
-            className="inline-flex items-center gap-2 group shrink-0"
-            style={{
-              padding: "9px 20px",
-              background: "#56db84",
-              borderRadius: "9999px",
-              fontSize: "0.875rem",
-              fontWeight: 600,
-              color: "#000",
-              textDecoration: "none",
-              transition: "all 0.2s ease",
-              boxShadow: "0 0 0 0 rgba(86,219,132,0)",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "scale(1.02)";
-              el.style.boxShadow = "0 0 20px rgba(86,219,132,0.3)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "scale(1)";
-              el.style.boxShadow = "0 0 0 0 rgba(86,219,132,0)";
-            }}
-          >
-            {tr.portfolio.cta}
-            <ArrowRight size={13} />
-          </Link>
+          <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem", lineHeight: 1.6 }}>
+            {tr.portfolio.subheadline}
+          </p>
         </div>
 
         {/* Grid */}

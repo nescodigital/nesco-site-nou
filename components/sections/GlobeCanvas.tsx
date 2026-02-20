@@ -59,8 +59,8 @@ export function GlobeCanvas() {
 
     // ── Scene / Camera ────────────────────────────────────────────────────────
     const scene  = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(42, w / h, 0.1, 100);
-    camera.position.set(0, 0, 3.8);
+    const camera = new THREE.PerspectiveCamera(38, w / h, 0.1, 100);
+    camera.position.set(0, 0, 3.2);
 
     // ── Globe group ───────────────────────────────────────────────────────────
     const globeGroup = new THREE.Group();

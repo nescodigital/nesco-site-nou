@@ -13,18 +13,18 @@ function getBreadcrumbCategory(category: BreadcrumbCategory, locale: Locale): { 
   if (category === "paidAds") {
     return {
       label: locale === "ro" ? "Reclame Plătite" : locale === "de" ? "Bezahlte Anzeigen" : "Paid Ads",
-      href: r.googleAds,
+      href: r.paidAdsHub,
     };
   }
   if (category === "webdesign") {
     return {
       label: "Webdesign",
-      href: r.leadGenWebsite,
+      href: r.webdesignHub,
     };
   }
   return {
     label: locale === "ro" ? "Marketing Digital" : locale === "de" ? "Digitales Marketing" : "Digital Marketing",
-    href: r.digitalStrategy,
+    href: r.digitalMarketingHub,
   };
 }
 

@@ -21,7 +21,7 @@ export function Solutions({ locale }: SolutionsProps) {
   const r = routes[locale];
 
   return (
-    <section className="section relative" style={{ backgroundColor: "#050505" }}>
+    <section className="section relative" style={{ backgroundColor: "#050505", paddingBottom: "4rem" }}>
       {/* Subtle top gradient separator */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
@@ -33,7 +33,7 @@ export function Solutions({ locale }: SolutionsProps) {
         <div>
           <span className="badge mb-6">{s.badge}</span>
           <h2
-            className="font-black text-white mb-10"
+            className="font-black text-white mb-5"
             style={{
               fontSize: "clamp(2rem, 4vw, 3.25rem)",
               lineHeight: 1.05,
@@ -47,7 +47,7 @@ export function Solutions({ locale }: SolutionsProps) {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-12 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 pb-16">
           {s.items.map((item, idx) => {
             const Icon = iconMap[item.icon as keyof typeof iconMap] || TrendingUp;
             return (

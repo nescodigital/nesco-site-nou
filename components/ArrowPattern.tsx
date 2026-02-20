@@ -1,30 +1,43 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const COLS  = 8;
 const ROWS  = 8;
 const COUNT = COLS * ROWS; // 64
 
+const LAUNCH_INTERVAL = 4000; // ms between launches
+const LAUNCH_DURATION = 900;  // must match CSS animation duration
+
 export function ArrowPattern() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  // Stable random base opacities — generated once on mount, never change
+  const baseOpacities = useRef(
+    Array.from({ length: COUNT }, () => 0.03 + Math.random() * 0.09)
+  );
+
+  // Set of arrow indices currently mid-launch
+  const [launching, setLaunching] = useState<Set<number>>(new Set());
 
   useEffect(() => {
-    const schedule = () => {
-      // Pick a random arrow and pulse it
+    const launch = () => {
       const idx = Math.floor(Math.random() * COUNT);
-      setActiveIndex(idx);
 
-      // After 2 s start fading back (transition handles the smooth fade)
-      const resetTimer = setTimeout(() => setActiveIndex(null), 2000);
+      // Add to launching set
+      setLaunching(prev => new Set(prev).add(idx));
 
-      return resetTimer;
+      // Remove after animation completes
+      setTimeout(() => {
+        setLaunching(prev => {
+          const next = new Set(prev);
+          next.delete(idx);
+          return next;
+        });
+      }, LAUNCH_DURATION);
     };
 
-    // First pulse after a short initial delay
-    const first = setTimeout(schedule, 600);
-
-    // Then repeat every 3 s
-    const interval = setInterval(schedule, 3000);
+    // First launch after short delay
+    const first = setTimeout(launch, 800);
+    // Then every LAUNCH_INTERVAL — multiple can overlap
+    const interval = setInterval(launch, LAUNCH_INTERVAL);
 
     return () => {
       clearTimeout(first);
@@ -46,31 +59,35 @@ export function ArrowPattern() {
         overflow: "hidden",
       }}
     >
-      {Array.from({ length: COUNT }).map((_, i) => (
-        <div
-          key={i}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo mare Nesco.svg"
-            alt=""
-            width={80}
-            height={80}
+      {Array.from({ length: COUNT }).map((_, i) => {
+        const isLaunching = launching.has(i);
+        return (
+          <div
+            key={i}
             style={{
-              width: 80,
-              height: 80,
-              opacity: activeIndex === i ? 0.18 : 0.04,
-              transition: "opacity 0.5s ease-in-out",
-              display: "block",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
-          />
-        </div>
-      ))}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo mare Nesco.svg"
+              alt=""
+              width={80}
+              height={80}
+              className={isLaunching ? "launching" : undefined}
+              style={{
+                "--base-opacity": baseOpacities.current[i],
+                width: 80,
+                height: 80,
+                display: "block",
+                opacity: isLaunching ? undefined : baseOpacities.current[i],
+              } as React.CSSProperties}
+            />
+          </div>
+        );
+      })}
     </div>
   );
 }
