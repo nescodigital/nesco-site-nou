@@ -7,7 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata } from "@/lib/seo";
-import { projects, getProjectBySlug } from "@/lib/projectData";
+import { projects, getProjectBySlug, getLocalizedProject } from "@/lib/projectData";
 import { ArrowLeft, ArrowRight, CheckCircle } from "lucide-react";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -20,10 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) return {};
+  const lp = getLocalizedProject(project, "ro");
   return buildMetadata({
     locale: "ro",
-    title: project.metaTitle,
-    description: project.metaDescription,
+    title: lp.metaTitle,
+    description: lp.metaDescription,
     path: `/proiecte/${project.slug}/`,
     routeKey: "projects",
   });
@@ -33,6 +34,7 @@ export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
   if (!project) notFound();
+  const lp = getLocalizedProject(project, "ro");
 
   return (
     <>
@@ -53,7 +55,7 @@ export default async function ProjectPage({ params }: Props) {
               <span>/</span>
               <Link href="/proiecte/" style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none", transition: "color 0.2s" }}>Proiecte</Link>
               <span>/</span>
-              <span style={{ color: "rgba(255,255,255,0.6)" }}>{project.shortTitle}</span>
+              <span style={{ color: "rgba(255,255,255,0.6)" }}>{lp.shortTitle}</span>
             </nav>
           </div>
         </div>
@@ -114,7 +116,7 @@ export default async function ProjectPage({ params }: Props) {
                     marginBottom: "24px",
                   }}
                 >
-                  {project.title}
+                  {lp.title}
                 </h1>
                 <p
                   style={{
@@ -125,7 +127,7 @@ export default async function ProjectPage({ params }: Props) {
                     maxWidth: "520px",
                   }}
                 >
-                  {project.description}
+                  {lp.description}
                 </p>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                   <Link href="/contact/" className="btn-primary">
@@ -178,7 +180,7 @@ export default async function ProjectPage({ params }: Props) {
                       marginBottom: "12px",
                     }}
                   >
-                    {project.metricMain}
+                    {lp.metricMain}
                   </div>
                   <div
                     style={{
@@ -187,7 +189,7 @@ export default async function ProjectPage({ params }: Props) {
                       fontWeight: 500,
                     }}
                   >
-                    {project.metricSub}
+                    {lp.metricSub}
                   </div>
                   <div
                     style={{
@@ -200,7 +202,7 @@ export default async function ProjectPage({ params }: Props) {
                       letterSpacing: "0.1em",
                     }}
                   >
-                    {project.industry} · {project.timeline}
+                    {lp.industry} · {lp.timeline}
                   </div>
                 </div>
               </div>
@@ -222,7 +224,7 @@ export default async function ProjectPage({ params }: Props) {
                 >
                   <Image
                     src={project.heroImage}
-                    alt={project.title}
+                    alt={lp.title}
                     width={1280}
                     height={640}
                     style={{ width: "100%", height: "auto", display: "block" }}
@@ -270,7 +272,7 @@ export default async function ProjectPage({ params }: Props) {
                     Provocarea
                   </div>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
-                    {project.challenge}
+                    {lp.challenge}
                   </p>
                 </div>
               </FadeInSection>
@@ -309,7 +311,7 @@ export default async function ProjectPage({ params }: Props) {
                     Soluția noastră
                   </div>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.8 }}>
-                    {project.solution}
+                    {lp.solution}
                   </p>
                 </div>
               </FadeInSection>
@@ -347,7 +349,7 @@ export default async function ProjectPage({ params }: Props) {
                 gap: "20px",
               }}
             >
-              {project.metrics.map((m, i) => (
+              {lp.metrics.map((m, i) => (
                 <FadeInSection key={i} delay={i * 80}>
                   <div
                     style={{

@@ -3,67 +3,20 @@ import Link from "next/link";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
+import { projects, getLocalizedProject } from "@/lib/projectData";
 
 interface PortfolioProps {
   locale: Locale;
 }
 
-const projects = [
-  {
-    tag: "B2B",
-    metric: "7-Figure",
-    metricSub: "Revenue in 10 months",
-    title: "7-Figure Revenue",
-    desc: "B2B SEO & Performance Marketing",
-    accent: "rgba(96,165,250,0.1)",
-    accentText: "#60a5fa",
-  },
-  {
-    tag: "E-commerce",
-    metric: "400%",
-    metricSub: "Revenue growth in 12 months",
-    title: "Revenue Growth",
-    desc: "E-Commerce Brand Scaling",
-    accent: "rgba(86,219,132,0.1)",
-    accentText: "#56db84",
-  },
-  {
-    tag: "SaaS",
-    metric: "5×",
-    metricSub: "ROI in 9 months",
-    title: "ROI Multiplied",
-    desc: "SaaS Platform Expansion",
-    accent: "rgba(167,139,250,0.1)",
-    accentText: "#a78bfa",
-  },
-  {
-    tag: "DTC",
-    metric: "10×",
-    metricSub: "Revenue in 14 months",
-    title: "Scale Up",
-    desc: "$250K → $2.5M DTC Brand",
-    accent: "rgba(251,146,60,0.1)",
-    accentText: "#fb923c",
-  },
-  {
-    tag: "E-commerce",
-    metric: "+200%",
-    metricSub: "Sales increase in 6 months",
-    title: "Sales Surge",
-    desc: "E-commerce Growth Campaign",
-    accent: "rgba(244,114,182,0.1)",
-    accentText: "#f472b6",
-  },
-  {
-    tag: "Email",
-    metric: "+160%",
-    metricSub: "Subscriber growth",
-    title: "List Growth",
-    desc: "Newsletter & Email Marketing",
-    accent: "rgba(34,211,238,0.1)",
-    accentText: "#22d3ee",
-  },
-];
+const CTA_LABEL: Record<Locale, string> = {
+  ro: "Vezi detalii",
+  en: "View details",
+  de: "Details ansehen",
+};
+
+// Show the first 6 projects (4 featured + 2 non-featured)
+const PREVIEW_PROJECTS = projects.slice(0, 6);
 
 export function Portfolio({ locale }: PortfolioProps) {
   const tr = t(locale);
@@ -133,87 +86,95 @@ export function Portfolio({ locale }: PortfolioProps) {
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
-          {projects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group card-hover"
-              style={{
-                padding: "32px",
-                background: "#0a0a0a",
-                border: "1px solid rgba(255,255,255,0.06)",
-                borderRadius: "16px",
-                position: "relative",
-                overflow: "hidden",
-                cursor: "pointer",
-              }}
-            >
-              {/* Hover bg */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                style={{ background: `radial-gradient(ellipse at 20% 80%, ${project.accent}, transparent 70%)` }}
-              />
-
-              <div className="relative">
-                {/* Tag */}
-                <span
+          {PREVIEW_PROJECTS.map((project) => {
+            const lp = getLocalizedProject(project, locale);
+            return (
+              <Link
+                key={project.slug}
+                href={`/proiecte/${project.slug}/`}
+                style={{ display: "block", textDecoration: "none" }}
+              >
+                <div
+                  className="group card-hover"
                   style={{
-                    display: "inline-block",
-                    fontSize: "0.6875rem",
-                    fontWeight: 600,
-                    padding: "3px 10px",
-                    borderRadius: "9999px",
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    color: "rgba(255,255,255,0.4)",
-                    letterSpacing: "0.06em",
-                    textTransform: "uppercase",
-                    marginBottom: "20px",
+                    padding: "32px",
+                    background: "#0a0a0a",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: "16px",
+                    position: "relative",
+                    overflow: "hidden",
+                    cursor: "pointer",
                   }}
                 >
-                  {project.tag}
-                </span>
+                  {/* Hover bg */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                    style={{ background: `radial-gradient(ellipse at 20% 80%, ${project.accentColor}, transparent 70%)` }}
+                  />
 
-                {/* Metric */}
-                <div
-                  className="font-black tabular-nums"
-                  style={{
-                    fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
-                    lineHeight: 1,
-                    color: project.accentText,
-                    letterSpacing: "-0.03em",
-                    marginBottom: "8px",
-                  }}
-                >
-                  {project.metric}
+                  <div className="relative">
+                    {/* Tag */}
+                    <span
+                      style={{
+                        display: "inline-block",
+                        fontSize: "0.6875rem",
+                        fontWeight: 600,
+                        padding: "3px 10px",
+                        borderRadius: "9999px",
+                        background: "rgba(255,255,255,0.05)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                        color: "rgba(255,255,255,0.4)",
+                        letterSpacing: "0.06em",
+                        textTransform: "uppercase",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      {project.categories[0]}
+                    </span>
+
+                    {/* Metric */}
+                    <div
+                      className="font-black tabular-nums"
+                      style={{
+                        fontSize: "clamp(2.5rem, 5vw, 3.5rem)",
+                        lineHeight: 1,
+                        color: project.accentText,
+                        letterSpacing: "-0.03em",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      {lp.metricMain}
+                    </div>
+
+                    {/* Title */}
+                    <div
+                      className="font-bold text-white"
+                      style={{ fontSize: "1.125rem", letterSpacing: "-0.01em", marginBottom: "6px" }}
+                    >
+                      {lp.shortTitle}
+                    </div>
+
+                    {/* Desc */}
+                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.35)" }}>
+                      {lp.industry}
+                    </p>
+                    <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.25)", marginTop: "3px" }}>
+                      {lp.metricSub}
+                    </p>
+
+                    {/* Hover CTA */}
+                    <div
+                      className="flex items-center gap-1.5 mt-5 opacity-0 group-hover:opacity-100 transition-opacity"
+                      style={{ fontSize: "0.8125rem", color: project.accentText, fontWeight: 600 }}
+                    >
+                      <TrendingUp size={13} />
+                      {CTA_LABEL[locale]}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Title */}
-                <div
-                  className="font-bold text-white"
-                  style={{ fontSize: "1.125rem", letterSpacing: "-0.01em", marginBottom: "6px" }}
-                >
-                  {project.title}
-                </div>
-
-                {/* Desc */}
-                <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.35)" }}>
-                  {project.desc}
-                </p>
-                <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.25)", marginTop: "3px" }}>
-                  {project.metricSub}
-                </p>
-
-                {/* Hover CTA */}
-                <div
-                  className="flex items-center gap-1.5 mt-5 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{ fontSize: "0.8125rem", color: project.accentText, fontWeight: 600 }}
-                >
-                  <TrendingUp size={13} />
-                  {locale === "ro" ? "Vezi detalii" : locale === "en" ? "View case study" : "Fallstudie ansehen"}
-                </div>
-              </div>
-            </div>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

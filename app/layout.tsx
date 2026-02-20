@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ArrowPattern } from "@/components/ArrowPattern";
+import { LazyArrowPattern } from "@/components/ui/LazyArrowPattern";
+import { CookieConsent } from "@/components/CookieConsent";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
     <html lang="ro" className={inter.variable}>
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
           rel="preload"
           as="style"
@@ -71,7 +73,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#080b0f" />
       </head>
       <body className="antialiased text-white" style={{ backgroundColor: "#050505" }}>
-        <ArrowPattern />
+        <LazyArrowPattern />
+        <CookieConsent />
         {children}
       </body>
     </html>

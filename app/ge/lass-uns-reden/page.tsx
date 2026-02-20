@@ -4,7 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { buildMetadata, buildWebPageSchema } from "@/lib/seo";
-import { MapPin, Mail, Clock, CheckCircle } from "lucide-react";
+import { MapPin, Clock, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
@@ -50,7 +50,7 @@ export default function LassUnsRedenPage() {
 
               {/* Left */}
               <div>
-                <span className="badge mb-6">Kostenloses Discovery-Call</span>
+                <span className="badge mb-6">Erstberatung</span>
                 <h1
                   className="font-black text-white"
                   style={{
@@ -90,8 +90,8 @@ export default function LassUnsRedenPage() {
                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "40px" }}>
                   {[
                     { icon: Clock, text: "Antwort innerhalb von 24 Stunden" },
-                    { icon: CheckCircle, text: "Kostenlose Analyse Ihrer aktuellen Situation" },
-                    { icon: CheckCircle, text: "Konkreter Aktionsplan, kein Blabla" },
+                    { icon: CheckCircle, text: "Dedizierte Analyse Ihrer Situation" },
+                    { icon: CheckCircle, text: "Wir arbeiten mit Unternehmen, die ernsthaft wachsen wollen" },
                   ].map((item, idx) => {
                     const Icon = item.icon;
                     return (
@@ -119,61 +119,24 @@ export default function LassUnsRedenPage() {
                     borderTop: "1px solid rgba(255,255,255,0.06)",
                     display: "flex",
                     flexDirection: "column",
-                    gap: "12px",
+                    gap: "8px",
                   }}
                 >
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                    <MapPin size={15} style={{ color: "#56db84", marginTop: "2px", flexShrink: 0 }} />
-                    <div>
-                      <div style={{ color: "#ffffff", fontSize: "0.875rem", fontWeight: 600 }}>München Büro</div>
-                      <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8125rem" }}>Maximilianstraße 13, München, Deutschland</div>
+                  {[
+                    "München · Maximilianstraße 13",
+                    "București · Str. Argentina 25",
+                  ].map((line) => (
+                    <div key={line} style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                      <MapPin size={13} style={{ color: "#56db84", flexShrink: 0 }} />
+                      <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8125rem" }}>{line}</span>
                     </div>
-                  </div>
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                    <MapPin size={15} style={{ color: "#56db84", marginTop: "2px", flexShrink: 0 }} />
-                    <div>
-                      <div style={{ color: "#ffffff", fontSize: "0.875rem", fontWeight: 600 }}>Bukarest Büro</div>
-                      <div style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.8125rem" }}>Str. Argentina 25, Bukarest, Rumänien</div>
-                    </div>
-                  </div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                    <Mail size={15} style={{ color: "#56db84", flexShrink: 0 }} />
-                    <a
-                      href="mailto:hello@nescodigital.com"
-                      style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.8125rem", textDecoration: "none" }}
-                    >
-                      hello@nescodigital.com
-                    </a>
-                  </div>
+                  ))}
                 </div>
               </div>
 
               {/* Right — Form */}
               <FadeInSection delay={150}>
-                <div
-                  className="p-5 sm:p-10"
-                  style={{
-                    background: "#0a0a0a",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    borderRadius: "24px",
-                    position: "relative",
-                    overflow: "hidden",
-                    maxWidth: "100%",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <div
-                    className="absolute top-0 left-0 right-0 h-px"
-                    style={{ background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.3), transparent)" }}
-                  />
-                  <h2
-                    className="font-bold text-white"
-                    style={{ fontSize: "1.25rem", letterSpacing: "-0.01em", marginBottom: "28px" }}
-                  >
-                    Kostenloses Angebot anfordern
-                  </h2>
-                  <ContactForm locale="de" />
-                </div>
+                <ContactForm locale="de" />
               </FadeInSection>
 
             </div>

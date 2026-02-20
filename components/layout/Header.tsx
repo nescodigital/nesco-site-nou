@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { type Locale } from "@/lib/translations";
 import { getNavLinks, routes } from "@/lib/routes";
@@ -30,18 +30,25 @@ function FlagIcon({ code, label }: { code: string; label: string }) {
   );
 }
 
-const LANG_HREFS: Record<Locale, string> = {
-  ro: "/",
-  en: "/en/",
-  de: "/ge/",
-};
+function getLocalizedPath(pathname: string, fromLocale: Locale, toLocale: Locale): string {
+  const normalized = pathname.endsWith("/") ? pathname : pathname + "/";
+  const fromEntries = Object.entries(routes[fromLocale]) as [string, string][];
+  const match = fromEntries.find(([, path]) => path === normalized);
+  if (match) {
+    const key = match[0] as keyof typeof routes.ro;
+    if (key in routes[toLocale]) return routes[toLocale][key];
+  }
+  return routes[toLocale].home;
+}
 
 export function Header({ locale }: HeaderProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [langOpen, setLangOpen] = useState(false);
+  const [openSection, setOpenSection] = useState<string | null>(null);
   const navLinks = getNavLinks(locale);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
@@ -262,7 +269,7 @@ export function Header({ locale }: HeaderProps) {
                     {(["ro", "en", "de"] as Locale[]).map((lang) => (
                       <button
                         key={lang}
-                        onClick={() => { setLangOpen(false); router.push(LANG_HREFS[lang]); }}
+                        onClick={() => { setLangOpen(false); router.push(getLocalizedPath(pathname, locale, lang)); }}
                         className="w-full flex items-center gap-2.5 rounded-lg transition-colors"
                         style={{
                           padding: "10px 12px",
@@ -335,7 +342,7 @@ export function Header({ locale }: HeaderProps) {
         <div
           className="absolute inset-0"
           style={{ background: "rgba(0,0,0,0.7)", backdropFilter: "blur(8px)" }}
-          onClick={() => setMobileOpen(false)}
+          onClick={() => { setMobileOpen(false); setOpenSection(null); }}
         />
         <div
           className={`absolute top-0 right-0 h-full w-80 overflow-y-auto transition-transform duration-300 ${
@@ -347,20 +354,137 @@ export function Header({ locale }: HeaderProps) {
             boxShadow: "-20px 0 60px rgba(0,0,0,0.8)",
           }}
         >
-          <div style={{ padding: "80px 24px 40px" }}>
-            {/* Language switcher mobile */}
-            <div className="flex gap-2 mb-5">
+          {/* Spacer matching header height so nav starts below the fixed header */}
+          <div style={{ height: "80px" }} />
+
+          {/* Nav list */}
+          {navLinks.map((item, idx) => (
+            <div key={idx}>
+              {item.children ? (
+                <>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      borderBottom: openSection === item.label ? "none" : "1px solid rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => { setMobileOpen(false); setOpenSection(null); }}
+                      style={{
+                        flex: 1,
+                        padding: "16px 24px",
+                        fontSize: "1rem",
+                        fontWeight: 500,
+                        color: "#ffffff",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                    <button
+                      onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
+                      style={{
+                        padding: "16px 20px",
+                        background: "transparent",
+                        border: "none",
+                        borderLeft: "1px solid rgba(255,255,255,0.04)",
+                        cursor: "pointer",
+                        flexShrink: 0,
+                      }}
+                      aria-label="Toggle section"
+                    >
+                      <span
+                        style={{
+                          display: "inline-block",
+                          transition: "transform 0.2s ease",
+                          transform: openSection === item.label ? "rotate(90deg)" : "rotate(0deg)",
+                          color: openSection === item.label ? "#56db84" : "rgba(255,255,255,0.3)",
+                          fontSize: "0.75rem",
+                          lineHeight: 1,
+                        }}
+                      >
+                        ▸
+                      </span>
+                    </button>
+                  </div>
+
+                  {openSection === item.label && (
+                    <div style={{ borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      {item.children.map((child, cidx) => (
+                        <Link
+                          key={cidx}
+                          href={child.href}
+                          onClick={() => { setMobileOpen(false); setOpenSection(null); }}
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            padding: "11px 24px 11px 48px",
+                            fontSize: "0.875rem",
+                            color: "rgba(255,255,255,0.6)",
+                            textDecoration: "none",
+                            borderTop: "1px solid rgba(255,255,255,0.04)",
+                          }}
+                        >
+                          <span style={{ color: "#56db84", fontSize: "0.6875rem", flexShrink: 0 }}>→</span>
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.href}
+                  onClick={() => { setMobileOpen(false); setOpenSection(null); }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    padding: "16px 24px",
+                    fontSize: "1rem",
+                    fontWeight: 500,
+                    color: "#ffffff",
+                    textDecoration: "none",
+                    borderBottom: "1px solid rgba(255,255,255,0.06)",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </div>
+          ))}
+
+          {/* CTA + language switcher — flow naturally after nav */}
+          <div style={{ padding: "24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+            <Link
+              href={ctaHref}
+              onClick={() => { setMobileOpen(false); setOpenSection(null); }}
+              className="btn-primary"
+              style={{ width: "100%", justifyContent: "center", marginBottom: "12px" }}
+            >
+              {ctaLabel}
+              <ArrowRight size={14} />
+            </Link>
+
+            <div style={{ display: "flex", gap: "8px" }}>
               {(["ro", "en", "de"] as Locale[]).map((lang) => (
                 <button
                   key={lang}
-                  onClick={() => { setMobileOpen(false); router.push(LANG_HREFS[lang]); }}
-                  className="flex-1 flex items-center justify-center gap-1.5 rounded-xl transition-colors"
+                  onClick={() => { setMobileOpen(false); setOpenSection(null); router.push(getLocalizedPath(pathname, locale, lang)); }}
                   style={{
+                    flex: 1,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "6px",
                     padding: "8px",
                     fontSize: "0.8125rem",
                     fontWeight: 500,
                     background: lang === locale ? "rgba(86,219,132,0.08)" : "rgba(255,255,255,0.03)",
                     border: `1px solid ${lang === locale ? "rgba(86,219,132,0.2)" : "rgba(255,255,255,0.06)"}`,
+                    borderRadius: "12px",
                     color: lang === locale ? "#56db84" : "rgba(255,255,255,0.4)",
                     cursor: "pointer",
                   }}
@@ -368,83 +492,6 @@ export function Header({ locale }: HeaderProps) {
                   <FlagIcon code={langConfig[lang].flagCode} label={langConfig[lang].label} />
                   <span>{langConfig[lang].label}</span>
                 </button>
-              ))}
-            </div>
-
-            {/* Quick links + CTA at top */}
-            <Link
-              href={ctaHref}
-              onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 w-full btn-primary mb-3"
-              style={{ justifyContent: "center" }}
-            >
-              {ctaLabel}
-              <ArrowRight size={14} />
-            </Link>
-            <div className="flex gap-2 mb-5">
-              {navLinks.filter(i => !i.children).map((item, idx) => (
-                <Link
-                  key={idx}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="flex-1 flex items-center justify-center rounded-xl"
-                  style={{
-                    padding: "8px 12px",
-                    fontSize: "0.875rem",
-                    fontWeight: 500,
-                    color: "rgba(255,255,255,0.6)",
-                    textDecoration: "none",
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-
-            {/* Service categories */}
-            <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "16px" }}>
-              {navLinks.filter(i => i.children).map((item, idx) => (
-                <div key={idx} style={{ marginBottom: "16px" }}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    style={{
-                      display: "block",
-                      padding: "4px 12px",
-                      fontSize: "0.625rem",
-                      fontWeight: 700,
-                      color: "rgba(255,255,255,0.35)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      marginBottom: "2px",
-                      textDecoration: "none",
-                    }}
-                  >
-                    {item.label} →
-                  </Link>
-                  {item.children!.map((child, cidx) => (
-                    <Link
-                      key={cidx}
-                      href={child.href}
-                      onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 rounded-xl"
-                      style={{
-                        padding: "6px 12px",
-                        fontSize: "0.875rem",
-                        color: "rgba(255,255,255,0.5)",
-                        textDecoration: "none",
-                        transition: "color 0.15s ease",
-                      }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)"; }}
-                    >
-                      <ArrowRight size={11} style={{ color: "rgba(86,219,132,0.5)", flexShrink: 0 }} />
-                      {child.label}
-                    </Link>
-                  ))}
-                </div>
               ))}
             </div>
           </div>

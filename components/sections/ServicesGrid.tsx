@@ -129,14 +129,14 @@ export function ServicesGrid({ locale }: ServicesGridProps) {
                     </div>
                     <h3
                       className="font-bold text-white"
-                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.01em" }}
+                      style={{ fontSize: "1.125rem", letterSpacing: "-0.01em", marginBottom: "6px" }}
                     >
                       {service.category}
                     </h3>
                   </div>
 
                   {/* Service items */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "4px", paddingLeft: 0 }}>
+                  <div style={{ display: "flex", flexDirection: "column", gap: "4px", paddingLeft: "60px" }}>
                     {service.items.map((item, iidx) => (
                       <Link
                         key={iidx}

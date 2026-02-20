@@ -17,9 +17,9 @@ const labels = {
     email: "Email *", emailPlaceholder: "ion@companie.ro",
     phone: "Telefon", phonePlaceholder: "+40 7xx xxx xxx",
     website: "Website", websitePlaceholder: "nescodigital.ro",
-    services: "Servicii necesare *", servicesDefault: "Selectează un serviciu",
-    budget: "Buget lunar", budgetDefault: "Selectează bugetul",
-    serviceList: ["Google Ads", "Facebook Ads", "Magazine Online", "Website Lead Generation", "Email Marketing", "SEO", "CRO", "Strategie Digitală", "Growth Sprint", "Altele"],
+    services: "Servicii necesare *",
+    serviceOptions: ["Reclame Plătite", "Social Media", "Email Marketing", "SEO", "Strategie Digitală", "Webdesign", "Magazin Online", "Mentenanță Website"],
+    budget: "Buget lunar de marketing", budgetDefault: "Selectează bugetul",
     budgetList: ["€1.000 – €3.000 / lună", "€3.000 – €5.000 / lună", "€5.000 – €10.000 / lună", "€10.000 – €30.000 / lună", "€30.000 – €100.000 / lună", "€100.000+ / lună"],
     submit: "Vreau o ofertă!",
     submitting: "Se trimite...",
@@ -28,6 +28,7 @@ const labels = {
     closeBtn: "Închide",
     errorEmail: "Adresa de email nu este validă.",
     errorRequired: "Câmp obligatoriu.",
+    errorServices: "Selectează cel puțin un serviciu.",
   },
   en: {
     firstName: "First Name", firstPlaceholder: "John",
@@ -36,9 +37,9 @@ const labels = {
     email: "Email *", emailPlaceholder: "john@company.com",
     phone: "Phone", phonePlaceholder: "+44 7xx xxx xxx",
     website: "Website", websitePlaceholder: "yourwebsite.com",
-    services: "Services Needed *", servicesDefault: "Select a service",
-    budget: "Monthly Budget", budgetDefault: "Select budget",
-    serviceList: ["Google Ads", "Facebook Ads", "E-Commerce Store", "Lead Generation Website", "Email Marketing", "SEO", "CRO", "Digital Strategy", "Growth Sprint", "Other"],
+    services: "Services needed *",
+    serviceOptions: ["Paid Ads", "Social Media", "Email Marketing", "SEO", "Digital Strategy", "Webdesign", "E-commerce", "Website Maintenance"],
+    budget: "Monthly marketing budget", budgetDefault: "Select budget",
     budgetList: ["€1,000 – €3,000 / month", "€3,000 – €5,000 / month", "€5,000 – €10,000 / month", "€10,000 – €30,000 / month", "€30,000 – €100,000 / month", "€100,000+ / month"],
     submit: "Get a free offer!",
     submitting: "Sending...",
@@ -47,6 +48,7 @@ const labels = {
     closeBtn: "Close",
     errorEmail: "Please enter a valid email address.",
     errorRequired: "This field is required.",
+    errorServices: "Please select at least one service.",
   },
   de: {
     firstName: "Vorname", firstPlaceholder: "Hans",
@@ -55,9 +57,9 @@ const labels = {
     email: "E-Mail *", emailPlaceholder: "hans@unternehmen.de",
     phone: "Telefon", phonePlaceholder: "+49 7xx xxx xxx",
     website: "Website", websitePlaceholder: "ihrewebsite.de",
-    services: "Benötigte Services *", servicesDefault: "Service auswählen",
-    budget: "Monatsbudget", budgetDefault: "Budget auswählen",
-    serviceList: ["Google Ads", "Facebook Ads", "E-Commerce-Shop", "Lead-Generation-Website", "E-Mail-Marketing", "SEO", "CRO", "Digitale Strategie", "Growth Sprint", "Sonstiges"],
+    services: "Benötigte Leistungen *",
+    serviceOptions: ["Bezahlte Werbung", "Social Media", "E-Mail-Marketing", "SEO", "Digitale Strategie", "Webdesign", "E-Commerce", "Website-Wartung"],
+    budget: "Monatliches Marketingbudget", budgetDefault: "Budget auswählen",
     budgetList: ["€1.000 – €3.000 / Monat", "€3.000 – €5.000 / Monat", "€5.000 – €10.000 / Monat", "€10.000 – €30.000 / Monat", "€30.000 – €100.000 / Monat", "€100.000+ / Monat"],
     submit: "Angebot anfordern!",
     submitting: "Wird gesendet...",
@@ -66,6 +68,7 @@ const labels = {
     closeBtn: "Schließen",
     errorEmail: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
     errorRequired: "Pflichtfeld.",
+    errorServices: "Bitte wählen Sie mindestens eine Leistung aus.",
   },
 };
 
@@ -81,7 +84,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
   const [fields, setFields] = useState({
     first_name: "", last_name: "", company: "",
     email: "", phone: "", website: "",
-    services: "", budget: "",
+    services: [] as string[], budget: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -91,7 +94,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
   const inputStyle: React.CSSProperties = {
     width: "100%",
     padding: "12px 16px",
-    background: "rgba(255,255,255,0.03)",
+    background: "#111111",
     border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: "12px",
     color: "#ffffff",
@@ -120,7 +123,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
     const newErrors: Record<string, string> = {};
     if (!fields.email) newErrors.email = l.errorRequired;
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email)) newErrors.email = l.errorEmail;
-    if (!fields.services) newErrors.services = l.errorRequired;
+    if (fields.services.length === 0) newErrors.services = l.errorServices;
     return newErrors;
   }
 
@@ -128,6 +131,16 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
     const { name, value } = e.target;
     setFields((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) setErrors((prev) => { const n = { ...prev }; delete n[name]; return n; });
+  }
+
+  function toggleService(value: string) {
+    setFields((prev) => {
+      const next = prev.services.includes(value)
+        ? prev.services.filter((s) => s !== value)
+        : [...prev.services, value];
+      return { ...prev, services: next };
+    });
+    if (errors.services) setErrors((prev) => { const n = { ...prev }; delete n.services; return n; });
   }
 
   function onFocus(e: React.FocusEvent<HTMLInputElement | HTMLSelectElement>) {
@@ -166,7 +179,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
       if (!res.ok) throw new Error("Submit failed");
       setShowSuccess(true);
       setTimeout(() => setShowSuccess(false), 5000);
-      setFields({ first_name: "", last_name: "", company: "", email: "", phone: "", website: "", services: "", budget: "" });
+      setFields({ first_name: "", last_name: "", company: "", email: "", phone: "", website: "", services: [], budget: "" });
     } catch {
       // silent — form stays open for retry
     } finally {
@@ -326,16 +339,69 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
           />
         </div>
 
+        {/* ── Services checkbox group ── */}
         <div ref={errors.services ? firstErrorRef : null}>
           <label style={labelStyle}>{l.services}</label>
-          <select
-            name="services" value={fields.services}
-            onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
-            style={{ ...inputStyle, color: fields.services ? "#ffffff" : "rgba(255,255,255,0.45)", appearance: "none", borderColor: fieldBorder("services") }}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: "8px",
+            }}
           >
-            <option value="">{l.servicesDefault}</option>
-            {l.serviceList.map((s) => <option key={s} value={s}>{s}</option>)}
-          </select>
+            {l.serviceOptions.map((option) => {
+              const checked = fields.services.includes(option);
+              return (
+                <div
+                  key={option}
+                  onClick={() => toggleService(option)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    padding: "12px",
+                    background: checked ? "rgba(86,219,132,0.06)" : "#0f0f0f",
+                    border: `1px solid ${checked ? "rgba(86,219,132,0.25)" : errors.services ? "rgba(248,113,113,0.3)" : "rgba(255,255,255,0.08)"}`,
+                    borderRadius: "10px",
+                    cursor: "pointer",
+                    userSelect: "none",
+                    transition: "background 0.15s ease, border-color 0.15s ease",
+                  }}
+                >
+                  <div
+                    style={{
+                      width: 16,
+                      height: 16,
+                      borderRadius: "4px",
+                      flexShrink: 0,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: checked ? "#56db84" : "transparent",
+                      border: checked ? "none" : "1px solid rgba(255,255,255,0.2)",
+                      transition: "background 0.15s ease",
+                    }}
+                  >
+                    {checked && (
+                      <svg width="10" height="8" viewBox="0 0 10 8" fill="none">
+                        <path d="M1 4L3.5 6.5L9 1" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
+                  </div>
+                  <span
+                    style={{
+                      fontSize: "0.8125rem",
+                      color: checked ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.5)",
+                      lineHeight: 1.3,
+                      transition: "color 0.15s ease",
+                    }}
+                  >
+                    {option}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
           {errors.services && <div style={errorStyle}>{errors.services}</div>}
         </div>
 

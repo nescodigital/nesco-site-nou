@@ -27,6 +27,8 @@ export const routes = {
     contact: "/contact/",
     growthSprintEducation: "/growth-sprint-educatie/",
     growthSprintEcommerce: "/growth-sprint-ecommerce-ro/",
+    privacy: "/politica-de-confidentialitate/",
+    terms: "/termeni-si-conditii/",
   },
   en: {
     home: "/en/",
@@ -53,6 +55,8 @@ export const routes = {
     contact: "/en/lets-talk/",
     growthSprintEducation: "/en/growth-sprint-education/",
     growthSprintEcommerce: "/en/growth-sprint-ecommerce/",
+    privacy: "/en/privacy-policy/",
+    terms: "/en/terms-and-conditions/",
   },
   de: {
     home: "/ge/",
@@ -79,6 +83,8 @@ export const routes = {
     contact: "/ge/lass-uns-reden/",
     growthSprintEducation: "/ge/growth-sprint-bildung/",
     growthSprintEcommerce: "/ge/growth-sprint-ecommerce-de/",
+    privacy: "/ge/datenschutz/",
+    terms: "/ge/nutzungsbedingungen/",
   },
 } as const;
 

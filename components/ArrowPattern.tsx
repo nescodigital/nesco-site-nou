@@ -11,7 +11,7 @@ const LAUNCH_DURATION = 900;  // must match CSS animation duration
 export function ArrowPattern() {
   // Stable random base opacities — generated once on mount, never change
   const baseOpacities = useRef(
-    Array.from({ length: COUNT }, () => 0.03 + Math.random() * 0.09)
+    Array.from({ length: COUNT }, () => 0.05 + Math.random() * 0.12)
   );
 
   // Set of arrow indices currently mid-launch
@@ -82,6 +82,7 @@ export function ArrowPattern() {
                 width: 80,
                 height: 80,
                 display: "block",
+                filter: "invert(1)",
                 opacity: isLaunching ? undefined : baseOpacities.current[i],
               } as React.CSSProperties}
             />

@@ -83,7 +83,7 @@ export default function ProiecteRoPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <ProjectsGrid />
+          <ProjectsGrid locale="ro" />
         </section>
 
         <CtaBanner locale="ro" />
