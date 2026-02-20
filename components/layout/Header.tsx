@@ -327,14 +327,14 @@ export function Header({ locale }: HeaderProps) {
         >
           <div style={{ padding: "80px 24px 40px" }}>
             {/* Language switcher mobile */}
-            <div className="flex gap-2 mb-8">
+            <div className="flex gap-2 mb-5">
               {(["ro", "en", "de"] as Locale[]).map((lang) => (
                 <button
                   key={lang}
                   onClick={() => { setMobileOpen(false); router.push(LANG_HREFS[lang]); }}
                   className="flex-1 flex items-center justify-center gap-1.5 rounded-xl transition-colors"
                   style={{
-                    padding: "10px",
+                    padding: "8px",
                     fontSize: "0.8125rem",
                     fontWeight: 500,
                     background: lang === locale ? "rgba(86,219,132,0.08)" : "rgba(255,255,255,0.03)",
@@ -349,81 +349,77 @@ export function Header({ locale }: HeaderProps) {
               ))}
             </div>
 
-            {/* Nav items */}
-            {navLinks.map((item, idx) => (
-              <div key={idx} style={{ marginBottom: "2px" }}>
-                {item.children ? (
-                  <div>
-                    <div
-                      style={{
-                        padding: "8px 12px",
-                        fontSize: "0.6875rem",
-                        fontWeight: 700,
-                        color: "rgba(255,255,255,0.25)",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.1em",
-                        marginTop: "24px",
-                        marginBottom: "4px",
-                      }}
-                    >
-                      {item.label}
-                    </div>
-                    {item.children.map((child, cidx) => (
-                      <Link
-                        key={cidx}
-                        href={child.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="flex items-center gap-2 rounded-xl"
-                        style={{
-                          padding: "10px 12px",
-                          fontSize: "0.9375rem",
-                          color: "rgba(255,255,255,0.5)",
-                          textDecoration: "none",
-                          transition: "color 0.15s ease",
-                        }}
-                        onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
-                        onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)"; }}
-                      >
-                        <ArrowRight size={11} style={{ color: "rgba(86,219,132,0.5)", flexShrink: 0 }} />
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="flex items-center rounded-xl"
+            {/* Quick links + CTA at top */}
+            <Link
+              href={ctaHref}
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center justify-center gap-2 w-full btn-primary mb-3"
+              style={{ justifyContent: "center" }}
+            >
+              {ctaLabel}
+              <ArrowRight size={14} />
+            </Link>
+            <div className="flex gap-2 mb-5">
+              {navLinks.filter(i => !i.children).map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex-1 flex items-center justify-center rounded-xl"
+                  style={{
+                    padding: "8px 12px",
+                    fontSize: "0.875rem",
+                    fontWeight: 500,
+                    color: "rgba(255,255,255,0.6)",
+                    textDecoration: "none",
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                  }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Service categories */}
+            <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: "16px" }}>
+              {navLinks.filter(i => i.children).map((item, idx) => (
+                <div key={idx} style={{ marginBottom: "16px" }}>
+                  <div
                     style={{
-                      padding: "10px 12px",
-                      fontSize: "0.9375rem",
-                      fontWeight: 600,
-                      color: "#fff",
-                      textDecoration: "none",
+                      padding: "4px 12px",
+                      fontSize: "0.625rem",
+                      fontWeight: 700,
+                      color: "rgba(255,255,255,0.25)",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      marginBottom: "2px",
                     }}
                   >
                     {item.label}
-                  </Link>
-                )}
-              </div>
-            ))}
-
-            <div
-              style={{
-                marginTop: "32px",
-                paddingTop: "24px",
-                borderTop: "1px solid rgba(255,255,255,0.06)",
-              }}
-            >
-              <Link
-                href={ctaHref}
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center gap-2 w-full btn-primary"
-                style={{ justifyContent: "center" }}
-              >
-                {ctaLabel}
-                <ArrowRight size={14} />
-              </Link>
+                  </div>
+                  {item.children!.map((child, cidx) => (
+                    <Link
+                      key={cidx}
+                      href={child.href}
+                      onClick={() => setMobileOpen(false)}
+                      className="flex items-center gap-2 rounded-xl"
+                      style={{
+                        padding: "6px 12px",
+                        fontSize: "0.875rem",
+                        color: "rgba(255,255,255,0.5)",
+                        textDecoration: "none",
+                        transition: "color 0.15s ease",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.5)"; }}
+                    >
+                      <ArrowRight size={11} style={{ color: "rgba(86,219,132,0.5)", flexShrink: 0 }} />
+                      {child.label}
+                    </Link>
+                  ))}
+                </div>
+              ))}
             </div>
           </div>
         </div>

@@ -83,21 +83,15 @@ export function Hero({ locale }: HeroProps) {
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
-          right: "-50%",
-          top: "100px",
+          right: "-45%",
+          top: "80px",
           width: 500,
           height: 500,
           zIndex: 1,
+          WebkitMaskImage: "linear-gradient(to left, white 30%, transparent 100%)",
+          maskImage: "linear-gradient(to left, white 30%, transparent 100%)",
         }}
       >
-        {/* Left-edge gradient so globe fades into page bg */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "linear-gradient(to right, #050505 0%, transparent 40%)",
-            zIndex: 2,
-          }}
-        />
         <GlobeCanvas />
       </div>
 
@@ -215,7 +209,7 @@ export function Hero({ locale }: HeroProps) {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 mt-8 md:mt-10 lg:mt-12">
+            <div className="grid grid-cols-3 gap-3 mt-8 md:mt-10 lg:mt-12" style={{ marginTop: "2rem" }}>
               {[
                 { value: h.stat1Value, label: h.stat1Label },
                 { value: h.stat2Value, label: h.stat2Label },
