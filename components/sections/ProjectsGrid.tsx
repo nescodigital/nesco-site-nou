@@ -119,9 +119,9 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                               position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
                               background: [
                                 "linear-gradient(to right,  #0a0a0a 28%, transparent 62%)",
-                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 22%)",
-                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 22%)",
-                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 18%)",
+                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 8%)",
+                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 8%)",
+                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 8%)",
                               ].join(", "),
                             }}
                           />
@@ -218,9 +218,9 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                               position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
                               background: [
                                 "linear-gradient(to right,  #0a0a0a 30%, transparent 65%)",
-                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 25%)",
-                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 25%)",
-                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 20%)",
+                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 8%)",
+                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 8%)",
+                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 8%)",
                               ].join(", "),
                             }}
                           />
