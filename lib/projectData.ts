@@ -31,6 +31,7 @@ export interface Project {
   accentColor: string;
   accentText: string;
   featured: boolean;
+  clientUrl?: string;
   i18n: { ro: ProjectI18n; en: ProjectI18n; de: ProjectI18n };
 }
 
@@ -855,6 +856,73 @@ export const projects: Project[] = [
         timeline: "—",
         metaTitle: "+340% Umsatz – Automatisiertes Umsatzsystem für Online-Bildung | Nesco Digital",
         metaDescription: "Wie wir manuelle Verkäufe einer Online-Bildungsplattform in ein automatisiertes Umsatzsystem mit +340% monatlichem Wachstum umgewandelt haben.",
+      },
+    },
+  },
+  {
+    slug: "kada-mobilier-ecommerce",
+    categories: ["E-commerce", "Webdesign"],
+    tags: ["Webdesign", "E-Commerce"],
+    services: ["Webdesign", "Dezvoltare WooCommerce", "UI/UX", "Magazin Online"],
+    heroImage: undefined,
+    accentColor: "rgba(201,169,110,0.1)",
+    accentText: "#c9a96e",
+    featured: false,
+    clientUrl: "https://kada.ro",
+    i18n: {
+      ro: {
+        title: "Magazin online de mobilier și decorațiuni premium — Kada.ro",
+        shortTitle: "Kada.ro — E-Commerce Mobilier",
+        metricMain: "E-Commerce",
+        metricSub: "Live",
+        industry: "Mobilier & Decorațiuni",
+        description: "Magazin live cu sute de produse organizate pe categorii de stil și spațiu, experiență premium de cumpărare, integrare completă plăți și livrare.",
+        challenge: "Kada.ro avea nevoie de un magazin online care să reflecte calitatea și estetica produselor premium pe care le comercializează — mobilier și decorațiuni de design, cu o experiență de cumpărare pe măsura brandului.",
+        solution: "Dezvoltare magazin WooCommerce cu focus pe experiența vizuală — navigare intuitivă pe categorii de stil și spațiu, prezentare detaliată a produselor, proces de comandă simplificat și design care pune produsele în prim-plan.",
+        metrics: [
+          { value: "Live", label: "Magazin funcțional cu sute de produse" },
+          { value: "WooCommerce", label: "Platformă scalabilă" },
+          { value: "100%", label: "Integrare plăți & livrare" },
+        ],
+        timeline: "—",
+        metaTitle: "Kada.ro – Magazin Online Mobilier Premium | Nesco Digital",
+        metaDescription: "Dezvoltare magazin WooCommerce pentru Kada.ro — mobilier și decorațiuni premium, cu experiență vizuală premium și integrare completă plăți și livrare.",
+      },
+      en: {
+        title: "Premium furniture and home decor e-commerce store — Kada.ro",
+        shortTitle: "Kada.ro — Furniture E-Commerce",
+        metricMain: "E-Commerce",
+        metricSub: "Live",
+        industry: "Furniture & Home Decor",
+        description: "Live store with hundreds of products organized by style and space categories, premium shopping experience, full payment and delivery integration.",
+        challenge: "Kada.ro needed an online store that reflected the quality and aesthetics of the premium products it sells — designer furniture and decor, with a shopping experience matching the brand.",
+        solution: "WooCommerce store development focused on visual experience — intuitive navigation by style and space categories, detailed product presentation, simplified checkout process and design that puts products front and center.",
+        metrics: [
+          { value: "Live", label: "Functional store with hundreds of products" },
+          { value: "WooCommerce", label: "Scalable platform" },
+          { value: "100%", label: "Payment & delivery integration" },
+        ],
+        timeline: "—",
+        metaTitle: "Kada.ro – Premium Furniture Online Store | Nesco Digital",
+        metaDescription: "WooCommerce store development for Kada.ro — premium furniture and home decor, with a premium visual experience and full payment and delivery integration.",
+      },
+      de: {
+        title: "Premium-Möbel und Heimdeko Online-Shop — Kada.ro",
+        shortTitle: "Kada.ro — Möbel E-Commerce",
+        metricMain: "E-Commerce",
+        metricSub: "Live",
+        industry: "Möbel & Heimdekoration",
+        description: "Live-Shop mit Hunderten von Produkten nach Stil- und Raumkategorien, Premium-Einkaufserlebnis, vollständige Zahlungs- und Lieferintegration.",
+        challenge: "Kada.ro benötigte einen Online-Shop, der die Qualität und Ästhetik der Premium-Produkte widerspiegelt — Designermöbel und Dekor mit einem zum Markenimage passenden Einkaufserlebnis.",
+        solution: "WooCommerce-Shop-Entwicklung mit Fokus auf das visuelle Erlebnis — intuitive Navigation nach Stil- und Raumkategorien, detaillierte Produktpräsentation, vereinfachter Bestellprozess und Design, das die Produkte in den Vordergrund stellt.",
+        metrics: [
+          { value: "Live", label: "Funktionaler Shop mit Hunderten von Produkten" },
+          { value: "WooCommerce", label: "Skalierbare Plattform" },
+          { value: "100%", label: "Zahlungs- & Lieferintegration" },
+        ],
+        timeline: "—",
+        metaTitle: "Kada.ro – Premium-Möbel Online-Shop | Nesco Digital",
+        metaDescription: "WooCommerce-Shop-Entwicklung für Kada.ro — Premium-Möbel und Heimdekoration mit einem hochwertigen visuellen Erlebnis und vollständiger Zahlungs- und Lieferintegration.",
       },
     },
   },
