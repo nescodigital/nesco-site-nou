@@ -5,7 +5,7 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
-    const { first_name, firstName, last_name, lastName, company, email, phone, website, services, budget, locale, source, qualification, qualifications, message } = body;
+    const { first_name, firstName, last_name, lastName, company, email, phone, website, services, budget, locale, source, qualification, qualifications, contactPrefs, message } = body;
 
     const resolvedFirst = first_name || firstName || "";
     const resolvedLast = last_name || lastName || "";
@@ -35,6 +35,7 @@ export async function POST(request: Request) {
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Servicii</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${services || "—"}</td></tr>
         <tr><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Buget lunar</td><td style="padding: 10px 0; ${source ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #111; font-size: 14px; font-weight: 500;">${budget || "—"}</td></tr>
         ${source ? `<tr><td style="padding: 10px 0; ${qualification || message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #666; font-size: 14px;">Sursă</td><td style="padding: 10px 0; ${qualification || message ? "border-bottom: 1px solid #f0f0f0;" : ""} color: #56db84; font-size: 14px; font-weight: 500;">${source}</td></tr>` : ""}
+        ${contactPrefs?.length ? `<tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Contact preferat</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${contactPrefs.join(", ")}</td></tr>` : ""}
         ${qualification ? `
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Venituri lunare</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualification.venituri || "—"}</td></tr>
         <tr><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #666; font-size: 14px;">Problemă principală</td><td style="padding: 10px 0; border-bottom: 1px solid #f0f0f0; color: #111; font-size: 14px; font-weight: 500;">${qualification.problema || "—"}</td></tr>

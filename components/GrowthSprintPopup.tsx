@@ -29,6 +29,7 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
   const [step, setStep] = useState<1 | 2>(1);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [fields, setFields] = useState({ name: "", email: "", phone: "", message: "" });
+  const [contactPrefs, setContactPrefs] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -73,6 +74,7 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
         email: fields.email,
         phone: fields.phone,
         message: fields.message,
+        contactPrefs,
         source,
         qualifications: {
           revenue: answers.revenue,
@@ -348,6 +350,52 @@ export function GrowthSprintPopup({ source, onClose }: GrowthSprintPopupProps) {
                       style={{ ...inputStyle, borderColor: errors.phone ? "rgba(248,113,113,0.4)" : "rgba(255,255,255,0.08)" }}
                     />
                     {errors.phone && <div style={errorStyle}>{errors.phone}</div>}
+                  </div>
+
+                  <div>
+                    <label style={labelStyle}>Cum preferi să fii contactat?</label>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: "8px", marginTop: "2px" }}>
+                      {["Telefon", "WhatsApp", "Email"].map((opt) => {
+                        const checked = contactPrefs.includes(opt);
+                        return (
+                          <div
+                            key={opt}
+                            onClick={() => setContactPrefs((prev) =>
+                              prev.includes(opt) ? prev.filter((x) => x !== opt) : [...prev, opt]
+                            )}
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              gap: "8px",
+                              padding: "10px 12px",
+                              background: checked ? "rgba(86,219,132,0.06)" : "#111111",
+                              border: `1px solid ${checked ? "rgba(86,219,132,0.25)" : "rgba(255,255,255,0.08)"}`,
+                              borderRadius: "10px",
+                              cursor: "pointer",
+                              userSelect: "none",
+                              transition: "background 0.15s, border-color 0.15s",
+                            }}
+                          >
+                            <div style={{
+                              width: 15, height: 15, borderRadius: "4px", flexShrink: 0,
+                              display: "flex", alignItems: "center", justifyContent: "center",
+                              background: checked ? "#56db84" : "transparent",
+                              border: checked ? "none" : "1px solid rgba(255,255,255,0.2)",
+                              transition: "background 0.15s",
+                            }}>
+                              {checked && (
+                                <svg width="9" height="7" viewBox="0 0 10 8" fill="none">
+                                  <path d="M1 4L3.5 6.5L9 1" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              )}
+                            </div>
+                            <span style={{ fontSize: "0.8125rem", color: checked ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.5)", transition: "color 0.15s" }}>
+                              {opt}
+                            </span>
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
 
                   <div>
