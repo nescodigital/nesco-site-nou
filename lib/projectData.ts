@@ -864,7 +864,7 @@ export const projects: Project[] = [
     categories: ["E-commerce", "Webdesign"],
     tags: ["Webdesign", "E-Commerce"],
     services: ["Webdesign", "Dezvoltare WooCommerce", "UI/UX", "Magazin Online"],
-    heroImage: undefined,
+    heroImage: "/proiecte/kada-mobilier-ecommerce/hero.png",
     accentColor: "rgba(201,169,110,0.1)",
     accentText: "#c9a96e",
     featured: false,
