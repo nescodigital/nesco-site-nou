@@ -83,7 +83,7 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
       <div className="page-container" style={{ paddingTop: 0, paddingBottom: "100px" }}>
         {/* Featured grid */}
         {featured.length > 0 && (
-          <div className={`grid gap-5 ${featured.length === 4 ? "grid-cols-1 sm:grid-cols-2 mb-10" : "grid-cols-1 md:grid-cols-3 mb-5"}`}>
+          <div className={`grid gap-5 ${featured.length === 4 ? "grid-cols-1 sm:grid-cols-2 mb-20" : "grid-cols-1 md:grid-cols-3 mb-14"}`}>
             {featured.map((p, i) => {
               const lp = getLocalizedProject(p, locale);
               return (
@@ -103,40 +103,34 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                       }}
                     >
                       {p.heroImage && (
-                        <>
-                          <div
+                        <div
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                            width: "55%",
+                            pointerEvents: "none",
+                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 24%, black 72%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+                            WebkitMaskComposite: "destination-in",
+                            maskImage: "linear-gradient(to right, transparent 0%, black 24%, black 72%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
+                            maskComposite: "intersect",
+                          }}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={p.heroImage}
+                            alt=""
+                            aria-hidden="true"
                             style={{
-                              position: "absolute",
-                              right: 0,
-                              top: 0,
-                              bottom: 0,
-                              width: "55%",
-                              pointerEvents: "none",
-                            }}
-                          >
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={p.heroImage}
-                              alt=""
-                              aria-hidden="true"
-                              style={{
-                                width: "100%",
-                                height: "100%",
-                                objectFit: "cover",
-                                objectPosition: "center",
-                                opacity: 0.55,
-                              }}
-                            />
-                          </div>
-                          <div
-                            style={{
-                              position: "absolute",
-                              top: 0, left: 0, right: 0, bottom: 0,
-                              background: "linear-gradient(to right, #0a0a0a 28%, rgba(10,10,10,0.7) 55%, rgba(10,10,10,0) 75%)",
-                              pointerEvents: "none",
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                              objectPosition: "center",
+                              opacity: 0.6,
                             }}
                           />
-                        </>
+                        </div>
                       )}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -213,6 +207,36 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                         height: "100%",
                       }}
                     >
+                      {p.heroImage && (
+                        <div
+                          style={{
+                            position: "absolute",
+                            right: 0,
+                            top: 0,
+                            bottom: 0,
+                            width: "50%",
+                            pointerEvents: "none",
+                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 28%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
+                            WebkitMaskComposite: "destination-in",
+                            maskImage: "linear-gradient(to right, transparent 0%, black 28%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
+                            maskComposite: "intersect",
+                          }}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={p.heroImage}
+                            alt=""
+                            aria-hidden="true"
+                            style={{
+                              width: "100%",
+                              height: "100%",
+                              objectFit: "cover",
+                              objectPosition: "center",
+                              opacity: 0.5,
+                            }}
+                          />
+                        </div>
+                      )}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                         style={{ background: `radial-gradient(ellipse at 20% 80%, ${p.accentColor}, transparent 70%)` }}
