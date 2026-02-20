@@ -105,12 +105,20 @@ section h2 + .subtitle {
   border-radius: 9999px;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  animation: btnGlowPulse 3s ease-in-out infinite;
+  animation: none;
 }
 .btn-primary:hover {
   transform: scale(1.02);
   box-shadow: 0 0 24px rgba(86, 219, 132, 0.35);
-  animation-play-state: paused;
+}
+
+@media (min-width: 1024px) {
+  .btn-primary {
+    animation: btnGlowPulse 3s ease-in-out infinite;
+  }
+  .btn-primary:hover {
+    animation-play-state: paused;
+  }
 }
 
 .btn-ghost {

@@ -118,7 +118,7 @@ export function GlobeCanvas() {
 
     const img = document.createElement("img");
     img.crossOrigin = "anonymous";
-    img.src = "https://unpkg.com/three-globe/example/img/earth-topology.png";
+    img.src = "/earth-topology.png";
 
     img.onload = () => {
       if (!container) return;
