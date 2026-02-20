@@ -104,34 +104,28 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                       }}
                     >
                       {p.heroImage && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            right: 0,
-                            top: 0,
-                            bottom: 0,
-                            width: "55%",
-                            pointerEvents: "none",
-                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 24%, black 72%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
-                            WebkitMaskComposite: "destination-in",
-                            maskImage: "linear-gradient(to right, transparent 0%, black 24%, black 72%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%)",
-                            maskComposite: "intersect",
-                          }}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={p.heroImage}
-                            alt=""
-                            aria-hidden="true"
+                        <>
+                          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "55%", pointerEvents: "none" }}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={p.heroImage}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.6 }}
+                            />
+                          </div>
+                          <div
                             style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                              objectPosition: "center",
-                              opacity: 0.6,
+                              position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
+                              background: [
+                                "linear-gradient(to right,  #0a0a0a 28%, transparent 62%)",
+                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 22%)",
+                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 22%)",
+                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 18%)",
+                              ].join(", "),
                             }}
                           />
-                        </div>
+                        </>
                       )}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
@@ -209,34 +203,28 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                       }}
                     >
                       {p.heroImage && (
-                        <div
-                          style={{
-                            position: "absolute",
-                            right: 0,
-                            top: 0,
-                            bottom: 0,
-                            width: "50%",
-                            pointerEvents: "none",
-                            WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 28%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
-                            WebkitMaskComposite: "destination-in",
-                            maskImage: "linear-gradient(to right, transparent 0%, black 28%, black 70%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 14%, black 86%, transparent 100%)",
-                            maskComposite: "intersect",
-                          }}
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={p.heroImage}
-                            alt=""
-                            aria-hidden="true"
+                        <>
+                          <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "50%", pointerEvents: "none" }}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={p.heroImage}
+                              alt=""
+                              aria-hidden="true"
+                              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.5 }}
+                            />
+                          </div>
+                          <div
                             style={{
-                              width: "100%",
-                              height: "100%",
-                              objectFit: "cover",
-                              objectPosition: "center",
-                              opacity: 0.5,
+                              position: "absolute", top: 0, left: 0, right: 0, bottom: 0, pointerEvents: "none",
+                              background: [
+                                "linear-gradient(to right,  #0a0a0a 30%, transparent 65%)",
+                                "linear-gradient(to bottom, #0a0a0a 0%,  transparent 25%)",
+                                "linear-gradient(to top,    #0a0a0a 0%,  transparent 25%)",
+                                "linear-gradient(to left,   #0a0a0a 0%,  transparent 20%)",
+                              ].join(", "),
                             }}
                           />
-                        </div>
+                        </>
                       )}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
