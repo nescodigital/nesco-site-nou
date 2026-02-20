@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, XCircle } from "lucide-react";
+import { XCircle } from "lucide-react";
+import { ServicePageCtaButton } from "@/components/ServicePageCtaButton";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
@@ -161,10 +162,11 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           >
             {hero.subtitle}
           </p>
-          <Link href={r.contact} className="btn-primary">
-            {tr.common.requestOffer}
-            <ArrowRight size={16} />
-          </Link>
+          <ServicePageCtaButton
+            locale={locale}
+            source={hero.badge}
+            label={tr.common.requestOffer}
+          />
         </div>
       </section>
 

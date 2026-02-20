@@ -684,6 +684,9 @@ export default function GrowthSprintEducatiePage() {
                     borderRadius: "20px",
                     position: "relative",
                     overflow: "hidden",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div
@@ -716,10 +719,12 @@ export default function GrowthSprintEducatiePage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Plătit înainte de start. Cel mai bun raport calitate-preț.
                   </p>
-                  <GrowthSprintApplyButton
-                    planLabel="4.500 € — Plată integrală"
-                    variant="primary"
-                  />
+                  <div style={{ marginTop: "auto" }}>
+                    <GrowthSprintApplyButton
+                      planLabel="4.500 € — Plată integrală"
+                      variant="primary"
+                    />
+                  </div>
                 </div>
               </FadeInSection>
 
@@ -731,6 +736,9 @@ export default function GrowthSprintEducatiePage() {
                     background: "#0a0a0a",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "20px",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div style={{ height: "26px", marginBottom: "20px" }} />
@@ -747,10 +755,12 @@ export default function GrowthSprintEducatiePage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Angajamentul complet de 6 săptămâni inclus.
                   </p>
-                  <GrowthSprintApplyButton
-                    planLabel="5.500 € — Rate în 2 tranșe"
-                    variant="ghost"
-                  />
+                  <div style={{ marginTop: "auto" }}>
+                    <GrowthSprintApplyButton
+                      planLabel="5.500 € — Rate în 2 tranșe"
+                      variant="ghost"
+                    />
+                  </div>
                 </div>
               </FadeInSection>
             </div>

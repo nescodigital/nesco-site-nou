@@ -676,7 +676,7 @@ export default function GrowthSprintEducationPage() {
               }}
             >
               {/* Option A */}
-              <FadeInSection delay={0}>
+              <FadeInSection delay={0} className="h-full">
                 <div
                   style={{
                     padding: "40px",
@@ -685,6 +685,9 @@ export default function GrowthSprintEducationPage() {
                     borderRadius: "20px",
                     position: "relative",
                     overflow: "hidden",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div
@@ -729,22 +732,27 @@ export default function GrowthSprintEducationPage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Paid before kick-off. Best value.
                   </p>
+                  <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
                     planLabel="€4,500 — Full payment"
                     variant="primary"
                     label="Apply for this option"
                   />
+                  </div>
                 </div>
               </FadeInSection>
 
               {/* Option B */}
-              <FadeInSection delay={120}>
+              <FadeInSection delay={120} className="h-full">
                 <div
                   style={{
                     padding: "40px",
                     background: "#0a0a0a",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "20px",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div style={{ height: "26px", marginBottom: "20px" }} />
@@ -773,11 +781,13 @@ export default function GrowthSprintEducationPage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Full 6-week engagement included.
                   </p>
+                  <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
                     planLabel="€5,500 — Split payment"
                     variant="ghost"
                     label="Apply for this option"
                   />
+                  </div>
                 </div>
               </FadeInSection>
             </div>

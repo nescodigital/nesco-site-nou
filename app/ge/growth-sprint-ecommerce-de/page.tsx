@@ -679,7 +679,7 @@ export default function GrowthSprintEcommerceDePage() {
               }}
             >
               {/* Option A */}
-              <FadeInSection delay={0}>
+              <FadeInSection delay={0} className="h-full">
                 <div
                   style={{
                     padding: "40px",
@@ -688,6 +688,9 @@ export default function GrowthSprintEcommerceDePage() {
                     borderRadius: "20px",
                     position: "relative",
                     overflow: "hidden",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div
@@ -732,22 +735,27 @@ export default function GrowthSprintEcommerceDePage() {
                   <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginBottom: "32px", lineHeight: 1.6 }}>
                     Vor Kick-off bezahlt. Bestes Preis-Leistungs-Verhältnis.
                   </p>
+                  <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
                     planLabel="5.500 € — Vollzahlung"
                     variant="primary"
                     label="Für diese Option bewerben"
                   />
+                  </div>
                 </div>
               </FadeInSection>
 
               {/* Option B */}
-              <FadeInSection delay={120}>
+              <FadeInSection delay={120} className="h-full">
                 <div
                   style={{
                     padding: "40px",
                     background: "#0a0a0a",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "20px",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
                   }}
                 >
                   <div style={{ height: "26px", marginBottom: "20px" }} />
@@ -776,11 +784,13 @@ export default function GrowthSprintEcommerceDePage() {
                   <p style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.2)", marginBottom: "32px" }}>
                     Vollständiges 6-Wochen-Engagement inklusive.
                   </p>
+                  <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
                     planLabel="6.500 € — Ratenzahlung"
                     variant="ghost"
                     label="Für diese Option bewerben"
                   />
+                  </div>
                 </div>
               </FadeInSection>
             </div>
