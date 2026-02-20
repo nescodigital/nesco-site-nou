@@ -102,6 +102,42 @@ export function ProjectsGrid({ locale }: ProjectsGridProps) {
                         height: "100%",
                       }}
                     >
+                      {p.heroImage && (
+                        <>
+                          <div
+                            style={{
+                              position: "absolute",
+                              right: 0,
+                              top: 0,
+                              bottom: 0,
+                              width: "55%",
+                              pointerEvents: "none",
+                            }}
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={p.heroImage}
+                              alt=""
+                              aria-hidden="true"
+                              style={{
+                                width: "100%",
+                                height: "100%",
+                                objectFit: "cover",
+                                objectPosition: "center",
+                                opacity: 0.55,
+                              }}
+                            />
+                          </div>
+                          <div
+                            style={{
+                              position: "absolute",
+                              top: 0, left: 0, right: 0, bottom: 0,
+                              background: "linear-gradient(to right, #0a0a0a 28%, rgba(10,10,10,0.7) 55%, rgba(10,10,10,0) 75%)",
+                              pointerEvents: "none",
+                            }}
+                          />
+                        </>
+                      )}
                       <div
                         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                         style={{ background: `radial-gradient(ellipse at 20% 80%, ${p.accentColor}, transparent 70%)` }}
