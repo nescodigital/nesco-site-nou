@@ -7,6 +7,7 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { HomeFaqSection } from "@/components/sections/HomeFaqSection";
 import { buildMetadata, orgSchema, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -43,6 +44,7 @@ export default function DeHomePage() {
         <ServicesGrid locale="de" />
         <Portfolio locale="de" />
         <Testimonials locale="de" />
+        <HomeFaqSection locale="de" />
         <CtaBanner locale="de" />
       </main>
       <Footer locale="de" />

@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
+import { StatsCounter } from "@/components/ui/StatsCounter";
 
 const GlobeCanvas = dynamic(
   () => import("@/components/sections/GlobeCanvas").then((m) => ({ default: m.GlobeCanvas })),
@@ -209,49 +210,13 @@ export function Hero({ locale }: HeroProps) {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 mt-8 md:mt-10 lg:mt-12" style={{ marginTop: "2rem" }}>
-              {[
+            <StatsCounter
+              stats={[
                 { value: h.stat1Value, label: h.stat1Label },
                 { value: h.stat2Value, label: h.stat2Label },
                 { value: h.stat3Value, label: h.stat3Label },
-              ].map((s) => (
-                <div
-                  key={s.label}
-                  style={{
-                    padding: "16px 20px",
-                    background: "#0a0a0a",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    borderRadius: "12px",
-                    transition: "border-color 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.14)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.07)";
-                  }}
-                >
-                  <div
-                    className="font-black tabular-nums whitespace-nowrap"
-                    style={{ fontSize: "1.5rem", color: "#ffffff", letterSpacing: "-0.02em" }}
-                  >
-                    {s.value}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "0.6875rem",
-                      color: "rgba(255,255,255,0.3)",
-                      marginTop: "4px",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.08em",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+              ]}
+            />
           </div>
 
           {/* ── Right column: globe ── */}

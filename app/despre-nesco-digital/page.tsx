@@ -4,19 +4,20 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { buildMetadata, orgSchema } from "@/lib/seo";
 import { CheckCircle, Zap, TrendingUp, Users } from "lucide-react";
+import { StatsCounter } from "@/components/ui/StatsCounter";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Despre Nesco Digital | Partener Premium de Marketing Digital",
-  description: "14+ ani de experiență în marketing digital. Partener premium de execuție pentru afaceri care vor să crească.",
+  description: "15+ ani de experiență în marketing digital. Partener premium de execuție pentru afaceri care vor să crească.",
   path: "/despre-nesco-digital/",
   routeKey: "about",
 });
 
 const stats = [
-  { value: "+14 ani", label: "Experiență" },
-  { value: "+€33M", label: "Buget administrat" },
-  { value: "+21.000", label: "Campanii executate" },
+  { value: "+15 ani", label: "Experiență" },
+  { value: "+€36M", label: "Buget administrat" },
+  { value: "+23.000", label: "Campanii executate" },
   { value: "+500", label: "Clienți mulțumiți" },
 ];
 
@@ -112,36 +113,13 @@ export default function DespreNescoPage() {
         </section>
 
         {/* ── Stats ── */}
-        <section style={{ backgroundColor: "#050505", padding: "80px 0" }}>
+        <section className="relative" style={{ backgroundColor: "#050505", padding: "80px 0" }}>
           <div
-            className="absolute left-0 right-0 h-px"
+            className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
           <div className="page-container">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {stats.map((s, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: "28px 24px",
-                    background: "#0a0a0a",
-                    border: "1px solid rgba(255,255,255,0.06)",
-                    borderRadius: "16px",
-                    textAlign: "center",
-                  }}
-                >
-                  <div
-                    className="font-black tabular-nums"
-                    style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", letterSpacing: "-0.025em", marginBottom: "8px" }}
-                  >
-                    {s.value}
-                  </div>
-                  <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500 }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
-            </div>
+            <StatsCounter stats={stats} columns={4} />
           </div>
         </section>
 

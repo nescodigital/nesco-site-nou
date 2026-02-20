@@ -5,19 +5,20 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata, orgSchema } from "@/lib/seo";
 import { CheckCircle, Zap, TrendingUp, Users } from "lucide-react";
+import { StatsCounter } from "@/components/ui/StatsCounter";
 
 export const metadata: Metadata = buildMetadata({
   locale: "de",
   title: "Über Nesco Digital | Premium Partner für Digitales Marketing",
-  description: "14+ Jahre Erfahrung im digitalen Marketing. Premium-Ausführungspartner für Unternehmen, die wachsen wollen.",
+  description: "15+ Jahre Erfahrung im digitalen Marketing. Premium-Ausführungspartner für Unternehmen, die wachsen wollen.",
   path: "/ge/uber-nesco-digital/",
   routeKey: "about",
 });
 
 const stats = [
-  { value: "+14 Jahre", label: "Erfahrung" },
-  { value: "+€33M", label: "Verwaltetes Budget" },
-  { value: "+21.000", label: "Ausgeführte Kampagnen" },
+  { value: "+15 Jahre", label: "Erfahrung" },
+  { value: "+€36M", label: "Verwaltetes Budget" },
+  { value: "+23.000", label: "Ausgeführte Kampagnen" },
   { value: "+500", label: "Zufriedene Kunden" },
 ];
 
@@ -118,31 +119,7 @@ export default function UeberNescoDePage() {
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
           <div className="page-container">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {stats.map((s, i) => (
-                <FadeInSection key={i} delay={i * 80}>
-                  <div
-                    style={{
-                      padding: "28px 24px",
-                      background: "#0a0a0a",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      borderRadius: "16px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <div
-                      className="font-black tabular-nums"
-                      style={{ fontSize: "clamp(1.75rem, 3vw, 2.5rem)", color: "#ffffff", letterSpacing: "-0.025em", marginBottom: "8px" }}
-                    >
-                      {s.value}
-                    </div>
-                    <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 500 }}>
-                      {s.label}
-                    </div>
-                  </div>
-                </FadeInSection>
-              ))}
-            </div>
+            <StatsCounter stats={stats} columns={4} />
           </div>
         </section>
 
