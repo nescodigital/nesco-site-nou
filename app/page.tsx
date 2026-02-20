@@ -19,6 +19,33 @@ export const metadata: Metadata = buildMetadata({
   routeKey: "home",
 });
 
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cu ce tip de companii lucrați?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Lucrăm cu companii care au deja un produs validat și vor să scaleze — branduri de educație online, e-commerce și B2B cu bugete de marketing de minim 3.000€/lună." },
+    },
+    {
+      "@type": "Question",
+      "name": "Cât durează până văd rezultate concrete?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Primele semnale apar în 2-4 săptămâni. Rezultate semnificative și măsurabile în 60-90 de zile, în funcție de serviciu și industrie." },
+    },
+    {
+      "@type": "Question",
+      "name": "Ce este Growth Sprint?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Growth Sprint este un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta — auditând și implementând cele mai importante îmbunătățiri. Nu producem rapoarte. Implementăm." },
+    },
+    {
+      "@type": "Question",
+      "name": "De ce să lucrez cu o agenție în loc să angajez intern?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Un specialist senior costă 2.500-3.500€/lună plus beneficii, acoperă o singură disciplină și poate pleca oricând. Cu Nesco Digital ai o echipă cu experiență pe toate canalele, fără costuri fixe și fără să o iei de la zero când cineva pleacă." },
+    },
+  ],
+};
+
 export default function HomePage() {
   const schemas = [
     orgSchema,
@@ -27,6 +54,7 @@ export default function HomePage() {
       url: "https://nescodigital.com/",
       title: "Nesco Digital | Experți în Marketing Digital și Web Design",
     }),
+    faqSchema,
   ];
 
   return (

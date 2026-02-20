@@ -49,6 +49,37 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Nesco Digital",
+  "url": "https://www.nescodigital.com",
+  "logo": "https://www.nescodigital.com/logo.png",
+  "description": "Agenție de marketing digital și webdesign din București. Specializată în reclame plătite, webdesign premium și Growth Sprint.",
+  "email": "hello@nescodigital.com",
+  "foundingDate": "2010",
+  "address": [
+    { "@type": "PostalAddress", "addressLocality": "București", "addressCountry": "RO" },
+    { "@type": "PostalAddress", "addressLocality": "München", "addressCountry": "DE" },
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/nesco-digital",
+    "https://www.facebook.com/nescodigital",
+    "https://www.instagram.com/nescodigital",
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicii Nesco Digital",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Growth Sprint Educație Online", "description": "Engagement de 6 săptămâni pentru branduri de educație online cu venituri de 10k-100k+/lună" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Growth Sprint E-commerce", "description": "Engagement de 6 săptămâni pentru branduri e-commerce cu venituri de 50k-500k+/lună" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Reclame Plătite", "description": "Google Ads, Facebook Ads, TikTok Ads, LinkedIn Ads" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Webdesign Premium", "description": "Site-uri de prezentare, magazine online, website-uri lead generation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Marketing Digital", "description": "SEO, Email Marketing, Social Media, CRO, Strategie Digitală" } },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -57,6 +88,10 @@ export default function RootLayout({
   return (
     <html lang="ro" className={inter.variable}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
         <link
