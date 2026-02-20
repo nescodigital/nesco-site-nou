@@ -1063,7 +1063,7 @@ export const projects: Project[] = [
     categories: ["E-commerce", "Performance Marketing"],
     tags: ["E-Commerce", "Performance Marketing"],
     services: ["Meta Ads", "Google Ads", "Strategie Digitală", "CRO", "Email Marketing"],
-    heroImage: undefined,
+    heroImage: "/proiecte/scalare-ecommerce-fmcg/hero.png",
     accentColor: "rgba(34,197,94,0.1)",
     accentText: "#22c55e",
     featured: false,
