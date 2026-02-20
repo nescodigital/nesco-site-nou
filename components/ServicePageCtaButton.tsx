@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { GrowthSprintPopup } from "@/components/GrowthSprintPopup";
+import { ContactPopup } from "@/components/ContactPopup";
 
 type Locale = "ro" | "en" | "de";
 
@@ -25,7 +25,7 @@ export function ServicePageCtaButton({ locale, source, label }: ServicePageCtaBu
         <ArrowRight size={16} />
       </button>
       {open && (
-        <GrowthSprintPopup
+        <ContactPopup
           source={source}
           locale={locale}
           onClose={() => setOpen(false)}

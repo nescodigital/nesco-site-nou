@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ArrowRight, Calendar } from "lucide-react";
 import { type Locale, t } from "@/lib/translations";
-import { GrowthSprintPopup } from "../GrowthSprintPopup";
+import { ContactPopup } from "../ContactPopup";
 
 interface CtaBannerProps {
   locale: Locale;
@@ -100,7 +100,7 @@ export function CtaBanner({ locale }: CtaBannerProps) {
         </div>
 
         {popupOpen && (
-          <GrowthSprintPopup
+          <ContactPopup
             source="cta-banner"
             locale={locale}
             onClose={() => setPopupOpen(false)}
