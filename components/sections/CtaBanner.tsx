@@ -56,7 +56,7 @@ export function CtaBanner({ locale }: CtaBannerProps) {
       </div>
 
       <div
-        className="relative max-w-3xl mx-auto text-center px-8"
+        className="relative max-w-3xl mx-auto w-full text-center px-8"
         style={{ zIndex: 1 }}
       >
         {/* Accent line */}

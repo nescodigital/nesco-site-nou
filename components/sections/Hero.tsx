@@ -1,19 +1,24 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { ArrowRight } from "lucide-react";
-import { GlobeCanvas } from "@/components/sections/GlobeCanvas";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
+
+const GlobeCanvas = dynamic(
+  () => import("@/components/sections/GlobeCanvas").then((m) => ({ default: m.GlobeCanvas })),
+  { ssr: false }
+);
 
 interface HeroProps {
   locale: Locale;
 }
 
 const AVATARS = [
-  { src: "https://randomuser.me/api/portraits/men/1.jpg",   z: 30 },
-  { src: "https://randomuser.me/api/portraits/women/1.jpg", z: 20 },
-  { src: "https://randomuser.me/api/portraits/men/2.jpg",   z: 10 },
+  { src: "https://randomuser.me/api/portraits/men/32.jpg",  z: 30 },
+  { src: "https://randomuser.me/api/portraits/women/44.jpg", z: 20 },
+  { src: "https://randomuser.me/api/portraits/men/67.jpg",  z: 10 },
 ];
 
 const socialProofText: Record<string, string> = {
@@ -73,6 +78,30 @@ export function Hero({ locale }: HeroProps) {
         }}
       />
 
+
+      {/* Mobile globe — partially visible on right side as background */}
+      <div
+        className="lg:hidden absolute pointer-events-none"
+        style={{
+          right: "-30%",
+          top: "50%",
+          transform: "translateY(-50%)",
+          width: 300,
+          height: 300,
+          zIndex: 1,
+        }}
+      >
+        {/* Left-edge gradient so globe fades into page bg */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: "linear-gradient(to right, #050505 0%, transparent 45%)",
+            zIndex: 2,
+          }}
+        />
+        <GlobeCanvas />
+      </div>
+
       {/* Bottom fade */}
       <div
         className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
@@ -80,8 +109,8 @@ export function Hero({ locale }: HeroProps) {
       />
 
       <div
-        className="relative w-full max-w-7xl mx-auto z-10"
-        style={{ paddingLeft: "5%", paddingRight: "5%", paddingTop: "120px", paddingBottom: "100px" }}
+        className="relative page-container z-10"
+        style={{ paddingTop: "120px", paddingBottom: "100px" }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 xl:gap-24 items-center">
 
@@ -176,7 +205,7 @@ export function Hero({ locale }: HeroProps) {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <Link href={r.contact} className="btn-primary group">
                 {h.cta1}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
@@ -187,7 +216,7 @@ export function Hero({ locale }: HeroProps) {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-3 mt-6">
+            <div className="grid grid-cols-3 gap-3 mt-8">
               {[
                 { value: h.stat1Value, label: h.stat1Label },
                 { value: h.stat2Value, label: h.stat2Label },
@@ -258,30 +287,31 @@ export function Hero({ locale }: HeroProps) {
               {h.badge}
             </div>
 
-            {/* Logo watermark */}
-            <div
+            {/* Arrow watermark — centered on globe, above it */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo mare Nesco.svg"
+              alt=""
+              aria-hidden="true"
+              width={520}
+              height={520}
               className="absolute pointer-events-none select-none"
               style={{
-                width: 528,
-                height: 528,
-                opacity: 0.18,
-                zIndex: 0,
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: 520,
+                height: 520,
+                opacity: 0.11,
+                zIndex: 10,
+                filter: "brightness(10)",
+                border: "none",
+                outline: "none",
+                boxShadow: "none",
+                background: "none",
               }}
-            >
-              <Image
-                src="/logo mare Nesco.avif"
-                alt=""
-                width={528}
-                height={528}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "contain",
-                  filter: "invert(1) hue-rotate(180deg) contrast(1.8)",
-                  mixBlendMode: "screen",
-                }}
-              />
-            </div>
+            />
+
             <GlobeCanvas />
           </div>
 

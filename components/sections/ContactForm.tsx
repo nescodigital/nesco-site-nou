@@ -263,7 +263,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
 
       {/* ── Form ── */}
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }} noValidate>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label style={labelStyle}>{l.firstName}</label>
             <input
@@ -294,7 +294,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
           />
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div ref={errors.email ? firstErrorRef : null}>
             <label style={labelStyle}>{l.email}</label>
             <input

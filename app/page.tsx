@@ -40,7 +40,7 @@ export default function HomePage() {
       ))}
 
       <Header locale="ro" />
-      <main>
+      <main style={{ width: "100%", display: "block" }}>
         <Hero locale="ro" />
         <Solutions locale="ro" />
         <ServicesGrid locale="ro" />

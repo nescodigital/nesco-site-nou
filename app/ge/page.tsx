@@ -37,7 +37,7 @@ export default function DeHomePage() {
         />
       ))}
       <Header locale="de" />
-      <main>
+      <main style={{ width: "100%", display: "block" }}>
         <Hero locale="de" />
         <Solutions locale="de" />
         <ServicesGrid locale="de" />

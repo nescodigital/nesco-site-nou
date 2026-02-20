@@ -96,7 +96,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
           style={{ background: "linear-gradient(to top, #050505, transparent)" }}
         />
-        <div className="relative max-w-7xl mx-auto px-[5%]">
+        <div className="relative page-container">
           <span className="badge mb-6">{hero.badge}</span>
           <h1
             className="font-black"
@@ -141,7 +141,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           className="absolute top-0 left-0 right-0 h-px"
           style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
         />
-        <div className="max-w-7xl mx-auto px-[5%]">
+        <div className="page-container">
           <FadeInSection>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
               <span className="badge mb-6">Provocări</span>
@@ -204,7 +204,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           className="absolute top-0 left-0 right-0 h-px"
           style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
         />
-        <div className="max-w-7xl mx-auto px-[5%]">
+        <div className="page-container">
           <FadeInSection>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
               <span className="badge mb-6">Cum ajutăm</span>
@@ -267,7 +267,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           className="absolute top-0 left-0 right-0 h-px"
           style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
         />
-        <div className="max-w-7xl mx-auto px-[5%]">
+        <div className="page-container">
           <FadeInSection>
             <div style={{ textAlign: "center", marginBottom: "64px" }}>
               <span className="badge mb-6">Rezultate</span>
@@ -342,7 +342,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
                 <span className="badge mb-6">Abordare 360°</span>
@@ -392,7 +392,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "40px" }}>
                 <p
@@ -445,7 +445,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "760px", margin: "0 auto" }}>
                 <div
@@ -527,7 +527,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "48px" }}>
                 <span className="badge mb-6">FAQ</span>
@@ -562,7 +562,7 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center" }}>
                 <span

@@ -88,7 +88,7 @@ export function Header({ locale }: HeaderProps) {
           borderBottom: isScrolled ? "1px solid rgba(255,255,255,0.05)" : "1px solid transparent",
         }}
       >
-        <div className="max-w-7xl mx-auto px-8">
+        <div className="page-container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href={routes[locale].home} className="flex items-center flex-shrink-0">
@@ -103,7 +103,7 @@ export function Header({ locale }: HeaderProps) {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-1" ref={dropdownRef}>
+            <nav className="hidden lg:flex items-center gap-3" ref={dropdownRef}>
               {navLinks.map((item, idx) => (
                 <div key={idx} className="relative">
                   {item.children ? (

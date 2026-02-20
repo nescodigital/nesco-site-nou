@@ -32,7 +32,7 @@ const MARKER_COLOR = 0x56db84;
 // initial rotation.y offset of ≈ 2.4 rad (derived analytically).
 // Positive rotation.y speed then produces: Australia → Asia → Europe → Americas.
 const GLOBE_START_Y = 2.4;   // radians
-const GLOBE_SPEED   = 0.052; // rad / s  (one full revolution ≈ 121 s)
+const GLOBE_SPEED   = 0.1325; // rad / s  (0.052 × 1.3 × 1.4 × 1.4)
 
 export function GlobeCanvas() {
   const containerRef = useRef<HTMLDivElement>(null);

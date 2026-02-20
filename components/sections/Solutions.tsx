@@ -28,7 +28,7 @@ export function Solutions({ locale }: SolutionsProps) {
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="page-container">
         {/* Header */}
         <div className="text-center">
           <span className="badge mb-6">{s.badge}</span>

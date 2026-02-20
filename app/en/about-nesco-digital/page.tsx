@@ -75,7 +75,7 @@ export default function AboutEnPage() {
             className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
-          <div className="relative max-w-7xl mx-auto px-[5%]">
+          <div className="relative page-container">
             <span className="badge mb-6">About Us</span>
             <h1
               className="font-black text-white"
@@ -121,7 +121,7 @@ export default function AboutEnPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((s, i) => (
                 <FadeInSection key={i} delay={i * 80}>
@@ -156,7 +156,7 @@ export default function AboutEnPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "680px" }}>
                 <span className="badge mb-6">Our Mission</span>
@@ -187,7 +187,7 @@ export default function AboutEnPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div className="text-center mb-16">
                 <span className="badge mb-6">Our Values</span>
@@ -249,7 +249,7 @@ export default function AboutEnPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div className="text-center mb-16">
                 <span className="badge mb-6">Our Process</span>

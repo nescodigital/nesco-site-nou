@@ -64,7 +64,7 @@ export function ServicesGrid({ locale }: ServicesGridProps) {
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="page-container">
         {/* Header */}
         <div style={{ textAlign: "center", maxWidth: "42rem", marginLeft: "auto", marginRight: "auto" }}>
           <span className="badge mb-6">{tr.services.badge}</span>

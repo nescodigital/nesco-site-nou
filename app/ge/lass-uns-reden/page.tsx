@@ -45,7 +45,7 @@ export default function LassUnsRedenPage() {
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
 
-          <div className="relative max-w-7xl mx-auto px-[5%]">
+          <div className="relative page-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
               {/* Left */}
@@ -151,13 +151,15 @@ export default function LassUnsRedenPage() {
               {/* Right — Form */}
               <FadeInSection delay={150}>
                 <div
+                  className="p-5 sm:p-10"
                   style={{
-                    padding: "40px",
                     background: "#0a0a0a",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: "24px",
                     position: "relative",
                     overflow: "hidden",
+                    maxWidth: "100%",
+                    boxSizing: "border-box",
                   }}
                 >
                   <div

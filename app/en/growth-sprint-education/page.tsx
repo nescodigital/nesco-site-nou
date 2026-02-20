@@ -119,7 +119,7 @@ export default function GrowthSprintEducationPage() {
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
 
-          <div className="relative max-w-7xl mx-auto px-[5%]" style={{ zIndex: 1 }}>
+          <div className="relative page-container" style={{ zIndex: 1 }}>
             <div className="flex items-center gap-3 mb-6">
               <span className="badge">Growth Sprint · Online Education</span>
               <span
@@ -249,7 +249,7 @@ export default function GrowthSprintEducationPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "680px" }}>
                 <span className="badge mb-6">The Problem</span>
@@ -296,7 +296,7 @@ export default function GrowthSprintEducationPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div
                 style={{
@@ -351,7 +351,7 @@ export default function GrowthSprintEducationPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
                 <span className="badge mb-6">What&apos;s Included</span>
@@ -534,7 +534,7 @@ export default function GrowthSprintEducationPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
                 <span className="badge mb-6">Fit</span>
@@ -651,7 +651,7 @@ export default function GrowthSprintEducationPage() {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
                 <span className="badge mb-6">Investment</span>

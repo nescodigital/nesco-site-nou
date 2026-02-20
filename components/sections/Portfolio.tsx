@@ -77,7 +77,7 @@ export function Portfolio({ locale }: PortfolioProps) {
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
       />
 
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="page-container">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
           <div>

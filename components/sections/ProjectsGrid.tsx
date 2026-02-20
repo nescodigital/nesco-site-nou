@@ -22,13 +22,7 @@ export function ProjectsGrid() {
   return (
     <>
       {/* Category Filters */}
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "40px 5% 40px",
-        }}
-      >
+      <div className="page-container" style={{ paddingTop: "40px", paddingBottom: "40px" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {ALL_CATEGORIES.map((cat) => (
             <button
@@ -53,13 +47,7 @@ export function ProjectsGrid() {
       </div>
 
       {/* Projects */}
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 5% 100px",
-        }}
-      >
+      <div className="page-container" style={{ paddingTop: 0, paddingBottom: "100px" }}>
         {/* Featured grid */}
         {featured.length > 0 && (
           <div className={`grid gap-5 ${featured.length === 4 ? "grid-cols-1 sm:grid-cols-2 mb-10" : "grid-cols-1 md:grid-cols-3 mb-5"}`}>

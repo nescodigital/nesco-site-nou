@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ArrowPattern } from "@/components/ArrowPattern";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -55,15 +56,22 @@ export default function RootLayout({
   return (
     <html lang="ro" className={inter.variable}>
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="style"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"
+        />
         <link
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"
         />
-        <link rel="icon" href="/logo mare Nesco.avif" type="image/avif" />
-        <link rel="apple-touch-icon" href="/logo mare Nesco.avif" />
+        <link rel="icon" href="/logo mare Nesco.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/logo mare Nesco.svg" />
         <meta name="theme-color" content="#080b0f" />
       </head>
       <body className="antialiased text-white" style={{ backgroundColor: "#050505" }}>
+        <ArrowPattern />
         {children}
       </body>
     </html>

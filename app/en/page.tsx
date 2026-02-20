@@ -37,7 +37,7 @@ export default function EnHomePage() {
         />
       ))}
       <Header locale="en" />
-      <main>
+      <main style={{ width: "100%", display: "block" }}>
         <Hero locale="en" />
         <Solutions locale="en" />
         <ServicesGrid locale="en" />

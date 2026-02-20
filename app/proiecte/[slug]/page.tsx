@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: Props) {
             paddingBottom: "0",
           }}
         >
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <nav style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "0.8125rem", color: "rgba(255,255,255,0.3)" }}>
               <Link href="/" style={{ color: "rgba(255,255,255,0.3)", textDecoration: "none", transition: "color 0.2s" }}>Acasă</Link>
               <span>/</span>
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
 
-          <div className="relative max-w-7xl mx-auto px-[5%]">
+          <div className="relative page-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
               {/* Left */}
@@ -211,7 +211,7 @@ export default async function ProjectPage({ params }: Props) {
         {/* ── Hero Image ── */}
         {project.heroImage && (
           <section className="relative" style={{ backgroundColor: "#050505", padding: "0 0 100px" }}>
-            <div className="max-w-7xl mx-auto px-[5%]">
+            <div className="page-container">
               <FadeInSection>
                 <div
                   style={{
@@ -239,7 +239,7 @@ export default async function ProjectPage({ params }: Props) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
               <FadeInSection>
                 <div
@@ -323,7 +323,7 @@ export default async function ProjectPage({ params }: Props) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
                 <span className="badge mb-6">Rezultate</span>
@@ -386,7 +386,7 @@ export default async function ProjectPage({ params }: Props) {
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <FadeInSection>
               <div style={{ maxWidth: "640px", margin: "0 auto", textAlign: "center" }}>
                 <span className="badge mb-6">Servicii utilizate</span>

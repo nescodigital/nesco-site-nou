@@ -71,7 +71,7 @@ export default function DespreNescoPage() {
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
 
-          <div className="relative max-w-7xl mx-auto px-[5%]">
+          <div className="relative page-container">
             <span className="badge mb-6">Despre Noi</span>
             <h1
               className="font-black text-white"
@@ -117,7 +117,7 @@ export default function DespreNescoPage() {
             className="absolute left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {stats.map((s, i) => (
                 <div
@@ -151,7 +151,7 @@ export default function DespreNescoPage() {
             className="absolute left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div style={{ maxWidth: "680px" }}>
               <span className="badge mb-6">Misiunea Noastră</span>
               <h2
@@ -180,7 +180,7 @@ export default function DespreNescoPage() {
             className="absolute left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div className="text-center mb-16">
               <span className="badge mb-6">Valorile Noastre</span>
               <h2
@@ -246,7 +246,7 @@ export default function DespreNescoPage() {
             className="absolute left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
           />
-          <div className="max-w-7xl mx-auto px-[5%]">
+          <div className="page-container">
             <div className="text-center mb-16">
               <span className="badge mb-6">Procesul Nostru</span>
               <h2

@@ -214,6 +214,7 @@ export function Footer({ locale }: FooterProps) {
                   key={alt}
                   src={src}
                   alt={alt}
+                  width={80}
                   height={32}
                   style={{ height: 32, width: "auto", objectFit: "contain", opacity: 0.75, filter: "brightness(1.2)" }}
                 />
