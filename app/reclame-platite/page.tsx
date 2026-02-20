@@ -49,11 +49,70 @@ const differentiators = [
 ];
 
 const services = [
-  { label: "Google Ads", desc: "Campanii Search, Display și Shopping optimizate pentru ROAS maxim. CPA cu 38% mai mic față de media industriei.", href: r.googleAds, accent: "#56db84" },
-  { label: "Facebook Ads", desc: "Audiențe precise construite pe baza datelor tale. Conversii reale pentru e-commerce și lead generation.", href: r.facebookAds, accent: "#60a5fa" },
-  { label: "Instagram Ads", desc: "Creativ vizual, impactant și convertibil. Ajungem la audiența ta cu formate care opresc scroll-ul.", href: r.instagramAds, accent: "#a78bfa" },
-  { label: "TikTok Ads", desc: "Reach Gen Z și Millennials cu creativitate nativă. Formate video care generează brand awareness și conversii.", href: r.tiktokAds, accent: "#fb923c" },
-  { label: "LinkedIn Ads", desc: "B2B lead generation premium. Ajungem la decidenții din companiile țintă cu mesaje relevante.", href: r.linkedinAds, accent: "#22d3ee" },
+  {
+    label: "Google Ads",
+    desc: "Campanii Search, Display și Shopping optimizate pentru ROAS maxim. CPA cu 38% mai mic față de media industriei.",
+    href: r.googleAds,
+    accent: "#4285F4",
+    icon: (
+      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+        <path d="M22.54 11.23L12.77 1.46a1.63 1.63 0 00-2.31 0L8.23 3.69l2.95 2.95a1.94 1.94 0 012.45 2.48l2.84 2.84a1.94 1.94 0 11-1.16 1.16l-2.65-2.65v6.97a1.94 1.94 0 11-1.6-.05V10.1a1.94 1.94 0 01-1.05-2.55L7.07 4.62 1.46 10.23a1.63 1.63 0 000 2.31l10.31 10.31a1.63 1.63 0 002.31 0l8.46-8.46a1.63 1.63 0 000-2.31z" fill="#4285F4" />
+      </svg>
+    ),
+  },
+  {
+    label: "Facebook Ads",
+    desc: "Audiențe precise construite pe baza datelor tale. Conversii reale pentru e-commerce și lead generation.",
+    href: r.facebookAds,
+    accent: "#1877F2",
+    icon: (
+      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2" />
+      </svg>
+    ),
+  },
+  {
+    label: "Instagram Ads",
+    desc: "Creativ vizual, impactant și convertibil. Ajungem la audiența ta cu formate care opresc scroll-ul.",
+    href: r.instagramAds,
+    accent: "#d6249f",
+    icon: (
+      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+        <defs>
+          <radialGradient id="ig-grad" cx="30%" cy="107%">
+            <stop offset="0%" stopColor="#fdf497" />
+            <stop offset="5%" stopColor="#fdf497" />
+            <stop offset="45%" stopColor="#fd5949" />
+            <stop offset="60%" stopColor="#d6249f" />
+            <stop offset="90%" stopColor="#285AEB" />
+          </radialGradient>
+        </defs>
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" fill="url(#ig-grad)" />
+      </svg>
+    ),
+  },
+  {
+    label: "TikTok Ads",
+    desc: "Reach Gen Z și Millennials cu creativitate nativă. Formate video care generează brand awareness și conversii.",
+    href: r.tiktokAds,
+    accent: "#ffffff",
+    icon: (
+      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+        <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" fill="white" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn Ads",
+    desc: "B2B lead generation premium. Ajungem la decidenții din companiile țintă cu mesaje relevante.",
+    href: r.linkedinAds,
+    accent: "#0A66C2",
+    icon: (
+      <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" fill="#0A66C2" />
+      </svg>
+    ),
+  },
 ];
 
 const stats = [
@@ -246,23 +305,21 @@ export default function ReclamePlatitePage() {
                     className="group card-hover block"
                     style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", textDecoration: "none", height: "100%", display: "flex", flexDirection: "column" }}
                   >
-                    <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: `${svc.accent}18`, border: `1px solid ${svc.accent}28`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px", flexShrink: 0 }}
-                    >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: svc.accent }} />
+                    <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px", flexShrink: 0 }}>
+                      {svc.icon}
                     </div>
                     <h3
                       className="font-bold text-white group-hover:text-brand-green transition-colors"
-                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.01em", marginBottom: "10px" }}
+                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.01em", marginBottom: "10px", textAlign: "center" }}
                     >
                       {svc.label}
                     </h3>
-                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65, flex: 1 }}>
+                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65, flex: 1, textAlign: "center" }}>
                       {svc.desc}
                     </p>
                     <div
-                      className="flex items-center gap-1.5 mt-5 font-semibold group-hover:gap-2.5 transition-all"
-                      style={{ fontSize: "0.8125rem", color: svc.accent }}
+                      className="flex items-center justify-center gap-1.5 mt-5 font-semibold group-hover:gap-2.5 transition-all"
+                      style={{ fontSize: "0.8125rem", color: "#56db84" }}
                     >
                       Află mai multe <ArrowRight size={13} />
                     </div>
