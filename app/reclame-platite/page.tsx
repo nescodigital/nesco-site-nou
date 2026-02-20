@@ -20,31 +20,31 @@ const r = routes.ro;
 
 const painPoints = [
   {
-    title: "Ai un buget de ads, dar nu știi dacă lucrează eficient",
-    desc: "Rapoarte frumoase, ROAS neclar. Nu știi dacă banii tăi generează profit real sau doar cheltuieli care arată bine în dashboard.",
+    title: "Ai mai lucrat cu o agenție și nu a mers",
+    desc: "Rapoarte frumoase, rezultate slabe. O agenție care nu a înțeles business-ul tău și a aplicat același template ca la toți clienții.",
   },
   {
-    title: "Ai schimbat agenția sau freelancerul de mai multe ori fără rezultate",
-    desc: "Promisiuni mari, livrare slabă. Și de fiecare dată o perioadă de 'acomodare' în care arzi buget fără să înveți nimic nou.",
+    title: "Vrei să angajezi un specialist dar...",
+    desc: "Un om bun pe paid ads costă 2.000-3.500€/lună + beneficii + risc că pleacă în 12 luni. Și nu acoperă Google Ads, Meta Ads, TikTok și LinkedIn simultan.",
   },
   {
-    title: "Algoritmii s-au schimbat și campaniile care mergeau nu mai funcționează",
-    desc: "Meta, Google, TikTok se schimbă constant. Fără o echipă dedicată care urmărește aceste modificări, ești mereu în urmă.",
+    title: "Bugetul tău de ads nu lucrează eficient",
+    desc: "Simți că plătești mult și obții puțin. ROAS-ul stagnează, CPA-ul crește, iar agenția ta spune că 'piața e dificilă'.",
   },
 ];
 
 const differentiators = [
   {
-    title: "Nu gestionăm bugete, construim sisteme de achiziție",
-    desc: "Fiecare campanie e construită în jurul unui funnel complet: trafic, conversie, retargeting. Urmărim profitul, nu ROAS-ul izolat.",
+    title: "Îți spunem din prima dacă te putem ajuta",
+    desc: "Nu pierdem timpul tău sau al nostru. După o discuție de 30 de minute știm dacă există potențial real de colaborare.",
   },
   {
-    title: "Suntem specializați, nu generaliști",
-    desc: "Nu facem social media, SEO și 'tot ce ține de digital'. Facem reclame plătite — profund, obsesiv, permanent optimizat.",
+    title: "Înțelegem business-ul, nu doar platforma",
+    desc: "Nu rulăm campanii. Construim sisteme de achiziție care se integrează cu vânzările, retenția și marja ta reală.",
   },
   {
-    title: "Îți spunem din prima ce e realist",
-    desc: "Nu promitem ROAS de 10x în prima lună. Îți spunem ce e posibil bazat pe industrie, buget și competiție — și construim de acolo.",
+    title: "Experiență pe bani reali, nu bugete de test",
+    desc: "36M€+ bugete gestionate. 23.000+ campanii. Știm ce funcționează și ce nu — pe piața românească și internațională.",
   },
 ];
 
@@ -58,22 +58,22 @@ const services = [
 
 const stats = [
   { metric: "36M€+", label: "bugete gestionate" },
-  { metric: "15 ani", label: "experiență în paid advertising" },
-  { metric: "38%", label: "CPA mediu mai mic față de industrie" },
+  { metric: "23.000+", label: "campanii executate" },
+  { metric: "15 ani", label: "experiență în paid media" },
 ];
 
 const faq = [
   {
-    q: "Care este bugetul minim recomandat?",
-    a: "Recomandăm un buget minim de 2.000€/lună pentru campanii pe un singur canal. Sub această sumă, algoritmii nu au suficiente date pentru optimizare și costurile de management nu mai justifică investiția.",
+    q: "E mai ieftin să angajez un om intern.",
+    a: "Un specialist senior pe paid ads costă 2.500-3.500€/lună + beneficii + timp de onboarding + risc de rotație. Cu noi ai o echipă cu experiență pe toate platformele, fără costuri fixe și fără să o iei de la zero când cineva pleacă.",
   },
   {
-    q: "Cât timp până văd rezultate?",
-    a: "Primele 2-4 săptămâni sunt de testare și calibrare. Rezultate clare și măsurabile apar de obicei după 60-90 de zile, când avem suficiente date pentru decizii solide.",
+    q: "Am mai lucrat cu o agenție și nu a funcționat.",
+    a: "Înțelegem. De aceea nu începem nicio colaborare fără să fim sinceri că putem aduce valoare. Dacă după prima discuție nu vedem un potențial clar, îți spunem direct.",
   },
   {
-    q: "Pe ce platforme rulați campanii?",
-    a: "Google Ads (Search, Display, Shopping, YouTube), Meta (Facebook și Instagram), TikTok, LinkedIn. Recomandăm platforma în funcție de audiența ta și obiectiv — nu de ce suntem noi mai confortabili.",
+    q: "Cum știu că veți înțelege business-ul meu?",
+    a: "Nu aplicăm template-uri. Prima săptămână e dedicată în totalitate înțelegerii business-ului tău — marje, ICP, funnel, competiție. Campania vine după.",
   },
 ];
 
@@ -123,14 +123,14 @@ export default function ReclamePlatitePage() {
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
             >
-              Nu gestionăm bugete. Construim sisteme de achiziție profitabile — fiecare canal, fiecare campanie, orientat spre un singur obiectiv: creșterea ta.
+              Nu gestionăm bugete. Construim sisteme de achiziție profitabile — și suntem primii care îți spun dacă nu putem ajuta.
             </p>
             <Link
               href={r.contact}
               className="group inline-flex items-center gap-3 btn-primary"
               style={{ fontSize: "1rem", padding: "18px 40px" }}
             >
-              Discută proiectul tău
+              Vorbește cu un specialist
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
@@ -194,7 +194,7 @@ export default function ReclamePlatitePage() {
                   className="font-black text-white"
                   style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
                 >
-                  Cum gândim altfel
+                  Cum lucrăm diferit
                 </h2>
               </div>
             </FadeInSection>
@@ -229,12 +229,12 @@ export default function ReclamePlatitePage() {
           <div className="page-container">
             <FadeInSection>
               <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Canale</span>
+                <span className="badge mb-6">Platforme</span>
                 <h2
                   className="font-black text-white"
                   style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
                 >
-                  Pe ce canale rulăm
+                  Platforme pe care le gestionăm
                 </h2>
               </div>
             </FadeInSection>
@@ -277,6 +277,17 @@ export default function ReclamePlatitePage() {
         <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
           <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
           <div className="page-container">
+            <FadeInSection>
+              <div style={{ textAlign: "center", marginBottom: "64px" }}>
+                <span className="badge mb-6">Track record</span>
+                <h2
+                  className="font-black text-white"
+                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
+                >
+                  Rezultate din proiecte reale
+                </h2>
+              </div>
+            </FadeInSection>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
               {stats.map((stat, idx) => (
                 <FadeInSection key={idx} delay={idx * 100}>
@@ -335,19 +346,19 @@ export default function ReclamePlatitePage() {
               className="font-black text-white"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "24px" }}
             >
-              Gata să transformi bugetul de ads într-un sistem profitabil?
+              Gata să construim un sistem de achiziție profitabil?
             </h2>
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "48px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto" }}
             >
-              O discuție de 30 de minute în care analizăm situația ta și îți spunem sincer ce putem face.
+              O discuție de 30 de minute. Fără pitch, fără presiune — doar o evaluare sinceră a situației tale.
             </p>
             <Link
               href={r.contact}
               className="group inline-flex items-center gap-3 btn-primary"
               style={{ fontSize: "1rem", padding: "18px 40px" }}
             >
-              Discută proiectul tău
+              Programează o discuție gratuită
               <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
             </Link>
           </div>
