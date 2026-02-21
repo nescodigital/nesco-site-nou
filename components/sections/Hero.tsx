@@ -265,7 +265,7 @@ export function Hero({ locale }: HeroProps) {
           <div
             className="relative hidden lg:flex items-center justify-center opacity-0"
             style={{
-              height: "min(578px, 49vw)",
+              height: "min(680px, 58vw)",
               animation: "fadeUp 1.1s ease forwards 0.35s",
             }}
           >
