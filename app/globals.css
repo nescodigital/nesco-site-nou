@@ -1,21 +1,5 @@
 @import "tailwindcss";
 
-/* ── Satoshi self-hosted — eliminates fontshare network chain ── */
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Black.woff2') format('woff2');
-  font-weight: 800 900;
-  font-display: swap;
-  font-style: normal;
-}
-
 :root {
   --brand-green: #56db84;
   --brand-green-dark: #3db868;

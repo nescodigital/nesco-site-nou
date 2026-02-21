@@ -17,7 +17,11 @@ interface HeroProps {
   locale: Locale;
 }
 
-const AVATAR_SRC = "/avatar-client.jpg";
+const AVATARS = [
+  { src: "https://randomuser.me/api/portraits/men/32.jpg",  z: 30 },
+  { src: "https://randomuser.me/api/portraits/women/44.jpg", z: 20 },
+  { src: "https://randomuser.me/api/portraits/men/67.jpg",  z: 10 },
+];
 
 const socialProofText: Record<string, string> = {
   ro: "clienți mulțumiți",
@@ -161,24 +165,32 @@ export function Hero({ locale }: HeroProps) {
                 padding: "6px 16px 6px 6px",
               }}
             >
-              {/* Single avatar */}
-              <div
-                style={{
-                  width: 28,
-                  height: 28,
-                  borderRadius: 9999,
-                  border: "2px solid rgba(255,255,255,0.1)",
-                  overflow: "hidden",
-                  flexShrink: 0,
-                }}
-              >
-                <Image
-                  src={AVATAR_SRC}
-                  alt="Client mulțumit"
-                  width={28}
-                  height={28}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
+              {/* Overlapping avatars */}
+              <div style={{ display: "flex", position: "relative" }}>
+                {AVATARS.map(({ src, z }, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      width: 28,
+                      height: 28,
+                      borderRadius: 9999,
+                      border: "2px solid rgba(255,255,255,0.1)",
+                      overflow: "hidden",
+                      flexShrink: 0,
+                      zIndex: z,
+                      marginLeft: i === 0 ? 0 : "-10px",
+                      position: "relative",
+                    }}
+                  >
+                    <Image
+                      src={src}
+                      alt={`Client ${i + 1}`}
+                      width={28}
+                      height={28}
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                ))}
               </div>
               <span style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.6)", whiteSpace: "nowrap" }}>
                 <span style={{ color: "#fff", fontWeight: 600 }}>500+</span>{" "}
