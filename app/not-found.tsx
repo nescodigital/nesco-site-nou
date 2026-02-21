@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ArrowGrid404 } from "@/components/ui/ArrowGrid404";
 
 export default function NotFound() {
   return (
@@ -19,43 +20,27 @@ export default function NotFound() {
           overflow: "hidden",
         }}
       >
-        {/* Subtle radial glow */}
+        {/* Animated arrow grid — square cells, Nesco green */}
+        <ArrowGrid404 />
+
+        {/* Subtle radial glow over the grid */}
         <div
           aria-hidden="true"
           style={{
             position: "absolute",
             inset: 0,
-            background: "radial-gradient(ellipse at center, rgba(86,219,132,0.05) 0%, transparent 65%)",
+            background:
+              "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(5,5,5,0.55) 0%, transparent 100%)",
             pointerEvents: "none",
+            zIndex: 1,
           }}
         />
-
-        {/* Large decorative 404 watermark */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            fontSize: "clamp(160px, 30vw, 320px)",
-            fontWeight: 900,
-            color: "#1a1a1a",
-            letterSpacing: "-0.05em",
-            lineHeight: 1,
-            pointerEvents: "none",
-            userSelect: "none",
-            fontFamily: "var(--font-satoshi, var(--font-inter, sans-serif))",
-          }}
-        >
-          404
-        </div>
 
         {/* Content */}
         <div
           style={{
             position: "relative",
-            zIndex: 1,
+            zIndex: 2,
             textAlign: "center",
             maxWidth: "540px",
           }}
