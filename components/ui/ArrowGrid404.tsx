@@ -1,130 +1,180 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
-const CELL = 72;              // px — cell stays the same → gap shrinks as arrows grow
-const ARROW_SIZE = 57;        // px — 38 * 1.5 = 57 (50% bigger)
+const CELL          = 72;    // px — square cell
+const ARROW_SIZE    = 57;    // px — arrow drawn inside cell
 const LAUNCH_INTERVAL = 1800; // ms between bursts
-const LAUNCH_DURATION = 900;  // ms — flight time
-const BURST_COUNT = 4;        // arrows launched per burst
-const BASE_MIN = 0.028;       // 0.04 * 0.7  (−30% opacity)
-const BASE_MAX = 0.07;        // 0.10 * 0.7  (−30% opacity)
+const LAUNCH_DURATION = 900;  // ms — rocket flight time
+const BURST_COUNT   = 4;     // arrows per burst
+const BASE_MIN      = 0.028;
+const BASE_MAX      = 0.07;
+const TARGET_FPS    = 24;    // decorative bg — no need for 60fps
+const FRAME_MS      = 1000 / TARGET_FPS;
+
+interface RocketArrow {
+  col: number;
+  row: number;
+  startTime: number;  // performance.now()
+  baseOp: number;
+}
 
 export function ArrowGrid404() {
-  const [dims, setDims] = useState({ cols: 0, rows: 0 });
-  const [launching, setLaunching] = useState<Set<number>>(new Set());
-  const baseOpacities = useRef<number[]>([]);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const update = () => {
-      const cols = Math.ceil(window.innerWidth / CELL) + 1;
-      const rows = Math.ceil(window.innerHeight / CELL) + 1;
-      const count = cols * rows;
-      if (baseOpacities.current.length !== count) {
-        baseOpacities.current = Array.from({ length: count }, () =>
-          BASE_MIN + Math.random() * (BASE_MAX - BASE_MIN)
-        );
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    // ── State ─────────────────────────────────────────────────────────────────
+    let cols = 0;
+    let rows = 0;
+    let baseOpacities: Float32Array = new Float32Array(0);
+    let rockets: RocketArrow[]      = [];
+    let greenArrow: HTMLCanvasElement | null = null;
+    let raf: number;
+    let lastFrameTs = 0;
+
+    // ── Resize ────────────────────────────────────────────────────────────────
+    const resize = () => {
+      const W = window.innerWidth;
+      const H = window.innerHeight;
+      canvas.width  = W;
+      canvas.height = H;
+      const newCols = Math.ceil(W / CELL) + 1;
+      const newRows = Math.ceil(H / CELL) + 1;
+      const count   = newCols * newRows;
+
+      // Re-seed only if dimensions changed
+      if (newCols !== cols || newRows !== rows) {
+        cols = newCols;
+        rows = newRows;
+        baseOpacities = new Float32Array(count);
+        for (let i = 0; i < count; i++) {
+          baseOpacities[i] = BASE_MIN + Math.random() * (BASE_MAX - BASE_MIN);
+        }
       }
-      setDims({ cols, rows });
     };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
 
-  useEffect(() => {
-    const total = dims.cols * dims.rows;
-    if (total === 0) return;
+    // ── Create green arrow on an offscreen canvas (done once) ─────────────────
+    // Draw SVG → source-in fill with #56db84 → exact colour, transparent bg
+    const buildArrow = (img: HTMLImageElement): HTMLCanvasElement => {
+      const oc    = document.createElement("canvas");
+      oc.width    = ARROW_SIZE;
+      oc.height   = ARROW_SIZE;
+      const octx  = oc.getContext("2d")!;
+      octx.drawImage(img, 0, 0, ARROW_SIZE, ARROW_SIZE);
+      octx.globalCompositeOperation = "source-in";
+      octx.fillStyle = "#56db84";
+      octx.fillRect(0, 0, ARROW_SIZE, ARROW_SIZE);
+      return oc;
+    };
 
+    // ── Render loop ───────────────────────────────────────────────────────────
+    const draw = (ts: number) => {
+      raf = requestAnimationFrame(draw);
+
+      // Throttle to TARGET_FPS
+      if (ts - lastFrameTs < FRAME_MS) return;
+      lastFrameTs = ts;
+
+      if (!greenArrow) return;
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Build a quick lookup of rocket cell indices
+      const rocketSet = new Set(rockets.map(r => r.row * cols + r.col));
+
+      // ── 1. Static grid ─────────────────────────────────────────────────────
+      const halfPad = (CELL - ARROW_SIZE) / 2;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          const idx = r * cols + c;
+          if (rocketSet.has(idx)) continue; // rocket handles this cell
+
+          ctx.globalAlpha = baseOpacities[idx] ?? BASE_MIN;
+          ctx.drawImage(greenArrow, c * CELL + halfPad, r * CELL + halfPad);
+        }
+      }
+
+      // ── 2. Rockets ─────────────────────────────────────────────────────────
+      const now = performance.now();
+      rockets = rockets.filter(rocket => {
+        const progress = Math.min((now - rocket.startTime) / LAUNCH_DURATION, 1);
+        if (progress >= 1) return false; // done — cell is empty, will reappear next frame as static
+
+        // Ease-in cubic for acceleration feel
+        const eased  = progress * progress * progress;
+        const scale  = 1 - eased * 0.95;      // 1 → 0.05
+        const alpha  = rocket.baseOp * (1 - progress); // fade out
+        const dx     = eased * 130;            // 45° right
+        const dy     = -eased * 130;           // 45° up
+
+        const originX = rocket.col * CELL + halfPad + ARROW_SIZE / 2;
+        const originY = rocket.row * CELL + halfPad + ARROW_SIZE / 2;
+
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        ctx.translate(originX + dx, originY + dy);
+        ctx.scale(scale, scale);
+        ctx.drawImage(greenArrow!, -ARROW_SIZE / 2, -ARROW_SIZE / 2);
+        ctx.restore();
+
+        return true;
+      });
+
+      ctx.globalAlpha = 1;
+    };
+
+    // ── Load SVG, then start ──────────────────────────────────────────────────
+    const img   = new Image();
+    img.onload  = () => {
+      greenArrow = buildArrow(img);
+      resize();
+      raf = requestAnimationFrame(draw);
+    };
+    img.onerror = () => { /* silent — blank canvas is fine */ };
+    img.src     = "/logo mare Nesco.svg";
+
+    window.addEventListener("resize", resize);
+
+    // ── Burst scheduler ───────────────────────────────────────────────────────
     const burst = () => {
-      const picked = new Set<number>();
+      if (cols === 0 || rows === 0) return;
+      const total   = cols * rows;
+      const picked  = new Set<number>();
       while (picked.size < BURST_COUNT) {
         picked.add(Math.floor(Math.random() * total));
       }
-      setLaunching(prev => new Set([...prev, ...picked]));
-      setTimeout(() => {
-        setLaunching(prev => {
-          const next = new Set(prev);
-          picked.forEach(i => next.delete(i));
-          return next;
+      const startTime = performance.now();
+      picked.forEach(idx => {
+        rockets.push({
+          col:       idx % cols,
+          row:       Math.floor(idx / cols),
+          startTime,
+          baseOp:    baseOpacities[idx] ?? BASE_MIN,
         });
-      }, LAUNCH_DURATION);
+      });
     };
 
     const t0 = setTimeout(burst, 300);
-    const id = setInterval(burst, LAUNCH_INTERVAL);
-    return () => { clearTimeout(t0); clearInterval(id); };
-  }, [dims]);
+    const id  = setInterval(burst, LAUNCH_INTERVAL);
 
-  const { cols, rows } = dims;
-  const total = cols * rows;
-  if (total === 0) return null;
+    // ── Cleanup ───────────────────────────────────────────────────────────────
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", resize);
+      clearTimeout(t0);
+      clearInterval(id);
+    };
+  }, []);
 
   return (
-    <>
-      {/* Rocket launch keyframe: flies 45° up-right, shrinks, fades out */}
-      <style>{`
-        @keyframes rocket404 {
-          0%   { transform: translate(0,    0)    scale(1);    opacity: var(--op); }
-          10%  { transform: translate(6px, -6px)  scale(1.05); opacity: var(--op); }
-          100% { transform: translate(130px,-130px) scale(0.05); opacity: 0; }
-        }
-      `}</style>
-
-      <div
-        aria-hidden="true"
-        style={{
-          position: "absolute",
-          inset: 0,
-          display: "grid",
-          gridTemplateColumns: `repeat(${cols}, ${CELL}px)`,
-          gridTemplateRows: `repeat(${rows}, ${CELL}px)`,
-          overflow: "hidden",
-          pointerEvents: "none",
-        }}
-      >
-        {Array.from({ length: total }).map((_, i) => {
-          const isLaunching = launching.has(i);
-          const baseOp = baseOpacities.current[i] ?? BASE_MIN;
-
-          return (
-            <div
-              key={i}
-              style={{
-                width: CELL,
-                height: CELL,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <div
-                style={{
-                  width: ARROW_SIZE,
-                  height: ARROW_SIZE,
-                  // Mask colours the SVG exactly as #56db84
-                  backgroundColor: "rgba(86,219,132,1)",
-                  WebkitMaskImage: "url('/logo mare Nesco.svg')",
-                  maskImage: "url('/logo mare Nesco.svg')",
-                  WebkitMaskSize: "contain",
-                  maskSize: "contain",
-                  WebkitMaskRepeat: "no-repeat",
-                  maskRepeat: "no-repeat",
-                  WebkitMaskPosition: "center",
-                  maskPosition: "center",
-                  // Opacity drives the base visibility; CSS var for keyframe start
-                  ["--op" as string]: baseOp,
-                  opacity: isLaunching ? undefined : baseOp,
-                  // Rocket flight when launching, soft fade-in when returning
-                  animation: isLaunching
-                    ? `rocket404 ${LAUNCH_DURATION}ms cubic-bezier(0.4,0,1,1) forwards`
-                    : "none",
-                  transition: isLaunching ? "none" : "opacity 0.4s ease",
-                } as React.CSSProperties}
-              />
-            </div>
-          );
-        })}
-      </div>
-    </>
+    <canvas
+      ref={canvasRef}
+      aria-hidden="true"
+      style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
+    />
   );
 }
