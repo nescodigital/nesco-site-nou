@@ -108,6 +108,13 @@ export default function RootLayout({
         <link rel="icon" href="/logo mare Nesco.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo mare Nesco.svg" />
         <meta name="theme-color" content="#080b0f" />
+        {/* theMarketer */}
+        <script dangerouslySetInnerHTML={{ __html: `
+  window.theMarketerKey = "2UFNOABX";
+  window.theMarketerRestKey = "BPAWOA46";
+  window.theMarketerCustomerId = "686292ccf87a2425120f1ac5";
+` }} />
+        <script async src="https://cdn.themarketer.com/js/themarketer.js" />
         {/* Google Analytics GA4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSFGPWEJV1" />
         <script dangerouslySetInnerHTML={{ __html: `

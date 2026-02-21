@@ -1,0 +1,133 @@
+"use client";
+import { useState } from "react";
+import Link from "next/link";
+
+export function NewsletterForm() {
+  const [email, setEmail] = useState("");
+  const [agreed, setAgreed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!agreed || !email) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("https://api.themarketer.com/v1/subscribers", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer BPAWOA46",
+        },
+        body: JSON.stringify({ email, source: "website_footer" }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setStatus("success");
+      setEmail("");
+      setAgreed(false);
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <p
+        style={{
+          fontSize: "0.875rem",
+          color: "#56db84",
+          fontWeight: 500,
+          padding: "10px 0",
+        }}
+      >
+        ✓ Te-ai abonat cu succes!
+      </p>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+      {/* Email row */}
+      <div style={{ display: "flex", gap: "8px" }}>
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="adresa@email.com"
+          style={{
+            flex: 1,
+            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "10px",
+            padding: "10px 14px",
+            fontSize: "0.875rem",
+            color: "#fff",
+            outline: "none",
+            transition: "border-color 0.2s ease",
+          }}
+          onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+          onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+        />
+        <button
+          type="submit"
+          disabled={status === "loading" || !agreed}
+          style={{
+            flexShrink: 0,
+            padding: "10px 18px",
+            borderRadius: "10px",
+            background: agreed ? "#56db84" : "rgba(86,219,132,0.2)",
+            color: agreed ? "#050505" : "rgba(86,219,132,0.5)",
+            fontSize: "0.8125rem",
+            fontWeight: 700,
+            border: "none",
+            cursor: agreed ? "pointer" : "not-allowed",
+            transition: "all 0.2s ease",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {status === "loading" ? "..." : "Abonează-te"}
+        </button>
+      </div>
+
+      {/* Consent checkbox */}
+      <label
+        style={{
+          display: "flex",
+          alignItems: "flex-start",
+          gap: "8px",
+          cursor: "pointer",
+          userSelect: "none",
+        }}
+      >
+        <input
+          type="checkbox"
+          required
+          checked={agreed}
+          onChange={(e) => setAgreed(e.target.checked)}
+          style={{
+            marginTop: "2px",
+            flexShrink: 0,
+            accentColor: "#56db84",
+            cursor: "pointer",
+          }}
+        />
+        <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", lineHeight: 1.5 }}>
+          Sunt de acord cu{" "}
+          <Link
+            href="/politica-de-confidentialitate"
+            style={{ color: "rgba(86,219,132,0.6)", textDecoration: "underline" }}
+          >
+            Politica de Confidențialitate
+          </Link>
+        </span>
+      </label>
+
+      {/* Error */}
+      {status === "error" && (
+        <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>
+          A apărut o eroare. Încearcă din nou.
+        </p>
+      )}
+    </form>
+  );
+}

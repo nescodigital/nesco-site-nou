@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
+import { NewsletterForm } from "@/components/NewsletterForm";
 
 interface FooterProps {
   locale: Locale;
@@ -96,6 +97,35 @@ export function Footer({ locale }: FooterProps) {
       }}
     >
       <div className="page-container">
+        {/* ── Newsletter ── */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            gap: "32px",
+            paddingBottom: "56px",
+            borderBottom: "1px solid rgba(255,255,255,0.05)",
+            marginBottom: "56px",
+          }}
+        >
+          <div style={{ maxWidth: "400px" }}>
+            <h3
+              className="font-black text-white"
+              style={{ fontSize: "1.25rem", lineHeight: 1.25, marginBottom: "8px" }}
+            >
+              Resurse și insights pentru creștere
+            </h3>
+            <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.38)", lineHeight: 1.65 }}>
+              Tips de marketing, studii de caz și strategii direct în inbox-ul tău.
+            </p>
+          </div>
+          <div style={{ flex: "1 1 320px", maxWidth: "460px" }}>
+            <NewsletterForm />
+          </div>
+        </div>
+
         {/* Main grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
