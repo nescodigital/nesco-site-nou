@@ -245,6 +245,11 @@ section h2 + .subtitle {
   50%       { transform: translateY(-8px); }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 .glow-green { box-shadow: 0 0 40px rgba(86, 219, 132, 0.12); }
 
 @keyframes rocketLaunch {

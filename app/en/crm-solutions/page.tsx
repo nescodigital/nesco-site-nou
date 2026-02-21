@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata, buildServiceSchema } from "@/lib/seo";
+import { CrmLogoTicker } from "@/components/ui/CrmLogoTicker";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -46,7 +47,7 @@ export default function CRMEnPage() {
   return (
     <>
       <Header locale="en" />
-      <main><ServicePageTemplate data={data} /></main>
+      <main><ServicePageTemplate data={data} /><CrmLogoTicker locale="en" /></main>
       <Footer locale="en" />
     </>
   );

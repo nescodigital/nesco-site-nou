@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
+import { CrmLogoTicker } from "@/components/ui/CrmLogoTicker";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -39,5 +40,5 @@ const data: ServicePageData = {
 };
 
 export default function CRMRoPage() {
-  return (<><Header locale="ro" /><main><ServicePageTemplate data={data} /></main><Footer locale="ro" /></>);
+  return (<><Header locale="ro" /><main><ServicePageTemplate data={data} /><CrmLogoTicker /></main><Footer locale="ro" /></>);
 }
