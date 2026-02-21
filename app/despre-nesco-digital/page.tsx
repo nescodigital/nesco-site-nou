@@ -231,11 +231,21 @@ export default function DespreNescoPage() {
                   <div
                     style={{
                       position: "relative",
-                      height: "340px",
-                      background: "radial-gradient(ellipse 80% 50% at 50% 100%, rgba(86,219,132,0.07) 0%, transparent 70%)",
-                      overflow: "hidden",
+                      background: "radial-gradient(ellipse 80% 40% at 50% 100%, rgba(86,219,132,0.07) 0%, transparent 70%)",
                     }}
                   >
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={1024}
+                      height={1536}
+                      style={{
+                        display: "block",
+                        width: "75%",
+                        height: "auto",
+                        margin: "0 auto",
+                      }}
+                    />
                     <div
                       style={{
                         position: "absolute",
@@ -245,19 +255,6 @@ export default function DespreNescoPage() {
                         width: "55%",
                         height: "1px",
                         background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.35), transparent)",
-                        zIndex: 2,
-                      }}
-                    />
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      width={1024}
-                      height={1536}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        objectPosition: "top 8%",
                       }}
                     />
                   </div>
