@@ -12,13 +12,10 @@ export function NewsletterForm() {
     if (!agreed || !email) return;
     setStatus("loading");
     try {
-      const res = await fetch("https://api.themarketer.com/v1/subscribers", {
+      const res = await fetch("/api/newsletter", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer BPAWOA46",
-        },
-        body: JSON.stringify({ email, source: "website_footer" }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
       });
       if (!res.ok) throw new Error("failed");
       setStatus("success");

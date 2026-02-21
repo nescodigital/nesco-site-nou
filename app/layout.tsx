@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LazyArrowPattern } from "@/components/ui/LazyArrowPattern";
 import { CookieConsent } from "@/components/CookieConsent";
+import { NewsletterPopup } from "@/components/NewsletterPopup";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -144,6 +145,7 @@ export default function RootLayout({
       <body className="antialiased text-white" style={{ backgroundColor: "#050505" }}>
         <LazyArrowPattern />
         <CookieConsent />
+        <NewsletterPopup />
         {children}
         <SpeedInsights />
         <Analytics />
