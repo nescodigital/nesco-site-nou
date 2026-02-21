@@ -8,7 +8,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "Digital Marketing | SEO, Email Marketing, Social Media | Nesco Digital",
-  description: "Strategy, execution and continuous optimization — all under one roof. SEO, email marketing, social media and CRO for measurable, sustainable growth.",
+  description: "Strategy, execution and continuous optimization , all under one roof. SEO, email marketing, social media and CRO for measurable, sustainable growth.",
   path: "/en/digital-marketing/",
   routeKey: "digitalMarketingHub",
 });
@@ -25,7 +25,7 @@ export default function DigitalMarketingEnPage() {
             locale: "en",
             badge: "Digital Marketing",
             title: "Digital Marketing focused on results",
-            subtitle: "Strategy, execution and continuous optimization — all under one roof.",
+            subtitle: "Strategy, execution and continuous optimization , all under one roof.",
             services: [
               {
                 label: "Digital Strategy",

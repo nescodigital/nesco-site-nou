@@ -41,7 +41,7 @@ export function Hero({ locale }: HeroProps) {
       {/* Subtle grid */}
       <div className="absolute inset-0 bg-grid opacity-100 pointer-events-none" />
 
-      {/* Hero animated glow — desktop right */}
+      {/* Hero animated glow , desktop right */}
       <div
         className="absolute hidden lg:block pointer-events-none"
         style={{
@@ -55,7 +55,7 @@ export function Hero({ locale }: HeroProps) {
           animation: "heroGlow 14s ease-in-out infinite",
         }}
       />
-      {/* Secondary glow — top left */}
+      {/* Secondary glow , top left */}
       <div
         className="absolute pointer-events-none"
         style={{
@@ -80,7 +80,7 @@ export function Hero({ locale }: HeroProps) {
       />
 
 
-      {/* Mobile globe — static glow only, no Three.js on mobile */}
+      {/* Mobile globe , static glow only, no Three.js on mobile */}
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
@@ -116,7 +116,7 @@ export function Hero({ locale }: HeroProps) {
             className="opacity-0"
             style={{ animation: "fadeUp 0.8s ease forwards 0.1s" }}
           >
-            {/* Social proof pill — first element */}
+            {/* Social proof pill , first element */}
             <div
               className="inline-flex items-center gap-3 mb-6"
               style={{
@@ -230,7 +230,7 @@ export function Hero({ locale }: HeroProps) {
               animation: "fadeUp 1.1s ease forwards 0.35s",
             }}
           >
-            {/* Badge — horizontal, above the globe */}
+            {/* Badge , horizontal, above the globe */}
             <div
               className="absolute pointer-events-none select-none"
               style={{
@@ -248,7 +248,7 @@ export function Hero({ locale }: HeroProps) {
               {h.badge}
             </div>
 
-            {/* Arrow watermark — centered on globe, above it */}
+            {/* Arrow watermark , centered on globe, above it */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo mare Nesco.svg"

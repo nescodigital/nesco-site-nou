@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   locale: "de",
   title: "Projekte | Digitale Marketing Fallstudien | Nesco Digital",
-  description: "Echte Ergebnisse für echte Kunden. 7-stelliger Umsatz, 400% Wachstum, 5X ROI — entdecken Sie unsere Fallstudien.",
+  description: "Echte Ergebnisse für echte Kunden. 7-stelliger Umsatz, 400% Wachstum, 5X ROI , entdecken Sie unsere Fallstudien.",
   path: "/ge/projekte/",
   routeKey: "projects",
 });

@@ -162,9 +162,9 @@ export default function DatenschutzPage() {
               </P>
               <ul style={{ listStyle: "none", padding: 0, marginBottom: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
-                  "Google Analytics — Website-Analytics",
-                  "Meta (Facebook) — Werbekampagnenmessung über Meta Pixel",
-                  "TikTok — Werbekampagnenmessung über TikTok Pixel",
+                  "Google Analytics , Website-Analytics",
+                  "Meta (Facebook) , Werbekampagnenmessung über Meta Pixel",
+                  "TikTok , Werbekampagnenmessung über TikTok Pixel",
                 ].map((item) => (
                   <Li key={item}>
                     <span style={{ color: "#56db84", marginRight: "10px" }}>→</span>{item}
@@ -202,11 +202,11 @@ export default function DatenschutzPage() {
               <H2>7. Cookies</H2>
               <P>Wir verwenden zwei Arten von Cookies:</P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Essenziell</strong> — für den Betrieb der
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Essenziell</strong> , für den Betrieb der
                 Website erforderlich, keine Einwilligung notwendig.
               </P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong> — Google
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong> , Google
                 Analytics, Meta Pixel und TikTok Pixel, nur nach Ihrer Einwilligung aktiviert. Sie können Ihre
                 Präferenzen jederzeit über das Cookie-Banner ändern.
               </P>

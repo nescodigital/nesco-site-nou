@@ -737,7 +737,7 @@ export default function GrowthSprintEcommerceDePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="5.500 € — Vollzahlung"
+                    planLabel="5.500 € , Vollzahlung"
                     variant="primary"
                     label="Für diese Option bewerben"
                   />
@@ -786,7 +786,7 @@ export default function GrowthSprintEcommerceDePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="6.500 € — Ratenzahlung"
+                    planLabel="6.500 € , Ratenzahlung"
                     variant="ghost"
                     label="Für diese Option bewerben"
                   />

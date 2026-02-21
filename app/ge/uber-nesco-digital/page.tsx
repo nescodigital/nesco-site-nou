@@ -38,7 +38,7 @@ const steps = [
   {
     step: "02",
     title: "Aufbau",
-    desc: "Detaillierte, akribische Implementierung: Strategie, Kampagnen, Assets, Tracking — alles auf Performance ausgerichtet.",
+    desc: "Detaillierte, akribische Implementierung: Strategie, Kampagnen, Assets, Tracking , alles auf Performance ausgerichtet.",
   },
   {
     step: "03",
@@ -107,7 +107,7 @@ export default function UeberNescoDePage() {
                 letterSpacing: "0.01em",
               }}
             >
-              Wir sind nicht nur eine Agentur. Wir sind Ihr Premium-Ausführungspartner — von der Strategie bis zu Kampagnen, die echten Umsatz generieren.
+              Wir sind nicht nur eine Agentur. Wir sind Ihr Premium-Ausführungspartner , von der Strategie bis zu Kampagnen, die echten Umsatz generieren.
             </p>
           </div>
         </section>
@@ -147,7 +147,7 @@ export default function UeberNescoDePage() {
                   Effiziente digitale Strategien, die eine Online-Präsenz mit echten Ergebnissen aufbauen.
                 </h2>
                 <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                  Bei Nesco Digital bieten wir maßgeschneiderte digitale Marketinglösungen für Unternehmen jeder Größe. Von Startups bis zu etablierten Unternehmen entwickeln wir Strategien, die nachhaltiges Wachstum generieren — eine Kombination aus Daten, Kreativität und makelloser Ausführung.
+                  Bei Nesco Digital bieten wir maßgeschneiderte digitale Marketinglösungen für Unternehmen jeder Größe. Von Startups bis zu etablierten Unternehmen entwickeln wir Strategien, die nachhaltiges Wachstum generieren , eine Kombination aus Daten, Kreativität und makelloser Ausführung.
                 </p>
               </div>
             </FadeInSection>
@@ -239,7 +239,7 @@ export default function UeberNescoDePage() {
                   Unser Ansatz
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem" }}>
-                  Es gibt keine Wunderlösungen — nur einen gut durchdachten Prozess.
+                  Es gibt keine Wunderlösungen , nur einen gut durchdachten Prozess.
                 </p>
               </div>
             </FadeInSection>

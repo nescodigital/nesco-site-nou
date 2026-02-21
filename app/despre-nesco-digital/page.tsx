@@ -37,7 +37,7 @@ const steps = [
   {
     step: "02",
     title: "Construire",
-    desc: "Implementare detaliată și meticuloasă: strategie, campanii, asset-uri, tracking — totul setat pentru performanță.",
+    desc: "Implementare detaliată și meticuloasă: strategie, campanii, asset-uri, tracking , totul setat pentru performanță.",
   },
   {
     step: "03",
@@ -107,7 +107,7 @@ export default function DespreNescoPage() {
                 letterSpacing: "0.01em",
               }}
             >
-              Nu suntem o agenție obișnuită. Suntem partenerul tău premium de execuție — de la strategie la campanii care generează revenue real.
+              Nu suntem o agenție obișnuită. Suntem partenerul tău premium de execuție , de la strategie la campanii care generează revenue real.
             </p>
           </div>
         </section>
@@ -240,7 +240,7 @@ export default function DespreNescoPage() {
                 Abordarea noastră
               </h2>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem" }}>
-                Nu există soluții magice — ci un proces bine gândit.
+                Nu există soluții magice , ci un proces bine gândit.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

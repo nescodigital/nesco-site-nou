@@ -8,7 +8,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "de",
   title: "Digitales Marketing | SEO, E-Mail-Marketing, Social Media | Nesco Digital",
-  description: "Strategie, Umsetzung und kontinuierliche Optimierung — alles unter einem Dach. SEO, E-Mail-Marketing, Social Media und CRO für messbares, nachhaltiges Wachstum.",
+  description: "Strategie, Umsetzung und kontinuierliche Optimierung , alles unter einem Dach. SEO, E-Mail-Marketing, Social Media und CRO für messbares, nachhaltiges Wachstum.",
   path: "/ge/digitales-marketing/",
   routeKey: "digitalMarketingHub",
 });
@@ -25,7 +25,7 @@ export default function DigitalesMarketingDePage() {
             locale: "de",
             badge: "Digitales Marketing",
             title: "Digitales Marketing mit Fokus auf Ergebnisse",
-            subtitle: "Strategie, Umsetzung und kontinuierliche Optimierung — alles unter einem Dach.",
+            subtitle: "Strategie, Umsetzung und kontinuierliche Optimierung , alles unter einem Dach.",
             services: [
               {
                 label: "Digitale Strategie",

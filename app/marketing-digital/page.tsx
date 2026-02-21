@@ -11,7 +11,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Marketing Digital | SEO, Email Marketing, Social Media | Nesco Digital",
-  description: "Strategie, execuție și optimizare continuă — toate sub același acoperiș. SEO, email marketing, social media și CRO pentru creștere măsurabilă.",
+  description: "Strategie, execuție și optimizare continuă , toate sub același acoperiș. SEO, email marketing, social media și CRO pentru creștere măsurabilă.",
   path: "/marketing-digital/",
   routeKey: "digitalMarketingHub",
 });
@@ -24,7 +24,7 @@ const painPoints = [
     desc: "SEO la o agenție, ads la alta, email marketing intern. Nimeni nu coordonează, nimeni nu e responsabil pentru rezultatul final.",
   },
   {
-    title: "Angajezi sau externalizezi — ambele variante par riscante",
+    title: "Angajezi sau externalizezi , ambele variante par riscante",
     desc: "Un om bun cu competențe complete costă mult, pleacă repede și nu acoperă tot. O agenție clasică livrează rapoarte și trimite factura.",
   },
   {
@@ -36,7 +36,7 @@ const painPoints = [
 const differentiators = [
   {
     title: "Acoperim tot spectrul digital",
-    desc: "SEO, paid ads, email marketing, social media, CRO, strategie — o echipă care vede și execută imaginea completă.",
+    desc: "SEO, paid ads, email marketing, social media, CRO, strategie , o echipă care vede și execută imaginea completă.",
   },
   {
     title: "Suntem sinceri despre ce funcționează",
@@ -74,7 +74,7 @@ const faq = [
   },
   {
     q: "Lucrați cu companii mici sau doar enterprise?",
-    a: "Lucrăm cu companii care au un produs validat și vor să scaleze — indiferent de dimensiune. Bugetul minim recomandat pentru paid ads este 3.000€/lună.",
+    a: "Lucrăm cu companii care au un produs validat și vor să scaleze , indiferent de dimensiune. Bugetul minim recomandat pentru paid ads este 3.000€/lună.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function MarketingDigitalPage() {
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
             >
-              Strategie, execuție și optimizare continuă — toate sub același acoperiș. Fără să angajezi 5 oameni diferiți.
+              Strategie, execuție și optimizare continuă , toate sub același acoperiș. Fără să angajezi 5 oameni diferiți.
             </p>
             <Link
               href={r.contact}

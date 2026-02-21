@@ -41,7 +41,7 @@ const forList = [
   "Online-Kursersteller und wissensbasierte Unternehmen mit einer bestehenden Zielgruppe",
   "Personal Brands, die Umsatz generieren und ohne zusätzliche Komplexität skalieren wollen",
   "Unternehmer, die Empfehlungen satt haben und Ausführung wollen",
-  "Bestehende Betriebe — Sie brauchen etwas zu optimieren, nicht von Grund auf aufzubauen",
+  "Bestehende Betriebe , Sie brauchen etwas zu optimieren, nicht von Grund auf aufzubauen",
 ];
 
 const notForList = [
@@ -274,7 +274,7 @@ export default function GrowthSprintBildungPage() {
                       fontWeight: 500,
                     }}
                   >
-                    Das eigentliche Problem ist nicht der Aufwand. Es ist, dass Sie jemanden brauchen, der in die Maschine geht, genau findet, was kaputt ist, und es repariert — keinen Bericht schreibt, kein Strategie-Deck übergibt.{" "}
+                    Das eigentliche Problem ist nicht der Aufwand. Es ist, dass Sie jemanden brauchen, der in die Maschine geht, genau findet, was kaputt ist, und es repariert , keinen Bericht schreibt, kein Strategie-Deck übergibt.{" "}
                     <span style={{ color: "#56db84" }}>Es tatsächlich repariert.</span>
                   </p>
                 </div>
@@ -734,7 +734,7 @@ export default function GrowthSprintBildungPage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="4.500 € — Vollzahlung"
+                    planLabel="4.500 € , Vollzahlung"
                     variant="primary"
                     label="Für diese Option bewerben"
                   />
@@ -783,7 +783,7 @@ export default function GrowthSprintBildungPage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="5.500 € — Ratenzahlung"
+                    planLabel="5.500 € , Ratenzahlung"
                     variant="ghost"
                     label="Für diese Option bewerben"
                   />

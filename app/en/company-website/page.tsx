@@ -43,7 +43,7 @@ const data: ServicePageData = {
   faq: [
     { q: "How long does it take to build a website?", a: "A presentation site: 3-4 weeks. An average e-commerce site: 6-8 weeks. It depends on the complexity and how quickly we receive materials from you." },
     { q: "What platform do you build on?", a: "WordPress for flexibility and ease of management, or Next.js for maximum performance and PageSpeed 95+. We recommend based on your specific needs." },
-    { q: "Do you include SEO in the website price?", a: "We include basic technical SEO — URL structure, meta tags, loading speed, sitemap. Ongoing SEO (content, link building) is a separate service." },
+    { q: "Do you include SEO in the website price?", a: "We include basic technical SEO , URL structure, meta tags, loading speed, sitemap. Ongoing SEO (content, link building) is a separate service." },
     { q: "Can I edit the content myself after launch?", a: "Yes, every site includes a 1-hour training session and documentation. You can edit texts, images, and add new pages without technical knowledge." },
     { q: "What happens after launch?", a: "We provide 30 days of free technical support. Afterwards, maintenance packages include updates, backups, and minor monthly modifications." },
   ],

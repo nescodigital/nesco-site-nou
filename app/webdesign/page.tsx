@@ -11,7 +11,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Webdesign & Dezvoltare Web | Site-uri Premium | Nesco Digital",
-  description: "Site-uri construite strategic, nu doar frumoase. Webdesign și dezvoltare web pentru companii ambițioase — lead generation, magazine online, website-uri de companie.",
+  description: "Site-uri construite strategic, nu doar frumoase. Webdesign și dezvoltare web pentru companii ambițioase , lead generation, magazine online, website-uri de companie.",
   path: "/webdesign/",
   routeKey: "webdesignHub",
 });
@@ -21,7 +21,7 @@ const r = routes.ro;
 const painPoints = [
   {
     title: "Ai un site dar nu generează lead-uri",
-    desc: "Arată bine, dar vizitatorii pleacă fără să facă nimic. Nimeni nu știe de ce — și nimeni nu pare să rezolve problema.",
+    desc: "Arată bine, dar vizitatorii pleacă fără să facă nimic. Nimeni nu știe de ce , și nimeni nu pare să rezolve problema.",
   },
   {
     title: "Ultimul site a durat 6 luni și tot nu era ce voiai",
@@ -51,7 +51,7 @@ const differentiators = [
 const services = [
   { label: "Website Lead Generation", desc: "Site-uri construite cu un singur scop: să transforme vizitatorii în lead-uri calificate pentru echipa ta de vânzări.", href: r.leadGenWebsite, accent: "#56db84" },
   { label: "Website Companie", desc: "Prezență profesională online care reflectă valorile brandului tău și inspiră încredere clienților potențiali.", href: r.companyWebsite, accent: "#60a5fa" },
-  { label: "Magazine Online", desc: "Shopify, WooCommerce, Magento — magazine online scalabile cu UX optimizat pentru conversii maxime.", href: r.ecommerceStores, accent: "#a78bfa" },
+  { label: "Magazine Online", desc: "Shopify, WooCommerce, Magento , magazine online scalabile cu UX optimizat pentru conversii maxime.", href: r.ecommerceStores, accent: "#a78bfa" },
   { label: "Mentenanță Website", desc: "Site-ul tău mereu performant, securizat și actualizat. Intervenții rapide și monitorizare continuă.", href: r.websiteMaintenance, accent: "#fb923c" },
 ];
 
@@ -64,7 +64,7 @@ const stats = [
 const faq = [
   {
     q: "Cât costă un site?",
-    a: "Depinde de obiectiv și complexitate. Un website de prezentare începe de la 1.500€, un magazin online de la 3.500€. Îți dăm o estimare clară după prima discuție — fără surprize pe parcurs.",
+    a: "Depinde de obiectiv și complexitate. Un website de prezentare începe de la 1.500€, un magazin online de la 3.500€. Îți dăm o estimare clară după prima discuție , fără surprize pe parcurs.",
   },
   {
     q: "Cât durează?",
@@ -122,7 +122,7 @@ export default function WebdesignPage() {
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
             >
-              Nu facem site-uri frumoase. Facem site-uri care lucrează — fiecare element construit strategic în jurul unui obiectiv de business.
+              Nu facem site-uri frumoase. Facem site-uri care lucrează , fiecare element construit strategic în jurul unui obiectiv de business.
             </p>
             <Link
               href={r.contact}

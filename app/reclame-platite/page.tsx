@@ -11,7 +11,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Reclame Plătite | Google Ads, Meta Ads, TikTok Ads | Nesco Digital",
-  description: "Nu gestionăm bugete — construim sisteme de achiziție profitabile. Google Ads, Meta Ads, TikTok Ads și LinkedIn Ads pentru companii ambițioase.",
+  description: "Nu gestionăm bugete , construim sisteme de achiziție profitabile. Google Ads, Meta Ads, TikTok Ads și LinkedIn Ads pentru companii ambițioase.",
   path: "/reclame-platite/",
   routeKey: "paidAdsHub",
 });
@@ -86,7 +86,7 @@ const differentiators = [
   },
   {
     title: "Experiență pe bani reali, nu bugete de test",
-    desc: "36M€+ bugete gestionate. 23.000+ campanii. Știm ce funcționează și ce nu — pe piața românească și internațională.",
+    desc: "36M€+ bugete gestionate. 23.000+ campanii. Știm ce funcționează și ce nu , pe piața românească și internațională.",
     icon: (
       <svg viewBox="0 0 100 100" width="140" height="140" style={{position:"absolute", top:"50%", right:"-20px", transform:"translateY(-50%)", opacity:0.1}} aria-hidden="true">
         <path d="M35 10 L65 10 L65 55 Q65 75 50 80 Q35 75 35 55 Z" fill="#56db84"/>
@@ -185,7 +185,7 @@ const faq = [
   },
   {
     q: "Cum știu că veți înțelege business-ul meu?",
-    a: "Nu aplicăm template-uri. Prima săptămână e dedicată în totalitate înțelegerii business-ului tău — marje, ICP, funnel, competiție. Campania vine după.",
+    a: "Nu aplicăm template-uri. Prima săptămână e dedicată în totalitate înțelegerii business-ului tău , marje, ICP, funnel, competiție. Campania vine după.",
   },
 ];
 
@@ -235,7 +235,7 @@ export default function ReclamePlatitePage() {
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
             >
-              Nu gestionăm bugete. Construim sisteme de achiziție profitabile — și suntem primii care îți spun dacă nu putem ajuta.
+              Nu gestionăm bugete. Construim sisteme de achiziție profitabile , și suntem primii care îți spun dacă nu putem ajuta.
             </p>
             <Link
               href={r.contact}
@@ -455,7 +455,7 @@ export default function ReclamePlatitePage() {
             <p
               style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "48px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto" }}
             >
-              O discuție de 30 de minute. Fără pitch, fără presiune — doar o evaluare sinceră a situației tale.
+              O discuție de 30 de minute. Fără pitch, fără presiune , doar o evaluare sinceră a situației tale.
             </p>
             <Link
               href={r.contact}

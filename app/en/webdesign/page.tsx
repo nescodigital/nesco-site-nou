@@ -8,7 +8,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "Webdesign & Web Development | Premium Websites | Nesco Digital",
-  description: "Strategically built websites — not just beautiful ones. Webdesign and web development for ambitious companies — lead generation, online stores, company websites.",
+  description: "Strategically built websites , not just beautiful ones. Webdesign and web development for ambitious companies , lead generation, online stores, company websites.",
   path: "/en/webdesign/",
   routeKey: "webdesignHub",
 });
@@ -25,7 +25,7 @@ export default function WebdesignEnPage() {
             locale: "en",
             badge: "Webdesign",
             title: "Webdesign that converts visitors into clients",
-            subtitle: "Strategically built websites — not just beautiful ones. Every element serves a business objective.",
+            subtitle: "Strategically built websites , not just beautiful ones. Every element serves a business objective.",
             services: [
               {
                 label: "Lead Generation Website",
@@ -41,7 +41,7 @@ export default function WebdesignEnPage() {
               },
               {
                 label: "E-commerce Stores",
-                desc: "Shopify, WooCommerce, Magento — scalable online stores with UX optimized for maximum conversions.",
+                desc: "Shopify, WooCommerce, Magento , scalable online stores with UX optimized for maximum conversions.",
                 href: r.ecommerceStores,
                 accent: "#a78bfa",
               },

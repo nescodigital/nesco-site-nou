@@ -737,7 +737,7 @@ export default function GrowthSprintEcommercePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="€5,500 — Full payment"
+                    planLabel="€5,500 , Full payment"
                     variant="primary"
                     label="Apply for this option"
                   />
@@ -786,7 +786,7 @@ export default function GrowthSprintEcommercePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="€6,500 — Split payment"
+                    planLabel="€6,500 , Split payment"
                     variant="ghost"
                     label="Apply for this option"
                   />

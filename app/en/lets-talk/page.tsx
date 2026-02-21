@@ -135,7 +135,7 @@ export default function LetsTalkPage() {
                 </div>
               </div>
 
-              {/* Right — Form */}
+              {/* Right , Form */}
               <FadeInSection delay={150}>
                 <ContactForm locale="en" />
               </FadeInSection>

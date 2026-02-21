@@ -20,19 +20,19 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const auditItems = [
-  "Audit achiziție plătită — ROAS, CPM, eficiența funnel-ului, alocarea bugetului",
-  "Analiza conversiei pe pagini de produs și checkout — unde pierzi cumpărători",
-  "Audit revenue email și SMS — flow-uri, secvențe, revenue per subscriber",
-  "Structura AOV și LTV — upsell-uri, bundle-uri, rate de reachizitie",
-  "Review operațional — fricțiune fulfillment, blocaje echipă, gaps de proces",
-  "Structura KPI și tracking — măsori ce contează cu adevărat?",
+  "Audit achiziție plătită , ROAS, CPM, eficiența funnel-ului, alocarea bugetului",
+  "Analiza conversiei pe pagini de produs și checkout , unde pierzi cumpărători",
+  "Audit revenue email și SMS , flow-uri, secvențe, revenue per subscriber",
+  "Structura AOV și LTV , upsell-uri, bundle-uri, rate de reachizitie",
+  "Review operațional , fricțiune fulfillment, blocaje echipă, gaps de proces",
+  "Structura KPI și tracking , măsori ce contează cu adevărat?",
 ];
 
 const implItems = [
   "Rezolvăm cele mai importante leak-uri de conversie și retenție din audit",
   "Reconstruim sau optimizăm flow-urile de email și SMS cu performanță slabă",
   "Restructurăm strategia de achiziție pentru profitabilitate, nu doar volum",
-  "Implementăm îmbunătățiri AOV și LTV — flow-uri upsell, structuri bundle",
+  "Implementăm îmbunătățiri AOV și LTV , flow-uri upsell, structuri bundle",
   "Configurăm tracking KPI curat și sisteme de raportare",
 ];
 
@@ -40,7 +40,7 @@ const forList = [
   "Branduri e-commerce la 50k–500k+/lună cu buget real de ads și operațiuni existente",
   "Fondatori care simt că creșterea s-a oprit deși cheltuielile de marketing cresc",
   "Business owners care vor un operator, nu un alt vendor",
-  "Branduri cu tech stack existent — Shopify, Klaviyo, Meta, Google — gata de optimizat",
+  "Branduri cu tech stack existent , Shopify, Klaviyo, Meta, Google , gata de optimizat",
 ];
 
 const notForList = [
@@ -278,7 +278,7 @@ export default function GrowthSprintEcommercePage() {
                     Rulezi campanii. Procesezi comenzi. Dar marginile sunt mai mici decât ar trebui, ROAS-ul scade constant, și cu cât cheltuiești mai mult, cu atât pare mai puțin profitabil.
                   </p>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Ai optimizat ce poți vedea — reclamele, poate homepage-ul. Dar pierderile reale sunt ascunse: în drop-off-urile din funnel, în performanța slabă a emailului și SMS-ului, în gap-urile de AOV și LTV, și în fricțiunea operațională care îți mănâncă eficiența.
+                    Ai optimizat ce poți vedea , reclamele, poate homepage-ul. Dar pierderile reale sunt ascunse: în drop-off-urile din funnel, în performanța slabă a emailului și SMS-ului, în gap-urile de AOV și LTV, și în fricțiunea operațională care îți mănâncă eficiența.
                   </p>
                   <p
                     style={{
@@ -342,7 +342,7 @@ export default function GrowthSprintEcommercePage() {
                   Nu îți oferim un plan de acțiune și dispărem.
                 </h2>
                 <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta e-commerce — auditând fiecare sistem de revenue și implementând cele mai importante fix-uri în achiziție, conversie, retenție și operațiuni.
+                  Un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta e-commerce , auditând fiecare sistem de revenue și implementând cele mai importante fix-uri în achiziție, conversie, retenție și operațiuni.
                 </p>
                 <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600 }}>
                   Acesta nu este consultanță. Noi executăm.
@@ -520,7 +520,7 @@ export default function GrowthSprintEcommercePage() {
                     Livrabil Final
                   </div>
                   <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>
-                    Un sistem de revenue mai profitabil și mai bine convertit — implementat, documentat și pregătit să scaleze.{" "}
+                    Un sistem de revenue mai profitabil și mai bine convertit , implementat, documentat și pregătit să scaleze.{" "}
                     <strong style={{ color: "#ffffff" }}>Păstrezi tot ce construim.</strong>
                   </p>
                 </div>
@@ -730,7 +730,7 @@ export default function GrowthSprintEcommercePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                     <GrowthSprintApplyButton
-                      planLabel="5.500 € — Plată integrală"
+                      planLabel="5.500 € , Plată integrală"
                       variant="primary"
                     />
                   </div>
@@ -766,7 +766,7 @@ export default function GrowthSprintEcommercePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                     <GrowthSprintApplyButton
-                      planLabel="6.500 € — Rate în 2 tranșe"
+                      planLabel="6.500 € , Rate în 2 tranșe"
                       variant="ghost"
                     />
                   </div>

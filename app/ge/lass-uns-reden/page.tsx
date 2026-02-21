@@ -134,7 +134,7 @@ export default function LassUnsRedenPage() {
                 </div>
               </div>
 
-              {/* Right — Form */}
+              {/* Right , Form */}
               <FadeInSection delay={150}>
                 <ContactForm locale="de" />
               </FadeInSection>

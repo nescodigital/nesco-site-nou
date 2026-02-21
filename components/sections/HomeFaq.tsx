@@ -8,7 +8,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
     items: [
       {
         q: "Cum ne poate ajuta Nesco Digital să îmi cresc afacerea online?",
-        a: "Printr-o strategie personalizată care combină reclame plătite (Google, Meta, TikTok), SEO, webdesign orientat spre conversii și marketing prin email. Ne concentrăm exclusiv pe rezultate măsurabile — trafic calificat, lead-uri și vânzări, nu vanity metrics.",
+        a: "Printr-o strategie personalizată care combină reclame plătite (Google, Meta, TikTok), SEO, webdesign orientat spre conversii și marketing prin email. Ne concentrăm exclusiv pe rezultate măsurabile , trafic calificat, lead-uri și vânzări, nu vanity metrics.",
       },
       {
         q: "Ce rezultate pot să mă aștept și în cât timp?",
@@ -24,7 +24,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
       },
       {
         q: "Ce diferențiază Nesco Digital de alte agenții de marketing digital?",
-        a: "Lucrăm ca un partener de execuție, nu ca o agenție clasică. Nu vindem pachete standard — fiecare strategie e construită pe specificul afacerii tale. Avem peste 15 ani de experiență, am gestionat peste 36M€ în bugete media și lucrăm cu companii care vor să crească serios, nu să bifeze prezența online.",
+        a: "Lucrăm ca un partener de execuție, nu ca o agenție clasică. Nu vindem pachete standard , fiecare strategie e construită pe specificul afacerii tale. Avem peste 15 ani de experiență, am gestionat peste 36M€ în bugete media și lucrăm cu companii care vor să crească serios, nu să bifeze prezența online.",
       },
     ],
   },
@@ -33,7 +33,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
     items: [
       {
         q: "How can Nesco Digital help me grow my business online?",
-        a: "Through a tailored strategy combining paid ads (Google, Meta, TikTok), SEO, conversion-focused web design, and email marketing. We focus exclusively on measurable outcomes — qualified traffic, leads, and sales, not vanity metrics.",
+        a: "Through a tailored strategy combining paid ads (Google, Meta, TikTok), SEO, conversion-focused web design, and email marketing. We focus exclusively on measurable outcomes , qualified traffic, leads, and sales, not vanity metrics.",
       },
       {
         q: "What results can I expect and how quickly?",
@@ -49,7 +49,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
       },
       {
         q: "What sets Nesco Digital apart from other digital marketing agencies?",
-        a: "We work as an execution partner, not a traditional agency. We don't sell standard packages — every strategy is built around your specific business. With over 15 years of experience, €36M+ in managed media budgets, we work with companies that are serious about growth.",
+        a: "We work as an execution partner, not a traditional agency. We don't sell standard packages , every strategy is built around your specific business. With over 15 years of experience, €36M+ in managed media budgets, we work with companies that are serious about growth.",
       },
     ],
   },
@@ -58,7 +58,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
     items: [
       {
         q: "Wie kann Nesco Digital mir helfen, mein Unternehmen online zu skalieren?",
-        a: "Durch eine maßgeschneiderte Strategie, die bezahlte Werbung (Google, Meta, TikTok), SEO, konversionsorientiertes Webdesign und E-Mail-Marketing kombiniert. Wir konzentrieren uns ausschließlich auf messbare Ergebnisse — qualifizierten Traffic, Leads und Umsatz, keine Eitelkeitskennzahlen.",
+        a: "Durch eine maßgeschneiderte Strategie, die bezahlte Werbung (Google, Meta, TikTok), SEO, konversionsorientiertes Webdesign und E-Mail-Marketing kombiniert. Wir konzentrieren uns ausschließlich auf messbare Ergebnisse , qualifizierten Traffic, Leads und Umsatz, keine Eitelkeitskennzahlen.",
       },
       {
         q: "Welche Ergebnisse kann ich erwarten und wie schnell?",
@@ -74,7 +74,7 @@ const FAQ_CONTENT: Record<Locale, { heading: string; items: { q: string; a: stri
       },
       {
         q: "Was unterscheidet Nesco Digital von anderen Digitalagenturen?",
-        a: "Wir arbeiten als Umsetzungspartner, nicht als klassische Agentur. Wir verkaufen keine Standardpakete — jede Strategie wird auf Ihr spezifisches Unternehmen zugeschnitten. Mit über 15 Jahren Erfahrung und mehr als 36 Mio. € verwaltetem Mediabudget arbeiten wir mit Unternehmen, die ernsthaft wachsen wollen.",
+        a: "Wir arbeiten als Umsetzungspartner, nicht als klassische Agentur. Wir verkaufen keine Standardpakete , jede Strategie wird auf Ihr spezifisches Unternehmen zugeschnitten. Mit über 15 Jahren Erfahrung und mehr als 36 Mio. € verwaltetem Mediabudget arbeiten wir mit Unternehmen, die ernsthaft wachsen wollen.",
       },
     ],
   },

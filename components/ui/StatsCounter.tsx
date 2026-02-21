@@ -69,7 +69,7 @@ export function StatsCounter({ stats, columns = 3 }: StatsCounterProps) {
 
     return () => {
       observer.disconnect();
-      // Only cancel if not yet started — don't kill an in-progress animation
+      // Only cancel if not yet started , don't kill an in-progress animation
       if (!animatedRef.current && rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }

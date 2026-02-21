@@ -41,7 +41,7 @@ const forList = [
   "Online course creators and knowledge-based businesses with an existing audience",
   "Personal brands generating revenue who want to scale without adding complexity",
   "Business owners who are tired of getting recommendations and want execution",
-  "Established operations — you need something to optimize, not build from zero",
+  "Established operations , you need something to optimize, not build from zero",
 ];
 
 const notForList = [
@@ -274,7 +274,7 @@ export default function GrowthSprintEducationPage() {
                       fontWeight: 500,
                     }}
                   >
-                    The real problem isn't effort. It's that you need someone to go inside the machine, identify exactly what's broken, and fix it — not write a report, not hand you a strategy deck.{" "}
+                    The real problem isn't effort. It's that you need someone to go inside the machine, identify exactly what's broken, and fix it , not write a report, not hand you a strategy deck.{" "}
                     <span style={{ color: "#56db84" }}>Actually fix it.</span>
                   </p>
                 </div>
@@ -734,7 +734,7 @@ export default function GrowthSprintEducationPage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="€4,500 — Full payment"
+                    planLabel="€4,500 , Full payment"
                     variant="primary"
                     label="Apply for this option"
                   />
@@ -783,7 +783,7 @@ export default function GrowthSprintEducationPage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                   <GrowthSprintApplyButton
-                    planLabel="€5,500 — Split payment"
+                    planLabel="€5,500 , Split payment"
                     variant="ghost"
                     label="Apply for this option"
                   />

@@ -321,7 +321,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
               </div>
             </div>
 
-            {/* Step 1 — Qualification */}
+            {/* Step 1 , Qualification */}
             {step === 1 && (
               <div>
                 <h2
@@ -388,7 +388,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
               </div>
             )}
 
-            {/* Step 2 — Contact details */}
+            {/* Step 2 , Contact details */}
             {step === 2 && (
               <form onSubmit={handleSubmit} noValidate>
                 <h2

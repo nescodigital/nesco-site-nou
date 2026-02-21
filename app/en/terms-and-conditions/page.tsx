@@ -92,7 +92,7 @@ export default function TermsAndConditionsEnPage() {
 
               <H2>4. Intellectual property</H2>
               <P>
-                All content on this site — text, graphics, logos, visual structure — is the property of Nesco
+                All content on this site , text, graphics, logos, visual structure , is the property of Nesco
                 Digital or its partners and is protected by copyright law. Reproduction or use without our written
                 consent is prohibited.
               </P>

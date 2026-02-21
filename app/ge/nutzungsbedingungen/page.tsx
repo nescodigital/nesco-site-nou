@@ -93,7 +93,7 @@ export default function NutzungsbedingungenPage() {
 
               <H2>4. Geistiges Eigentum</H2>
               <P>
-                Alle Inhalte dieser Website — Texte, Grafiken, Logos, visuelle Struktur — sind Eigentum von
+                Alle Inhalte dieser Website , Texte, Grafiken, Logos, visuelle Struktur , sind Eigentum von
                 Nesco Digital oder seiner Partner und durch das Urheberrecht geschützt. Vervielfältigung oder
                 Nutzung ohne unsere schriftliche Zustimmung ist untersagt.
               </P>

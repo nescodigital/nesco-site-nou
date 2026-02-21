@@ -8,7 +8,7 @@ import { routes } from "@/lib/routes";
 export const metadata: Metadata = buildMetadata({
   locale: "de",
   title: "Webdesign & Webentwicklung | Premium-Websites | Nesco Digital",
-  description: "Strategisch entwickelte Websites — nicht nur schöne. Webdesign und Webentwicklung für ambitionierte Unternehmen — Lead-Generation, Online-Shops, Unternehmenswebsites.",
+  description: "Strategisch entwickelte Websites , nicht nur schöne. Webdesign und Webentwicklung für ambitionierte Unternehmen , Lead-Generation, Online-Shops, Unternehmenswebsites.",
   path: "/ge/webdesign/",
   routeKey: "webdesignHub",
 });
@@ -25,7 +25,7 @@ export default function WebdesignDePage() {
             locale: "de",
             badge: "Webdesign",
             title: "Webdesign, das Besucher in Kunden verwandelt",
-            subtitle: "Strategisch entwickelte Websites — nicht nur schöne. Jedes Element dient einem Business-Ziel.",
+            subtitle: "Strategisch entwickelte Websites , nicht nur schöne. Jedes Element dient einem Business-Ziel.",
             services: [
               {
                 label: "Lead-Generation-Website",
@@ -41,7 +41,7 @@ export default function WebdesignDePage() {
               },
               {
                 label: "E-Commerce-Shops",
-                desc: "Shopify, WooCommerce, Magento — skalierbare Online-Shops mit UX für maximale Conversions.",
+                desc: "Shopify, WooCommerce, Magento , skalierbare Online-Shops mit UX für maximale Conversions.",
                 href: r.ecommerceStores,
                 accent: "#a78bfa",
               },
