@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
@@ -26,6 +27,45 @@ const values = [
   { icon: TrendingUp,  title: "Performanță",  desc: "Ne concentrăm exclusiv pe rezultate tangibile, măsurabile, reale." },
   { icon: Users,       title: "Colaborare",   desc: "Construim parteneriate autentice și pe termen lung cu clienții noștri." },
   { icon: CheckCircle, title: "Transparență", desc: "Comunicăm clar fiecare pas, fiecare decizie, fiecare rezultat." },
+];
+
+const team = [
+  {
+    photo: "/team/markus.png",
+    name: "Markus",
+    role: "The Strategist",
+    bio: "Primește obiectivul și îl transformă în plan executabil. Stabilește prioritățile, distribuie task-urile și validează fiecare output înainte de livrare. Nu execută — gândește și controlează direcția.",
+  },
+  {
+    photo: "/team/sofia.png",
+    name: "Sofia",
+    role: "The Curator",
+    bio: "Monitorizează trendurile, filtrează informația relevantă și pregătește materia primă pentru comunicare. Fără Sofia, echipa ar lucra cu date incomplete și context lipsă.",
+  },
+  {
+    photo: "/team/bogdan.png",
+    name: "Bogdan",
+    role: "The Copywriter",
+    bio: "Scrie emailuri, ad copy și posts care convertesc. Lucrează structurat, cu hook-uri clare și CTA-uri testate — și cere validare strategică atunci când contextul o cere.",
+  },
+  {
+    photo: "/team/paula.png",
+    name: "Paula",
+    role: "The Prospector",
+    bio: "Identifică oportunități noi și construiește liste de outreach curate și calificate. Nu negociază, nu închide — pregătește terenul pentru conversații cu șanse reale.",
+  },
+  {
+    photo: "/team/diana.png",
+    name: "Diana",
+    role: "The Ops Manager",
+    bio: "Ține toate firele în mână: monitorizează progresul, semnalează blocajele și se asigură că livrabilele ajung la timp. Sistemul nervos al echipei.",
+  },
+  {
+    photo: "/team/alex.png",
+    name: "Alex",
+    role: "Head of Performance",
+    bio: "Urmărește ROAS, CPA și LTV cu precizie chirurgicală. Decide unde cresc și unde se opresc bugetele, optimizând continuu pentru profit real — nu doar trafic.",
+  },
 ];
 
 const steps = [
@@ -148,6 +188,109 @@ export default function DespreNescoPage() {
               <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
                 La Nesco Digital, oferim soluții de marketing digital personalizate pentru afaceri de toate dimensiunile. De la startup-uri la companii consolidate, construim strategii care generează creștere sustenabilă, combinând date, creativitate și execuție impecabilă.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Team ── */}
+        <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+          <div
+            className="absolute left-0 right-0 h-px"
+            style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
+          />
+          <div className="page-container">
+            <div className="text-center" style={{ marginBottom: "64px" }}>
+              <span className="badge mb-6">Echipa Noastră</span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  fontFeatureSettings: '"kern" 1, "liga" 1',
+                  marginTop: "20px",
+                }}
+              >
+                Oamenii din spatele rezultatelor
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+              {team.map((member) => (
+                <div
+                  key={member.name}
+                  className="group card-hover"
+                  style={{
+                    background: "#0a0a0a",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                  }}
+                >
+                  {/* Photo */}
+                  <div
+                    style={{
+                      position: "relative",
+                      height: "280px",
+                      background: "radial-gradient(ellipse 90% 60% at 50% 100%, rgba(86,219,132,0.07) 0%, transparent 70%)",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "55%",
+                        height: "1px",
+                        background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.35), transparent)",
+                      }}
+                    />
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={1024}
+                      height={1536}
+                      style={{
+                        height: "100%",
+                        width: "auto",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                        objectPosition: "bottom center",
+                      }}
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div style={{ padding: "20px 22px 24px" }}>
+                    <h3
+                      className="font-black text-white"
+                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.015em", marginBottom: "3px" }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.6875rem",
+                        color: "#56db84",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        marginBottom: "12px",
+                      }}
+                    >
+                      {member.role}
+                    </p>
+                    <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.38)", lineHeight: 1.65 }}>
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
