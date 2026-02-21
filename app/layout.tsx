@@ -111,10 +111,14 @@ export default function RootLayout({
         <meta name="theme-color" content="#080b0f" />
         {/* theMarketer */}
         <script dangerouslySetInnerHTML={{ __html: `
-  window.theMarketerKey = "2UFNOABX";
-  window.theMarketerRestKey = "BPAWOA46";
-  window.theMarketerCustomerId = "686292ccf87a2425120f1ac5";
-  (function(d,s){var t=d.createElement(s);t.async=true;t.src="https://cdn.themarketer.com/js/themarketer.js";d.head.appendChild(t);})(document,"script");
+  (function(){
+    mktr_key = "2UFNOABX";
+    var mktr = document.createElement("script");
+    mktr.async = true;
+    mktr.src = "https://t.themarketer.com/t/j/" + mktr_key;
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(mktr, s);
+  })();
 ` }} />
         {/* Google Analytics GA4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSFGPWEJV1" />
