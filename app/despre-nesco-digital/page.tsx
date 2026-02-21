@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
@@ -26,6 +27,25 @@ const values = [
   { icon: TrendingUp,  title: "Performanță",  desc: "Ne concentrăm exclusiv pe rezultate tangibile, măsurabile, reale." },
   { icon: Users,       title: "Colaborare",   desc: "Construim parteneriate autentice și pe termen lung cu clienții noștri." },
   { icon: CheckCircle, title: "Transparență", desc: "Comunicăm clar fiecare pas, fiecare decizie, fiecare rezultat." },
+];
+
+const team = [
+  {
+    photo: "/team/person-male.png",
+    photoWidth: 1024,
+    photoHeight: 1024,
+    name: "Alexandru Nescu",
+    role: "Fondator & CEO",
+    bio: "Peste 15 ani de experiență în marketing digital. A condus campanii cu bugete de milioane de euro pentru branduri din România, Germania și Europa de Vest.",
+  },
+  {
+    photo: "/team/person-female.png",
+    photoWidth: 768,
+    photoHeight: 1024,
+    name: "Ana-Maria Constantin",
+    role: "Head of Performance",
+    bio: "Specialistă în paid media și growth. A generat creștere de 3-10x ROAS pentru clienți din e-commerce, educație online și servicii B2B.",
+  },
 ];
 
 const steps = [
@@ -148,6 +168,117 @@ export default function DespreNescoPage() {
               <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
                 La Nesco Digital, oferim soluții de marketing digital personalizate pentru afaceri de toate dimensiunile. De la startup-uri la companii consolidate, construim strategii care generează creștere sustenabilă, combinând date, creativitate și execuție impecabilă.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Team ── */}
+        <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+          <div
+            className="absolute left-0 right-0 h-px"
+            style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
+          />
+          <div className="page-container">
+            <div className="text-center" style={{ marginBottom: "64px" }}>
+              <span className="badge mb-6">Echipa Noastră</span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  fontFeatureSettings: '"kern" 1, "liga" 1',
+                  marginTop: "20px",
+                }}
+              >
+                Oamenii din spatele rezultatelor
+              </h2>
+            </div>
+
+            <div
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+              style={{ maxWidth: "800px", margin: "0 auto" }}
+            >
+              {team.map((member, i) => (
+                <div
+                  key={i}
+                  className="group card-hover"
+                  style={{
+                    background: "#0a0a0a",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    position: "relative",
+                  }}
+                >
+                  {/* Photo area */}
+                  <div
+                    style={{
+                      position: "relative",
+                      height: "340px",
+                      background: "radial-gradient(ellipse 80% 60% at 50% 100%, rgba(86,219,132,0.09) 0%, transparent 70%)",
+                      display: "flex",
+                      alignItems: "flex-end",
+                      justifyContent: "center",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {/* Subtle green floor glow */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "60%",
+                        height: "2px",
+                        background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.4), transparent)",
+                        zIndex: 2,
+                      }}
+                    />
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      width={member.photoWidth}
+                      height={member.photoHeight}
+                      style={{
+                        height: "100%",
+                        width: "auto",
+                        maxWidth: "100%",
+                        objectFit: "contain",
+                        objectPosition: "bottom center",
+                        position: "relative",
+                        zIndex: 1,
+                      }}
+                    />
+                  </div>
+
+                  {/* Info */}
+                  <div style={{ padding: "24px 28px 30px" }}>
+                    <h3
+                      className="font-black text-white"
+                      style={{ fontSize: "1.125rem", letterSpacing: "-0.015em", marginBottom: "4px" }}
+                    >
+                      {member.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.75rem",
+                        color: "#56db84",
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        marginBottom: "14px",
+                      }}
+                    >
+                      {member.role}
+                    </p>
+                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>
+                      {member.bio}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
