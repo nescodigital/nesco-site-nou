@@ -94,17 +94,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
-        <link
-          rel="preload"
-          as="style"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"
-        />
+        {/* Satoshi self-hosted — preload critical weights for fast LCP */}
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/Satoshi-Black.woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" type="font/woff2" href="/fonts/Satoshi-Bold.woff2" crossOrigin="anonymous" />
         <link rel="icon" href="/logo mare Nesco.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/logo mare Nesco.svg" />
         <meta name="theme-color" content="#080b0f" />
