@@ -114,8 +114,8 @@ export default function RootLayout({
   window.theMarketerKey = "2UFNOABX";
   window.theMarketerRestKey = "BPAWOA46";
   window.theMarketerCustomerId = "686292ccf87a2425120f1ac5";
+  (function(d,s){var t=d.createElement(s);t.async=true;t.src="https://cdn.themarketer.com/js/themarketer.js";d.head.appendChild(t);})(document,"script");
 ` }} />
-        <script async src="https://cdn.themarketer.com/js/themarketer.js" />
         {/* Google Analytics GA4 */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PSFGPWEJV1" />
         <script dangerouslySetInnerHTML={{ __html: `
