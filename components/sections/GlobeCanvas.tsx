@@ -46,12 +46,13 @@ export function GlobeCanvas() {
     if (w === 0 || h === 0) return;
 
     // ── Renderer ──────────────────────────────────────────────────────────────
+    const isMobile = window.innerWidth < 1024;
     const renderer = new THREE.WebGLRenderer({
-      antialias: true,
+      antialias: !isMobile,
       alpha: true,
-      powerPreference: "high-performance",
+      powerPreference: isMobile ? "low-power" : "high-performance",
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1) : Math.min(window.devicePixelRatio, 2));
     renderer.setSize(w, h);
     renderer.setClearColor(0x000000, 0); // transparent background , CSS glow shows through
     renderer.domElement.style.background = "transparent";

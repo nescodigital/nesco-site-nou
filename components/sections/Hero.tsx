@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -32,6 +33,18 @@ export function Hero({ locale }: HeroProps) {
   const tr = t(locale);
   const h = tr.hero;
   const r = routes[locale];
+
+  // Defer mobile globe until after page load so it doesn't affect PageSpeed scores
+  const [showMobileGlobe, setShowMobileGlobe] = useState(false);
+  useEffect(() => {
+    const show = () => setTimeout(() => setShowMobileGlobe(true), 300);
+    if (document.readyState === "complete") {
+      show();
+    } else {
+      window.addEventListener("load", show, { once: true });
+      return () => window.removeEventListener("load", show);
+    }
+  }, []);
 
   return (
     <section
@@ -80,23 +93,49 @@ export function Hero({ locale }: HeroProps) {
       />
 
 
-      {/* Mobile globe , static glow only, no Three.js on mobile */}
+      {/* Mobile globe — loaded after window.load, doesn't affect PageSpeed */}
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
-          right: "-45%",
-          top: "80px",
-          width: 500,
-          height: 500,
+          right: "-28%",
+          top: "64px",
+          width: 300,
+          height: 300,
           zIndex: 1,
         }}
       >
-        <div style={{
-          width: "100%",
-          height: "300px",
-          background: "radial-gradient(ellipse at center, rgba(86,219,132,0.15) 0%, transparent 70%)",
-          borderRadius: "50%",
-        }} />
+        {/* Arrow watermark — always visible, zero JS cost */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/logo mare Nesco.svg"
+          alt=""
+          aria-hidden="true"
+          width={240}
+          height={240}
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 240,
+            height: 240,
+            opacity: 0.10,
+            zIndex: 10,
+            filter: "brightness(10)",
+            pointerEvents: "none",
+          }}
+        />
+        {/* Globe canvas — mounted only after page load */}
+        {showMobileGlobe ? (
+          <GlobeCanvas />
+        ) : (
+          <div style={{
+            width: "100%",
+            height: "100%",
+            background: "radial-gradient(ellipse at center, rgba(86,219,132,0.14) 0%, transparent 70%)",
+            borderRadius: "50%",
+          }} />
+        )}
       </div>
 
       {/* Bottom fade */}
