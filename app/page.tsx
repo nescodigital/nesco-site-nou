@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { HomeFaqSection } from "@/components/sections/HomeFaqSection";
 import { buildMetadata, orgSchema, websiteSchema, buildWebPageSchema } from "@/lib/seo";
+import { ClientLogos } from "@/components/sections/ClientLogos";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
@@ -71,6 +72,7 @@ export default function HomePage() {
       <Header locale="ro" />
       <main style={{ width: "100%", display: "block" }}>
         <Hero locale="ro" />
+        <ClientLogos />
         <Solutions locale="ro" />
         <ServicesGrid locale="ro" />
         <Portfolio locale="ro" />

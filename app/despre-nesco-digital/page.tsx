@@ -6,6 +6,7 @@ import { CtaBanner } from "@/components/sections/CtaBanner";
 import { buildMetadata, orgSchema } from "@/lib/seo";
 import { CheckCircle, Zap, TrendingUp, Users } from "lucide-react";
 import { StatsCounter } from "@/components/ui/StatsCounter";
+import { ClientLogos } from "@/components/sections/ClientLogos";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
@@ -162,6 +163,8 @@ export default function DespreNescoPage() {
             <StatsCounter stats={stats} columns={4} />
           </div>
         </section>
+
+        <ClientLogos label="Clienți de referință" />
 
         {/* ── Mission ── */}
         <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
