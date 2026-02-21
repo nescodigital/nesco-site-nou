@@ -2,12 +2,15 @@
 import Image from "next/image";
 
 const logos = [
-  { src: "/clients/accor.png",     alt: "Accor Hotels" },
-  { src: "/clients/vel-pitar.png", alt: "Vel Pitar" },
-  { src: "/clients/siemens.png",   alt: "Siemens" },
-  { src: "/clients/douglas.png",   alt: "Douglas" },
-  { src: "/clients/dentestet.png", alt: "DentEstet" },
-  { src: "/clients/burn.png",      alt: "Burn Energy Drink" },
+  { src: "/clients/accor.png",              alt: "Accor Hotels" },
+  { src: "/clients/vel-pitar.png",          alt: "Vel Pitar" },
+  { src: "/clients/siemens.png",            alt: "Siemens" },
+  { src: "/clients/douglas.png",            alt: "Douglas" },
+  { src: "/clients/dentestet.png",          alt: "DentEstet" },
+  { src: "/clients/burn.png",               alt: "Burn Energy Drink" },
+  { src: "/clients/luxury-interiors.webp",  alt: "Luxury Interiors" },
+  { src: "/clients/elvan.webp",             alt: "Elvan" },
+  { src: "/clients/syndax.webp",            alt: "Syndax" },
 ];
 
 // Duplicate for seamless loop
