@@ -53,7 +53,7 @@ export default function GoogleAdsEnPage() {
   const heroRightSlot = (
     <AdsDashboardCard
       emoji="📊"
-      title="Google Ads — Campaign"
+      title="Google Ads Campaign"
       date="September 2025"
       metrics={[
         { label: "ROAS", animated: { target: 5.2, decimals: 1, suffix: "x" }, badge: { text: "↑ 189%", positive: true } },
@@ -62,7 +62,7 @@ export default function GoogleAdsEnPage() {
       ]}
       barPercent={94}
       barLabel="Budget used"
-      status="ACTIVE — Search + Shopping + Display"
+      status="ACTIVE Search + Shopping + Display"
       badge1="5.2x ROAS E-commerce"
       badge2="Retail, Romania"
     />
@@ -78,7 +78,7 @@ export default function GoogleAdsEnPage() {
         { stat: "500+", label: "campaigns delivered" },
       ]} />
       <AdsBeforeAfter
-        title="Real Results — Before and After Nesco Digital"
+        title="Real Results Before and After Nesco Digital"
         beforeLabel="Before"
         afterLabel="After Nesco"
         before={[
@@ -97,7 +97,7 @@ export default function GoogleAdsEnPage() {
           { label: "Strategy", display: "full-funnel PPC" },
           { label: "Reporting", display: "ROAS & revenue" },
         ]}
-        source="E-commerce retail, Romania — 90 days"
+        source="E-commerce retail, Romania 90 days"
       />
       <AdsComparison
         bad={[

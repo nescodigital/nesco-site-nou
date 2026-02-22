@@ -73,7 +73,7 @@ export function LeadGenCalculator() {
               </div>
             </div>
             <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
-              Cu <strong style={{ color: "#fff" }}>{visitors.toLocaleString("ro-RO")} vizitatori/lună</strong> și o rată de conversie de <strong style={{ color: "#fff" }}>{convRate.toFixed(1)}%</strong>, generezi <strong style={{ color: "rgba(255,255,255,0.4)" }}>{currentLeads} lead-uri</strong>. La o rată de <strong style={{ color: "#56db84" }}>3% (benchmark industrie)</strong>, ai putea genera <strong style={{ color: "#56db84" }}>{potentialLeads} lead-uri</strong> — o diferență de <strong style={{ color: "#fb923c" }}>{lostLeads} lead-uri = ~{lostRevenue >= 1000 ? `${fmt(lostRevenue)}€` : `${lostRevenue}€`} revenue lunar</strong>.
+              Cu <strong style={{ color: "#fff" }}>{visitors.toLocaleString("ro-RO")} vizitatori/lună</strong> și o rată de conversie de <strong style={{ color: "#fff" }}>{convRate.toFixed(1)}%</strong>, generezi <strong style={{ color: "rgba(255,255,255,0.4)" }}>{currentLeads} lead-uri</strong>. La o rată de <strong style={{ color: "#56db84" }}>3% (benchmark industrie)</strong>, ai putea genera <strong style={{ color: "#56db84" }}>{potentialLeads} lead-uri</strong> o diferență de <strong style={{ color: "#fb923c" }}>{lostLeads} lead-uri = ~{lostRevenue >= 1000 ? `${fmt(lostRevenue)}€` : `${lostRevenue}€`} revenue lunar</strong>.
             </p>
           </div>
           <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", textAlign: "center" }}>

@@ -92,7 +92,7 @@ const trustBarItems: { icon?: ReactNode; label: string; stat?: string }[] = [
 const dashboardCard = (
   <AdsDashboardCard
     emoji="💼"
-    title="LinkedIn Ads — B2B"
+    title="LinkedIn Ads B2B"
     date="Octombrie 2025"
     metrics={[
       { label: "Lead-uri/lună", animated: { target: 22 }, badge: { text: "↑ 633%", positive: true } },
@@ -101,7 +101,7 @@ const dashboardCard = (
     ]}
     barPercent={83}
     barLabel="Buget folosit"
-    status="ACTIV — Sponsored Content + Message Ads"
+    status="ACTIV Sponsored Content + Message Ads"
     badge1="De la 3 la 22 lead-uri B2B/lună"
     badge2="SaaS Enterprise, România"
   />
@@ -111,7 +111,7 @@ const afterHeroContent = (
   <>
     <AdsTrustBar items={trustBarItems} />
     <AdsBeforeAfter
-      title="Rezultate reale — Înainte și după Nesco Digital"
+      title="Rezultate reale Înainte și după Nesco Digital"
       beforeLabel="Înainte"
       afterLabel="După Nesco"
       before={[
@@ -130,7 +130,7 @@ const afterHeroContent = (
         { label: "Pipeline lunar", display: "220.000€", animate: { target: 220000 } },
         { label: "CPL", display: "85€", animate: { target: 85, suffix: "€" } },
       ]}
-      source="SaaS Enterprise B2B, România — 90 de zile"
+      source="SaaS Enterprise B2B, România 90 de zile"
     />
     <AdsComparison
       bad={[

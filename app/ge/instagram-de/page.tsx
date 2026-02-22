@@ -50,11 +50,11 @@ const data: ServicePageData = {
     { title: "Guter Content, aber keine Sichtbarkeit", desc: "Sie posten qualitativ hochwertige Fotos, haben aber nicht genug neue Zielgruppen, die Sie entdecken. Der Algorithmus begrenzt die organische Reichweite." },
   ],
   solutions: [
-    { title: "Stories Ads — Fullscreen, unmöglich zu ignorieren", desc: "15-Sekunden-Anzeigen in Stories nehmen den gesamten Bildschirm ein. Die Betrachtungsrate ist 3–5x höher als bei Banner-Formaten." },
-    { title: "Reels Ads — Viraler Content, bezahlte Reichweite", desc: "Reels ist das Format mit der höchsten Reichweite auf Instagram. Wir verstärken Ihren besten Content mit bezahltem Budget." },
-    { title: "Feed Ads — Premium-Präsentation", desc: "Bilder und Videos im Feed der Nutzer, mit direktem CTA zu Ihrer Website oder zum Checkout." },
-    { title: "Instagram Shopping — Vom Post zum Kauf", desc: "Wir taggen Produkte direkt in Bildern. Der Nutzer klickt auf das Produkt und wird direkt zum Checkout weitergeleitet." },
-    { title: "Lookalike Audiences — Finden Sie Kunden wie Ihre bestehenden", desc: "Wir nutzen Ihre bestehende Kundenliste, um ähnliche Personen auf Instagram zu finden." },
+    { title: "Stories Ads Fullscreen, unmöglich zu ignorieren", desc: "15-Sekunden-Anzeigen in Stories nehmen den gesamten Bildschirm ein. Die Betrachtungsrate ist 3–5x höher als bei Banner-Formaten." },
+    { title: "Reels Ads Viraler Content, bezahlte Reichweite", desc: "Reels ist das Format mit der höchsten Reichweite auf Instagram. Wir verstärken Ihren besten Content mit bezahltem Budget." },
+    { title: "Feed Ads Premium-Präsentation", desc: "Bilder und Videos im Feed der Nutzer, mit direktem CTA zu Ihrer Website oder zum Checkout." },
+    { title: "Instagram Shopping Vom Post zum Kauf", desc: "Wir taggen Produkte direkt in Bildern. Der Nutzer klickt auf das Produkt und wird direkt zum Checkout weitergeleitet." },
+    { title: "Lookalike Audiences Finden Sie Kunden wie Ihre bestehenden", desc: "Wir nutzen Ihre bestehende Kundenliste, um ähnliche Personen auf Instagram zu finden." },
     { title: "Creative A/B-Testing", desc: "Wir testen mehrere Bild-, Video- und Textvarianten, um herauszufinden, was für Ihre Zielgruppe am besten funktioniert." },
   ],
   cases: [
@@ -70,7 +70,7 @@ const data: ServicePageData = {
     { q: "Brauche ich ein aktives Instagram-Profil für Anzeigen?", a: "Ein bestehendes Profil hilft (sozialer Beweis für Besucher), ist aber für Anzeigen nicht erforderlich. Anzeigen können direkt über Meta Business Suite geschaltet werden, auch ohne aktives Profil oder mit einem Profil mit wenigen Followern." },
     { q: "Welches Format funktioniert besser: Stories, Reels oder Feed?", a: "Es hängt vom Ziel ab: Stories für schnelles Awareness und maximale visuelle Wirkung, Reels für amplified Reach, Feed für Consideration und Conversion. Wir empfehlen, alle Formate zu testen und zu skalieren, was für Ihre Zielgruppe funktioniert." },
     { q: "Muss ich neuen Content speziell für Anzeigen erstellen?", a: "Nicht unbedingt. Wir können organische Posts verstärken, die gut performt haben. Für maximale Ergebnisse erstellen wir jedoch optimierten Content für jedes Format und Ziel oder leiten dessen Erstellung an." },
-    { q: "Ist Instagram gut für B2B?", a: "Für direkte B2B-Verkäufe ist LinkedIn effektiver. Aber Instagram funktioniert hervorragend für B2B Brand Awareness und Thought Leadership — Architekten, Designer, Berater und Agenturen gewinnen neue Kunden durch Instagram." },
+    { q: "Ist Instagram gut für B2B?", a: "Für direkte B2B-Verkäufe ist LinkedIn effektiver. Aber Instagram funktioniert hervorragend für B2B Brand Awareness und Thought Leadership Architekten, Designer, Berater und Agenturen gewinnen neue Kunden durch Instagram." },
     { q: "Wie wichtig ist die visuelle Qualität?", a: "Entscheidend. Instagram ist eine visuelle Plattform. Ein Foto oder Video mit schlechter Qualität wird selbst mit großem Budget schlecht performen. Wir bieten Leitfäden und Briefs für die Content-Erstellung oder übernehmen die Creatives selbst." },
     { q: "Wie messen Sie den Kampagnenerfolg?", a: "Über Likes und Kommentare hinaus (die keine Rechnungen bezahlen) verfolgen wir: Reichweite, Frequenz, Website-Klicks, Conversions, Cost per Conversion und ROAS. Sie erhalten monatlich einen Bericht mit allen Daten, in verständlicher Sprache erklärt." },
   ],
@@ -90,7 +90,7 @@ export default function InstagramDePage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📸"
-              title="Instagram Ads — Kampagne"
+              title="Instagram Ads Kampagne"
               date="Oktober 2025"
               metrics={[
                 { label: "ROAS", animated: { target: 3.2, decimals: 1, suffix: "x" }, badge: { text: "↑ 45%", positive: true } },
@@ -99,7 +99,7 @@ export default function InstagramDePage() {
               ]}
               barPercent={91}
               barLabel="Budget genutzt"
-              status="AKTIV — Stories + Reels + Feed"
+              status="AKTIV Stories + Reels + Feed"
               badge1="+80% Bestellungen aus Instagram Shopping"
               badge2="E-Commerce, Rumänien"
             />
@@ -116,7 +116,7 @@ export default function InstagramDePage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Echte Ergebnisse — Vor und nach Nesco Digital"
+                title="Echte Ergebnisse Vor und nach Nesco Digital"
                 beforeLabel="Vorher"
                 afterLabel="Nach Nesco"
                 before={[
@@ -135,7 +135,7 @@ export default function InstagramDePage() {
                   { label: "Format", display: "Stories + Reels + Feed" },
                   { label: "Instagram Shopping", display: "aktiv, 2.400 Produkte" },
                 ]}
-                source="E-Commerce, Rumänien — 60 Tage"
+                source="E-Commerce, Rumänien 60 Tage"
               />
               <AdsComparison
                 badLabel="❌  Schlecht verwaltet"

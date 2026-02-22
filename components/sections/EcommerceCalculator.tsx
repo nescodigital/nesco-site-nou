@@ -79,7 +79,7 @@ export function EcommerceCalculator() {
                 <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", marginTop: "6px" }}>Potențial la 2% conv.</div>
               </div>
               <div>
-                <div style={{ fontSize: "clamp(1.25rem,2.5vw,1.75rem)", fontWeight: 900, color: "#60a5fa", letterSpacing: "-0.03em", lineHeight: 1 }}>{uplift > 0 ? `+${fmt(uplift)}€` : "—"}</div>
+                <div style={{ fontSize: "clamp(1.25rem,2.5vw,1.75rem)", fontWeight: 900, color: "#60a5fa", letterSpacing: "-0.03em", lineHeight: 1 }}>{uplift > 0 ? `+${fmt(uplift)}€` : ""}</div>
                 <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", marginTop: "6px" }}>Revenue suplimentar</div>
               </div>
             </div>

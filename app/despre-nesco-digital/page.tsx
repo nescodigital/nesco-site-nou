@@ -35,7 +35,7 @@ const team = [
     photo: "/team/markus.png",
     name: "Markus",
     role: "The Strategist",
-    bio: "Primește obiectivul și îl transformă în plan executabil. Stabilește prioritățile, distribuie task-urile și validează fiecare output înainte de livrare. Nu execută — gândește și controlează direcția.",
+    bio: "Primește obiectivul și îl transformă în plan executabil. Stabilește prioritățile, distribuie task-urile și validează fiecare output înainte de livrare. Nu execută gândește și controlează direcția.",
   },
   {
     photo: "/team/sofia.png",
@@ -47,13 +47,13 @@ const team = [
     photo: "/team/bogdan.png",
     name: "Bogdan",
     role: "The Copywriter",
-    bio: "Scrie emailuri, ad copy și posts care convertesc. Lucrează structurat, cu hook-uri clare și CTA-uri testate — și cere validare strategică atunci când contextul o cere.",
+    bio: "Scrie emailuri, ad copy și posts care convertesc. Lucrează structurat, cu hook-uri clare și CTA-uri testate și cere validare strategică atunci când contextul o cere.",
   },
   {
     photo: "/team/paula.png",
     name: "Paula",
     role: "The Prospector",
-    bio: "Identifică oportunități noi și construiește liste de outreach curate și calificate. Nu negociază, nu închide — pregătește terenul pentru conversații cu șanse reale.",
+    bio: "Identifică oportunități noi și construiește liste de outreach curate și calificate. Nu negociază, nu închide pregătește terenul pentru conversații cu șanse reale.",
   },
   {
     photo: "/team/diana.png",
@@ -65,7 +65,7 @@ const team = [
     photo: "/team/alex.png",
     name: "Alex",
     role: "Head of Performance",
-    bio: "Urmărește ROAS, CPA și LTV cu precizie chirurgicală. Decide unde cresc și unde se opresc bugetele, optimizând continuu pentru profit real — nu doar trafic.",
+    bio: "Urmărește ROAS, CPA și LTV cu precizie chirurgicală. Decide unde cresc și unde se opresc bugetele, optimizând continuu pentru profit real nu doar trafic.",
   },
 ];
 
@@ -125,10 +125,13 @@ export default function DespreNescoPage() {
                 marginTop: "16px",
                 marginBottom: "28px",
                 maxWidth: "800px",
+                paddingBottom: "0.12em",
+                overflow: "visible",
               }}
             >
-              Despre{" "}
+              <span className="block">Despre</span>
               <span
+                className="block"
                 style={{
                   background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
                   WebkitBackgroundClip: "text",

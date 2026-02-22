@@ -54,7 +54,7 @@ export function GoogleAdsTimeline() {
           </h2>
         </div>
 
-        {/* Connector line — desktop only */}
+        {/* Connector line desktop only */}
         <div className="relative hidden md:block" style={{ marginBottom: "-16px", zIndex: 1 }}>
           <div style={{ position: "absolute", top: "20px", left: "calc(16.66% + 20px)", right: "calc(16.66% + 20px)", height: "2px", background: "linear-gradient(90deg, #60a5fa, #a78bfa, #56db84)" }} />
         </div>
@@ -72,7 +72,7 @@ export function GoogleAdsTimeline() {
                 padding: "28px 28px 32px",
               }}
             >
-              {/* Node dot — visible in desktop timeline */}
+              {/* Node dot visible in desktop timeline */}
               <div
                 className="hidden md:block"
                 style={{ width: 12, height: 12, borderRadius: "50%", background: phase.color, marginBottom: "20px", boxShadow: `0 0 8px ${phase.color}` }}

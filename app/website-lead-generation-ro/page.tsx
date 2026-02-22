@@ -103,7 +103,7 @@ export default function LeadGenRoPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="💡"
-              title="Lead Gen Site — Conversie"
+              title="Lead Gen Site Conversie"
               date="Octombrie 2025"
               metrics={[
                 { label: "Rată conversie", animated: { target: 3.8, decimals: 1, suffix: "%" }, badge: { text: "↑ 380%", positive: true } },
@@ -112,7 +112,7 @@ export default function LeadGenRoPage() {
               ]}
               barPercent={88}
               barLabel="Obiectiv lunar atins"
-              status="LIVE — PageSpeed 96/100"
+              status="LIVE PageSpeed 96/100"
               badge1="0.8% → 3.8% rată conversie"
               badge2="Consultanță IT, România"
             />
@@ -127,7 +127,7 @@ export default function LeadGenRoPage() {
                 { stat: "24/7", label: "suport post-lansare" },
               ]} />
               <AdsBeforeAfter
-                title="Rezultate reale — Înainte și după Nesco Digital"
+                title="Rezultate reale Înainte și după Nesco Digital"
                 beforeLabel="Înainte"
                 afterLabel="După Nesco"
                 before={[
@@ -146,7 +146,7 @@ export default function LeadGenRoPage() {
                   { label: "Mobile experience", display: "perfect" },
                   { label: "Cost per lead", display: "42€", animate: { target: 42, suffix: "€" } },
                 ]}
-                source="Consultanță IT, România — 60 de zile"
+                source="Consultanță IT, România 60 de zile"
               />
               <AdsComparison
                 badLabel="Site de prezentare clasic"

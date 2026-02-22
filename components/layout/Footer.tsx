@@ -76,6 +76,7 @@ export function Footer({ locale }: FooterProps) {
       label: locale === "ro" ? "Strategie Digitală" : locale === "en" ? "Digital Strategy" : "Digitale Strategie",
       href: r.digitalStrategy,
     },
+    { label: "GEO AI Optimization", href: r.geoOptimization },
   ];
 
   const companyLinks = [
@@ -85,6 +86,10 @@ export function Footer({ locale }: FooterProps) {
       href: r.projects,
     },
     { label: "Growth Sprint", href: r.growthSprintEducation },
+    {
+      label: locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner",
+      href: "/calculator",
+    },
   ];
 
   return (

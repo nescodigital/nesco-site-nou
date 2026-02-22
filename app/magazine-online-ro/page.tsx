@@ -78,7 +78,7 @@ export default function EcommerceRoPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="🛒"
-              title="Magazine Online — Performance"
+              title="Magazine Online Performance"
               date="Octombrie 2025"
               metrics={[
                 { label: "Conversie", animated: { target: 2.8, decimals: 1, suffix: "%" }, badge: { text: "↑ 400%", positive: true } },
@@ -87,7 +87,7 @@ export default function EcommerceRoPage() {
               ]}
               barPercent={92}
               barLabel="Obiectiv revenue atins"
-              status="LIVE — Shopify Plus, RO+EU"
+              status="LIVE Shopify Plus, RO+EU"
               badge1="0.7% → 2.8% rată conversie"
               badge2="Fashion e-commerce, România"
             />
@@ -102,7 +102,7 @@ export default function EcommerceRoPage() {
                 { stat: "GDPR", label: "complet conform" },
               ]} />
               <AdsBeforeAfter
-                title="Rezultate reale — Înainte și după Nesco Digital"
+                title="Rezultate reale Înainte și după Nesco Digital"
                 beforeLabel="Înainte"
                 afterLabel="După Nesco"
                 before={[
@@ -121,7 +121,7 @@ export default function EcommerceRoPage() {
                   { label: "Abandonment coș", display: "58%" },
                   { label: "Mobile experience", display: "flawless" },
                 ]}
-                source="Fashion e-commerce, România — 8 săptămâni post-lansare"
+                source="Fashion e-commerce, România 8 săptămâni post-lansare"
               />
               <AdsComparison
                 badLabel="Magazin online standard"

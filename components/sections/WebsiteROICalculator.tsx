@@ -79,7 +79,7 @@ export function WebsiteROICalculator() {
               </div>
             </div>
             <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
-              Cu rata actuală de <strong style={{ color: "#fff" }}>{currentRate.toFixed(2)}%</strong>, primești <strong style={{ color: "rgba(255,255,255,0.4)" }}>{submissions} contacte/lună</strong>. Un site optimizat la <strong style={{ color: "#56db84" }}>2%</strong> ar genera <strong style={{ color: "#56db84" }}>{potentialLeads} contacte</strong> — adică <strong style={{ color: "#60a5fa" }}>+{additionalRevenue >= 1000 ? `${fmt(additionalRevenue)}€` : `${additionalRevenue}€`}/lună</strong> revenue potențial.
+              Cu rata actuală de <strong style={{ color: "#fff" }}>{currentRate.toFixed(2)}%</strong>, primești <strong style={{ color: "rgba(255,255,255,0.4)" }}>{submissions} contacte/lună</strong>. Un site optimizat la <strong style={{ color: "#56db84" }}>2%</strong> ar genera <strong style={{ color: "#56db84" }}>{potentialLeads} contacte</strong> adică <strong style={{ color: "#60a5fa" }}>+{additionalRevenue >= 1000 ? `${fmt(additionalRevenue)}€` : `${additionalRevenue}€`}/lună</strong> revenue potențial.
             </p>
           </div>
           <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", textAlign: "center" }}>

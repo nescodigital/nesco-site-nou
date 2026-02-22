@@ -1,358 +1,802 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, XCircle } from "lucide-react";
+import { ArrowRight, Monitor, Zap, ShoppingCart, Wrench } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FadeInSection } from "@/components/ui/FadeInSection";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { buildMetadata } from "@/lib/seo";
-import { routes } from "@/lib/routes";
+import { CtaBanner } from "@/components/sections/CtaBanner";
 
-export const metadata: Metadata = buildMetadata({
-  locale: "ro",
-  title: "Webdesign & Dezvoltare Web | Site-uri Premium | Nesco Digital",
-  description: "Site-uri construite strategic, nu doar frumoase. Webdesign și dezvoltare web pentru companii ambițioase , lead generation, magazine online, website-uri de companie.",
-  path: "/webdesign/",
-  routeKey: "webdesignHub",
-});
+/* ─── Types ─────────────────────────────────────────────── */
+interface TiltState {
+  rotateX: number;
+  rotateY: number;
+}
 
-const r = routes.ro;
+/* ─── 3D Tilt Card ───────────────────────────────────────── */
+function TiltCard({ children, className, style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [tilt, setTilt] = useState<TiltState>({ rotateX: 0, rotateY: 0 });
+  const [isHovered, setIsHovered] = useState(false);
 
-const painPoints = [
-  {
-    title: "Ai un site dar nu generează lead-uri",
-    desc: "Arată bine, dar vizitatorii pleacă fără să facă nimic. Nimeni nu știe de ce , și nimeni nu pare să rezolve problema.",
-  },
-  {
-    title: "Ultimul site a durat 6 luni și tot nu era ce voiai",
-    desc: "Briefuri neclare, revizii fără sfârșit, un rezultat mediocru livrat cu întârziere. Și acum trebuie să o iei de la capăt.",
-  },
-  {
-    title: "Nu știi dacă să angajezi designer, developer sau agenție",
-    desc: "Un designer bun nu știe să codeze. Un developer nu gândește conversii. O agenție clasică îți livrează un template scump.",
-  },
-];
+  function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    const card = cardRef.current;
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const cx = rect.width / 2;
+    const cy = rect.height / 2;
+    const rotateX = ((y - cy) / cy) * -8;
+    const rotateY = ((x - cx) / cx) * 8;
+    setTilt({ rotateX, rotateY });
+  }
 
-const differentiators = [
-  {
-    title: "Strategie înainte de design",
-    desc: "Înainte de orice pixel, înțelegem obiectivul: lead-uri, vânzări, credibilitate. Design-ul servește strategia, nu invers.",
-  },
-  {
-    title: "Îți spunem din prima dacă te putem ajuta",
-    desc: "Nu acceptăm orice proiect. Dacă după prima discuție nu vedem un potențial real de impact, îți spunem direct.",
-  },
-  {
-    title: "Livrăm ce promitem, când promitem",
-    desc: "Procese clare, timeline asumat, comunicare directă. Fără surprize, fără scuze.",
-  },
-];
+  function handleMouseLeave() {
+    setTilt({ rotateX: 0, rotateY: 0 });
+    setIsHovered(false);
+  }
 
-const services = [
-  { label: "Website Lead Generation", desc: "Site-uri construite cu un singur scop: să transforme vizitatorii în lead-uri calificate pentru echipa ta de vânzări.", href: r.leadGenWebsite, accent: "#56db84" },
-  { label: "Website Companie", desc: "Prezență profesională online care reflectă valorile brandului tău și inspiră încredere clienților potențiali.", href: r.companyWebsite, accent: "#60a5fa" },
-  { label: "Magazine Online", desc: "Shopify, WooCommerce, Magento , magazine online scalabile cu UX optimizat pentru conversii maxime.", href: r.ecommerceStores, accent: "#a78bfa" },
-  { label: "Mentenanță Website", desc: "Site-ul tău mereu performant, securizat și actualizat. Intervenții rapide și monitorizare continuă.", href: r.websiteMaintenance, accent: "#fb923c" },
-];
-
-const stats = [
-  { metric: "122+", label: "pagini livrate pe proiectele recente" },
-  { metric: "15 ani", label: "experiență în web development" },
-  { metric: "36M€+", label: "revenue generat pentru clienți" },
-];
-
-const faq = [
-  {
-    q: "Cât costă un site?",
-    a: "Depinde de obiectiv și complexitate. Un website de prezentare începe de la 1.500€, un magazin online de la 3.500€. Îți dăm o estimare clară după prima discuție , fără surprize pe parcurs.",
-  },
-  {
-    q: "Cât durează?",
-    a: "Un website de prezentare: 3-5 săptămâni. Un magazin online: 6-10 săptămâni. Respectăm timeline-ul asumat sau îți comunicăm din timp orice modificare.",
-  },
-  {
-    q: "Pe ce tehnologie construiți?",
-    a: "Next.js pentru performanță maximă, WooCommerce sau Shopify pentru e-commerce, în funcție de nevoi. Site-urile noastre au scoruri PageSpeed de 90+ și se încarcă rapid pe orice dispozitiv.",
-  },
-];
-
-export default function WebdesignPage() {
   return (
-    <>
-      <Header locale="ro" />
-      <main>
-        {/* ── HERO ── */}
-        <section
-          className="relative overflow-hidden"
-          style={{ backgroundColor: "#050505", paddingTop: "140px", paddingBottom: "100px" }}
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+      className={className}
+      style={{
+        ...style,
+        transform: `perspective(1000px) rotateX(${tilt.rotateX}deg) rotateY(${tilt.rotateY}deg) translateY(${isHovered ? "-2px" : "0"})`,
+        transition: isHovered ? "transform 0.1s ease" : "transform 0.4s ease",
+        willChange: "transform",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+/* ─── PageSpeed Gauge ────────────────────────────────────── */
+function SpeedGauge({ score, label, animated }: { score: number; label: string; animated: boolean }) {
+  const [displayed, setDisplayed] = useState(0);
+
+  useEffect(() => {
+    if (!animated) return;
+    let start = 0;
+    const duration = 1200;
+    const startTime = performance.now();
+
+    function tick(now: number) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * score);
+      setDisplayed(current);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }, [animated, score]);
+
+  const value = animated ? displayed : score;
+  const isGood = score >= 90;
+  const color = isGood ? "#56db84" : score >= 50 ? "#f59e0b" : "#ef4444";
+  const pct = (value / 100) * 100;
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 10 }}>
+      <div
+        style={{
+          width: 80,
+          height: 80,
+          borderRadius: "50%",
+          background: `conic-gradient(${color} ${pct}%, rgba(255,255,255,0.06) ${pct}%)`,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            width: 64,
+            height: 64,
+            borderRadius: "50%",
+            background: "#0a0a0a",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
         >
-          <div className="absolute inset-0 bg-grid pointer-events-none" />
-          <div
-            className="absolute pointer-events-none"
-            style={{ top: "-20%", right: "-10%", width: 700, height: 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(86,219,132,0.06) 0%, transparent 70%)", animation: "heroGlow 14s ease-in-out infinite" }}
-          />
-          <div
-            className="absolute pointer-events-none"
-            style={{ top: "-10%", left: "-5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(86,219,132,0.03) 0%, transparent 70%)", animation: "heroGlow 18s ease-in-out infinite reverse" }}
-          />
-          <div
-            className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-            style={{ background: "linear-gradient(to top, #050505, transparent)" }}
-          />
-          <div className="relative page-container">
-            <span className="badge mb-6" style={{ display: "inline-flex" }}>Webdesign</span>
-            <h1
-              className="font-black"
+          <span style={{ fontSize: "1.25rem", fontWeight: 700, color, fontFamily: "var(--font-satoshi, sans-serif)" }}>
+            {value}
+          </span>
+        </div>
+      </div>
+      <span style={{ fontSize: "0.7rem", color: "rgba(255,255,255,0.4)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+        {label}
+      </span>
+    </div>
+  );
+}
+
+interface SpeedComparisonItem {
+  before: number;
+  after: number;
+}
+
+function SpeedComparisonCard({ item, animate }: { item: SpeedComparisonItem; animate: boolean }) {
+  return (
+    <div
+      style={{
+        background: "#0a0a0a",
+        border: "1px solid rgba(255,255,255,0.06)",
+        borderRadius: 20,
+        padding: "32px 28px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 24,
+        flex: 1,
+        minWidth: 0,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
+        <SpeedGauge score={item.before} label="Înainte" animated={false} />
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+          <ArrowRight size={20} style={{ color: "#56db84" }} />
+          <span style={{ fontSize: "0.65rem", color: "rgba(255,255,255,0.3)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+            după
+          </span>
+        </div>
+        <SpeedGauge score={item.after} label="După" animated={animate} />
+      </div>
+      <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+        PageSpeed Score
+      </span>
+    </div>
+  );
+}
+
+/* ─── Tech Chip ──────────────────────────────────────────── */
+function TechChip({ label }: { label: string }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <span
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      style={{
+        background: hovered ? "rgba(86,219,132,0.06)" : "rgba(255,255,255,0.04)",
+        border: `1px solid ${hovered ? "rgba(86,219,132,0.2)" : "rgba(255,255,255,0.08)"}`,
+        borderRadius: 8,
+        padding: "8px 16px",
+        fontSize: "0.875rem",
+        color: hovered ? "#56db84" : "rgba(255,255,255,0.6)",
+        cursor: "default",
+        transition: "all 0.2s ease",
+        display: "inline-block",
+        fontFamily: "monospace",
+      }}
+    >
+      {label}
+    </span>
+  );
+}
+
+/* ─── Main Page ──────────────────────────────────────────── */
+export default function WebdesignHubPage() {
+  const speedRef = useRef<HTMLDivElement>(null);
+  const [speedVisible, setSpeedVisible] = useState(false);
+
+  useEffect(() => {
+    const el = speedRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSpeedVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  const speedComparisons: SpeedComparisonItem[] = [
+    { before: 32, after: 96 },
+    { before: 41, after: 94 },
+    { before: 28, after: 97 },
+  ];
+
+  const services = [
+    {
+      icon: <Monitor size={28} style={{ color: "#56db84" }} />,
+      title: "Website Lead Generation",
+      desc: "Transformă vizitatorii în clienți cu landing pages optimizate pentru conversie. A/B testing, heatmaps, CRO inclus.",
+      href: "/website-lead-generation-ro/",
+    },
+    {
+      icon: <ShoppingCart size={28} style={{ color: "#56db84" }} />,
+      title: "Magazine Online",
+      desc: "Shopify, WooCommerce sau Magento. Integrări complete: plăți, livrări, facturare, sincronizare stoc.",
+      href: "/magazine-online-ro/",
+    },
+    {
+      icon: <Monitor size={28} style={{ color: "#56db84" }} />,
+      title: "Website Companie",
+      desc: "Prezență profesională online care reflectă calitatea businessului tău. Design custom, nu template.",
+      href: "/website-companie-ro/",
+    },
+    {
+      icon: <Wrench size={28} style={{ color: "#56db84" }} />,
+      title: "Mentenanță Website",
+      desc: "Monitorizare 24/7, updates, security patches și optimizări continue. Site-ul tău, mereu performant.",
+      href: "/mentenanta-website-ro/",
+    },
+  ];
+
+  const techStack = [
+    "Next.js",
+    "React",
+    "Shopify",
+    "WooCommerce",
+    "WordPress",
+    "TypeScript",
+    "Tailwind CSS",
+    "Vercel",
+    "Cloudflare",
+  ];
+
+  const processSteps = [
+    {
+      week: "Săpt. 1–2",
+      title: "Discovery & Brief",
+      desc: "Analizăm obiectivele, publicul țintă și piața. Deliverable: site map + wireframes.",
+    },
+    {
+      week: "Săpt. 2–3",
+      title: "Design UI/UX",
+      desc: "Mockups Figma complete, review și aprobare. Fiecare pixel cu intenție.",
+    },
+    {
+      week: "Săpt. 3–5",
+      title: "Development",
+      desc: "Cod curat, performanță optimă, integrări complete.",
+    },
+    {
+      week: "Săpt. 5–6",
+      title: "Testing & Launch",
+      desc: "QA pe toate device-urile, PageSpeed audit, lansare și monitoring post-launch.",
+    },
+  ];
+
+  return (
+    <div style={{ backgroundColor: "#050505", minHeight: "100vh" }}>
+      <Header locale="ro" />
+
+      {/* ── SECTION 1: Hero ── */}
+      <section
+        style={{
+          backgroundColor: "#050505",
+          paddingTop: 140,
+          paddingBottom: 100,
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* bg-grid */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+            pointerEvents: "none",
+          }}
+        />
+        {/* green glow */}
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            top: "20%",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: 700,
+            height: 400,
+            background: "radial-gradient(ellipse at center, rgba(86,219,132,0.12) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div className="page-container" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
+          {/* Badge */}
+          <div style={{ display: "inline-flex", marginBottom: 24 }}>
+            <span className="badge">Webdesign Premium</span>
+          </div>
+
+          {/* H1 */}
+          <h1
+            style={{
+              fontFamily: "var(--font-satoshi, sans-serif)",
+              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+              fontWeight: 800,
+              lineHeight: 1.1,
+              color: "#fff",
+              margin: "0 auto 24px",
+              maxWidth: 800,
+            }}
+          >
+            Website-uri care{" "}
+            <span
               style={{
-                fontSize: "clamp(3rem, 7vw, 5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "16px",
-                marginBottom: "28px",
-                maxWidth: "800px",
-                background: "linear-gradient(135deg, #ffffff 20%, #56db84 100%)",
+                display: "inline-block",
+                background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}
             >
-              Webdesign care convertește vizitatori în clienți
-            </h1>
-            <p
-              style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
-            >
-              Nu facem site-uri frumoase. Facem site-uri care lucrează , fiecare element construit strategic în jurul unui obiectiv de business.
-            </p>
-            <Link
-              href={r.contact}
-              className="group inline-flex items-center gap-3 btn-primary"
-              style={{ fontSize: "1rem", padding: "18px 40px" }}
-            >
-              Discută proiectul tău
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
+              convertesc și performează.
+            </span>
+          </h1>
+
+          {/* Subtitle */}
+          <p
+            style={{
+              fontSize: "clamp(1rem, 2vw, 1.2rem)",
+              color: "rgba(255,255,255,0.55)",
+              maxWidth: 620,
+              margin: "0 auto 40px",
+              lineHeight: 1.7,
+            }}
+          >
+            De la landing pages cu conversion rate de top, la magazine online care vând.
+            Construim cu performanță și design premium nu template-uri.
+          </p>
+
+          {/* CTAs */}
+          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 56 }}>
+            <Link href="/contact/" className="btn-primary">
+              Hai să vorbim <ArrowRight size={16} />
+            </Link>
+            <Link href="/proiecte/" className="btn-ghost">
+              Vezi proiecte
             </Link>
           </div>
-        </section>
 
-        {/* ── PAIN POINTS ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Situații comune</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Recunoști vreuna din situațiile astea?
-                </h2>
+          {/* Browser Mockup */}
+          <div
+            style={{
+              maxWidth: 680,
+              margin: "0 auto",
+              background: "#0a0a0a",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 12,
+              overflow: "hidden",
+              boxShadow: "0 40px 80px rgba(0,0,0,0.6)",
+            }}
+          >
+            {/* Browser chrome */}
+            <div
+              style={{
+                background: "#111",
+                padding: "12px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                borderBottom: "1px solid rgba(255,255,255,0.06)",
+              }}
+            >
+              {/* Traffic light dots */}
+              <div style={{ display: "flex", gap: 6 }}>
+                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ef4444" }} />
+                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#f59e0b" }} />
+                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#22c55e" }} />
               </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {painPoints.map((item, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
+              {/* URL bar */}
+              <div
+                style={{
+                  flex: 1,
+                  background: "rgba(255,255,255,0.05)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: 6,
+                  padding: "4px 12px",
+                  fontSize: "0.75rem",
+                  color: "rgba(255,255,255,0.35)",
+                  textAlign: "left",
+                  fontFamily: "monospace",
+                }}
+              >
+                nescodigital.com
+              </div>
+            </div>
+
+            {/* Browser content */}
+            <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 16 }}>
+              {/* Fake nav */}
+              <div style={{ display: "flex", gap: 20, marginBottom: 8 }}>
+                {[60, 50, 55, 45].map((w, i) => (
                   <div
-                    className="card-hover"
+                    key={i}
                     style={{
-                      padding: "28px 24px",
-                      background: "#0a0a0a",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      borderLeft: "3px solid rgba(251,146,60,0.45)",
-                      borderRadius: "16px",
-                      height: "100%",
+                      width: w,
+                      height: 8,
+                      background: "rgba(255,255,255,0.08)",
+                      borderRadius: 4,
+                    }}
+                  />
+                ))}
+              </div>
+              {/* Hero heading skeleton */}
+              <div style={{ width: "75%", height: 24, background: "rgba(255,255,255,0.1)", borderRadius: 6 }} />
+              <div style={{ width: "55%", height: 24, background: "rgba(86,219,132,0.25)", borderRadius: 6 }} />
+              {/* Body text skeletons */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 4 }}>
+                <div style={{ width: "90%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
+                <div style={{ width: "80%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
+                <div style={{ width: "65%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
+              </div>
+              {/* CTA button */}
+              <div style={{ marginTop: 8 }}>
+                <div
+                  style={{
+                    display: "inline-block",
+                    background: "#56db84",
+                    borderRadius: 50,
+                    padding: "10px 24px",
+                    width: 140,
+                    height: 14,
+                    opacity: 0.85,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+
+      {/* ── SECTION 2: PageSpeed Gauge Animation ── */}
+      <section ref={speedRef} style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <div className="page-container">
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <span className="badge">
+              <Zap size={12} style={{ display: "inline", marginRight: 6, verticalAlign: "middle" }} />
+              Performanță
+            </span>
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-satoshi, sans-serif)",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 800,
+              color: "#fff",
+              textAlign: "center",
+              marginBottom: 16,
+            }}
+          >
+            Din 32 în 96 garantat
+          </h2>
+          <p
+            style={{
+              textAlign: "center",
+              color: "rgba(255,255,255,0.45)",
+              fontSize: "1rem",
+              maxWidth: 520,
+              margin: "0 auto 56px",
+              lineHeight: 1.7,
+            }}
+          >
+            Nu facem compromisuri la viteză. Fiecare site livrat trece de 90+ pe PageSpeed Insights.
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              gap: 20,
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
+            {speedComparisons.map((item, i) => (
+              <SpeedComparisonCard key={i} item={item} animate={speedVisible} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+
+      {/* ── SECTION 3: 4 Service Cards with 3D tilt ── */}
+      <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <div className="page-container">
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <span className="badge">Servicii</span>
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-satoshi, sans-serif)",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 800,
+              color: "#fff",
+              textAlign: "center",
+              marginBottom: 56,
+            }}
+          >
+            Ce construim
+          </h2>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 20,
+            }}
+          >
+            {services.map((svc, i) => (
+              <TiltCard
+                key={i}
+                style={{
+                  background: "#0a0a0a",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                  borderRadius: 20,
+                  padding: "36px 32px",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 16,
+                  textDecoration: "none",
+                  cursor: "pointer",
+                }}
+              >
+                <Link
+                  href={svc.href}
+                  style={{ textDecoration: "none", display: "flex", flexDirection: "column", gap: 16 }}
+                >
+                  <div
+                    style={{
+                      width: 52,
+                      height: 52,
+                      background: "rgba(86,219,132,0.08)",
+                      borderRadius: 12,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    {svc.icon}
+                  </div>
+                  <div>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-satoshi, sans-serif)",
+                        fontSize: "1.2rem",
+                        fontWeight: 700,
+                        color: "#fff",
+                        margin: "0 0 10px",
+                      }}
+                    >
+                      {svc.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "rgba(255,255,255,0.5)",
+                        lineHeight: 1.65,
+                        margin: 0,
+                      }}
+                    >
+                      {svc.desc}
+                    </p>
+                  </div>
+                  <div
+                    style={{
+                      marginTop: "auto",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 6,
+                      color: "#56db84",
+                      fontSize: "0.875rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Află mai mult <ArrowRight size={14} />
+                  </div>
+                </Link>
+              </TiltCard>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+
+      {/* ── SECTION 4: Tech Stack ── */}
+      <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <div className="page-container">
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <span className="badge">Tehnologii</span>
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-satoshi, sans-serif)",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 800,
+              color: "#fff",
+              textAlign: "center",
+              marginBottom: 16,
+            }}
+          >
+            Stack-ul nostru
+          </h2>
+          <p
+            style={{
+              textAlign: "center",
+              color: "rgba(255,255,255,0.45)",
+              fontSize: "1rem",
+              maxWidth: 480,
+              margin: "0 auto 48px",
+              lineHeight: 1.7,
+            }}
+          >
+            Folosim tehnologiile potrivite pentru fiecare proiect nu un singur template aplicat la toți.
+          </p>
+
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              justifyContent: "center",
+              maxWidth: 700,
+              margin: "0 auto",
+            }}
+          >
+            {techStack.map((tech) => (
+              <TechChip key={tech} label={tech} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Separator */}
+      <div style={{ height: 1, background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+
+      {/* ── SECTION 5: Process Timeline ── */}
+      <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <div className="page-container">
+          <div style={{ textAlign: "center", marginBottom: 16 }}>
+            <span className="badge">Proces</span>
+          </div>
+          <h2
+            style={{
+              fontFamily: "var(--font-satoshi, sans-serif)",
+              fontSize: "clamp(2rem, 4vw, 3rem)",
+              fontWeight: 800,
+              color: "#fff",
+              textAlign: "center",
+              marginBottom: 64,
+            }}
+          >
+            De la brief la lansare
+          </h2>
+
+          <div
+            style={{
+              maxWidth: 680,
+              margin: "0 auto",
+              position: "relative",
+            }}
+          >
+            {/* Vertical timeline line */}
+            <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                left: 20,
+                top: 0,
+                bottom: 0,
+                width: 1,
+                background: "rgba(86,219,132,0.2)",
+              }}
+            />
+
+            <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
+              {processSteps.map((step, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "flex",
+                    gap: 32,
+                    alignItems: "flex-start",
+                    paddingBottom: i < processSteps.length - 1 ? 48 : 0,
+                    position: "relative",
+                  }}
+                >
+                  {/* Timeline dot */}
+                  <div
+                    style={{
+                      flexShrink: 0,
+                      width: 40,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      paddingTop: 6,
                     }}
                   >
                     <div
-                      style={{ width: 36, height: 36, borderRadius: "10px", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}
-                    >
-                      <XCircle size={16} style={{ color: "#f87171" }} />
-                    </div>
-                    <h3 className="font-bold text-white" style={{ fontSize: "0.9375rem", letterSpacing: "-0.01em", marginBottom: "8px" }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", lineHeight: 1.65 }}>
-                      {item.desc}
-                    </p>
+                      style={{
+                        width: 12,
+                        height: 12,
+                        borderRadius: "50%",
+                        background: "#56db84",
+                        boxShadow: "0 0 12px rgba(86,219,132,0.5)",
+                        flexShrink: 0,
+                      }}
+                    />
                   </div>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* ── HOW WE'RE DIFFERENT ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Abordare</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Cum lucrăm diferit
-                </h2>
-              </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {differentiators.map((item, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
+                  {/* Step content */}
                   <div
-                    className="group card-hover"
-                    style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", height: "100%" }}
+                    style={{
+                      background: "#0a0a0a",
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      borderRadius: 16,
+                      padding: "24px 28px",
+                      flex: 1,
+                    }}
                   >
                     <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: "rgba(86,219,132,0.08)", border: "1px solid rgba(86,219,132,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}
+                      style={{
+                        fontSize: "0.7rem",
+                        color: "#56db84",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                        fontWeight: 600,
+                        marginBottom: 8,
+                      }}
                     >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#56db84" }} />
-                    </div>
-                    <h3 className="font-bold text-white" style={{ fontSize: "1rem", letterSpacing: "-0.01em", marginBottom: "10px" }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65 }}>
-                      {item.desc}
-                    </p>
-                  </div>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── SERVICES GRID ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Servicii</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Ce construim
-                </h2>
-              </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {services.map((svc, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
-                  <Link
-                    href={svc.href}
-                    className="group card-hover block"
-                    style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", textDecoration: "none", height: "100%", display: "flex", flexDirection: "column" }}
-                  >
-                    <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: `${svc.accent}18`, border: `1px solid ${svc.accent}28`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px", flexShrink: 0 }}
-                    >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: svc.accent }} />
+                      {step.week}
                     </div>
                     <h3
-                      className="font-bold text-white group-hover:text-brand-green transition-colors"
-                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.01em", marginBottom: "10px" }}
+                      style={{
+                        fontFamily: "var(--font-satoshi, sans-serif)",
+                        fontSize: "1.1rem",
+                        fontWeight: 700,
+                        color: "#fff",
+                        margin: "0 0 8px",
+                      }}
                     >
-                      {svc.label}
+                      {step.title}
                     </h3>
-                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65, flex: 1 }}>
-                      {svc.desc}
+                    <p
+                      style={{
+                        fontSize: "0.9rem",
+                        color: "rgba(255,255,255,0.5)",
+                        lineHeight: 1.65,
+                        margin: 0,
+                      }}
+                    >
+                      {step.desc}
                     </p>
-                    <div
-                      className="flex items-center gap-1.5 mt-5 font-semibold group-hover:gap-2.5 transition-all"
-                      style={{ fontSize: "0.8125rem", color: svc.accent }}
-                    >
-                      Află mai multe <ArrowRight size={13} />
-                    </div>
-                  </Link>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {stats.map((stat, idx) => (
-                <FadeInSection key={idx} delay={idx * 100}>
-                  <div style={{ textAlign: "center" }}>
-                    <div
-                      className="font-black tabular-nums"
-                      style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", lineHeight: 1, color: "#56db84", letterSpacing: "-0.03em", marginBottom: "12px" }}
-                    >
-                      {stat.metric}
-                    </div>
-                    <div style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.5 }}>
-                      {stat.label}
-                    </div>
                   </div>
-                </FadeInSection>
+                </div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ── FAQ ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "48px" }}>
-                <span className="badge mb-6">FAQ</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Întrebări frecvente
-                </h2>
-              </div>
-            </FadeInSection>
-            <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-              <FaqAccordion items={faq} />
-            </div>
-          </div>
-        </section>
-
-        {/* ── FINAL CTA ── */}
-        <section
-          className="relative overflow-hidden"
-          style={{ backgroundColor: "#050505", padding: "160px 0" }}
-        >
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse at center, rgba(86,219,132,0.08) 0%, transparent 70%)" }}
-          />
-          <div
-            style={{ position: "relative", zIndex: 1, maxWidth: "48rem", width: "100%", margin: "0 auto", textAlign: "center", padding: "0 2rem" }}
-          >
-            <h2
-              className="font-black text-white"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "24px" }}
-            >
-              Hai să construim ceva care chiar funcționează
-            </h2>
-            <p
-              style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "48px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto" }}
-            >
-              O discuție de 30 de minute în care înțelegem obiectivul tău și îți spunem sincer ce putem face.
-            </p>
-            <Link
-              href={r.contact}
-              className="group inline-flex items-center gap-3 btn-primary"
-              style={{ fontSize: "1rem", padding: "18px 40px" }}
-            >
-              Discută proiectul tău
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-          </div>
-        </section>
-      </main>
+      <CtaBanner locale="ro" />
       <Footer locale="ro" />
-    </>
+    </div>
   );
 }

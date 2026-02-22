@@ -1,6 +1,6 @@
 import type { Locale } from "./translations";
 
-export type NavChild = { label: string; href: string; desc?: string };
+export type NavChild = { label: string; href: string; desc?: string; badge?: string };
 export type NavItem = { label: string; href: string; children?: NavChild[]; accent?: boolean };
 
 // Exact URL structure matching the existing nescodigital.com site
@@ -30,6 +30,7 @@ export const routes = {
     contact: "/contact/",
     growthSprintEducation: "/growth-sprint-educatie/",
     growthSprintEcommerce: "/growth-sprint-ecommerce/",
+    geoOptimization: "/geo-optimization/",
     privacy: "/politica-de-confidentialitate/",
     terms: "/termeni-si-conditii/",
   },
@@ -58,6 +59,7 @@ export const routes = {
     contact: "/en/lets-talk/",
     growthSprintEducation: "/en/growth-sprint-education/",
     growthSprintEcommerce: "/en/growth-sprint-ecommerce/",
+    geoOptimization: "/geo-optimization/",
     privacy: "/en/privacy-policy/",
     terms: "/en/terms-and-conditions/",
   },
@@ -86,6 +88,7 @@ export const routes = {
     contact: "/ge/lass-uns-reden/",
     growthSprintEducation: "/ge/growth-sprint-bildung/",
     growthSprintEcommerce: "/ge/growth-sprint-ecommerce-de/",
+    geoOptimization: "/geo-optimization/",
     privacy: "/ge/datenschutz/",
     terms: "/ge/nutzungsbedingungen/",
   },
@@ -313,6 +316,17 @@ export function getNavLinks(locale: Locale): NavItem[] {
               : locale === "en"
                 ? "Community and engagement"
                 : "Community und Engagement",
+        },
+        {
+          label: "GEO AI Optimization",
+          href: r.geoOptimization,
+          desc:
+            locale === "ro"
+              ? "Fii vizibil în ChatGPT & Perplexity"
+              : locale === "en"
+                ? "Be visible in ChatGPT & Perplexity"
+                : "Sichtbar in ChatGPT & Perplexity",
+          badge: locale === "ro" ? "NOU" : locale === "en" ? "NEW" : "NEU",
         },
       ],
     },

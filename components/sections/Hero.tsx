@@ -93,7 +93,7 @@ export function Hero({ locale }: HeroProps) {
       />
 
 
-      {/* Mobile globe — loaded after window.load, doesn't affect PageSpeed */}
+      {/* Mobile globe loaded after window.load, doesn't affect PageSpeed */}
       <div
         className="lg:hidden absolute pointer-events-none"
         style={{
@@ -104,7 +104,7 @@ export function Hero({ locale }: HeroProps) {
           zIndex: 1,
         }}
       >
-        {/* Arrow watermark — always visible, zero JS cost */}
+        {/* Arrow watermark always visible, zero JS cost */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/logo mare Nesco.svg"
@@ -125,7 +125,7 @@ export function Hero({ locale }: HeroProps) {
             pointerEvents: "none",
           }}
         />
-        {/* Globe canvas — mounted only after page load */}
+        {/* Globe canvas mounted only after page load */}
         {showMobileGlobe ? (
           <GlobeCanvas />
         ) : (
@@ -265,7 +265,7 @@ export function Hero({ locale }: HeroProps) {
           <div
             className="relative hidden lg:flex items-center justify-center opacity-0"
             style={{
-              height: "min(680px, 58vw)",
+              height: "min(540px, 48vw)",
               animation: "fadeUp 1.1s ease forwards 0.35s",
             }}
           >

@@ -16,7 +16,7 @@ export interface AdsBeforeAfterProps {
   source?: string;
 }
 
-export function AdsBeforeAfter({ title = "Rezultate reale — Înainte și după Nesco Digital", beforeLabel = "Înainte", afterLabel = "După Nesco", before, after, source }: AdsBeforeAfterProps) {
+export function AdsBeforeAfter({ title = "Rezultate reale Înainte și după Nesco Digital", beforeLabel = "Înainte", afterLabel = "După Nesco", before, after, source }: AdsBeforeAfterProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState(0);

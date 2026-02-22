@@ -228,9 +228,14 @@ export function Header({ locale }: HeaderProps) {
                               <div className="flex-1 min-w-0">
                                 <div
                                   className="font-semibold text-white group-hover:text-brand-green transition-colors"
-                                  style={{ fontSize: "0.9375rem" }}
+                                  style={{ fontSize: "0.9375rem", display: "flex", alignItems: "center", gap: "6px" }}
                                 >
                                   {child.label}
+                                  {child.badge && (
+                                    <span style={{ fontSize: "0.5625rem", fontWeight: 700, color: "#56db84", background: "rgba(86,219,132,0.12)", border: "1px solid rgba(86,219,132,0.3)", borderRadius: "4px", padding: "1px 5px", letterSpacing: "0.06em", flexShrink: 0 }}>
+                                      {child.badge}
+                                    </span>
+                                  )}
                                 </div>
                                 {child.desc && (
                                   <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginTop: "2px" }}>
@@ -444,6 +449,11 @@ export function Header({ locale }: HeaderProps) {
                         >
                           <span style={{ color: "#56db84", fontSize: "0.6875rem", flexShrink: 0 }}>→</span>
                           {child.label}
+                          {child.badge && (
+                            <span style={{ fontSize: "0.5rem", fontWeight: 700, color: "#56db84", background: "rgba(86,219,132,0.12)", border: "1px solid rgba(86,219,132,0.3)", borderRadius: "3px", padding: "1px 4px", letterSpacing: "0.05em" }}>
+                              {child.badge}
+                            </span>
+                          )}
                         </Link>
                       ))}
                     </div>

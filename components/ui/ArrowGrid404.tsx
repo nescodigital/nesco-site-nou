@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-const CELL          = 72;    // px — square cell
-const ARROW_SIZE    = 57;    // px — arrow drawn inside cell
+const CELL          = 72;    // px square cell
+const ARROW_SIZE    = 57;    // px arrow drawn inside cell
 const LAUNCH_INTERVAL = 1800; // ms between bursts
-const LAUNCH_DURATION = 900;  // ms — rocket flight time
+const LAUNCH_DURATION = 900;  // ms rocket flight time
 const BURST_COUNT   = 4;     // arrows per burst
 const BASE_MIN      = 0.028;
 const BASE_MAX      = 0.07;
-const TARGET_FPS    = 24;    // decorative bg — no need for 60fps
+const TARGET_FPS    = 24;    // decorative bg no need for 60fps
 const FRAME_MS      = 1000 / TARGET_FPS;
 
 interface RocketArrow {
@@ -102,7 +102,7 @@ export function ArrowGrid404() {
       const now = performance.now();
       rockets = rockets.filter(rocket => {
         const progress = Math.min((now - rocket.startTime) / LAUNCH_DURATION, 1);
-        if (progress >= 1) return false; // done — cell is empty, will reappear next frame as static
+        if (progress >= 1) return false; // done cell is empty, will reappear next frame as static
 
         // Ease-in cubic for acceleration feel
         const eased  = progress * progress * progress;
@@ -134,7 +134,7 @@ export function ArrowGrid404() {
       resize();
       raf = requestAnimationFrame(draw);
     };
-    img.onerror = () => { /* silent — blank canvas is fine */ };
+    img.onerror = () => { /* silent blank canvas is fine */ };
     img.src     = "/logo mare Nesco.svg";
 
     window.addEventListener("resize", resize);

@@ -60,8 +60,8 @@ export function TikTokAdsCalculator() {
             <div>
               <label style={{ display: "block", fontSize: "0.8125rem", color: "rgba(255,255,255,0.5)", fontWeight: 500, marginBottom: "12px" }}>Ai conținut video disponibil?</label>
               <select className="calc-select" value={hasVideo} onChange={e => setHasVideo(e.target.value)}>
-                <option value="da">Da — am videoclipuri</option>
-                <option value="nu">Nu — pornim de la zero</option>
+                <option value="da">Da am videoclipuri</option>
+                <option value="nu">Nu pornim de la zero</option>
               </select>
             </div>
           </div>

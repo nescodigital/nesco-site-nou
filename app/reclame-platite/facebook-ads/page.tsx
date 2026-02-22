@@ -54,7 +54,7 @@ export default function FacebookAdsRoPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📣"
-              title="Meta Ads — Campanie"
+              title="Meta Ads Campanie"
               date="Octombrie 2025"
               metrics={[
                 {
@@ -75,7 +75,7 @@ export default function FacebookAdsRoPage() {
               ]}
               barPercent={87}
               barLabel="Buget folosit"
-              status="ACTIV — Feed + Stories + Reels"
+              status="ACTIV Feed + Stories + Reels"
               badge1="6.2x ROAS Black Friday"
               badge2="E-commerce, România"
             />
@@ -92,7 +92,7 @@ export default function FacebookAdsRoPage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Rezultate reale — Înainte și după Nesco Digital"
+                title="Rezultate reale Înainte și după Nesco Digital"
                 beforeLabel="Înainte"
                 afterLabel="După Nesco"
                 before={[
@@ -111,7 +111,7 @@ export default function FacebookAdsRoPage() {
                   { label: "Strategie", display: "full-funnel" },
                   { label: "Raportare", display: "ROAS & revenue" },
                 ]}
-                source="E-commerce fashion, România — 60 de zile"
+                source="E-commerce fashion, România 60 de zile"
               />
               <AdsComparison
                 bad={[

@@ -78,7 +78,7 @@ export function GoogleAdsBeforeAfter() {
             className="font-black text-white"
             style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
           >
-            Rezultate reale — Înainte și după Nesco Digital
+            Rezultate reale Înainte și după Nesco Digital
           </h2>
         </div>
 
@@ -143,7 +143,7 @@ export function GoogleAdsBeforeAfter() {
 
         {/* Source */}
         <p style={{ textAlign: "center", marginTop: "24px", fontSize: "0.75rem", color: "rgba(255,255,255,0.25)", fontStyle: "italic" }}>
-          E-commerce, România — 6 luni
+          E-commerce, România 6 luni
         </p>
       </div>
     </section>

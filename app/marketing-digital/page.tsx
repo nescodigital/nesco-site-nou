@@ -1,358 +1,1120 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowRight, XCircle } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { FadeInSection } from "@/components/ui/FadeInSection";
-import { FaqAccordion } from "@/components/ui/FaqAccordion";
-import { buildMetadata } from "@/lib/seo";
-import { routes } from "@/lib/routes";
+import { CtaBanner } from "@/components/sections/CtaBanner";
+import {
+  ArrowRight,
+  TrendingUp,
+  Mail,
+  Users,
+  BarChart3,
+  Search,
+  Share2,
+} from "lucide-react";
 
-export const metadata: Metadata = buildMetadata({
-  locale: "ro",
-  title: "Marketing Digital | SEO, Email Marketing, Social Media | Nesco Digital",
-  description: "Strategie, execuție și optimizare continuă , toate sub același acoperiș. SEO, email marketing, social media și CRO pentru creștere măsurabilă.",
-  path: "/marketing-digital/",
-  routeKey: "digitalMarketingHub",
-});
-
-const r = routes.ro;
-
-const painPoints = [
+/* ─────────────────────────────────────────────
+   DATA
+───────────────────────────────────────────── */
+const serviceCards = [
   {
-    title: "Ai servicii de marketing la mai mulți furnizori și nimeni nu vede imaginea de ansamblu",
-    desc: "SEO la o agenție, ads la alta, email marketing intern. Nimeni nu coordonează, nimeni nu e responsabil pentru rezultatul final.",
+    Icon: TrendingUp,
+    title: "Strategie Digitală",
+    desc: "Plan clar de creștere bazat pe date. Audit, obiective, KPI-uri și roadmap executabil.",
+    price: "De la 800€/lună",
+    href: "/strategie-digitala-ro/",
   },
   {
-    title: "Angajezi sau externalizezi , ambele variante par riscante",
-    desc: "Un om bun cu competențe complete costă mult, pleacă repede și nu acoperă tot. O agenție clasică livrează rapoarte și trimite factura.",
+    Icon: Mail,
+    title: "Email Marketing",
+    desc: "Campanii automate cu ROI 42:1 dovedit. Klaviyo, Mailchimp, ActiveCampaign.",
+    price: "De la 600€/lună",
+    href: "/solutii-email-marketing-ro/",
   },
   {
-    title: "Nu știi ce canal merită buget și ce e pierdere de bani",
-    desc: "Toată lumea spune că 'depinde'. Tu vrei cineva care să analizeze situația ta și să spună direct ce funcționează.",
+    Icon: Users,
+    title: "CRM Solutions",
+    desc: "Implementare și optimizare HubSpot, Salesforce, Zoho. Pipeline automatizat.",
+    price: "De la 700€/lună",
+    href: "/solutii-crm-ro/",
+  },
+  {
+    Icon: BarChart3,
+    title: "CRO Solutions",
+    desc: "A/B testing, heatmaps, optimizare conversie. Mai multe vânzări, același buget.",
+    price: "De la 900€/lună",
+    href: "/solutii-cro-ro/",
+  },
+  {
+    Icon: Search,
+    title: "SEO",
+    desc: "Trafic organic de calitate. Technical SEO, content strategy, link building.",
+    price: "De la 800€/lună",
+    href: "/solutii-seo-ro/",
+  },
+  {
+    Icon: Share2,
+    title: "Social Media",
+    desc: "Comunitate, engagement și content care convertesc pe toate platformele.",
+    price: "De la 500€/lună",
+    href: "/solutii-social-media-ro/",
   },
 ];
 
-const differentiators = [
+const orbitLabels = ["SEO", "Email\nMktg", "CRM", "CRO", "Social\nMedia", "GEO"];
+
+const chartData = {
+  months: [1, 2, 3, 4, 5, 6],
+  lines: [
+    {
+      label: "Email Marketing (ROI 42:1)",
+      color: "#56db84",
+      points: [4, 10, 18, 28, 36, 42],
+    },
+    {
+      label: "Google Ads (ROI 8:1)",
+      color: "#60a5fa",
+      points: [2, 3.5, 5, 6, 7, 8],
+    },
+    {
+      label: "Medie Industrie (ROI 2:1)",
+      color: "rgba(255,255,255,0.25)",
+      points: [0.5, 0.8, 1.2, 1.5, 1.8, 2],
+    },
+  ],
+};
+
+const comparisonRows = [
   {
-    title: "Acoperim tot spectrul digital",
-    desc: "SEO, paid ads, email marketing, social media, CRO, strategie , o echipă care vede și execută imaginea completă.",
+    feature: "Experiență",
+    standard: "3-5 ani",
+    freelancer: "Variabil",
+    nesco: "15+ ani",
+    standardOk: false,
+    freelancerOk: null,
   },
   {
-    title: "Suntem sinceri despre ce funcționează",
-    desc: "Nu vindem servicii de care nu ai nevoie. Dacă bugetul tău de SEO nu are sens acum, îți spunem. Preferăm o relație lungă unui contract scurt.",
+    feature: "Transparență",
+    standard: "Rapoarte lunare",
+    freelancer: "Uneori",
+    nesco: "Dashboard live",
+    standardOk: false,
+    freelancerOk: null,
   },
   {
-    title: "Fără rotație de oameni, fără pierdere de know-how",
-    desc: "Nu angajezi un om care poate pleca. Lucrezi cu o echipă care acumulează cunoaștere despre business-ul tău în timp.",
+    feature: "Canale acoperite",
+    standard: "1-2",
+    freelancer: "1",
+    nesco: "Full-stack",
+    standardOk: false,
+    freelancerOk: false,
+  },
+  {
+    feature: "Reporting",
+    standard: "PDF static",
+    freelancer: "Excel",
+    nesco: "KPI în timp real",
+    standardOk: false,
+    freelancerOk: false,
+  },
+  {
+    feature: "Timp de răspuns",
+    standard: "48-72h",
+    freelancer: "Variabil",
+    nesco: "< 4h",
+    standardOk: false,
+    freelancerOk: null,
+  },
+  {
+    feature: "Garanție rezultate",
+    standard: "Nu",
+    freelancer: "Nu",
+    nesco: "Da",
+    standardOk: false,
+    freelancerOk: false,
   },
 ];
 
-const services = [
-  { label: "Strategie Digitală", desc: "Plan clar de creștere digitală, personalizat pentru obiectivele și resursele afacerii tale.", href: r.digitalStrategy, accent: "#56db84" },
-  { label: "Email Marketing", desc: "ROI 42:1 dovedit. Campanii de email automation și newsletters care convertesc și fidelizează.", href: r.emailMarketing, accent: "#60a5fa" },
-  { label: "CRM Solutions", desc: "Relații cu clienții optimizate. Implementăm și gestionăm soluții CRM care cresc retenția.", href: r.crmSolutions, accent: "#a78bfa" },
-  { label: "CRO Solutions", desc: "Mai multe conversii din același trafic, fără buget extra. Optimizare bazată pe date și teste A/B.", href: r.croSolutions, accent: "#fb923c" },
-  { label: "SEO", desc: "Trafic organic de calitate, sustenabil pe termen lung. Strategii SEO tehnice și de conținut.", href: r.seoSolutions, accent: "#f472b6" },
-  { label: "Social Media", desc: "Comunitate activă și engagement real. Gestionăm prezența ta pe toate platformele sociale.", href: r.socialMedia, accent: "#22d3ee" },
+const tickerItems = [
+  "ROI email 42:1",
+  "Trafic organic +180%",
+  "Conversii +63%",
+  "Cost per lead -44%",
+  "Vânzări e-com +210%",
+  "Pipeline CRM +3x",
+  "Open rate email 38%",
+  "Bounce rate -28%",
+  "Lead-uri calificate +90%",
+  "ROAS Google Ads 9.4x",
 ];
 
-const stats = [
-  { metric: "15 ani", label: "experiență în marketing digital" },
-  { metric: "36M€+", label: "bugete gestionate" },
-  { metric: "23.000+", label: "campanii executate" },
-];
+/* ─────────────────────────────────────────────
+   SVG CHART helpers
+───────────────────────────────────────────── */
+const CHART_W = 640;
+const CHART_H = 280;
+const PAD = { top: 20, right: 20, bottom: 40, left: 50 };
 
-const faq = [
-  {
-    q: "De unde știu că meritați bugetul meu de marketing?",
-    a: "Nu cerem să ne crezi pe cuvânt. Începem cu un audit care îți arată exact unde pierzi bani și unde sunt oportunități reale. Pe baza lui decidem împreună dacă și cum colaborăm.",
-  },
-  {
-    q: "Cât timp până văd rezultate?",
-    a: "Depinde de canal. Paid ads: 2-4 săptămâni. SEO: 3-6 luni. Email marketing: 30-60 zile. Îți spunem de la început la ce să te aștepți și când.",
-  },
-  {
-    q: "Lucrați cu companii mici sau doar enterprise?",
-    a: "Lucrăm cu companii care au un produs validat și vor să scaleze , indiferent de dimensiune. Bugetul minim recomandat pentru paid ads este 3.000€/lună.",
-  },
-];
+function toSvgX(month: number) {
+  const innerW = CHART_W - PAD.left - PAD.right;
+  return PAD.left + ((month - 1) / 5) * innerW;
+}
+function toSvgY(roi: number) {
+  const innerH = CHART_H - PAD.top - PAD.bottom;
+  const maxRoi = 50;
+  return PAD.top + (1 - roi / maxRoi) * innerH;
+}
+function pointsToPath(pts: number[]) {
+  return pts
+    .map((y, i) => {
+      const svgX = toSvgX(i + 1);
+      const svgY = toSvgY(y);
+      return `${i === 0 ? "M" : "L"} ${svgX} ${svgY}`;
+    })
+    .join(" ");
+}
+function pathLength(pts: number[]): number {
+  let len = 0;
+  for (let i = 1; i < pts.length; i++) {
+    const dx = toSvgX(i + 1) - toSvgX(i);
+    const dy = toSvgY(pts[i]) - toSvgY(pts[i - 1]);
+    len += Math.sqrt(dx * dx + dy * dy);
+  }
+  return len;
+}
 
+/* ─────────────────────────────────────────────
+   PAGE COMPONENT
+───────────────────────────────────────────── */
 export default function MarketingDigitalPage() {
+  /* chart draw-on-scroll */
+  const chartRef = useRef<SVGSVGElement>(null);
+  const [chartVisible, setChartVisible] = useState(false);
+
+  /* comparison table animate */
+  const tableRef = useRef<HTMLDivElement>(null);
+  const [tableVisible, setTableVisible] = useState(false);
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+
+    if (chartRef.current) {
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setChartVisible(true); },
+        { threshold: 0.3 }
+      );
+      obs.observe(chartRef.current);
+      observers.push(obs);
+    }
+    if (tableRef.current) {
+      const obs = new IntersectionObserver(
+        ([entry]) => { if (entry.isIntersecting) setTableVisible(true); },
+        { threshold: 0.2 }
+      );
+      obs.observe(tableRef.current);
+      observers.push(obs);
+    }
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
     <>
       <Header locale="ro" />
-      <main>
-        {/* ── HERO ── */}
+      <main style={{ backgroundColor: "#050505", overflowX: "hidden" }}>
+
+        {/* ── SECTION 1: HERO ── */}
         <section
           className="relative overflow-hidden"
-          style={{ backgroundColor: "#050505", paddingTop: "140px", paddingBottom: "100px" }}
+          style={{ paddingTop: 140, paddingBottom: 100 }}
         >
           <div className="absolute inset-0 bg-grid pointer-events-none" />
           <div
             className="absolute pointer-events-none"
-            style={{ top: "-20%", right: "-10%", width: 700, height: 700, borderRadius: "50%", background: "radial-gradient(circle, rgba(86,219,132,0.06) 0%, transparent 70%)", animation: "heroGlow 14s ease-in-out infinite" }}
+            style={{
+              top: "-20%",
+              right: "-10%",
+              width: 700,
+              height: 700,
+              borderRadius: "50%",
+              background:
+                "radial-gradient(circle, rgba(86,219,132,0.07) 0%, transparent 70%)",
+              animation: "heroGlow 14s ease-in-out infinite",
+            }}
           />
           <div
             className="absolute pointer-events-none"
-            style={{ top: "-10%", left: "-5%", width: 500, height: 500, borderRadius: "50%", background: "radial-gradient(circle, rgba(86,219,132,0.03) 0%, transparent 70%)", animation: "heroGlow 18s ease-in-out infinite reverse" }}
+            style={{
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: 120,
+              background: "linear-gradient(to top, #050505, transparent)",
+            }}
           />
-          <div
-            className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
-            style={{ background: "linear-gradient(to top, #050505, transparent)" }}
-          />
+
           <div className="relative page-container">
-            <span className="badge mb-6" style={{ display: "inline-flex" }}>Marketing Digital</span>
+            <span className="badge mb-6" style={{ display: "inline-flex" }}>
+              Marketing Digital
+            </span>
+
             <h1
               className="font-black"
               style={{
                 fontSize: "clamp(3rem, 7vw, 5rem)",
                 lineHeight: 0.92,
                 letterSpacing: "-0.03em",
-                fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "16px",
-                marginBottom: "28px",
-                maxWidth: "800px",
-                background: "linear-gradient(135deg, #ffffff 20%, #56db84 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                marginTop: 16,
+                marginBottom: 28,
+                maxWidth: 820,
               }}
             >
-              Marketing Digital orientat spre rezultate
+              <span style={{ color: "#fff" }}>Marketing digital care</span>
+              <br />
+              <span
+                style={{
+                  background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                generează creștere.
+              </span>
             </h1>
+
             <p
-              style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, maxWidth: "560px", letterSpacing: "0.01em", marginBottom: "40px" }}
+              style={{
+                fontSize: "1.0625rem",
+                color: "rgba(255,255,255,0.45)",
+                lineHeight: 1.7,
+                maxWidth: 560,
+                marginBottom: 40,
+              }}
             >
-              Strategie, execuție și optimizare continuă , toate sub același acoperiș. Fără să angajezi 5 oameni diferiți.
+              Nu facem marketing de dragul marketingului. Fiecare euro investit
+              trebuie să se întoarcă înmulțit. Strategie, execuție și
+              optimizare continuă toate sub același acoperiș.
             </p>
-            <Link
-              href={r.contact}
-              className="group inline-flex items-center gap-3 btn-primary"
-              style={{ fontSize: "1rem", padding: "18px 40px" }}
-            >
-              Vorbește cu un specialist
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
+
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
+              <Link
+                href="/contact/"
+                className="group inline-flex items-center gap-3 btn-primary"
+                style={{ fontSize: "1rem", padding: "18px 40px" }}
+              >
+                Vorbește cu un specialist
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                />
+              </Link>
+              <Link
+                href="/proiecte/"
+                className="group inline-flex items-center gap-3 btn-ghost"
+                style={{ fontSize: "1rem", padding: "18px 32px" }}
+              >
+                Vezi proiecte
+                <ArrowRight
+                  size={16}
+                  className="group-hover:translate-x-0.5 transition-transform"
+                />
+              </Link>
+            </div>
           </div>
         </section>
 
-        {/* ── PAIN POINTS ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+        {/* ── SECTION 2: SOLAR SYSTEM ORBIT DIAGRAM ── */}
+        <section className="relative" style={{ padding: "100px 0" }}>
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
+          />
+
+          <style>{`
+            @keyframes slowOrbit {
+              from { transform: rotate(0deg); }
+              to   { transform: rotate(360deg); }
+            }
+            @keyframes counterOrbit {
+              from { transform: rotate(0deg); }
+              to   { transform: rotate(-360deg); }
+            }
+            @keyframes roiDraw {
+              from { stroke-dashoffset: var(--len); }
+              to   { stroke-dashoffset: 0; }
+            }
+          `}</style>
+
           <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Situații comune</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <span className="badge mb-6" style={{ display: "inline-flex" }}>
+                Ecosistem Digital
+              </span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  marginTop: 20,
+                }}
+              >
+                Toate canalele, o singură strategie
+              </h2>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "rgba(255,255,255,0.4)",
+                  marginTop: 16,
+                  maxWidth: 480,
+                  margin: "16px auto 0",
+                  lineHeight: 1.65,
+                }}
+              >
+                Fiecare canal lucrează în sincron pentru un ecosistem digital
+                coerent și profitabil.
+              </p>
+            </div>
+
+            {/* Orbit diagram */}
+            <div
+              style={{
+                position: "relative",
+                width: "min(560px, 90vw)",
+                height: "min(560px, 90vw)",
+                margin: "0 auto",
+              }}
+            >
+              {/* Orbit ring outer */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                  width: "92%",
+                  height: "92%",
+                  borderRadius: "50%",
+                  border: "1px dashed rgba(255,255,255,0.06)",
+                }}
+              />
+              {/* Orbit ring inner */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                  width: "66%",
+                  height: "66%",
+                  borderRadius: "50%",
+                  border: "1px dashed rgba(86,219,132,0.12)",
+                }}
+              />
+
+              {/* Center node */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%,-50%)",
+                  width: 108,
+                  height: 108,
+                  borderRadius: "50%",
+                  background: "rgba(86,219,132,0.12)",
+                  border: "1.5px solid rgba(86,219,132,0.45)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  boxShadow: "0 0 32px rgba(86,219,132,0.15)",
+                  zIndex: 2,
+                }}
+              >
+                <span
+                  style={{
+                    color: "#56db84",
+                    fontSize: "0.7rem",
+                    fontWeight: 700,
+                    textAlign: "center",
+                    lineHeight: 1.4,
+                    letterSpacing: "0.02em",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  Recunoști vreuna din situațiile astea?
-                </h2>
+                  Strategie<br />Digitală
+                </span>
               </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {painPoints.map((item, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
+
+              {/* Rotating group of nodes */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  animation: "slowOrbit 60s linear infinite",
+                }}
+              >
+                {orbitLabels.map((label, i) => {
+                  const angleDeg = i * 60 - 90;
+                  const angleRad = (angleDeg * Math.PI) / 180;
+                  const radiusPct = 46; // % of container
+                  const cx = 50 + radiusPct * Math.cos(angleRad);
+                  const cy = 50 + radiusPct * Math.sin(angleRad);
+
+                  return (
+                    <div
+                      key={label}
+                      style={{
+                        position: "absolute",
+                        top: `${cy}%`,
+                        left: `${cx}%`,
+                        transform: "translate(-50%,-50%)",
+                      }}
+                    >
+                      {/* counter-rotate so label stays upright */}
+                      <div
+                        style={{
+                          animation: "counterOrbit 60s linear infinite",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "center",
+                          gap: 6,
+                        }}
+                      >
+                        <div
+                          style={{
+                            width: 52,
+                            height: 52,
+                            borderRadius: "50%",
+                            background: "#0a0a0a",
+                            border: "1px solid rgba(86,219,132,0.25)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            boxShadow: "0 0 16px rgba(86,219,132,0.08)",
+                          }}
+                        >
+                          <div
+                            style={{
+                              width: 8,
+                              height: 8,
+                              borderRadius: "50%",
+                              background: "#56db84",
+                            }}
+                          />
+                        </div>
+                        <span
+                          style={{
+                            fontSize: "0.65rem",
+                            fontWeight: 600,
+                            color: "rgba(255,255,255,0.65)",
+                            textAlign: "center",
+                            whiteSpace: "pre",
+                            lineHeight: 1.3,
+                            letterSpacing: "0.03em",
+                          }}
+                        >
+                          {label}
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 3: ROI LINE CHART ── */}
+        <section className="relative" style={{ padding: "100px 0" }}>
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
+          />
+
+          <div className="page-container">
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <span className="badge mb-6" style={{ display: "inline-flex" }}>
+                ROI
+              </span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  marginTop: 20,
+                }}
+              >
+                Rezultate măsurabile în timp
+              </h2>
+              <p
+                style={{
+                  fontSize: "1rem",
+                  color: "rgba(255,255,255,0.4)",
+                  marginTop: 16,
+                  maxWidth: 460,
+                  margin: "16px auto 0",
+                  lineHeight: 1.65,
+                }}
+              >
+                Evoluția ROI pe canale principale în primele 6 luni de
+                colaborare.
+              </p>
+            </div>
+
+            <div
+              style={{
+                background: "#0a0a0a",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 20,
+                padding: "32px 24px 24px",
+                maxWidth: 720,
+                margin: "0 auto",
+              }}
+            >
+              <svg
+                ref={chartRef}
+                viewBox={`0 0 ${CHART_W} ${CHART_H}`}
+                style={{ width: "100%", height: "auto", display: "block" }}
+              >
+                {/* Y axis labels */}
+                {[0, 10, 20, 30, 40, 50].map((v) => (
+                  <g key={v}>
+                    <line
+                      x1={PAD.left}
+                      y1={toSvgY(v)}
+                      x2={CHART_W - PAD.right}
+                      y2={toSvgY(v)}
+                      stroke="rgba(255,255,255,0.05)"
+                      strokeWidth={1}
+                    />
+                    <text
+                      x={PAD.left - 8}
+                      y={toSvgY(v) + 4}
+                      textAnchor="end"
+                      fill="rgba(255,255,255,0.3)"
+                      fontSize={11}
+                    >
+                      {v}x
+                    </text>
+                  </g>
+                ))}
+
+                {/* X axis labels */}
+                {chartData.months.map((m) => (
+                  <text
+                    key={m}
+                    x={toSvgX(m)}
+                    y={CHART_H - 8}
+                    textAnchor="middle"
+                    fill="rgba(255,255,255,0.3)"
+                    fontSize={11}
+                  >
+                    Luna {m}
+                  </text>
+                ))}
+
+                {/* Chart lines */}
+                {chartData.lines.map((line) => {
+                  const d = pointsToPath(line.points);
+                  const len = pathLength(line.points);
+                  return (
+                    <path
+                      key={line.label}
+                      d={d}
+                      fill="none"
+                      stroke={line.color}
+                      strokeWidth={2.5}
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      style={{
+                        strokeDasharray: len,
+                        strokeDashoffset: chartVisible ? 0 : len,
+                        transition: chartVisible
+                          ? "stroke-dashoffset 1.6s cubic-bezier(0.4,0,0.2,1)"
+                          : "none",
+                      }}
+                    />
+                  );
+                })}
+
+                {/* Dots at final point */}
+                {chartData.lines.map((line) => {
+                  const last = line.points[line.points.length - 1];
+                  return (
+                    <circle
+                      key={line.label}
+                      cx={toSvgX(6)}
+                      cy={toSvgY(last)}
+                      r={4}
+                      fill={line.color}
+                      style={{
+                        opacity: chartVisible ? 1 : 0,
+                        transition: "opacity 0.4s 1.5s",
+                      }}
+                    />
+                  );
+                })}
+              </svg>
+
+              {/* Legend */}
+              <div
+                style={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "12px 24px",
+                  justifyContent: "center",
+                  marginTop: 20,
+                }}
+              >
+                {chartData.lines.map((line) => (
                   <div
-                    className="card-hover"
+                    key={line.label}
+                    style={{ display: "flex", alignItems: "center", gap: 8 }}
+                  >
+                    <div
+                      style={{
+                        width: 24,
+                        height: 2.5,
+                        background: line.color,
+                        borderRadius: 2,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <span
+                      style={{
+                        fontSize: "0.78rem",
+                        color: "rgba(255,255,255,0.5)",
+                      }}
+                    >
+                      {line.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 4: SERVICE CARDS WITH PRICING ── */}
+        <section className="relative" style={{ padding: "100px 0" }}>
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
+          />
+
+          <div className="page-container">
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <span className="badge mb-6" style={{ display: "inline-flex" }}>
+                Servicii
+              </span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  marginTop: 20,
+                }}
+              >
+                Soluții complete, prețuri clare
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {serviceCards.map(({ Icon, title, desc, price, href }, idx) => (
+                <Link
+                  key={idx}
+                  href={href}
+                  className="group card-hover block"
+                  style={{
+                    padding: "32px",
+                    background: "#0a0a0a",
+                    border: "1px solid rgba(255,255,255,0.06)",
+                    borderRadius: 20,
+                    textDecoration: "none",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "relative",
+                    minHeight: 240,
+                  }}
+                >
+                  {/* Icon */}
+                  <div
                     style={{
-                      padding: "28px 24px",
-                      background: "#0a0a0a",
-                      border: "1px solid rgba(255,255,255,0.06)",
-                      borderLeft: "3px solid rgba(251,146,60,0.45)",
-                      borderRadius: "16px",
-                      height: "100%",
+                      width: 44,
+                      height: 44,
+                      borderRadius: 12,
+                      background: "rgba(86,219,132,0.08)",
+                      border: "1px solid rgba(86,219,132,0.18)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      marginBottom: 20,
+                      flexShrink: 0,
                     }}
                   >
-                    <div
-                      style={{ width: 36, height: 36, borderRadius: "10px", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}
-                    >
-                      <XCircle size={16} style={{ color: "#f87171" }} />
-                    </div>
-                    <h3 className="font-bold text-white" style={{ fontSize: "0.9375rem", letterSpacing: "-0.01em", marginBottom: "8px" }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", lineHeight: 1.65 }}>
-                      {item.desc}
-                    </p>
+                    <Icon size={20} style={{ color: "#56db84" }} />
                   </div>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* ── HOW WE'RE DIFFERENT ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Diferențiatori</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Un partener, nu un furnizor
-                </h2>
-              </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-              {differentiators.map((item, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
+                  {/* Title */}
+                  <h3
+                    className="font-bold text-white group-hover:text-brand-green transition-colors"
+                    style={{
+                      fontSize: "1.0625rem",
+                      letterSpacing: "-0.01em",
+                      marginBottom: 10,
+                    }}
+                  >
+                    {title}
+                  </h3>
+
+                  {/* Desc */}
+                  <p
+                    style={{
+                      fontSize: "0.875rem",
+                      color: "rgba(255,255,255,0.4)",
+                      lineHeight: 1.65,
+                      flex: 1,
+                    }}
+                  >
+                    {desc}
+                  </p>
+
+                  {/* Footer row */}
                   <div
-                    className="group card-hover"
-                    style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "16px", height: "100%" }}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginTop: 24,
+                    }}
                   >
-                    <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: "rgba(86,219,132,0.08)", border: "1px solid rgba(86,219,132,0.15)", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}
+                    <span
+                      className="flex items-center gap-1.5 group-hover:gap-2.5 transition-all font-semibold"
+                      style={{ fontSize: "0.8125rem", color: "#56db84" }}
                     >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#56db84" }} />
-                    </div>
-                    <h3 className="font-bold text-white" style={{ fontSize: "1rem", letterSpacing: "-0.01em", marginBottom: "10px" }}>
-                      {item.title}
-                    </h3>
-                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65 }}>
-                      {item.desc}
-                    </p>
+                      Detalii <ArrowRight size={13} />
+                    </span>
+                    {/* Price badge */}
+                    <span
+                      style={{
+                        fontSize: "0.7rem",
+                        fontWeight: 700,
+                        color: "rgba(86,219,132,0.8)",
+                        background: "rgba(86,219,132,0.08)",
+                        border: "1px solid rgba(86,219,132,0.18)",
+                        borderRadius: 999,
+                        padding: "4px 10px",
+                        letterSpacing: "0.02em",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {price}
+                    </span>
                   </div>
-                </FadeInSection>
+                </Link>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── SERVICES GRID ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "64px" }}>
-                <span className="badge mb-6">Servicii</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Servicii de marketing digital
-                </h2>
-              </div>
-            </FadeInSection>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {services.map((svc, idx) => (
-                <FadeInSection key={idx} delay={idx * 80}>
-                  <Link
-                    href={svc.href}
-                    className="group card-hover block"
-                    style={{ padding: "32px", background: "#0a0a0a", border: "1px solid rgba(255,255,255,0.06)", borderRadius: "20px", textDecoration: "none", height: "100%", display: "flex", flexDirection: "column" }}
-                  >
-                    <div
-                      style={{ width: 44, height: 44, borderRadius: "12px", background: `${svc.accent}18`, border: `1px solid ${svc.accent}28`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px", flexShrink: 0 }}
-                    >
-                      <div style={{ width: 8, height: 8, borderRadius: "50%", background: svc.accent }} />
-                    </div>
-                    <h3
-                      className="font-bold text-white group-hover:text-brand-green transition-colors"
-                      style={{ fontSize: "1.0625rem", letterSpacing: "-0.01em", marginBottom: "10px" }}
-                    >
-                      {svc.label}
-                    </h3>
-                    <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.65, flex: 1 }}>
-                      {svc.desc}
-                    </p>
-                    <div
-                      className="flex items-center gap-1.5 mt-5 font-semibold group-hover:gap-2.5 transition-all"
-                      style={{ fontSize: "0.8125rem", color: svc.accent }}
-                    >
-                      Află mai multe <ArrowRight size={13} />
-                    </div>
-                  </Link>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── STATS ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-              {stats.map((stat, idx) => (
-                <FadeInSection key={idx} delay={idx * 100}>
-                  <div style={{ textAlign: "center" }}>
-                    <div
-                      className="font-black tabular-nums"
-                      style={{ fontSize: "clamp(2.5rem, 5vw, 3.5rem)", lineHeight: 1, color: "#56db84", letterSpacing: "-0.03em", marginBottom: "12px" }}
-                    >
-                      {stat.metric}
-                    </div>
-                    <div style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.5 }}>
-                      {stat.label}
-                    </div>
-                  </div>
-                </FadeInSection>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── FAQ ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
-          <div className="page-container">
-            <FadeInSection>
-              <div style={{ textAlign: "center", marginBottom: "48px" }}>
-                <span className="badge mb-6">FAQ</span>
-                <h2
-                  className="font-black text-white"
-                  style={{ fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}
-                >
-                  Întrebări frecvente
-                </h2>
-              </div>
-            </FadeInSection>
-            <div style={{ maxWidth: "760px", margin: "0 auto" }}>
-              <FaqAccordion items={faq} />
-            </div>
-          </div>
-        </section>
-
-        {/* ── FINAL CTA ── */}
-        <section
-          className="relative overflow-hidden"
-          style={{ backgroundColor: "#050505", padding: "160px 0" }}
-        >
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }} />
+        {/* ── SECTION 5: COMPARISON TABLE ── */}
+        <section className="relative" style={{ padding: "100px 0" }}>
           <div
-            className="absolute inset-0 pointer-events-none"
-            style={{ background: "radial-gradient(ellipse at center, rgba(86,219,132,0.08) 0%, transparent 70%)" }}
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
+          />
+
+          <div className="page-container">
+            <div style={{ textAlign: "center", marginBottom: 64 }}>
+              <span className="badge mb-6" style={{ display: "inline-flex" }}>
+                Comparație
+              </span>
+              <h2
+                className="font-black text-white"
+                style={{
+                  fontSize: "clamp(1.75rem, 3.5vw, 2.75rem)",
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.025em",
+                  marginTop: 20,
+                }}
+              >
+                Nesco vs alte agenții
+              </h2>
+            </div>
+
+            <div
+              ref={tableRef}
+              style={{
+                maxWidth: 860,
+                margin: "0 auto",
+                overflowX: "auto",
+                opacity: tableVisible ? 1 : 0,
+                transform: tableVisible ? "translateY(0)" : "translateY(24px)",
+                transition: "opacity 0.7s ease, transform 0.7s ease",
+              }}
+            >
+              <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
+                <thead>
+                  <tr>
+                    <th
+                      style={{
+                        padding: "14px 20px",
+                        textAlign: "left",
+                        fontSize: "0.75rem",
+                        fontWeight: 600,
+                        color: "rgba(255,255,255,0.3)",
+                        letterSpacing: "0.08em",
+                        textTransform: "uppercase",
+                        borderBottom: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      Criteriu
+                    </th>
+                    {[
+                      { label: "Agenție Standard", isNesco: false },
+                      { label: "Freelancer", isNesco: false },
+                      { label: "Nesco Digital", isNesco: true },
+                    ].map(({ label, isNesco }) => (
+                      <th
+                        key={label}
+                        style={{
+                          padding: "14px 20px",
+                          textAlign: "center",
+                          fontSize: "0.8125rem",
+                          fontWeight: 700,
+                          color: isNesco ? "#56db84" : "rgba(255,255,255,0.55)",
+                          letterSpacing: "-0.01em",
+                          borderBottom: "1px solid rgba(255,255,255,0.06)",
+                          background: isNesco
+                            ? "rgba(86,219,132,0.04)"
+                            : "transparent",
+                          borderLeft: isNesco
+                            ? "1px solid rgba(86,219,132,0.15)"
+                            : undefined,
+                          borderRight: isNesco
+                            ? "1px solid rgba(86,219,132,0.15)"
+                            : undefined,
+                          borderTop: isNesco
+                            ? "1px solid rgba(86,219,132,0.15)"
+                            : undefined,
+                          borderRadius: isNesco ? "8px 8px 0 0" : undefined,
+                        }}
+                      >
+                        {label}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, idx) => {
+                    const isLast = idx === comparisonRows.length - 1;
+                    return (
+                      <tr
+                        key={row.feature}
+                        style={{
+                          opacity: tableVisible ? 1 : 0,
+                          transform: tableVisible
+                            ? "translateY(0)"
+                            : "translateY(12px)",
+                          transition: `opacity 0.5s ${idx * 80 + 200}ms ease, transform 0.5s ${idx * 80 + 200}ms ease`,
+                        }}
+                      >
+                        <td
+                          style={{
+                            padding: "16px 20px",
+                            fontSize: "0.875rem",
+                            fontWeight: 600,
+                            color: "rgba(255,255,255,0.7)",
+                            borderBottom: isLast
+                              ? "none"
+                              : "1px solid rgba(255,255,255,0.04)",
+                          }}
+                        >
+                          {row.feature}
+                        </td>
+                        {/* Agenție Standard */}
+                        <td
+                          style={{
+                            padding: "16px 20px",
+                            textAlign: "center",
+                            borderBottom: isLast
+                              ? "none"
+                              : "1px solid rgba(255,255,255,0.04)",
+                          }}
+                        >
+                          <span style={{ fontSize: "0.78rem" }}>
+                            {row.standardOk === false ? (
+                              <span style={{ color: "#f87171" }}>✕</span>
+                            ) : (
+                              <span style={{ color: "#facc15" }}>~</span>
+                            )}
+                            <span
+                              style={{
+                                marginLeft: 6,
+                                color: "rgba(255,255,255,0.35)",
+                              }}
+                            >
+                              {row.standard}
+                            </span>
+                          </span>
+                        </td>
+                        {/* Freelancer */}
+                        <td
+                          style={{
+                            padding: "16px 20px",
+                            textAlign: "center",
+                            borderBottom: isLast
+                              ? "none"
+                              : "1px solid rgba(255,255,255,0.04)",
+                          }}
+                        >
+                          <span style={{ fontSize: "0.78rem" }}>
+                            {row.freelancerOk === false ? (
+                              <span style={{ color: "#f87171" }}>✕</span>
+                            ) : (
+                              <span style={{ color: "#facc15" }}>~</span>
+                            )}
+                            <span
+                              style={{
+                                marginLeft: 6,
+                                color: "rgba(255,255,255,0.35)",
+                              }}
+                            >
+                              {row.freelancer}
+                            </span>
+                          </span>
+                        </td>
+                        {/* Nesco */}
+                        <td
+                          style={{
+                            padding: "16px 20px",
+                            textAlign: "center",
+                            background: "rgba(86,219,132,0.04)",
+                            borderLeft: "1px solid rgba(86,219,132,0.15)",
+                            borderRight: "1px solid rgba(86,219,132,0.15)",
+                            borderBottom: isLast
+                              ? "1px solid rgba(86,219,132,0.15)"
+                              : "1px solid rgba(86,219,132,0.08)",
+                            borderRadius: isLast ? "0 0 8px 8px" : undefined,
+                          }}
+                        >
+                          <span style={{ fontSize: "0.78rem" }}>
+                            <span style={{ color: "#56db84", fontWeight: 700 }}>
+                              ✓
+                            </span>
+                            <span
+                              style={{
+                                marginLeft: 6,
+                                color: "rgba(255,255,255,0.6)",
+                              }}
+                            >
+                              {row.nesco}
+                            </span>
+                          </span>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        {/* ── SECTION 6: INFINITE TICKER ── */}
+        <section className="relative" style={{ padding: "60px 0", overflow: "hidden" }}>
+          <div
+            className="absolute top-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
           />
           <div
-            style={{ position: "relative", zIndex: 1, maxWidth: "48rem", width: "100%", margin: "0 auto", textAlign: "center", padding: "0 2rem" }}
-          >
-            <h2
-              className="font-black text-white"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", lineHeight: 1.05, letterSpacing: "-0.03em", marginBottom: "24px" }}
+            className="absolute bottom-0 left-0 right-0 h-px"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)",
+            }}
+          />
+
+          <style>{`
+            @keyframes tickerMove {
+              from { transform: translateX(0); }
+              to   { transform: translateX(-50%); }
+            }
+          `}</style>
+
+          <div style={{ display: "flex", overflow: "hidden" }}>
+            <div
+              style={{
+                display: "flex",
+                gap: 0,
+                animation: "tickerMove 28s linear infinite",
+                whiteSpace: "nowrap",
+                willChange: "transform",
+              }}
             >
-              Gata să tratezi marketingul ca pe un sistem, nu ca pe o cheltuială?
-            </h2>
-            <p
-              style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "48px", maxWidth: "480px", marginLeft: "auto", marginRight: "auto" }}
-            >
-              O discuție de 30 de minute. Îți spunem sincer ce vedem și ce am face în locul tău.
-            </p>
-            <Link
-              href={r.contact}
-              className="group inline-flex items-center gap-3 btn-primary"
-              style={{ fontSize: "1rem", padding: "18px 40px" }}
-            >
-              Programează o discuție gratuită
-              <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
+              {/* Doubled for seamless loop */}
+              {[...tickerItems, ...tickerItems].map((item, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 12,
+                    padding: "0 32px",
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.875rem",
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,0.55)",
+                      letterSpacing: "0.01em",
+                    }}
+                  >
+                    {item}
+                  </span>
+                  <span
+                    style={{
+                      width: 4,
+                      height: 4,
+                      borderRadius: "50%",
+                      background: "#56db84",
+                      display: "inline-block",
+                      flexShrink: 0,
+                    }}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
+
+        {/* ── CTA BANNER ── */}
+        <CtaBanner locale="ro" />
       </main>
       <Footer locale="ro" />
     </>

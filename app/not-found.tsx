@@ -20,7 +20,7 @@ export default function NotFound() {
           overflow: "hidden",
         }}
       >
-        {/* Animated arrow grid — square cells, Nesco green */}
+        {/* Animated arrow grid square cells, Nesco green */}
         <ArrowGrid404 />
 
         {/* Subtle radial glow over the grid */}

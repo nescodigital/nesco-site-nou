@@ -54,7 +54,7 @@ export default function FacebookDePage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📣"
-              title="Meta Ads — Kampagne"
+              title="Meta Ads Kampagne"
               date="Oktober 2025"
               metrics={[
                 {
@@ -75,7 +75,7 @@ export default function FacebookDePage() {
               ]}
               barPercent={87}
               barLabel="Budget genutzt"
-              status="AKTIV — Feed + Stories + Reels"
+              status="AKTIV Feed + Stories + Reels"
               badge1="6.2x ROAS Black Friday"
               badge2="E-Commerce, Rumänien"
             />
@@ -92,7 +92,7 @@ export default function FacebookDePage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Echte Ergebnisse — Vor und nach Nesco Digital"
+                title="Echte Ergebnisse Vor und nach Nesco Digital"
                 beforeLabel="Vorher"
                 afterLabel="Nach Nesco"
                 before={[
@@ -111,7 +111,7 @@ export default function FacebookDePage() {
                   { label: "Strategie", display: "Full-Funnel" },
                   { label: "Reporting", display: "ROAS & Umsatz" },
                 ]}
-                source="E-Commerce Fashion, Rumänien — 60 Tage"
+                source="E-Commerce Fashion, Rumänien 60 Tage"
               />
               <AdsComparison
                 badLabel="❌  Schlecht verwaltet"

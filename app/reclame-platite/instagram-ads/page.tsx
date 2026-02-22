@@ -50,11 +50,11 @@ const data: ServicePageData = {
     { title: "Conținut bun, dar fără vizibilitate", desc: "Postezi fotografii de calitate, dar nu ai suficientă audiență nouă care să te descopere. Algoritmul limitează reach-ul organic." },
   ],
   solutions: [
-    { title: "Stories Ads — Fullscreen, imposibil de ignorat", desc: "Reclamele de 15 secunde în Stories ocupă tot ecranul. Rata de vizualizare este de 3-5x mai mare decât format banner." },
-    { title: "Reels Ads — Conținut viral, reach plătit", desc: "Reels este formatul cu cel mai mare reach pe Instagram. Amplificăm cel mai bun conținut cu buget plătit." },
-    { title: "Feed Ads — Prezentare premium", desc: "Imagini și video-uri în feed-ul utilizatorilor, cu CTA direct către site sau checkout." },
-    { title: "Instagram Shopping — De la postare la cumpărare", desc: "Tagăm produsele direct în imagini. Utilizatorul dă click pe produs și este trimis direct la checkout." },
-    { title: "Lookalike Audiences — Găsim clienți ca ai tăi", desc: "Folosim lista ta de clienți existenți pentru a găsi persoane similare pe Instagram." },
+    { title: "Stories Ads Fullscreen, imposibil de ignorat", desc: "Reclamele de 15 secunde în Stories ocupă tot ecranul. Rata de vizualizare este de 3-5x mai mare decât format banner." },
+    { title: "Reels Ads Conținut viral, reach plătit", desc: "Reels este formatul cu cel mai mare reach pe Instagram. Amplificăm cel mai bun conținut cu buget plătit." },
+    { title: "Feed Ads Prezentare premium", desc: "Imagini și video-uri în feed-ul utilizatorilor, cu CTA direct către site sau checkout." },
+    { title: "Instagram Shopping De la postare la cumpărare", desc: "Tagăm produsele direct în imagini. Utilizatorul dă click pe produs și este trimis direct la checkout." },
+    { title: "Lookalike Audiences Găsim clienți ca ai tăi", desc: "Folosim lista ta de clienți existenți pentru a găsi persoane similare pe Instagram." },
     { title: "A/B testing de creative", desc: "Testăm multiple variante de imagini, video-uri și copy pentru a identifica ce funcționează cel mai bine." },
   ],
   cases: [
@@ -70,7 +70,7 @@ const data: ServicePageData = {
     { q: "E necesar să am deja un profil de Instagram activ?", a: "Un profil existent ajută (dovadă socială pentru vizitatori), dar nu este obligatoriu pentru reclame. Reclamele pot rula direct din Meta Business Suite chiar fără profil activ sau cu un profil cu puțini urmăritori." },
     { q: "Care format funcționează mai bine: Stories, Reels sau Feed?", a: "Depinde de obiectiv: Stories pentru awareness rapid și impact vizual maxim, Reels pentru reach organic amplificat, Feed pentru considerare și conversie. Recomandăm să testăm toate formatele și să scălăm ce funcționează pentru audiența ta." },
     { q: "Trebuie să creez conținut nou special pentru reclame?", a: "Nu neapărat. Putem amplifica postările organice care au performat bine (Spark Ads). Dar pentru rezultate maxime, creăm sau ghidăm crearea de conținut optimizat pentru fiecare format și obiectiv." },
-    { q: "Instagram e bun pentru B2B?", a: "Pentru vânzări directe B2B, LinkedIn este mai eficient. Dar Instagram funcționează excelent pentru brand awareness și thought leadership B2B — arhitecți, designeri, consultanți, agenții care postează conținut educațional câștigă clienți noi prin Instagram." },
+    { q: "Instagram e bun pentru B2B?", a: "Pentru vânzări directe B2B, LinkedIn este mai eficient. Dar Instagram funcționează excelent pentru brand awareness și thought leadership B2B arhitecți, designeri, consultanți, agenții care postează conținut educațional câștigă clienți noi prin Instagram." },
     { q: "Cât de importantă e calitatea vizualului?", a: "Critică. Instagram este o platformă vizuală. O fotografie sau video de calitate slabă va performa slab chiar și cu un buget mare. Noi oferăm ghiduri și brief-uri pentru content creation sau ne ocupăm noi de creative." },
     { q: "Cum măsurați succesul unei campanii?", a: "Dincolo de like-uri și comentarii (care nu plătesc facturile), urmărim: reach, frecvență, click-uri pe site, conversii, cost per conversie și ROAS. Tu primești raport lunar cu toate datele, explicat în termeni simpli." },
   ],
@@ -90,7 +90,7 @@ export default function InstagramRoPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📸"
-              title="Instagram Ads — Campanie"
+              title="Instagram Ads Campanie"
               date="Octombrie 2025"
               metrics={[
                 { label: "ROAS", animated: { target: 3.2, decimals: 1, suffix: "x" }, badge: { text: "↑ 45%", positive: true } },
@@ -99,7 +99,7 @@ export default function InstagramRoPage() {
               ]}
               barPercent={91}
               barLabel="Buget folosit"
-              status="ACTIV — Stories + Reels + Feed"
+              status="ACTIV Stories + Reels + Feed"
               badge1="+80% comenzi din Instagram Shopping"
               badge2="Brand modă, România"
             />
@@ -116,7 +116,7 @@ export default function InstagramRoPage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Rezultate reale — Înainte și după Nesco Digital"
+                title="Rezultate reale Înainte și după Nesco Digital"
                 beforeLabel="Înainte"
                 afterLabel="După Nesco"
                 before={[
@@ -135,7 +135,7 @@ export default function InstagramRoPage() {
                   { label: "Format", display: "Stories + Reels + Feed" },
                   { label: "Instagram Shopping", display: "activ, 2.400 produse" },
                 ]}
-                source="Brand modă, România — 60 de zile"
+                source="Brand modă, România 60 de zile"
               />
               <AdsComparison
                 bad={[

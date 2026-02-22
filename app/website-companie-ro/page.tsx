@@ -102,7 +102,7 @@ export default function WebsiteCompanieRoPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="🏢"
-              title="Website Companie — Launch"
+              title="Website Companie Launch"
               date="Septembrie 2025"
               metrics={[
                 { label: "Contacte/lună", animated: { target: 34 }, badge: { text: "↑ 340%", positive: true } },
@@ -111,7 +111,7 @@ export default function WebsiteCompanieRoPage() {
               ]}
               barPercent={94}
               barLabel="Obiectiv conversie atins"
-              status="LIVE — PageSpeed 94/100"
+              status="LIVE PageSpeed 94/100"
               badge1="8 → 34 contacte/lună"
               badge2="Companie consultanță, România"
             />
@@ -126,7 +126,7 @@ export default function WebsiteCompanieRoPage() {
                 { stat: "Training", label: "inclus la livrare" },
               ]} />
               <AdsBeforeAfter
-                title="Rezultate reale — Înainte și după Nesco Digital"
+                title="Rezultate reale Înainte și după Nesco Digital"
                 beforeLabel="Înainte"
                 afterLabel="După Nesco"
                 before={[
@@ -145,7 +145,7 @@ export default function WebsiteCompanieRoPage() {
                   { label: "Design", display: "custom 2024" },
                   { label: "Credibilitate percepută", display: "ridicată" },
                 ]}
-                source="Companie de consultanță, România — 30 zile post-lansare"
+                source="Companie de consultanță, România 30 zile post-lansare"
               />
               <AdsComparison
                 badLabel="Website construit pe template"
@@ -155,14 +155,14 @@ export default function WebsiteCompanieRoPage() {
                   "Performanță slabă: mult CSS și JS inutil",
                   "Nu reflectă identitatea unică a brandului tău",
                   "Greu de personalizat fără cunoștințe tehnice",
-                  "Fără strategie de conversie — just prezentare",
+                  "Fără strategie de conversie just prezentare",
                   "SEO tehnic slab din start",
                 ]}
                 good={[
                   "Design proiectat de la zero specific pentru brandul tău",
                   "Cod optimizat, PageSpeed 90+ garantat",
                   "Identitate vizuală unică, memorabilă",
-                  "CMS intuitiv — editezi singur fără programare",
+                  "CMS intuitiv editezi singur fără programare",
                   "Structura construită pentru a converti vizitatorii",
                   "SEO tehnic corect de la prima zi",
                 ]}

@@ -69,7 +69,7 @@ export default function LinkedInEnPage() {
   const heroRightSlot = (
     <AdsDashboardCard
       emoji="💼"
-      title="LinkedIn Ads — B2B Campaign"
+      title="LinkedIn Ads B2B Campaign"
       date="October 2025"
       metrics={[
         { label: "Leads/month", animated: { target: 22 }, badge: { text: "↑ 633%", positive: true } },
@@ -78,7 +78,7 @@ export default function LinkedInEnPage() {
       ]}
       barPercent={83}
       barLabel="Budget used"
-      status="ACTIVE — Sponsored Content + InMail"
+      status="ACTIVE Sponsored Content + InMail"
       badge1="From 3 to 22 B2B leads/month"
       badge2="SaaS Enterprise, Romania"
     />
@@ -94,7 +94,7 @@ export default function LinkedInEnPage() {
         { stat: "15", label: "years B2B experience" },
       ]} />
       <AdsBeforeAfter
-        title="Real Results — Before and After Nesco Digital"
+        title="Real Results Before and After Nesco Digital"
         beforeLabel="Before"
         afterLabel="After Nesco"
         before={[
@@ -113,7 +113,7 @@ export default function LinkedInEnPage() {
           { label: "Monthly pipeline", display: "€220,000", animate: { target: 220000 } },
           { label: "CPL", display: "€85", animate: { target: 85, suffix: "€" } },
         ]}
-        source="B2B SaaS Enterprise, Romania — 90 days"
+        source="B2B SaaS Enterprise, Romania 90 days"
       />
       <AdsComparison
         bad={[

@@ -67,7 +67,7 @@ export default function FacebookAdsEnPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📣"
-              title="Meta Ads — Campaign"
+              title="Meta Ads Campaign"
               date="October 2025"
               metrics={[
                 {
@@ -88,7 +88,7 @@ export default function FacebookAdsEnPage() {
               ]}
               barPercent={87}
               barLabel="Budget used"
-              status="ACTIVE — Feed + Stories + Reels"
+              status="ACTIVE Feed + Stories + Reels"
               badge1="6.2x ROAS Black Friday"
               badge2="E-commerce, Romania"
             />
@@ -105,7 +105,7 @@ export default function FacebookAdsEnPage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Real results — Before and after Nesco Digital"
+                title="Real results Before and after Nesco Digital"
                 beforeLabel="Before"
                 afterLabel="After Nesco"
                 before={[
@@ -124,7 +124,7 @@ export default function FacebookAdsEnPage() {
                   { label: "Strategy", display: "full-funnel" },
                   { label: "Reporting", display: "ROAS & revenue" },
                 ]}
-                source="E-commerce fashion, Romania — 60 days"
+                source="E-commerce fashion, Romania 60 days"
               />
               <AdsComparison
                 badLabel="❌  Poorly managed"

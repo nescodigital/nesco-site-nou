@@ -50,11 +50,11 @@ const data: ServicePageData = {
     { title: "Good content, but no visibility", desc: "You post quality photos, but don't have enough new audiences discovering you. The algorithm limits organic reach." },
   ],
   solutions: [
-    { title: "Stories Ads — Fullscreen, impossible to ignore", desc: "15-second ads in Stories occupy the entire screen. View rates are 3–5x higher than banner formats." },
-    { title: "Reels Ads — Viral content, paid reach", desc: "Reels is the highest-reach format on Instagram. We amplify your best content with paid budget." },
-    { title: "Feed Ads — Premium presentation", desc: "Images and videos in users' feeds, with direct CTA to your site or checkout." },
-    { title: "Instagram Shopping — From post to purchase", desc: "We tag products directly in images. The user clicks the product and goes straight to checkout." },
-    { title: "Lookalike Audiences — Find customers like yours", desc: "We use your existing customer list to find similar people on Instagram." },
+    { title: "Stories Ads Fullscreen, impossible to ignore", desc: "15-second ads in Stories occupy the entire screen. View rates are 3–5x higher than banner formats." },
+    { title: "Reels Ads Viral content, paid reach", desc: "Reels is the highest-reach format on Instagram. We amplify your best content with paid budget." },
+    { title: "Feed Ads Premium presentation", desc: "Images and videos in users' feeds, with direct CTA to your site or checkout." },
+    { title: "Instagram Shopping From post to purchase", desc: "We tag products directly in images. The user clicks the product and goes straight to checkout." },
+    { title: "Lookalike Audiences Find customers like yours", desc: "We use your existing customer list to find similar people on Instagram." },
     { title: "Creative A/B testing", desc: "We test multiple image, video, and copy variations to identify what works best for your audience." },
   ],
   cases: [
@@ -70,7 +70,7 @@ const data: ServicePageData = {
     { q: "Do I need an active Instagram profile to run ads?", a: "An existing profile helps (social proof for visitors), but it's not required for ads. Ads can run directly from Meta Business Suite even without an active profile or with a profile with few followers." },
     { q: "Which format works better: Stories, Reels, or Feed?", a: "It depends on the objective: Stories for rapid awareness and maximum visual impact, Reels for amplified reach, Feed for consideration and conversion. We recommend testing all formats and scaling what works for your audience." },
     { q: "Do I need to create new content specifically for ads?", a: "Not necessarily. We can amplify organic posts that have performed well. But for maximum results, we create or guide the creation of content optimized for each format and objective." },
-    { q: "Is Instagram good for B2B?", a: "For direct B2B sales, LinkedIn is more effective. But Instagram works great for B2B brand awareness and thought leadership — architects, designers, consultants, and agencies posting educational content win new clients through Instagram." },
+    { q: "Is Instagram good for B2B?", a: "For direct B2B sales, LinkedIn is more effective. But Instagram works great for B2B brand awareness and thought leadership architects, designers, consultants, and agencies posting educational content win new clients through Instagram." },
     { q: "How important is visual quality?", a: "Critical. Instagram is a visual platform. A low-quality photo or video will perform poorly even with a large budget. We provide guides and briefs for content creation, or handle the creative ourselves." },
     { q: "How do you measure campaign success?", a: "Beyond likes and comments (which don't pay the bills), we track: reach, frequency, website clicks, conversions, cost per conversion, and ROAS. You receive a monthly report with all data, explained in plain terms." },
   ],
@@ -90,7 +90,7 @@ export default function InstagramEnPage() {
           heroRightSlot={
             <AdsDashboardCard
               emoji="📸"
-              title="Instagram Ads — Campaign"
+              title="Instagram Ads Campaign"
               date="October 2025"
               metrics={[
                 { label: "ROAS", animated: { target: 3.2, decimals: 1, suffix: "x" }, badge: { text: "↑ 45%", positive: true } },
@@ -99,7 +99,7 @@ export default function InstagramEnPage() {
               ]}
               barPercent={91}
               barLabel="Budget used"
-              status="ACTIVE — Stories + Reels + Feed"
+              status="ACTIVE Stories + Reels + Feed"
               badge1="+80% orders from Instagram Shopping"
               badge2="Fashion brand, Romania"
             />
@@ -116,7 +116,7 @@ export default function InstagramEnPage() {
                 ]}
               />
               <AdsBeforeAfter
-                title="Real results — Before and after Nesco Digital"
+                title="Real results Before and after Nesco Digital"
                 beforeLabel="Before"
                 afterLabel="After Nesco"
                 before={[
@@ -135,7 +135,7 @@ export default function InstagramEnPage() {
                   { label: "Format", display: "Stories + Reels + Feed" },
                   { label: "Instagram Shopping", display: "active, 2,400 products" },
                 ]}
-                source="Fashion brand, Romania — 60 days"
+                source="Fashion brand, Romania 60 days"
               />
               <AdsComparison
                 badLabel="❌  Poorly managed"

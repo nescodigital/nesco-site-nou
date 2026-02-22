@@ -160,7 +160,7 @@ export function GoogleAdsCalculator() {
               </div>
               <div>
                 <div style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 900, color: savings > 0 ? "#60a5fa" : "rgba(255,255,255,0.4)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-                  {savings > 0 ? `~${savings.toLocaleString("ro-RO")}€` : "—"}
+                  {savings > 0 ? `~${savings.toLocaleString("ro-RO")}€` : ""}
                 </div>
                 <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", marginTop: "6px" }}>Economii vs. angajat intern</div>
               </div>

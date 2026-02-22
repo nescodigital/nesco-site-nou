@@ -2,7 +2,7 @@ const STAGES = [
   {
     emoji: "🎯",
     label: "TOF",
-    title: "Top of Funnel — Awareness",
+    title: "Top of Funnel Awareness",
     color: "#60a5fa",
     budget: "40%",
     details: [
@@ -15,7 +15,7 @@ const STAGES = [
   {
     emoji: "💡",
     label: "MOF",
-    title: "Middle of Funnel — Consideration",
+    title: "Middle of Funnel Consideration",
     color: "#a78bfa",
     budget: "30%",
     details: [
@@ -28,7 +28,7 @@ const STAGES = [
   {
     emoji: "💰",
     label: "BOF",
-    title: "Bottom of Funnel — Conversion",
+    title: "Bottom of Funnel Conversion",
     color: "#56db84",
     budget: "30%",
     details: [

@@ -39,7 +39,7 @@ export default function GoogleDeePage() {
   const heroRightSlot = (
     <AdsDashboardCard
       emoji="📊"
-      title="Google Ads — Kampagne"
+      title="Google Ads Kampagne"
       date="September 2025"
       metrics={[
         { label: "ROAS", animated: { target: 5.2, decimals: 1, suffix: "x" }, badge: { text: "↑ 189%", positive: true } },
@@ -48,7 +48,7 @@ export default function GoogleDeePage() {
       ]}
       barPercent={94}
       barLabel="Budget genutzt"
-      status="AKTIV — Search + Shopping + Display"
+      status="AKTIV Search + Shopping + Display"
       badge1="5,2x ROAS E-Commerce"
       badge2="Handel, Rumänien"
     />
@@ -64,7 +64,7 @@ export default function GoogleDeePage() {
         { stat: "500+", label: "Kampagnen" },
       ]} />
       <AdsBeforeAfter
-        title="Echte Ergebnisse — Vor und Nach Nesco Digital"
+        title="Echte Ergebnisse Vor und Nach Nesco Digital"
         beforeLabel="Vorher"
         afterLabel="Nach Nesco"
         before={[
@@ -83,7 +83,7 @@ export default function GoogleDeePage() {
           { label: "Strategie", display: "Full-Funnel PPC" },
           { label: "Reporting", display: "ROAS & Umsatz" },
         ]}
-        source="E-Commerce Handel, Rumänien — 90 Tage"
+        source="E-Commerce Handel, Rumänien 90 Tage"
       />
       <AdsComparison
         bad={[

@@ -81,7 +81,7 @@ const MetaIcon = () => (
 const heroRightSlot: ReactNode = (
   <AdsDashboardCard
     emoji="🎵"
-    title="TikTok Ads — Campanie"
+    title="TikTok Ads Campanie"
     date="Noiembrie 2025"
     metrics={[
       { label: "Vizualizări", animated: { target: 3200000 }, badge: { text: "↑ 300%", positive: true } },
@@ -90,7 +90,7 @@ const heroRightSlot: ReactNode = (
     ]}
     barPercent={91}
     barLabel="Buget folosit"
-    status="ACTIV — In-Feed + Spark Ads"
+    status="ACTIV In-Feed + Spark Ads"
     badge1="2.5x ROAS Fashion"
     badge2="E-commerce, România"
   />
@@ -106,7 +106,7 @@ const afterHeroSlot: ReactNode = (
       { stat: "500+", label: "campanii livrate" },
     ]} />
     <AdsBeforeAfter
-      title="Rezultate reale — Înainte și după Nesco Digital"
+      title="Rezultate reale Înainte și după Nesco Digital"
       beforeLabel="Înainte"
       afterLabel="După Nesco"
       before={[
@@ -125,7 +125,7 @@ const afterHeroSlot: ReactNode = (
         { label: "Tip content", display: "UGC nativ TikTok" },
         { label: "Urmăritori câștigați", display: "4.200", animate: { target: 4200 } },
       ]}
-      source="Brand fashion streetwear, România — 60 de zile"
+      source="Brand fashion streetwear, România 60 de zile"
     />
     <AdsComparison
       bad={[
