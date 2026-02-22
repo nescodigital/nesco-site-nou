@@ -48,12 +48,10 @@ export function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [langOpen, setLangOpen] = useState(false);
-  const [toolkitOpen, setToolkitOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const navLinks = getNavLinks(locale);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
-  const toolkitRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -65,11 +63,9 @@ export function Header({ locale }: HeaderProps) {
     const handleClick = (e: MouseEvent) => {
       const insideNav = dropdownRef.current?.contains(e.target as Node);
       const insideLang = langRef.current?.contains(e.target as Node);
-      const insideToolkit = toolkitRef.current?.contains(e.target as Node);
-      if (!insideNav && !insideLang && !insideToolkit) {
+      if (!insideNav && !insideLang) {
         setOpenDropdown(null);
         setLangOpen(false);
-        setToolkitOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
@@ -265,89 +261,51 @@ export function Header({ locale }: HeaderProps) {
 
             {/* Right: toolkit + lang + CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              {/* Toolkit */}
-              <div className="relative" ref={toolkitRef}>
-                <button
-                  onClick={() => { setToolkitOpen(!toolkitOpen); setLangOpen(false); }}
+              {/* Calculator icon with tooltip */}
+              <div className="relative group">
+                <Link
+                  href="/calculator/"
                   className="flex items-center justify-center transition-all"
                   style={{
                     width: 36,
                     height: 36,
-                    background: toolkitOpen ? "rgba(86,219,132,0.08)" : "rgba(255,255,255,0.04)",
-                    border: `1px solid ${toolkitOpen ? "rgba(86,219,132,0.3)" : "rgba(255,255,255,0.08)"}`,
+                    background: "rgba(255,255,255,0.04)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     borderRadius: "10px",
-                    fontSize: "0.875rem",
                     cursor: "pointer",
-                    lineHeight: 1,
                   }}
                   onMouseEnter={(e) => {
-                    if (!toolkitOpen) {
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(86,219,132,0.3)";
-                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(86,219,132,0.06)";
-                    }
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(86,219,132,0.3)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(86,219,132,0.06)";
                   }}
                   onMouseLeave={(e) => {
-                    if (!toolkitOpen) {
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.08)";
-                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.04)";
-                    }
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)";
                   }}
-                  aria-label="Toolkit"
+                  aria-label={locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
                 >
-                  🧮
-                </button>
-                {toolkitOpen && (
-                  <div
-                    className="dropdown-enter absolute right-0 top-full mt-2"
-                    style={{
-                      width: "220px",
-                      background: "#0a0a0a",
-                      border: "1px solid rgba(86,219,132,0.2)",
-                      borderRadius: "14px",
-                      boxShadow: "0 16px 40px rgba(0,0,0,0.7)",
-                      overflow: "hidden",
-                      padding: "6px",
-                    }}
-                  >
-                    <Link
-                      href="/calculator/"
-                      onClick={() => setToolkitOpen(false)}
-                      className="flex items-center gap-2.5 rounded-lg transition-colors"
-                      style={{
-                        padding: "10px 12px",
-                        fontSize: "0.875rem",
-                        fontWeight: 500,
-                        color: "rgba(255,255,255,0.7)",
-                        textDecoration: "none",
-                      }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.7)"; }}
-                    >
-                      <span>🧮</span>
-                      <span>{locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}</span>
-                    </Link>
-                    <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "2px 0" }} />
-                    <Link
-                      href={ctaHref}
-                      onClick={() => setToolkitOpen(false)}
-                      className="flex items-center justify-center gap-2 rounded-lg transition-all"
-                      style={{
-                        padding: "9px 12px",
-                        margin: "4px",
-                        fontSize: "0.8125rem",
-                        fontWeight: 600,
-                        color: "#000",
-                        background: "#56db84",
-                        textDecoration: "none",
-                        borderRadius: "8px",
-                      }}
-                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#6ee89a"; }}
-                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#56db84"; }}
-                    >
-                      {ctaLabel} →
-                    </Link>
-                  </div>
-                )}
+                  <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3h2v2h-2V6zm-4 0h2v2H8V6zm-2 4h10v2H6v-2zm0 4h2v2H6v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" />
+                  </svg>
+                </Link>
+                {/* Tooltip */}
+                <div
+                  className="absolute left-1/2 top-full mt-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                  style={{
+                    transform: "translateX(-50%)",
+                    whiteSpace: "nowrap",
+                    background: "#1a1a1a",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: "8px",
+                    padding: "5px 10px",
+                    fontSize: "0.75rem",
+                    fontWeight: 500,
+                    color: "#fff",
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
+                </div>
               </div>
 
               {/* Language switcher */}
