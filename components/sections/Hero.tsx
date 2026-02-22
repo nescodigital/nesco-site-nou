@@ -203,11 +203,11 @@ export function Hero({ locale }: HeroProps) {
               className="font-black text-left"
               style={{
                 fontSize: "clamp(3rem, 6.5vw, 5.5rem)",
-                lineHeight: 0.92,
+                lineHeight: 0.88,
                 letterSpacing: "-0.03em",
                 fontFeatureSettings: '"kern" 1, "liga" 1',
                 marginTop: "16px",
-                marginBottom: "28px",
+                marginBottom: "16px",
               }}
             >
               <span className="block text-white">{h.headline1}</span>
@@ -230,11 +230,11 @@ export function Hero({ locale }: HeroProps) {
               className="text-left"
               style={{
                 fontSize: "1.0625rem",
-                lineHeight: 1.7,
+                lineHeight: 1.5,
                 color: "rgba(255,255,255,0.45)",
                 maxWidth: "460px",
                 letterSpacing: "0.01em",
-                marginBottom: "20px",
+                marginBottom: "16px",
               }}
             >
               {h.subheadline}
