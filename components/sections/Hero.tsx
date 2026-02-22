@@ -207,7 +207,7 @@ export function Hero({ locale }: HeroProps) {
                 letterSpacing: "-0.03em",
                 fontFeatureSettings: '"kern" 1, "liga" 1',
                 marginTop: "16px",
-                marginBottom: "16px",
+                marginBottom: "10px",
               }}
             >
               <span className="block text-white">{h.headline1}</span>
@@ -234,7 +234,7 @@ export function Hero({ locale }: HeroProps) {
                 color: "rgba(255,255,255,0.45)",
                 maxWidth: "460px",
                 letterSpacing: "0.01em",
-                marginBottom: "16px",
+                marginBottom: "12px",
               }}
             >
               {h.subheadline}
