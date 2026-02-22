@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
-import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight, Calculator } from "lucide-react";
 import { type Locale } from "@/lib/translations";
 import { getNavLinks, routes } from "@/lib/routes";
 
@@ -284,9 +284,7 @@ export function Header({ locale }: HeaderProps) {
                   }}
                   aria-label={locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
                 >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" width="20" height="20">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25v-.008zm2.496-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zm2.496-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008v-.008zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25z" />
-                  </svg>
+                  <Calculator size={20} color="white" />
                 </Link>
                 {/* Tooltip */}
                 <div
