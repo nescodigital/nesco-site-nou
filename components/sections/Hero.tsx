@@ -234,7 +234,7 @@ export function Hero({ locale }: HeroProps) {
                 color: "rgba(255,255,255,0.45)",
                 maxWidth: "460px",
                 letterSpacing: "0.01em",
-                marginBottom: "36px",
+                marginBottom: "20px",
               }}
             >
               {h.subheadline}
