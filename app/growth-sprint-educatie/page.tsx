@@ -178,7 +178,7 @@ export default function GrowthSprintEducatiePage() {
             >
               Pentru branduri de educație online cu venituri de{" "}
               <strong style={{ color: "#ffffff", fontWeight: 700 }}>10k–100k+/lună</strong>{" "}
-              care lasă bani pe masă.
+              care pierd oportunități de venit.
             </p>
             <p
               style={{
