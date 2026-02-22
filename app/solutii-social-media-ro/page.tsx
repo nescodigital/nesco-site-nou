@@ -24,9 +24,9 @@ const data: ServicePageData = {
   ],
   solutions: [
     { title: "Analiză și Strategie", desc: "Strategie social media personalizată pe audiența și obiectivele tale." },
-    { title: "Creare Conținut Angajant", desc: "Conținut vizual și scris care oprește scroll-ul." },
-    { title: "Administrare Conturi", desc: "Gestionăm conturile tale profesional și consistent." },
-    { title: "Campanii Plătite", desc: "Reclame sociale care convertesc, nu doar impresii." },
+    { title: "Creare Conținut Captivant", desc: "Conținut vizual și scris care oprește scroll-ul." },
+    { title: "Administrare Conturi", desc: "Gestionăm conturile la un nivel profesionist și consistent." },
+    { title: "Campanii Plătite", desc: "Reclame care convertesc, nu doar vizualizări." },
     { title: "Monitorizare și Analiză", desc: "Raportare săptămânală despre ce funcționează." },
     { title: "Creștere Comunitate", desc: "Construim o comunitate loială în jurul brandului tău." },
   ],

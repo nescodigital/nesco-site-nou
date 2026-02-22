@@ -160,9 +160,9 @@ export default function PrivacyPolicyEnPage() {
               </P>
               <ul style={{ listStyle: "none", padding: 0, marginBottom: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
-                  "Google Analytics , site analytics",
-                  "Meta (Facebook) , advertising campaign measurement via Meta Pixel",
-                  "TikTok , advertising campaign measurement via TikTok Pixel",
+                  "Google Analytics, site analytics",
+                  "Meta (Facebook), advertising campaign measurement via Meta Pixel",
+                  "TikTok, advertising campaign measurement via TikTok Pixel",
                 ].map((item) => (
                   <Li key={item}>
                     <span style={{ color: "#56db84", marginRight: "10px" }}>→</span>{item}
@@ -199,11 +199,11 @@ export default function PrivacyPolicyEnPage() {
               <H2>7. Cookies</H2>
               <P>We use two types of cookies:</P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Essential</strong> , required for the site to
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Essential</strong>, required for the site to
                 function, no consent needed.
               </P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong> , Google
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong>, Google
                 Analytics, Meta Pixel and TikTok Pixel, activated only after your consent. You can change
                 preferences at any time via the cookie banner.
               </P>

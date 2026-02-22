@@ -39,7 +39,7 @@ const data: ServicePageData = {
   faq: [
     { q: "Cât durează până văd rezultate SEO?", a: "Primele îmbunătățiri de ranking apar în 60-90 de zile. Rezultate semnificative de trafic organic în 4-6 luni. SEO este o investiție pe termen lung cu efecte cumulative." },
     { q: "Ce include auditul SEO gratuit?", a: "Analizăm structura tehnică a site-ului, viteza de încărcare, cuvintele cheie curente, profilul de backlink-uri și comparăm cu top 3 competitori din nișa ta." },
-    { q: "Garantați poziția 1 în Google?", a: "Nu. Nicio agenție serioasă nu garantează poziții specifice , Google nu permite asta. Garantăm un proces transparent, tehnici white-hat și creștere măsurabilă a traficului organic." },
+    { q: "Garantați poziția 1 în Google?", a: "Nu. Nicio agenție serioasă nu garantează poziții specifice, Google nu permite asta. Garantăm un proces transparent, tehnici white-hat și creștere măsurabilă a traficului organic." },
     { q: "Cât costă serviciile SEO?", a: "Pachetele SEO încep de la 800€/lună pentru site-uri mici și cresc în funcție de competitivitatea nișei și volumul de muncă necesar. Oferim audit gratuit înainte de orice propunere." },
     { q: "Funcționează SEO și pentru business-uri locale?", a: "Da, SEO local este una dintre cele mai eficiente investiții pentru business-uri cu locație fizică. Optimizăm Google Business Profile, cităm NAP consistent și targetăm căutări locale." },
   ],

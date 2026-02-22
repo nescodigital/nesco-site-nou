@@ -9,7 +9,7 @@ const LAUNCH_INTERVAL = 4000; // ms between launches
 const LAUNCH_DURATION = 900;  // must match CSS animation duration
 
 export function ArrowPattern() {
-  // Stable random base opacities , generated once on mount, never change
+  // Stable random base opacities, generated once on mount, never change
   const baseOpacities = useRef(
     Array.from({ length: COUNT }, () => 0.05 + Math.random() * 0.12)
   );
@@ -36,7 +36,7 @@ export function ArrowPattern() {
 
     // First launch after short delay
     const first = setTimeout(launch, 800);
-    // Then every LAUNCH_INTERVAL , multiple can overlap
+    // Then every LAUNCH_INTERVAL, multiple can overlap
     const interval = setInterval(launch, LAUNCH_INTERVAL);
 
     return () => {

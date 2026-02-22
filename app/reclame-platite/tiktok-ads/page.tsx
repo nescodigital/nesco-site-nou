@@ -36,9 +36,9 @@ const data: ServicePageData = {
     { title: "Concurenții tăi au descoperit deja TikTok", desc: "Brandurile care au intrat pe TikTok în 2023-2024 au avantaj de piață. Cu fiecare lună de întârziere, costul de entry crește." },
   ],
   solutions: [
-    { title: "In-Feed Ads , Native ca un TikTok normal", desc: "Reclamele apar în feed-ul utilizatorilor și par conținut organic. Cel mai eficient format pentru conversii directe." },
-    { title: "Spark Ads , Amplifică ce merge deja", desc: "Dacă ai un TikTok organic care a performat bine, îl amplificăm cu buget plătit. Cel mai rapid ROI pe platformă." },
-    { title: "TopView , Primul lucru văzut la deschidere", desc: "Reclama ta apare imediat ce utilizatorul deschide TikTok. Imposibil de ignorat, ideal pentru lansări de brand." },
+    { title: "In-Feed Ads, Native ca un TikTok normal", desc: "Reclamele apar în feed-ul utilizatorilor și par conținut organic. Cel mai eficient format pentru conversii directe." },
+    { title: "Spark Ads, Amplifică ce merge deja", desc: "Dacă ai un TikTok organic care a performat bine, îl amplificăm cu buget plătit. Cel mai rapid ROI pe platformă." },
+    { title: "TopView, Primul lucru văzut la deschidere", desc: "Reclama ta apare imediat ce utilizatorul deschide TikTok. Imposibil de ignorat, ideal pentru lansări de brand." },
     { title: "Producție creative nativă", desc: "Nu orice conținut funcționează pe TikTok. Creăm sau ghidăm crearea de conținut autentic, nativ platformei, care nu pare reclamă." },
     { title: "Targeting precis al audienței", desc: "Targetăm după interese, comportament de vizionare, dispozitiv și demografie. Ajungem la audiența ta chiar dacă nu te urmărește." },
     { title: "Tracking și atribuire completă", desc: "TikTok Pixel pe site-ul tău, urmărim vizitele, adăugările în coș și conversiile. Știi exact ce generează TikTok." },
@@ -129,7 +129,7 @@ const afterHeroSlot: ReactNode = (
     />
     <AdsComparison
       bad={[
-        "Video-uri repurpusate de pe Instagram sau YouTube",
+        "Video-uri repostate de pe Instagram sau YouTube",
         "Boost la postări organice fără strategie",
         "Un singur format (In-Feed) fără testare",
         "Fără TikTok Pixel instalat",

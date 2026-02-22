@@ -298,8 +298,8 @@ export default function MarketingDigitalPage() {
               }}
             >
               Nu facem marketing de dragul marketingului. Fiecare euro investit
-              trebuie să se întoarcă înmulțit. Strategie, execuție și
-              optimizare continuă toate sub același acoperiș.
+              trebuie să se întoarcă înmulțit. Strategie, execuție și optimizare
+              într-un ecosistem de creștere complet integrat.
             </p>
 
             <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -373,7 +373,7 @@ export default function MarketingDigitalPage() {
                   marginTop: 20,
                 }}
               >
-                Toate canalele, o singură strategie
+                Toate serviciile, o singură strategie
               </h2>
               <p
                 style={{
@@ -385,7 +385,7 @@ export default function MarketingDigitalPage() {
                   lineHeight: 1.65,
                 }}
               >
-                Fiecare canal lucrează în sincron pentru un ecosistem digital
+                Fiecare serviciu lucrează în sincron pentru un ecosistem digital
                 coerent și profitabil.
               </p>
             </div>
@@ -578,7 +578,7 @@ export default function MarketingDigitalPage() {
                   lineHeight: 1.65,
                 }}
               >
-                Evoluția ROI pe canale principale în primele 6 luni de
+                Evoluția ROI pe servicii principale în primele 6 luni de
                 colaborare.
               </p>
             </div>

@@ -92,7 +92,7 @@ export default function TermeniConditiiPage() {
 
               <H2>4. Proprietate intelectuală</H2>
               <P>
-                Tot conținutul de pe acest site , texte, grafică, logo-uri, structură vizuală , este proprietatea
+                Tot conținutul de pe acest site, texte, grafică, logo-uri, structură vizuală, este proprietatea
                 Nesco Digital sau a partenerilor săi și este protejat de legislația privind drepturile de autor.
                 Reproducerea sau utilizarea fără acordul nostru scris este interzisă.
               </P>

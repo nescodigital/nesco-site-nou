@@ -52,9 +52,9 @@ const data: ServicePageData = {
   ],
   solutions: [
     { title: "Targetare exactă B2B", desc: "Job title (CEO, CFO, Head of Marketing), senioritate, industrie, dimensiunea companiei. Nivelul de precizie imposibil de atins pe alte platforme." },
-    { title: "Sponsored Content , Thought leadership în feed", desc: "Articole, video-uri și caruseluri care construiesc autoritatea brandului tău în fața publicului B2B vizat." },
-    { title: "Message Ads , Direct în inbox", desc: "Mesaje personalizate direct în inbox-ul LinkedIn al decidenților. Rată de deschidere de 50-60% față de 20% la email rece." },
-    { title: "Lead Gen Forms , Captare fără fricțiune", desc: "Formulare native pre-completate cu datele profilului LinkedIn. Transformă interesul în lead-uri calificate cu un singur click." },
+    { title: "Sponsored Content, Thought leadership în feed", desc: "Articole, video-uri și caruseluri care construiesc autoritatea brandului tău în fața publicului B2B vizat." },
+    { title: "Message Ads, Direct în inbox", desc: "Mesaje personalizate direct în inbox-ul LinkedIn al decidenților. Rată de deschidere de 50-60% față de 20% la email rece." },
+    { title: "Lead Gen Forms, Captare fără fricțiune", desc: "Formulare native pre-completate cu datele profilului LinkedIn. Transformă interesul în lead-uri calificate cu un singur click." },
     { title: "Account-Based Marketing (ABM)", desc: "Targetezi direct companiile de vis după nume. LinkedIn afișează reclamele tale angajaților companiilor selectate." },
     { title: "Retargeting și audiențe similare", desc: "Re-engajăm vizitatorii site-ului și creăm audiențe lookalike bazate pe clienții tăi existenți." },
   ],

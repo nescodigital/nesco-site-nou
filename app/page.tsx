@@ -28,7 +28,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Cu ce tip de companii lucrați?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Lucrăm cu companii care au deja un produs validat și vor să scaleze , branduri de educație online, e-commerce și B2B cu bugete de marketing de minim 3.000€/lună." },
+      "acceptedAnswer": { "@type": "Answer", "text": "Lucrăm cu companii care au deja un produs validat și vor să scaleze, branduri de educație online, e-commerce și B2B cu bugete de marketing de minim 3.000€/lună." },
     },
     {
       "@type": "Question",
@@ -38,7 +38,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Ce este Growth Sprint?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Growth Sprint este un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta , auditând și implementând cele mai importante îmbunătățiri. Nu producem rapoarte. Implementăm." },
+      "acceptedAnswer": { "@type": "Answer", "text": "Growth Sprint este un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta, auditând și implementând cele mai importante îmbunătățiri. Nu producem rapoarte. Implementăm." },
     },
     {
       "@type": "Question",

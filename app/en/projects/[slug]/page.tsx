@@ -133,7 +133,7 @@ export default async function ProjectEnPage({ params }: Props) {
                 </div>
               </div>
 
-              {/* Right , Main metric */}
+              {/* Right, Main metric */}
               <div style={{ display: "flex", justifyContent: "center" }}>
                 <div
                   style={{

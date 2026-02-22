@@ -359,7 +359,7 @@ export default function WebdesignHubPage() {
                 }}
               >
                 De la landing pages cu conversion rate de top, la magazine online care vând.
-                Construim cu performanță și design premium nu template-uri.
+                Performanță și design premium, adaptate business-ului tău.
               </p>
 
               {/* CTAs */}

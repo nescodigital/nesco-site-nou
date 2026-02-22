@@ -54,7 +54,7 @@ export function GlobeCanvas() {
     });
     renderer.setPixelRatio(isMobile ? Math.min(window.devicePixelRatio, 1) : Math.min(window.devicePixelRatio, 2));
     renderer.setSize(w, h);
-    renderer.setClearColor(0x000000, 0); // transparent background , CSS glow shows through
+    renderer.setClearColor(0x000000, 0); // transparent background, CSS glow shows through
     renderer.domElement.style.background = "transparent";
     container.appendChild(renderer.domElement);
 
@@ -69,7 +69,7 @@ export function GlobeCanvas() {
     globeGroup.rotation.y = GLOBE_START_Y;  // Australia facing viewer at t=0
     scene.add(globeGroup);
 
-    // ── Core sphere , near-black base, visible while dots load ────────────────
+    // ── Core sphere, near-black base, visible while dots load ────────────────
     const coreGeo = new THREE.SphereGeometry(0.993, 64, 64);
     const coreMat = new THREE.MeshBasicMaterial({ color: 0x0a0a0a });
     globeGroup.add(new THREE.Mesh(coreGeo, coreMat));
@@ -108,7 +108,7 @@ export function GlobeCanvas() {
       markerMeshes.push({ dot, ring, offset: i * (PULSE_PERIOD / CITIES.length) });
     });
 
-    // ── Dot cloud , sampled from topology image ───────────────────────────────
+    // ── Dot cloud, sampled from topology image ───────────────────────────────
     // Topology image: ocean = dark-blue dominant, land = lighter warm tones.
     const STEP        = 1.3;      // degrees between sample points
     const DOT_SIZE    = 0.011;    // ~2.6× the previous size
@@ -167,7 +167,7 @@ export function GlobeCanvas() {
       })));
     };
 
-    img.onerror = () => { /* silent , dark sphere is already visible */ };
+    img.onerror = () => { /* silent, dark sphere is already visible */ };
 
     // ── Resize ────────────────────────────────────────────────────────────────
     const onResize = () => {

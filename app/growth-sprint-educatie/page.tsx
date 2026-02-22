@@ -41,7 +41,7 @@ const forList = [
   "Creatori de cursuri online și afaceri bazate pe cunoaștere cu o audiență existentă",
   "Personal branduri care generează venituri și vor să scaleze fără complexitate adăugată",
   "Antreprenori care sunt sătui de recomandări și vor execuție",
-  "Operațiuni deja existente , ai nevoie de ceva de optimizat, nu de construit de la zero",
+  "Operațiuni deja existente, ai nevoie de ceva de optimizat, nu de construit de la zero",
 ];
 
 const notForList = [
@@ -721,7 +721,7 @@ export default function GrowthSprintEducatiePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                     <GrowthSprintApplyButton
-                      planLabel="4.500 € , Plată integrală"
+                      planLabel="4.500 €, Plată integrală"
                       variant="primary"
                     />
                   </div>
@@ -757,7 +757,7 @@ export default function GrowthSprintEducatiePage() {
                   </p>
                   <div style={{ marginTop: "auto" }}>
                     <GrowthSprintApplyButton
-                      planLabel="5.500 € , Rate în 2 tranșe"
+                      planLabel="5.500 €, Rate în 2 tranșe"
                       variant="ghost"
                     />
                   </div>

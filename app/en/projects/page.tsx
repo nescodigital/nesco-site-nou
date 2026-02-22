@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "Projects | Digital Marketing Case Studies | Nesco Digital",
-  description: "Real results for real clients. 7-figure revenue, 400% growth, 5X ROI , explore our digital marketing case studies.",
+  description: "Real results for real clients. 7-figure revenue, 400% growth, 5X ROI, explore our digital marketing case studies.",
   path: "/en/projects/",
   routeKey: "projects",
 });

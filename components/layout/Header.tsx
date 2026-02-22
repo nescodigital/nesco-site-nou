@@ -178,7 +178,7 @@ export function Header({ locale }: HeaderProps) {
                       }}
                     >
                       <div style={{ padding: "12px" }}>
-                        {/* "See all" hub link , hidden for accent groups (no hub page) */}
+                        {/* "See all" hub link, hidden for accent groups (no hub page) */}
                         {!item.accent && (
                           <>
                             <Link
@@ -482,7 +482,7 @@ export function Header({ locale }: HeaderProps) {
             </div>
           ))}
 
-          {/* CTA + language switcher , flow naturally after nav */}
+          {/* CTA + language switcher, flow naturally after nav */}
           <div style={{ padding: "24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
             <Link
               href={ctaHref}

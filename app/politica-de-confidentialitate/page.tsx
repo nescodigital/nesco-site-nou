@@ -160,9 +160,9 @@ export default function PoliticaConfidentialitateePage() {
               </P>
               <ul style={{ listStyle: "none", padding: 0, marginBottom: "16px", display: "flex", flexDirection: "column", gap: "8px" }}>
                 {[
-                  "Google Analytics , analytics site",
-                  "Meta (Facebook) , măsurare campanii publicitare prin Meta Pixel",
-                  "TikTok , măsurare campanii publicitare prin TikTok Pixel",
+                  "Google Analytics, analytics site",
+                  "Meta (Facebook), măsurare campanii publicitare prin Meta Pixel",
+                  "TikTok, măsurare campanii publicitare prin TikTok Pixel",
                 ].map((item) => (
                   <Li key={item}>
                     <span style={{ color: "#56db84", marginRight: "10px" }}>→</span>{item}
@@ -200,11 +200,11 @@ export default function PoliticaConfidentialitateePage() {
               <H2>7. Cookies</H2>
               <P>Folosim două tipuri de cookies:</P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Esențiale</strong> , necesare funcționării
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Esențiale</strong>, necesare funcționării
                 site-ului, nu necesită consimțământ.
               </P>
               <P>
-                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong> , Google
+                <strong style={{ color: "rgba(255,255,255,0.8)" }}>Analytics &amp; Marketing</strong>, Google
                 Analytics, Meta Pixel și TikTok Pixel, activate doar după acordul tău. Poți modifica preferințele
                 oricând din bannerul de cookies.
               </P>

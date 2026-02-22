@@ -17,7 +17,7 @@ const data: ServicePageData = {
   faq: [
     { q: "Wie lange dauert es, eine Website zu bauen?", a: "Eine Präsentationswebsite: 3-4 Wochen. Eine durchschnittliche E-Commerce-Website: 6-8 Wochen. Es hängt von der Komplexität und der Geschwindigkeit ab, mit der wir Materialien von Ihnen erhalten." },
     { q: "Auf welcher Plattform bauen Sie?", a: "WordPress für Flexibilität und einfache Verwaltung, oder Next.js für maximale Performance und PageSpeed 95+. Wir empfehlen basierend auf Ihren spezifischen Bedürfnissen." },
-    { q: "Ist SEO im Website-Preis inbegriffen?", a: "Wir beinhalten grundlegendes technisches SEO , URL-Struktur, Meta-Tags, Ladegeschwindigkeit, Sitemap. Kontinuierliches SEO (Content, Link Building) ist ein separater Service." },
+    { q: "Ist SEO im Website-Preis inbegriffen?", a: "Wir beinhalten grundlegendes technisches SEO, URL-Struktur, Meta-Tags, Ladegeschwindigkeit, Sitemap. Kontinuierliches SEO (Content, Link Building) ist ein separater Service." },
     { q: "Kann ich den Content nach dem Launch selbst bearbeiten?", a: "Ja, jede Website beinhaltet eine 1-stündige Schulung und Dokumentation. Sie können Texte, Bilder bearbeiten und neue Seiten ohne technische Kenntnisse hinzufügen." },
     { q: "Was passiert nach dem Launch?", a: "Wir bieten 30 Tage kostenlosen technischen Support. Danach beinhalten Wartungspakete Updates, Backups und kleinere monatliche Änderungen." },
   ],

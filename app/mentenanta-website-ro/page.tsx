@@ -47,7 +47,7 @@ const premiumFeatures = [
 const faqItems = [
   {
     q: "Am nevoie de mentenanță dacă site-ul meu e mic?",
-    a: "Da , mărimea site-ului nu contează pentru hackeri. Plugin-urile vulnerabile sunt exploatate automat, indiferent dacă ai 100 sau 100.000 de vizitatori pe lună.",
+    a: "Da, mărimea site-ului nu contează pentru hackeri. Plugin-urile vulnerabile sunt exploatate automat, indiferent dacă ai 100 sau 100.000 de vizitatori pe lună.",
   },
   {
     q: "Ce se întâmplă dacă site-ul meu cade în weekend?",
@@ -55,11 +55,11 @@ const faqItems = [
   },
   {
     q: "Pot să îmi gestionez singur site-ul după ce semnez contractul?",
-    a: "Absolut. Accesul la WordPress rămâne al tău. Noi lucrăm în spate , tu poți adăuga conținut, modifica texte, orice dorești.",
+    a: "Absolut. Accesul la WordPress rămâne al tău. Noi lucrăm în spate, tu poți adăuga conținut, modifica texte, orice dorești.",
   },
   {
     q: "Ce înseamnă \"modificări incluse\"?",
-    a: "Modificări mici de conținut, text, imagini sau setări , fără să plătești extra. La Standard ai 2 ore/lună, la Premium 5 ore/lună. Dacă depășești, tariful orar e 60€.",
+    a: "Modificări mici de conținut, text, imagini sau setări, fără să plătești extra. La Standard ai 2 ore/lună, la Premium 5 ore/lună. Dacă depășești, tariful orar e 60€.",
   },
   {
     q: "Pot schimba pachetul după ce am semnat?",
@@ -139,7 +139,7 @@ export default function MentenantaWebsiteRoPage() {
                 marginBottom: 24,
               }}
             >
-              Mentenanță Website ,{" "}
+              Mentenanță Website,{" "}
               <span style={{ color: "#56db84" }}>site-ul tău în siguranță</span>, mereu la zi
             </h1>
             <p
@@ -182,7 +182,7 @@ export default function MentenantaWebsiteRoPage() {
               gap: 24,
             }}
           >
-            {/* Card 1 , Security */}
+            {/* Card 1, Security */}
             <div
               style={{
                 background: "#0a0a0a",
@@ -215,7 +215,7 @@ export default function MentenantaWebsiteRoPage() {
               </p>
             </div>
 
-            {/* Card 2 , Speed */}
+            {/* Card 2, Speed */}
             <div
               style={{
                 background: "#0a0a0a",
@@ -249,7 +249,7 @@ export default function MentenantaWebsiteRoPage() {
               </p>
             </div>
 
-            {/* Card 3 , Backup */}
+            {/* Card 3, Backup */}
             <div
               style={{
                 background: "#0a0a0a",
@@ -279,7 +279,7 @@ export default function MentenantaWebsiteRoPage() {
                 Fără backup, un incident înseamnă totul pierdut
               </h3>
               <p style={{ color: "rgba(255,255,255,0.45)", lineHeight: 1.7, fontSize: "0.95rem" }}>
-                Server crash, atac malware, eroare umană , fără backup zilnic poți pierde ani de conținut și date despre clienți.
+                Server crash, atac malware, eroare umană, fără backup zilnic poți pierde ani de conținut și date despre clienți.
               </p>
             </div>
           </div>
@@ -433,7 +433,7 @@ export default function MentenantaWebsiteRoPage() {
               </button>
             </div>
 
-            {/* STANDARD , highlighted */}
+            {/* STANDARD, highlighted */}
             <div
               style={{
                 background: "#0a0a0a",

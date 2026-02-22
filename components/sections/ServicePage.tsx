@@ -90,7 +90,7 @@ export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: Serv
 
   const freeAuditSubtitle =
     locale === "ro"
-      ? "Analizăm situația ta actuală fără costuri și fără angajament financiar."
+      ? "Analizăm situația ta actuală fără costuri."
       : locale === "de"
       ? "Wir analysieren Ihre aktuelle Situation kostenlos und unverbindlich."
       : "We analyze your current situation at no cost and with no commitment.";
@@ -607,7 +607,7 @@ export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: Serv
                         marginLeft: "8px",
                       }}
                     >
-                      , {testimonial.role}
+                     , {testimonial.role}
                     </span>
                   </div>
                 </div>

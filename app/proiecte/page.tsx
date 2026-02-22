@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Proiecte | Studii de Caz Marketing Digital | Nesco Digital",
-  description: "Rezultate reale pentru clienți reali. Revenue de 7 cifre, creștere 400%, ROI de 5X , explorează studiile noastre de caz.",
+  description: "Rezultate reale pentru clienți reali. Revenue de 7 cifre, creștere 400%, ROI de 5X, explorează studiile noastre de caz.",
   path: "/proiecte/",
   routeKey: "projects",
 });

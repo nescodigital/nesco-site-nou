@@ -24,20 +24,20 @@ const data: ServicePageData = {
   breadcrumbCategory: "webdesign",
   hero: {
     badge: "Website Companie",
-    title: "Prima impresie a companiei tale , de cele mai multe ori, site-ul tău",
-    subtitle: "80% dintre potențialii clienți caută online o companie înainte de a lua legătura. Un website profesional nu este o cheltuială , este cel mai eficient agent de vânzări care lucrează pentru tine 24/7, chiar și când dormi.",
+    title: "Prima impresie a companiei tale, de cele mai multe ori, site-ul tău",
+    subtitle: "80% dintre potențialii clienți caută online o companie înainte de a lua legătura. Un website profesional nu este o cheltuială, este cel mai eficient agent de vânzări care lucrează pentru tine 24/7, chiar și când dormi.",
   },
   problems: [
     { title: "Potențialii clienți te caută și nu găsesc nimic convingător", desc: "Dacă site-ul tău are 5 ani sau nu există, pierzi credibilitate în fața concurenților care arată bine online. Prima impresie contează mai mult decât orice altceva." },
     { title: "Ai o pagină de Facebook, dar fără site nu ești luat în serios", desc: "O pagină de Facebook poate fi ștearsă sau blocată oricând. Un site propriu este fundamental pentru credibilitatea unui business serios." },
-    { title: "Vizitatorii nu înțeleg ce faci sau de ce să te aleagă", desc: "Dacă mesajul de pe site nu este clar și convingător, potențialii clienți pleacă în 8 secunde , media de atenție a unui utilizator web." },
+    { title: "Vizitatorii nu înțeleg ce faci sau de ce să te aleagă", desc: "Dacă mesajul de pe site nu este clar și convingător, potențialii clienți pleacă în 8 secunde, media de atenție a unui utilizator web." },
     { title: "Concurenții tăi arată mai profesional online", desc: "O primă impresie proastă este dificil de recuperat. Dacă site-ul tău nu exprimă încredere și profesionalism, pierzi clienți înainte să apuci să vorbești cu ei." },
   ],
   solutions: [
     { title: "Design care comunică profesionalism instantaneu", desc: "Folosim principii de psihologie vizuală pentru o primă impresie care inspiră încredere. Culorile, fonturile și imaginile sunt alese strategic." },
     { title: "Mesaj clar: ce faci, cui te adresezi, de ce tu", desc: "Scriem copy care răspunde în primele 5 secunde la întrebarea vizitatorului: \"Sunt la locul potrivit?\" și \"Îmi rezolvă asta problema mea?\"" },
-    { title: "Optimizat pentru mobil , 70% din trafic vine de pe telefon", desc: "Un site care nu arată perfect pe telefon pierde majoritate traficului. Toate site-urile noastre sunt mobile-first." },
-    { title: "Rapid , fiecare secundă în plus scade conversiile cu 7%", desc: "Optimizare imagini, hosting premium, cod curat. PageSpeed 90+ garantat." },
+    { title: "Optimizat pentru mobil, 70% din trafic vine de pe telefon", desc: "Un site care nu arată perfect pe telefon pierde majoritate traficului. Toate site-urile noastre sunt mobile-first." },
+    { title: "Rapid, fiecare secundă în plus scade conversiile cu 7%", desc: "Optimizare imagini, hosting premium, cod curat. PageSpeed 90+ garantat." },
     { title: "SEO de bază inclus", desc: "Structura URL-urilor, meta tags, sitemap, Google Search Console. De la zi 1, Google poate indexa site-ul tău corect." },
     { title: "Ușor de administrat", desc: "Tu adaugi știri, case studies, angajați noi fără să știi programare. Training inclus la livrare." },
   ],
@@ -51,7 +51,7 @@ const data: ServicePageData = {
   ],
   omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "Email Marketing", "CRO"],
   faq: [
-    { q: "Am nevoie de un site dacă am pagină de Facebook?", a: "Absolut. O pagină de Facebook poate fi dezactivată, restricționată sau penalizată de algoritm fără avertisment. Un site propriu este singurul spațiu digital pe care îl controlezi 100%. Plus că site-ul tău poate fi găsit pe Google , Facebook nu poate fi indexat la fel." },
+    { q: "Am nevoie de un site dacă am pagină de Facebook?", a: "Absolut. O pagină de Facebook poate fi dezactivată, restricționată sau penalizată de algoritm fără avertisment. Un site propriu este singurul spațiu digital pe care îl controlezi 100%. Plus că site-ul tău poate fi găsit pe Google, Facebook nu poate fi indexat la fel." },
     { q: "Cât costă un website de companie?", a: "Depinde de complexitate: un site de 5-8 pagini (Acasă, Despre, Servicii, Blog, Contact) pornește de la 1.500-3.000€. Un site cu funcționalități avansate (calculator de ofertă, portal client, multi-limbă) poate ajunge la 5.000-15.000€. Facem estimare detaliată după discuția inițială." },
     { q: "Cât de des trebuie actualizat un site?", a: "Conținutul (știri, case studies) ar trebui actualizat lunar pentru SEO și credibilitate. Actualizările tehnice (securitate, plugin-uri) se fac lunar de noi dacă ești pe un pachet de mentenanță." },
     { q: "Pot să îmi fac singur site-ul pe Wix sau Squarespace?", a: "Poți, dar vei obține un site cu aspect semi-profesional care nu se diferențiază de concurenții care fac la fel. Site-urile custom convertesc cu 30-50% mai bine decât template-urile standard pentru că sunt construite specific pentru audiența ta și obiectivele tale de business." },
@@ -155,7 +155,7 @@ export default function WebsiteCompanieRoPage() {
                   "Performanță slabă: mult CSS și JS inutil",
                   "Nu reflectă identitatea unică a brandului tău",
                   "Greu de personalizat fără cunoștințe tehnice",
-                  "Fără strategie de conversie just prezentare",
+                  "Fără strategie de conversie, doar prezentare",
                   "SEO tehnic slab din start",
                 ]}
                 good={[

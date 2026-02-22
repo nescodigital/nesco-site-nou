@@ -42,7 +42,7 @@ export function LinkedInFunnel() {
         <div style={{ textAlign: "center", marginBottom: "56px" }}>
           <span className="badge mb-6">Account-Based Marketing</span>
           <h2 className="font-black text-white" style={{ fontSize: "clamp(1.75rem,3.5vw,2.75rem)", lineHeight: 1.05, letterSpacing: "-0.025em", marginTop: "20px" }}>
-            Cum targetăm exact companiile tale de vis
+            Cum targetăm exact companiile aliniate cu oferta ta
           </h2>
         </div>
         <div className="relative hidden md:block" style={{ marginBottom: "-16px", zIndex: 1 }}>

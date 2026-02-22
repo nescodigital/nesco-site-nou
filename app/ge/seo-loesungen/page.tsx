@@ -17,7 +17,7 @@ const data: ServicePageData = {
   faq: [
     { q: "Wie lange dauert es, bis ich SEO-Ergebnisse sehe?", a: "Erste Ranking-Verbesserungen erscheinen in 60-90 Tagen. Bedeutende organische Traffic-Ergebnisse in 4-6 Monaten. SEO ist eine langfristige Investition mit kumulativen Effekten." },
     { q: "Was beinhaltet das kostenlose SEO-Audit?", a: "Wir analysieren die technische Struktur Ihrer Website, Ladegeschwindigkeit, aktuelle Keywords, Backlink-Profil und vergleichen mit Ihren Top-3-Wettbewerbern in Ihrer Nische." },
-    { q: "Garantieren Sie Platz 1 bei Google?", a: "Nein. Keine seriöse Agentur garantiert spezifische Positionen , Google erlaubt das nicht. Wir garantieren einen transparenten Prozess, White-Hat-Techniken und messbare organische Traffic-Wachstum." },
+    { q: "Garantieren Sie Platz 1 bei Google?", a: "Nein. Keine seriöse Agentur garantiert spezifische Positionen, Google erlaubt das nicht. Wir garantieren einen transparenten Prozess, White-Hat-Techniken und messbare organische Traffic-Wachstum." },
     { q: "Was kosten SEO-Dienstleistungen?", a: "SEO-Pakete beginnen ab 800 €/Monat für kleine Sites und skalieren basierend auf der Wettbewerbsfähigkeit der Nische. Wir bieten ein kostenloses Audit vor jedem Angebot." },
     { q: "Funktioniert SEO auch für lokale Unternehmen?", a: "Ja, lokales SEO ist eine der effektivsten Investitionen für Unternehmen mit einem physischen Standort. Wir optimieren das Google Business Profile und targeten lokale Suchanfragen." },
   ],

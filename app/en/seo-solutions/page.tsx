@@ -43,7 +43,7 @@ const data: ServicePageData = {
   faq: [
     { q: "How long until I see SEO results?", a: "First ranking improvements appear in 60-90 days. Significant organic traffic results in 4-6 months. SEO is a long-term investment with cumulative effects." },
     { q: "What does the free SEO audit include?", a: "We analyze your site's technical structure, loading speed, current keywords, backlink profile, and compare against your top 3 competitors in your niche." },
-    { q: "Do you guarantee #1 ranking on Google?", a: "No. No serious agency guarantees specific positions , Google doesn't allow that. We guarantee a transparent process, white-hat techniques, and measurable organic traffic growth." },
+    { q: "Do you guarantee #1 ranking on Google?", a: "No. No serious agency guarantees specific positions, Google doesn't allow that. We guarantee a transparent process, white-hat techniques, and measurable organic traffic growth." },
     { q: "How much do SEO services cost?", a: "SEO packages start from €800/month for small sites and scale based on niche competitiveness and workload required. We provide a free audit before any proposal." },
     { q: "Does SEO work for local businesses?", a: "Yes, local SEO is one of the most effective investments for businesses with a physical location. We optimize Google Business Profile, cite NAP consistently, and target local searches." },
   ],

@@ -11,17 +11,17 @@ import { ClientLogos } from "@/components/sections/ClientLogos";
 import { GeometricAnimation } from "@/components/sections/GeometricAnimation";
 
 const stats = [
-  { value: "+15 ani", label: "Experienta" },
+  { value: "+15 ani", label: "Experiență" },
   { value: "+€36M", label: "Buget administrat" },
   { value: "+23.000", label: "Campanii executate" },
-  { value: "+500", label: "Clienti multumiti" },
+  { value: "+500", label: "Clienți mulțumiți" },
 ];
 
 const values = [
-  { icon: Zap,         title: "Inovatie",     desc: "Gandim diferit si propunem solutii moderne adaptate realitatii digitale." },
-  { icon: TrendingUp,  title: "Performanta",  desc: "Ne concentram exclusiv pe rezultate tangibile, masurabile, reale." },
-  { icon: Users,       title: "Colaborare",   desc: "Construim parteneriate autentice si pe termen lung cu clientii nostri." },
-  { icon: CheckCircle, title: "Transparenta", desc: "Comunicam clar fiecare pas, fiecare decizie, fiecare rezultat." },
+  { icon: Zap,         title: "Inovație",     desc: "Gândim diferit și propunem soluții moderne adaptate realității digitale." },
+  { icon: TrendingUp,  title: "Performanță",  desc: "Ne concentrăm exclusiv pe rezultate tangibile, măsurabile, reale." },
+  { icon: Users,       title: "Colaborare",   desc: "Construim parteneriate autentice și pe termen lung cu clienții noștri." },
+  { icon: CheckCircle, title: "Transparență", desc: "Comunicăm clar fiecare pas, fiecare decizie, fiecare rezultat." },
 ];
 
 const team = [
@@ -29,37 +29,37 @@ const team = [
     photo: "/team/markus.png",
     name: "Markus",
     role: "The Strategist",
-    bio: "Primeste obiectivul si il transforma in plan executabil. Stabileste prioritatile, distribuie task-urile si valideaza fiecare output inainte de livrare. Nu executa, gandeste si controleaza directia.",
+    bio: "Primește obiectivul și îl transformă în plan executabil. Stabilește prioritățile, distribuie task-urile și validează fiecare output înainte de livrare. Gândește și controlează direcția, nu execută.",
   },
   {
     photo: "/team/sofia.png",
     name: "Sofia",
     role: "The Curator",
-    bio: "Monitorizeaza trendurile, filtreaza informatia relevanta si pregateste materia prima pentru comunicare. Fara Sofia, echipa ar lucra cu date incomplete si context lipsa.",
+    bio: "Monitorizează trendurile, filtrează informația relevantă și pregătește materia primă pentru comunicare. Fără Sofia, echipa ar lucra cu date incomplete și context lipsă.",
   },
   {
     photo: "/team/bogdan.png",
-    name: "Bogdan",
+    name: "George",
     role: "The Copywriter",
-    bio: "Scrie emailuri, ad copy si posts care convertesc. Lucreaza structurat, cu hook-uri clare si CTA-uri testate si cere validare strategica atunci cand contextul o cere.",
+    bio: "Scrie emailuri, ad copy și posts care convertesc. Lucrează structurat, cu hook-uri clare și CTA-uri testate și cere validare strategică atunci când contextul o cere.",
   },
   {
     photo: "/team/paula.png",
     name: "Paula",
     role: "The Prospector",
-    bio: "Identifica oportunitati noi si construieste liste de outreach curate si calificate. Nu negociaza, nu inchide, pregateste terenul pentru conversatii cu sanse reale.",
+    bio: "Identifică oportunități noi și construiește liste de outreach curate și calificate. Nu negociază, nu închide. Pregătește terenul pentru conversații cu șanse reale.",
   },
   {
     photo: "/team/diana.png",
     name: "Diana",
     role: "The Ops Manager",
-    bio: "Tine toate firele in mana: monitorizeaza progresul, semnaleaza blocajele si se asigura ca livrabilele ajung la timp. Sistemul nervos al echipei.",
+    bio: "Ține toate firele în mână: monitorizează progresul, semnalează blocajele și se asigură că livrabilele ajung la timp. Sistemul nervos al echipei, cum ne place nouă să spunem.",
   },
   {
     photo: "/team/alex.png",
     name: "Alex",
     role: "Head of Performance",
-    bio: "Urmareste ROAS, CPA si LTV cu precizie chirurgicala. Decide unde cresc si unde se opresc bugetele, optimizand continuu pentru profit real, nu doar trafic.",
+    bio: "Urmărește ROAS, CPA și LTV cu precizie chirurgicală. Decide unde cresc și unde se opresc bugetele, optimizând continuu pentru profit real, nu doar trafic.",
   },
 ];
 
@@ -67,17 +67,17 @@ const steps = [
   {
     step: "01",
     title: "Descoperire",
-    desc: "Analizam profund afacerea, piata si concurentii tai pentru a intelege contextul complet inainte de orice actiune.",
+    desc: "Analizăm profund afacerea, piața și concurenții tăi pentru a înțelege contextul complet înainte de orice acțiune.",
   },
   {
     step: "02",
     title: "Construire",
-    desc: "Implementare detaliata si meticuloasa: strategie, campanii, asset-uri, tracking, totul setat pentru performanta.",
+    desc: "Implementare detaliată și meticuloasă: strategie, campanii, asset-uri, tracking, totul setat pentru performanță.",
   },
   {
     step: "03",
     title: "Scalare",
-    desc: "Optimizare continua si scalare sustenabila bazate pe date reale, nu pe intuitie.",
+    desc: "Optimizare continuă și scalare sustenabilă bazate pe date reale, nu pe intuiție.",
   },
 ];
 
@@ -204,7 +204,7 @@ export default function DespreNescoPage() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  Nu suntem o agentie obisnuita. Suntem partenerul tau premium de executie, de la strategie la campanii care genereaza revenue real.
+                  Nu suntem o agenție obișnuită. Suntem partenerul tău premium de execuție, de la strategie la campanii care generează revenue real.
                 </p>
               </div>
 
@@ -224,7 +224,7 @@ export default function DespreNescoPage() {
           </div>
         </section>
 
-        <ClientLogos label="Clienti de referinta" />
+        <ClientLogos label="Clienți de referință" />
 
         {/* Mission */}
         <section style={{ backgroundColor: "#050505", padding: "100px 0" }}>
@@ -234,7 +234,7 @@ export default function DespreNescoPage() {
           />
           <div className="page-container">
             <div style={{ maxWidth: "680px" }}>
-              <span className="badge mb-6">Misiunea Noastra</span>
+              <span className="badge mb-6">Misiunea Noastră</span>
               <h2
                 className="font-black text-white"
                 style={{
@@ -246,10 +246,10 @@ export default function DespreNescoPage() {
                   marginBottom: "24px",
                 }}
               >
-                Strategii digitale eficiente care construiesc o prezenta online cu rezultate reale.
+                Strategii digitale eficiente care construiesc o prezență online cu rezultate reale.
               </h2>
               <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                La Nesco Digital, oferim solutii de marketing digital personalizate pentru afaceri de toate dimensiunile. De la startup-uri la companii consolidate, construim strategii care genereaza crestere sustenabila, combinand date, creativitate si executie impecabila.
+                La Nesco Digital, oferim soluții de marketing digital personalizate pentru afaceri de toate dimensiunile. De la startup-uri la companii consolidate, construim strategii care generează creștere sustenabilă, combinând date, creativitate și execuție impecabilă.
               </p>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function DespreNescoPage() {
           />
           <div className="page-container">
             <div className="text-center" style={{ marginBottom: "64px" }}>
-              <span className="badge mb-6">Echipa Noastra</span>
+              <span className="badge mb-6">Echipa Noastră</span>
               <h2
                 className="font-black text-white"
                 style={{
@@ -372,7 +372,7 @@ export default function DespreNescoPage() {
                   marginTop: "20px",
                 }}
               >
-                De ce sa ne alegi?
+                De ce să ne alegi?
               </h2>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -439,10 +439,10 @@ export default function DespreNescoPage() {
                   marginBottom: "12px",
                 }}
               >
-                Abordarea noastra
+                Abordarea noastră
               </h2>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem" }}>
-                Nu exista solutii magice, ci un proces bine gandit.
+                Nu există soluții magice, ci un proces bine gândit.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">

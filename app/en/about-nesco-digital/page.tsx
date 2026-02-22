@@ -11,7 +11,7 @@ import { StatsCounter } from "@/components/ui/StatsCounter";
 export const metadata: Metadata = buildMetadata({
   locale: "en",
   title: "About Nesco Digital | Premium Digital Marketing Partner",
-  description: "15+ years of digital marketing expertise. Premium execution partner for businesses that want to grow , from strategy to campaigns that generate real revenue.",
+  description: "15+ years of digital marketing expertise. Premium execution partner for businesses that want to grow, from strategy to campaigns that generate real revenue.",
   path: "/en/about-nesco-digital/",
   routeKey: "about",
 });
@@ -39,7 +39,7 @@ const steps = [
   {
     step: "02",
     title: "Build",
-    desc: "Detailed, meticulous implementation: strategy, campaigns, assets, tracking , everything set for performance.",
+    desc: "Detailed, meticulous implementation: strategy, campaigns, assets, tracking, everything set for performance.",
   },
   {
     step: "03",
@@ -114,7 +114,7 @@ export default function AboutEnPage() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  We are not just an agency. We are your premium execution partner , from strategy to campaigns that generate real revenue.
+                  We are not just an agency. We are your premium execution partner, from strategy to campaigns that generate real revenue.
                 </p>
               </div>
               <GeometricAnimation />
@@ -157,7 +157,7 @@ export default function AboutEnPage() {
                   Efficient digital strategies that build an online presence with real results.
                 </h2>
                 <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                  At Nesco Digital, we provide customized digital marketing solutions for businesses of all sizes. From startups to established enterprises, we build strategies that generate sustainable growth , combining data, creativity, and flawless execution.
+                  At Nesco Digital, we provide customized digital marketing solutions for businesses of all sizes. From startups to established enterprises, we build strategies that generate sustainable growth, combining data, creativity, and flawless execution.
                 </p>
               </div>
             </FadeInSection>
@@ -249,7 +249,7 @@ export default function AboutEnPage() {
                   Our approach
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.4)", fontSize: "1rem" }}>
-                  There are no magic solutions , only a well-thought-out process.
+                  There are no magic solutions, only a well-thought-out process.
                 </p>
               </div>
             </FadeInSection>

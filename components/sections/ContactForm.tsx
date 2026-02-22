@@ -188,7 +188,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
       setTimeout(() => setShowSuccess(false), 5000);
       setFields({ first_name: "", last_name: "", company: "", email: "", phone: "", website: "", services: [], budget: "" });
     } catch {
-      // silent , form stays open for retry
+      // silent, form stays open for retry
     } finally {
       setSubmitting(false);
     }

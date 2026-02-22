@@ -18,11 +18,11 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
       { title: "Nu știi câți clienți pierzi zilnic", desc: "Fără date clare, conduci cu ochii închiși. Cu Google Ads știi exact ce buget a generat câți clienți." },
     ],
     solutions: [
-      { title: "Search Ads , Apari primul când contează", desc: "Reclamele tale apar în primele poziții când cineva caută exact serviciul sau produsul tău. Plătești doar când face click." },
-      { title: "Shopping Ads , Produsul tău cu preț și imagine", desc: "Perfect pentru magazine online: produsele tale apar vizual în rezultatele Google, cu preț, recenzii și link direct." },
-      { title: "Display , Fii văzut pe tot internetul", desc: "Reclame vizuale pe milioane de site-uri partenere Google. Ideal pentru brand awareness și remarketing." },
-      { title: "YouTube Ads , Video înainte de conținut relevant", desc: "Reclamele tale video apar înainte de conținut relevant pe YouTube, cea mai mare platformă video din lume." },
-      { title: "Remarketing , Readu clienții care te-au uitat", desc: "97% din vizitatori nu cumpără la prima vizită. Remarketing-ul le reamintește de tine cu mesaje relevante până convertesc." },
+      { title: "Search Ads, Apari primul când contează", desc: "Reclamele tale apar în primele poziții când cineva caută exact serviciul sau produsul tău. Plătești doar când face click." },
+      { title: "Shopping Ads, Produsul tău cu preț și imagine", desc: "Perfect pentru magazine online: produsele tale apar vizual în rezultatele Google, cu preț, recenzii și link direct." },
+      { title: "Display, Fii văzut pe tot internetul", desc: "Reclame vizuale pe milioane de site-uri partenere Google. Ideal pentru brand awareness și remarketing." },
+      { title: "YouTube Ads, Video înainte de conținut relevant", desc: "Reclamele tale video apar înainte de conținut relevant pe YouTube, cea mai mare platformă video din lume." },
+      { title: "Remarketing, Readu clienții care te-au uitat", desc: "97% din vizitatori nu cumpără la prima vizită. Remarketing-ul le reamintește de tine cu mesaje relevante până convertesc." },
       { title: "Raportare 100% transparentă", desc: "Știi exact câți lei au generat câte conversii. Nu există cheltuieli ascunse sau rezultate vagi." },
     ],
     cases: [
@@ -35,7 +35,7 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     omnichannelServices: ["Facebook Ads", "Instagram Ads", "TikTok Ads", "SEO", "Email Marketing", "CRO"],
     faq: [
-      { q: "Am deja SEO, mai am nevoie de Google Ads?", a: "SEO și Google Ads se completează, nu se înlocuiesc. SEO construiește prezența pe termen lung (6-12 luni), în timp ce Google Ads îți aduce clienți imediat. Clienții noștri care le folosesc pe ambele obțin cele mai bune rezultate , Google Ads acoperă perioada în care SEO se construiește." },
+      { q: "Am deja SEO, mai am nevoie de Google Ads?", a: "SEO și Google Ads se completează, nu se înlocuiesc. SEO construiește prezența pe termen lung (6-12 luni), în timp ce Google Ads îți aduce clienți imediat. Clienții noștri care le folosesc pe ambele obțin cele mai bune rezultate, Google Ads acoperă perioada în care SEO se construiește." },
       { q: "Cum funcționează? Plătesc pentru fiecare click?", a: "Da, Google Ads funcționează pe sistem PPC (pay-per-click). Plătești doar când cineva face click pe reclama ta, nu când o vede. Licitezi pentru cuvinte cheie relevante și Google afișează reclama ta utilizatorilor care le caută." },
       { q: "De cât buget am nevoie ca să fie eficient?", a: "Recomandăm minimum 500€/lună în buget de reclame pentru a obține date suficiente pentru optimizare. Sub această sumă, algoritmul Google nu are suficienți utilizatori pentru a învăța și optimiza. Onorariul nostru de management este separat de bugetul de reclame." },
       { q: "Cât de repede văd rezultate?", a: "Primele click-uri și vizite apar în 24-48 ore de la lansare. Conversiile (vânzări, lead-uri) apar de obicei în prima săptămână dacă site-ul tău este bine pregătit. Optimizarea completă durează 2-4 săptămâni." },
@@ -148,7 +148,7 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
       badge: "Facebook Ads",
       title: "Ajunge la viitorii tăi clienți înainte ca ei să te caute",
       subtitle:
-        "Facebook are 9 milioane de utilizatori activi în România. Cu targetarea avansată Meta, reclamele tale ajung exact la persoanele care seamănă cu clienții tăi existenți , chiar dacă ei nu știu încă că au nevoie de tine.",
+        "Facebook are 9 milioane de utilizatori activi în România. Cu targetarea avansată Meta, reclamele tale ajung exact la persoanele care seamănă cu clienții tăi existenți, chiar dacă ei nu știu încă că au nevoie de tine.",
     },
     problems: [
       { title: "Reach-ul organic a scăzut la 3-5%", desc: "Postezi constant pe Facebook, dar doar o mică parte din urmăritori văd postările. Facebook prioritizează conținutul prietenilor față de cel al brandurilor." },
@@ -158,10 +158,10 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     solutions: [
       { title: "Targeting după interese și comportament", desc: "Ajungem la oameni interesați de exact ce vinzi tu: hobby-uri, comportamente de cumpărare, venituri, locație și mult mai mult." },
-      { title: "Lookalike Audiences , clienți ca ai tăi", desc: "Uploadăm lista ta de clienți existenți și Facebook găsește automat milioane de oameni similari din România sau Europa." },
-      { title: "Creative care opresc scroll-ul", desc: "Video de 15-30 secunde și imagini autentice care captează atenția în primele 3 secunde , singura modalitate de a bate algoritmul." },
-      { title: "Funnel complet , de la awareness la vânzare", desc: "Expunem brandul tău oamenilor noi, reconectăm cu cei interesați și convertim cei care au vizitat site-ul." },
-      { title: "Retargeting , readu-i pe cei interesați", desc: "97% din vizitatori nu cumpără la prima vizită. Retargeting-ul le reamintește de tine cu mesaje relevante." },
+      { title: "Lookalike Audiences, clienți ca ai tăi", desc: "Uploadăm lista ta de clienți existenți și Facebook găsește automat milioane de oameni similari din România sau Europa." },
+      { title: "Creative care opresc scroll-ul", desc: "Video de 15-30 secunde și imagini autentice care captează atenția în primele 3 secunde, singura modalitate de a bate algoritmul." },
+      { title: "Funnel complet, de la awareness la vânzare", desc: "Expunem brandul tău oamenilor noi, reconectăm cu cei interesați și convertim cei care au vizitat site-ul." },
+      { title: "Retargeting, readu-i pe cei interesați", desc: "97% din vizitatori nu cumpără la prima vizită. Retargeting-ul le reamintește de tine cu mesaje relevante." },
       { title: "Raportare și optimizare continuă", desc: "Urmărim costul per lead sau vânzare, nu clicuri sau like-uri care nu înseamnă nimic pentru business." },
     ],
     cases: [
@@ -175,11 +175,11 @@ export const facebookAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
     omnichannelServices: ["Google Ads", "Instagram Ads", "TikTok Ads", "CRO", "Email Marketing"],
     faq: [
       { q: "Nu mai are nimeni Facebook?", a: "Cu 9 milioane de utilizatori activi în România (din care 60% sunt adulți cu putere de cumpărare), Facebook este încă cea mai mare rețea socială din țară. Plus că Meta include și Instagram în aceleași campanii." },
-      { q: "Eu postez deja pe Facebook, ce face paid diferit?", a: "Postările organice ajung la 3-5% din urmăritori. Reclamele plătite ajung exact la audiența definită de tine , sute de mii sau milioane de persoane , nu doar la cei care te urmăresc deja." },
+      { q: "Eu postez deja pe Facebook, ce face paid diferit?", a: "Postările organice ajung la 3-5% din urmăritori. Reclamele plătite ajung exact la audiența definită de tine, sute de mii sau milioane de persoane, nu doar la cei care te urmăresc deja." },
       { q: "De cât buget am nevoie pentru Facebook Ads?", a: "Recomandăm minimum 300-500€/lună în buget de reclame. Cu mai puțin, datele sunt insuficiente pentru optimizare. Rezultatele devin semnificativ mai bune după 60 de zile când algoritmul a învățat audiența ta." },
-      { q: "Funcționează Facebook Ads pentru B2B?", a: "Da, dar cu strategie diferită. Targetăm după job title, industrie și dimensiunea companiei. Pentru B2B enterprise, LinkedIn poate fi mai eficient , te ajutăm să decizi ce funcționează pentru business-ul tău." },
-      { q: "Ce tip de conținut trebuie să pregătesc?", a: "Noi ne ocupăm de strategie și copy. Avem nevoie de câteva imagini cu produsele/serviciile tale și eventual un video scurt (chiar și filmat cu telefonul). Autenticul funcționează mai bine decât perfectul pe Facebook." },
-      { q: "Cum știu că reclamele mele performează cu adevărat?", a: "Prin rapoarte săptămânale cu toate metricile: reach, frecvență, cost per click, cost per lead, cost per vânzare și ROAS. Nu ascundem nicio dată , chiar dacă rezultatele nu sunt la nivel maxim, ești primul care știe." },
+      { q: "Funcționează Facebook Ads pentru B2B?", a: "Da, dar cu strategie diferită. Targetăm după job title, industrie și dimensiunea companiei. Pentru B2B enterprise, LinkedIn poate fi mai eficient, te ajutăm să decizi ce funcționează pentru business-ul tău." },
+      { q: "Ce tip de conținut trebuie să pregătesc?", a: "Noi ne ocupăm de strategie și copy. Avem nevoie de câteva imagini cu produsele/serviciile tale și eventual un video scurt (chiar și filmat cu telefonul). O imagine autentică funcționează mai bine decât una perfectă pe Facebook." },
+      { q: "Cum știu că reclamele mele performează cu adevărat?", a: "Prin rapoarte săptămânale cu toate metricile: reach, frecvență, cost per click, cost per lead, cost per vânzare și ROAS. Nu ascundem nicio dată, chiar dacă rezultatele nu sunt la nivel maxim, ești primul care știe." },
     ],
     testimonial: { quote: "ROAS de 6.2x pe campaniile de Black Friday. Nesco a creat o strategie completă de funnel care a funcționat mult mai bine decât ce făceam noi intern.", name: "Bogdan R.", role: "Fondator, brand de cosmetice naturale" },
     tools: ["Meta Ads Manager", "Meta Pixel", "Meta Business Suite", "Google Analytics 4", "Klaviyo"],
@@ -300,7 +300,7 @@ export const ecommerceData: Record<"ro" | "en" | "de", ServicePageData> = {
       { title: "Design custom", desc: "Experiență vizuală unică, adaptată brandului tău." },
       { title: "Platforme top", desc: "Shopify, WooCommerce, Magento, alegem platforma potrivită." },
       { title: "Integrare completă", desc: "Plăți, livrări, CRM, ERP, totul integrat perfect." },
-      { title: "Optimizare SEO", desc: "Structura site-ului optimizată pentru Google din zi 1." },
+      { title: "Optimizare SEO", desc: "Structura site-ului optimizată pentru Google din ziua 1." },
       { title: "Instrumente business", desc: "Raportare avansată, email marketing, retargeting." },
     ],
     cases: [
@@ -436,8 +436,8 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     omnichannelServices: ["Google Ads", "Facebook Ads", "CRM Solutions", "CRO", "Social Media"],
     faq: [
-      { q: "Ce rată de deschidere pot să mă aștept?", a: "Media industriei este 20-25%. Clienții noștri obțin în medie 35-45% open rate prin segmentare corectă și subiecte testate." },
-      { q: "Funcționează email marketing în 2025?", a: "Email-ul are cel mai mare ROI din toate canalele de marketing , 42:1 în medie. Nu este mort, este subutilizat de majoritatea business-urilor." },
+      { q: "La ce rată de deschidere pot să mă aștept?", a: "Media industriei este 20-25%. Clienții noștri obțin în medie 35-45% open rate prin segmentare corectă și subiecte testate." },
+      { q: "Funcționează email marketing în 2026?", a: "Email-ul are cel mai mare ROI din toate canalele de marketing, 42:1 în medie. Nu este mort, este subutilizat de majoritatea business-urilor." },
       { q: "De câte emailuri am nevoie pe lună?", a: "Minimum 4 emailuri/lună pentru a rămâne relevant. Recomandăm 8-12 pentru o strategie completă cu nurturing, promotional și educational." },
     ],
     testimonial: { quote: "Lista noastră de 8000 de abonați genera aproape nimic. Acum generează 15% din totalul revenue-ului lunar prin secvențele pe care le-a construit Nesco.", name: "Thomas K.", role: "Owner, lanț de retail Germania" },
@@ -479,7 +479,7 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
     omnichannelServices: ["Google Ads", "Facebook Ads", "CRM Solutions", "CRO", "Social Media"],
     faq: [
       { q: "What open rate can I expect?", a: "The industry average is 20-25%. Our clients achieve an average 35-45% open rate through proper segmentation and tested subject lines." },
-      { q: "Does email marketing still work in 2025?", a: "Email has the highest ROI of all marketing channels , 42:1 on average. It's not dead, it's underutilized by most businesses." },
+      { q: "Does email marketing still work in 2026?", a: "Email has the highest ROI of all marketing channels, 42:1 on average. It's not dead, it's underutilized by most businesses." },
       { q: "How many emails do I need per month?", a: "Minimum 4 emails/month to stay relevant. We recommend 8-12 for a complete strategy with nurturing, promotional, and educational content." },
     ],
     testimonial: { quote: "Our list of 8,000 subscribers was generating almost nothing. Now it generates 15% of total monthly revenue through the sequences Nesco built.", name: "Thomas K.", role: "Owner, retail chain Germany" },
@@ -521,7 +521,7 @@ export const emailMarketingData: Record<"ro" | "en" | "de", ServicePageData> = {
     omnichannelServices: ["Google Ads", "Facebook Ads", "CRM-Lösungen", "CRO", "Social Media"],
     faq: [
       { q: "Welche Öffnungsrate kann ich erwarten?", a: "Der Branchendurchschnitt liegt bei 20-25%. Unsere Kunden erzielen durchschnittlich 35-45% Öffnungsrate durch korrekte Segmentierung und getestete Betreffzeilen." },
-      { q: "Funktioniert E-Mail-Marketing im Jahr 2025 noch?", a: "E-Mail hat den höchsten ROI aller Marketing-Kanäle , durchschnittlich 42:1. Es ist nicht tot, es wird von den meisten Unternehmen zu wenig genutzt." },
+      { q: "Funktioniert E-Mail-Marketing im Jahr 2026 noch?", a: "E-Mail hat den höchsten ROI aller Marketing-Kanäle, durchschnittlich 42:1. Es ist nicht tot, es wird von den meisten Unternehmen zu wenig genutzt." },
       { q: "Wie viele E-Mails brauche ich pro Monat?", a: "Mindestens 4 E-Mails/Monat, um relevant zu bleiben. Wir empfehlen 8-12 für eine vollständige Strategie mit Nurturing, Promotions und edukativen Inhalten." },
     ],
     testimonial: { quote: "Unsere Liste mit 8.000 Abonnenten generierte fast nichts. Jetzt generiert sie 15% des monatlichen Gesamtumsatzes durch die Sequenzen, die Nesco aufgebaut hat.", name: "Thomas K.", role: "Inhaber, Einzelhandelskette Deutschland" },
@@ -566,7 +566,7 @@ export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "Email Marketing", "Web Design"],
     faq: [
-      { q: "Cum știți ce trebuie optimizat pe site-ul meu?", a: "Începem cu analiza datelor , heatmaps, session recordings, funnel analysis în Google Analytics. Datele dictează ce testăm, nu opinia noastră." },
+      { q: "Cum știți ce trebuie optimizat pe site-ul meu?", a: "Începem cu analiza datelor, heatmaps, session recordings, funnel analysis în Google Analytics. Datele dictează ce testăm, nu opinia noastră." },
       { q: "Cât de mult poate crește rata de conversie?", a: "Îmbunătățiri de 20-50% sunt realiste în primele 90 de zile. Am obținut și creșteri de 200%+ pentru clienți cu site-uri cu probleme majore de UX." },
       { q: "Ce este un A/B test și cât durează?", a: "Rulăm simultan două versiuni ale aceleiași pagini pentru a vedea care convertește mai bine. Durata: minimum 2 săptămâni sau 1000 vizitatori per variantă." },
     ],
@@ -608,7 +608,7 @@ export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "Email Marketing", "Web Design"],
     faq: [
-      { q: "How do you know what needs to be optimized on my site?", a: "We start with data analysis , heatmaps, session recordings, funnel analysis in Google Analytics. Data dictates what we test, not our opinion." },
+      { q: "How do you know what needs to be optimized on my site?", a: "We start with data analysis, heatmaps, session recordings, funnel analysis in Google Analytics. Data dictates what we test, not our opinion." },
       { q: "How much can the conversion rate increase?", a: "Improvements of 20-50% are realistic in the first 90 days. We've also achieved 200%+ increases for clients with sites that had major UX issues." },
       { q: "What is an A/B test and how long does it take?", a: "We run two versions of the same page simultaneously to see which converts better. Duration: minimum 2 weeks or 1,000 visitors per variant." },
     ],
@@ -650,7 +650,7 @@ export const croData: Record<"ro" | "en" | "de", ServicePageData> = {
     ],
     omnichannelServices: ["Google Ads", "Facebook Ads", "SEO", "E-Mail-Marketing", "Webdesign"],
     faq: [
-      { q: "Woher wissen Sie, was auf meiner Website optimiert werden muss?", a: "Wir beginnen mit der Datenanalyse , Heatmaps, Session-Recordings, Funnel-Analyse in Google Analytics. Daten bestimmen, was wir testen, nicht unsere Meinung." },
+      { q: "Woher wissen Sie, was auf meiner Website optimiert werden muss?", a: "Wir beginnen mit der Datenanalyse, Heatmaps, Session-Recordings, Funnel-Analyse in Google Analytics. Daten bestimmen, was wir testen, nicht unsere Meinung." },
       { q: "Wie stark kann die Conversion-Rate steigen?", a: "Verbesserungen von 20-50% sind in den ersten 90 Tagen realistisch. Wir haben auch 200%+ Steigerungen für Kunden mit Websites mit schwerwiegenden UX-Problemen erzielt." },
       { q: "Was ist ein A/B-Test und wie lange dauert er?", a: "Wir führen zwei Versionen derselben Seite gleichzeitig aus, um zu sehen, welche besser konvertiert. Dauer: mindestens 2 Wochen oder 1.000 Besucher pro Variante." },
     ],
