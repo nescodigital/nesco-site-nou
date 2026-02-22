@@ -69,6 +69,7 @@ export interface ServicePageData {
 interface ServicePageProps {
   data: ServicePageData;
   heroRightSlot?: ReactNode;
+  afterHeroSlot?: ReactNode;
 }
 
 const RESULT_ACCENTS = [
@@ -80,7 +81,7 @@ const RESULT_ACCENTS = [
   { bg: "rgba(34,211,238,0.10)", border: "rgba(34,211,238,0.15)", text: "#22d3ee" },
 ];
 
-export function ServicePageTemplate({ data, heroRightSlot }: ServicePageProps) {
+export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: ServicePageProps) {
   const { locale, breadcrumbCategory, hero, problems, solutions, cases, omnichannelServices, faq, testimonial, tools, toolsSectionTitle, freeAuditBadge } = data;
   const tr = t(locale);
   const r = routes[locale];
@@ -228,6 +229,8 @@ export function ServicePageTemplate({ data, heroRightSlot }: ServicePageProps) {
           )}
         </div>
       </section>
+
+      {afterHeroSlot}
 
       {/* ── Problems ── */}
       <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>

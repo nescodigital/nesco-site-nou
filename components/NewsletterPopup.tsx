@@ -5,11 +5,37 @@ import { X } from "lucide-react";
 
 const SESSION_KEY = "newsletter_popup_dismissed";
 
+const BUSINESS_TYPES = [
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "educatie-online", label: "Educație Online" },
+  { value: "b2b-servicii", label: "B2B / Servicii" },
+  { value: "sanatate-wellness", label: "Sănătate & Wellness" },
+  { value: "imobiliare", label: "Imobiliare" },
+  { value: "altul", label: "Altul" },
+];
+
+const inputStyle: React.CSSProperties = {
+  width: "100%",
+  background: "rgba(255,255,255,0.04)",
+  border: "1px solid rgba(255,255,255,0.08)",
+  borderRadius: "10px",
+  padding: "12px 16px",
+  fontSize: "0.9375rem",
+  color: "#fff",
+  outline: "none",
+  transition: "border-color 0.2s ease",
+};
+
 export function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [step, setStep] = useState<1 | 2>(1);
+  const [businessType, setBusinessType] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [profileStatus, setProfileStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
 
   useEffect(() => {
     const isRomanianPage = !window.location.pathname.startsWith("/en") && !window.location.pathname.startsWith("/ge");
@@ -36,8 +62,25 @@ export function NewsletterPopup() {
       });
       if (!res.ok) throw new Error("failed");
       setStatus("success");
+      setStep(2);
     } catch {
       setStatus("error");
+    }
+  };
+
+  const handleProfile = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setProfileStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, firstName, phone, businessType }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setProfileStatus("done");
+    } catch {
+      setProfileStatus("error");
     }
   };
 
@@ -120,11 +163,7 @@ export function NewsletterPopup() {
           Tips de marketing, studii de caz și strategii direct în inbox-ul tău. Fără spam.
         </p>
 
-        {status === "success" ? (
-          <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600, padding: "12px 0" }}>
-            ✓ Te-ai abonat cu succes!
-          </p>
-        ) : (
+        {step === 1 ? (
           <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <input
               type="email"
@@ -132,21 +171,10 @@ export function NewsletterPopup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="adresa@email.com"
-              style={{
-                width: "100%",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "10px",
-                padding: "12px 16px",
-                fontSize: "0.9375rem",
-                color: "#fff",
-                outline: "none",
-                transition: "border-color 0.2s ease",
-              }}
+              style={inputStyle}
               onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
               onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
             />
-
             <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", cursor: "pointer", userSelect: "none" }}>
               <input
                 type="checkbox"
@@ -162,28 +190,85 @@ export function NewsletterPopup() {
                 </Link>
               </span>
             </label>
-
             {status === "error" && (
-              <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>
-                A apărut o eroare. Încearcă din nou.
-              </p>
+              <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>A apărut o eroare. Încearcă din nou.</p>
             )}
-
             <button
               type="submit"
               disabled={status === "loading" || !agreed}
               className="btn-primary"
-              style={{
-                marginTop: "4px",
-                width: "100%",
-                justifyContent: "center",
-                opacity: agreed ? 1 : 0.45,
-                cursor: agreed ? "pointer" : "not-allowed",
-              }}
+              style={{ marginTop: "4px", width: "100%", justifyContent: "center", opacity: agreed ? 1 : 0.45, cursor: agreed ? "pointer" : "not-allowed" }}
             >
               {status === "loading" ? "Se procesează..." : "Abonează-te"}
             </button>
           </form>
+        ) : profileStatus === "done" ? (
+          <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600, padding: "12px 0" }}>
+            ✓ Profil completat! Ne vedem în inbox.
+          </p>
+        ) : (
+          <>
+            <p style={{ fontSize: "0.875rem", color: "#56db84", fontWeight: 600, marginBottom: "20px" }}>
+              ✓ Email confirmat! Completează profilul tău (opțional):
+            </p>
+            <form onSubmit={handleProfile} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div>
+                <label style={{ display: "block", fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: "6px" }}>
+                  Tipul tău de business
+                </label>
+                <select
+                  value={businessType}
+                  onChange={(e) => setBusinessType(e.target.value)}
+                  style={{ ...inputStyle, appearance: "none", WebkitAppearance: "none", cursor: "pointer" }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                >
+                  <option value="" disabled>Selectează tipul de business</option>
+                  {BUSINESS_TYPES.map(({ value, label }) => (
+                    <option key={value} value={value}>{label}</option>
+                  ))}
+                </select>
+              </div>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Prenume"
+                style={inputStyle}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+              />
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Telefon"
+                style={inputStyle}
+                onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+                onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+              />
+              {profileStatus === "error" && (
+                <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>A apărut o eroare. Încearcă din nou.</p>
+              )}
+              <div style={{ display: "flex", gap: "8px", marginTop: "4px" }}>
+                <button
+                  type="submit"
+                  disabled={profileStatus === "loading"}
+                  className="btn-primary"
+                  style={{ flex: 1, justifyContent: "center" }}
+                >
+                  {profileStatus === "loading" ? "Se salvează..." : "Salvează profilul"}
+                </button>
+                <button
+                  type="button"
+                  onClick={dismiss}
+                  style={{ padding: "10px 16px", borderRadius: "999px", border: "1px solid rgba(255,255,255,0.1)", background: "transparent", color: "rgba(255,255,255,0.4)", fontSize: "0.8125rem", cursor: "pointer" }}
+                >
+                  Sari peste
+                </button>
+              </div>
+            </form>
+          </>
         )}
       </div>
 

@@ -1,7 +1,45 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function GoogleAdsDashboardCard() {
+type Locale = "ro" | "en" | "de";
+
+const T = {
+  ro: {
+    title: "Google Ads — Campanie",
+    date:  "Septembrie 2025",
+    conv:  "Conversii",
+    cpa:   "CPA",
+    budget: "Buget folosit",
+    status: "ACTIV — Search + Shopping",
+    badge1: "+200% conversii în 3 luni",
+    badge2: "E-commerce, România",
+  },
+  en: {
+    title:  "Google Ads — Campaign",
+    date:   "September 2025",
+    conv:   "Conversions",
+    cpa:    "CPA",
+    budget: "Budget used",
+    status: "ACTIVE — Search + Shopping",
+    badge1: "+200% conversions in 3 months",
+    badge2: "E-commerce, Romania",
+  },
+  de: {
+    title:  "Google Ads — Kampagne",
+    date:   "September 2025",
+    conv:   "Conversionen",
+    cpa:    "CPA",
+    budget: "Budget genutzt",
+    status: "AKTIV — Search + Shopping",
+    badge1: "+200% Conversionen in 3 Monaten",
+    badge2: "E-Commerce, Rumänien",
+  },
+};
+
+interface Props { locale?: Locale }
+
+export function GoogleAdsDashboardCard({ locale = "ro" }: Props) {
+  const tr = T[locale];
   const [roas, setRoas] = useState(0);
   const [conv, setConv] = useState(0);
   const [cpa, setCpa]   = useState(0);
@@ -41,9 +79,7 @@ export function GoogleAdsDashboardCard() {
         }
       `}</style>
 
-      {/* Wrapper — extra padding so rotated card doesn't clip */}
       <div style={{ position: "relative", padding: "20px 20px 80px 10px" }}>
-
         {/* ── Main dashboard card ── */}
         <div
           style={{
@@ -55,22 +91,19 @@ export function GoogleAdsDashboardCard() {
             animation: "floatMain 6s ease-in-out infinite",
           }}
         >
-          {/* Header row */}
           <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "3px" }}>
             <div style={{ width: 8, height: 8, borderRadius: "50%", background: "#56db84", boxShadow: "0 0 6px #56db84" }} />
             <span style={{ fontSize: "0.8125rem", fontWeight: 700, color: "#ffffff", letterSpacing: "-0.01em" }}>
-              Google Ads — Campanie
+              {tr.title}
             </span>
           </div>
           <p style={{ fontSize: "0.6875rem", color: "rgba(255,255,255,0.28)", marginBottom: "20px", paddingLeft: "16px" }}>
-            Septembrie 2024
+            {tr.date}
           </p>
 
           <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginBottom: "18px" }} />
 
-          {/* Metrics */}
           <div style={{ display: "flex", flexDirection: "column", gap: "13px", marginBottom: "18px" }}>
-            {/* ROAS */}
             <div style={{ display: "flex", alignItems: "center" }}>
               <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", width: "90px", flexShrink: 0 }}>ROAS</span>
               <span style={{ fontSize: "0.9375rem", fontWeight: 800, color: "#ffffff", fontVariantNumeric: "tabular-nums", flex: 1 }}>
@@ -80,9 +113,8 @@ export function GoogleAdsDashboardCard() {
                 ↑ 23%
               </span>
             </div>
-            {/* Conversii */}
             <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", width: "90px", flexShrink: 0 }}>Conversii</span>
+              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", width: "90px", flexShrink: 0 }}>{tr.conv}</span>
               <span style={{ fontSize: "0.9375rem", fontWeight: 800, color: "#ffffff", fontVariantNumeric: "tabular-nums", flex: 1 }}>
                 {conv.toLocaleString("ro-RO")}
               </span>
@@ -90,9 +122,8 @@ export function GoogleAdsDashboardCard() {
                 ↑ 31%
               </span>
             </div>
-            {/* CPA */}
             <div style={{ display: "flex", alignItems: "center" }}>
-              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", width: "90px", flexShrink: 0 }}>CPA</span>
+              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.38)", width: "90px", flexShrink: 0 }}>{tr.cpa}</span>
               <span style={{ fontSize: "0.9375rem", fontWeight: 800, color: "#ffffff", fontVariantNumeric: "tabular-nums", flex: 1 }}>
                 {cpa} lei
               </span>
@@ -104,10 +135,9 @@ export function GoogleAdsDashboardCard() {
 
           <div style={{ height: 1, background: "rgba(255,255,255,0.06)", marginBottom: "16px" }} />
 
-          {/* Budget progress */}
           <div style={{ marginBottom: "14px" }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "7px" }}>
-              <span style={{ fontSize: "0.6875rem", color: "rgba(255,255,255,0.38)" }}>Buget folosit</span>
+              <span style={{ fontSize: "0.6875rem", color: "rgba(255,255,255,0.38)" }}>{tr.budget}</span>
               <span style={{ fontSize: "0.6875rem", fontWeight: 700, color: "#ffffff" }}>94%</span>
             </div>
             <div style={{ background: "rgba(255,255,255,0.06)", borderRadius: "4px", height: "6px", overflow: "hidden" }}>
@@ -123,11 +153,10 @@ export function GoogleAdsDashboardCard() {
             </div>
           </div>
 
-          {/* Status pill */}
           <div style={{ display: "inline-flex", alignItems: "center", gap: "6px", background: "rgba(86,219,132,0.05)", border: "1px solid rgba(86,219,132,0.12)", borderRadius: "100px", padding: "4px 10px" }}>
             <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#56db84" }} />
             <span style={{ fontSize: "0.625rem", fontWeight: 600, color: "rgba(255,255,255,0.4)", letterSpacing: "0.04em" }}>
-              ACTIV — Search + Shopping
+              {tr.status}
             </span>
           </div>
         </div>
@@ -147,10 +176,10 @@ export function GoogleAdsDashboardCard() {
           }}
         >
           <div style={{ fontSize: "0.9375rem", fontWeight: 800, color: "#56db84", letterSpacing: "-0.02em", marginBottom: "3px" }}>
-            +200% conversii în 3 luni
+            {tr.badge1}
           </div>
           <div style={{ fontSize: "0.6875rem", color: "rgba(255,255,255,0.3)" }}>
-            E-commerce, România
+            {tr.badge2}
           </div>
         </div>
       </div>

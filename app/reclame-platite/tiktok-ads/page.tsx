@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate, type ServicePageData } from "@/components/sections/ServicePage";
 import { buildMetadata } from "@/lib/seo";
+import { AdsDashboardCard } from "@/components/sections/ads/AdsDashboardCard";
+import { AdsTrustBar } from "@/components/sections/ads/AdsTrustBar";
+import { AdsBeforeAfter } from "@/components/sections/ads/AdsBeforeAfter";
+import { AdsComparison } from "@/components/sections/ads/AdsComparison";
+import { TikTokFormats } from "@/components/sections/ads/TikTokFormats";
+import { AdsTimeline } from "@/components/sections/ads/AdsTimeline";
+import { TikTokAdsCalculator } from "@/components/sections/ads/TikTokAdsCalculator";
+import { AdsStickyBar } from "@/components/sections/ads/AdsStickyBar";
 
 export const metadata: Metadata = buildMetadata({
   locale: "ro",
@@ -57,6 +66,143 @@ const data: ServicePageData = {
   freeAuditBadge: "Audit TikTok Ads Gratuit Inclus",
 };
 
+const TikTokIcon = () => (
+  <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+    <path fill="white" d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+  </svg>
+);
+
+const MetaIcon = () => (
+  <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+    <path fill="#1877F2" d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+  </svg>
+);
+
+const heroRightSlot: ReactNode = (
+  <AdsDashboardCard
+    emoji="🎵"
+    title="TikTok Ads — Campanie"
+    date="Noiembrie 2025"
+    metrics={[
+      { label: "Vizualizări", animated: { target: 3200000 }, badge: { text: "↑ 300%", positive: true } },
+      { label: "Comenzi", animated: { target: 1280 }, badge: { text: "↑ 156%", positive: true } },
+      { label: "CPO", animated: { target: 8, suffix: "€" }, badge: { text: "↓ 45%", positive: false } },
+    ]}
+    barPercent={91}
+    barLabel="Buget folosit"
+    status="ACTIV — In-Feed + Spark Ads"
+    badge1="2.5x ROAS Fashion"
+    badge2="E-commerce, România"
+  />
+);
+
+const afterHeroSlot: ReactNode = (
+  <>
+    <AdsTrustBar items={[
+      { icon: <TikTokIcon />, label: "TikTok Ads Manager" },
+      { icon: <MetaIcon />, label: "Meta Business Partner" },
+      { stat: "5M+", label: "utilizatori TikTok în RO" },
+      { stat: "3x", label: "reach la cost mai mic vs Meta" },
+      { stat: "500+", label: "campanii livrate" },
+    ]} />
+    <AdsBeforeAfter
+      title="Rezultate reale — Înainte și după Nesco Digital"
+      beforeLabel="Înainte"
+      afterLabel="După Nesco"
+      before={[
+        { label: "Vizualizări/lună", display: "45.000" },
+        { label: "Comenzi", display: "12" },
+        { label: "CPO (cost/comandă)", display: "82€" },
+        { label: "ROAS", display: "0.9x" },
+        { label: "Tip content", display: "video repurpusat" },
+        { label: "Urmăritori câștigați", display: "120" },
+      ]}
+      after={[
+        { label: "Vizualizări/lună", display: "3.200.000", animate: { target: 3200000 } },
+        { label: "Comenzi", display: "1.280", animate: { target: 1280 } },
+        { label: "CPO (cost/comandă)", display: "8€", animate: { target: 8, suffix: "€" } },
+        { label: "ROAS", display: "2.5x" },
+        { label: "Tip content", display: "UGC nativ TikTok" },
+        { label: "Urmăritori câștigați", display: "4.200", animate: { target: 4200 } },
+      ]}
+      source="Brand fashion streetwear, România — 60 de zile"
+    />
+    <AdsComparison
+      bad={[
+        "Video-uri repurpusate de pe Instagram sau YouTube",
+        "Boost la postări organice fără strategie",
+        "Un singur format (In-Feed) fără testare",
+        "Fără TikTok Pixel instalat",
+        "Audiențe broad fără segmentare pe interese",
+        "Raportare: views și followers",
+      ]}
+      good={[
+        "UGC și native content creat specific pentru TikTok",
+        "Spark Ads pe conținut organic cu performanță dovedită",
+        "Mix In-Feed + TopView + Brand Takeover",
+        "TikTok Pixel + Events API pentru atribuire exactă",
+        "Targeting pe comportament de cumpărare și interese",
+        "Raportare: ROAS, CPO, comenzi și revenue",
+      ]}
+    />
+    <TikTokFormats />
+    <AdsTimeline
+      phases={[
+        {
+          emoji: "🎬",
+          range: "Zilele 1–14",
+          title: "Creative & Setup",
+          color: "#ff0050",
+          items: [
+            "Audit cont și strategie content TikTok",
+            "Setup TikTok Business Center și Pixel",
+            "Brief creative și producție primele video-uri",
+            "Lansare campanii In-Feed și Spark Ads",
+          ],
+        },
+        {
+          emoji: "📊",
+          range: "Zilele 15–45",
+          title: "Test & Optimizare",
+          color: "#a78bfa",
+          items: [
+            "A/B testing 5-8 creative/săptămână",
+            "Optimizare targeting și bugete",
+            "Identificare format câștigător (In-Feed vs Spark)",
+            "Retargeting pe vizitatori site și adăugări coș",
+          ],
+        },
+        {
+          emoji: "🚀",
+          range: "Zilele 46–90",
+          title: "Scalare virală",
+          color: "#56db84",
+          items: [
+            "Scalare bugete pe video-urile cu cel mai bun ROAS",
+            "Lansare TopView pentru brand awareness",
+            "Lookalike audiences pe cumpărători",
+            "Strategie content săptămânală consolidată",
+          ],
+        },
+      ]}
+    />
+    <TikTokAdsCalculator />
+  </>
+);
+
 export default function TikTokRoPage() {
-  return (<><Header locale="ro" /><main><ServicePageTemplate data={data} /></main><Footer locale="ro" /></>);
+  return (
+    <>
+      <Header locale="ro" />
+      <main>
+        <ServicePageTemplate
+          data={data}
+          heroRightSlot={heroRightSlot}
+          afterHeroSlot={afterHeroSlot}
+        />
+      </main>
+      <AdsStickyBar title="Gata să scalezi pe TikTok?" cta="Vorbește cu un specialist" href="/contact/" />
+      <Footer locale="ro" />
+    </>
+  );
 }
