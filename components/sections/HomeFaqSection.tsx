@@ -43,7 +43,7 @@ const FAQ_ITEMS: Record<Locale, FaqItem[]> = {
     },
     {
       q: "Cum măsurați succesul și ce raportare oferiți?",
-      a: "Lucrăm cu KPI-uri clare agreate înainte de start: ROAS, CPL, rata de conversie, trafic organic, revenue generat. Oferiți acces la dashboard-uri live și rapoarte lunare detaliate, cu explicații în limbaj simplu, fără jargon.",
+      a: "Lucrăm cu KPI-uri clare agreate înainte de start: ROAS, CPL, rata de conversie, trafic organic, revenue generat. Oferim acces la dashboard-uri live și rapoarte lunare detaliate, cu explicații în limbaj simplu, fără jargon.",
     },
     {
       q: "Ce diferențiază Nesco Digital de alte agenții de marketing digital?",
