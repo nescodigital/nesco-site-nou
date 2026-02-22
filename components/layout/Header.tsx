@@ -48,10 +48,12 @@ export function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<number | null>(null);
   const [langOpen, setLangOpen] = useState(false);
+  const [toolkitOpen, setToolkitOpen] = useState(false);
   const [openSection, setOpenSection] = useState<string | null>(null);
   const navLinks = getNavLinks(locale);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
+  const toolkitRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
@@ -63,9 +65,11 @@ export function Header({ locale }: HeaderProps) {
     const handleClick = (e: MouseEvent) => {
       const insideNav = dropdownRef.current?.contains(e.target as Node);
       const insideLang = langRef.current?.contains(e.target as Node);
-      if (!insideNav && !insideLang) {
+      const insideToolkit = toolkitRef.current?.contains(e.target as Node);
+      if (!insideNav && !insideLang && !insideToolkit) {
         setOpenDropdown(null);
         setLangOpen(false);
+        setToolkitOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClick);
@@ -259,8 +263,93 @@ export function Header({ locale }: HeaderProps) {
               ))}
             </nav>
 
-            {/* Right: lang + CTA */}
+            {/* Right: toolkit + lang + CTA */}
             <div className="hidden lg:flex items-center gap-3">
+              {/* Toolkit */}
+              <div className="relative" ref={toolkitRef}>
+                <button
+                  onClick={() => { setToolkitOpen(!toolkitOpen); setLangOpen(false); }}
+                  className="flex items-center justify-center transition-all"
+                  style={{
+                    width: 36,
+                    height: 36,
+                    background: toolkitOpen ? "rgba(86,219,132,0.08)" : "rgba(255,255,255,0.04)",
+                    border: `1px solid ${toolkitOpen ? "rgba(86,219,132,0.3)" : "rgba(255,255,255,0.08)"}`,
+                    borderRadius: "10px",
+                    fontSize: "0.875rem",
+                    cursor: "pointer",
+                    lineHeight: 1,
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!toolkitOpen) {
+                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(86,219,132,0.3)";
+                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(86,219,132,0.06)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!toolkitOpen) {
+                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(255,255,255,0.08)";
+                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(255,255,255,0.04)";
+                    }
+                  }}
+                  aria-label="Toolkit"
+                >
+                  🧮
+                </button>
+                {toolkitOpen && (
+                  <div
+                    className="dropdown-enter absolute right-0 top-full mt-2"
+                    style={{
+                      width: "220px",
+                      background: "#0a0a0a",
+                      border: "1px solid rgba(86,219,132,0.2)",
+                      borderRadius: "14px",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.7)",
+                      overflow: "hidden",
+                      padding: "6px",
+                    }}
+                  >
+                    <Link
+                      href="/calculator/"
+                      onClick={() => setToolkitOpen(false)}
+                      className="flex items-center gap-2.5 rounded-lg transition-colors"
+                      style={{
+                        padding: "10px 12px",
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        color: "rgba(255,255,255,0.7)",
+                        textDecoration: "none",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)"; (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.7)"; }}
+                    >
+                      <span>🧮</span>
+                      <span>{locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}</span>
+                    </Link>
+                    <div style={{ height: 1, background: "rgba(255,255,255,0.06)", margin: "2px 0" }} />
+                    <Link
+                      href={ctaHref}
+                      onClick={() => setToolkitOpen(false)}
+                      className="flex items-center justify-center gap-2 rounded-lg transition-all"
+                      style={{
+                        padding: "9px 12px",
+                        margin: "4px",
+                        fontSize: "0.8125rem",
+                        fontWeight: 600,
+                        color: "#000",
+                        background: "#56db84",
+                        textDecoration: "none",
+                        borderRadius: "8px",
+                      }}
+                      onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#6ee89a"; }}
+                      onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.background = "#56db84"; }}
+                    >
+                      {ctaLabel} →
+                    </Link>
+                  </div>
+                )}
+              </div>
+
               {/* Language switcher */}
               <div className="relative" ref={langRef}>
                 <button
@@ -481,6 +570,24 @@ export function Header({ locale }: HeaderProps) {
               )}
             </div>
           ))}
+
+          {/* Calculator Cost – mobile */}
+          <Link
+            href="/calculator/"
+            onClick={() => { setMobileOpen(false); setOpenSection(null); }}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: "16px 24px",
+              fontSize: "1rem",
+              fontWeight: 500,
+              color: "#ffffff",
+              textDecoration: "none",
+              borderBottom: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            {locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
+          </Link>
 
           {/* CTA + language switcher, flow naturally after nav */}
           <div style={{ padding: "24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
