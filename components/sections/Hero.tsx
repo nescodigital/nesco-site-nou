@@ -303,26 +303,6 @@ export function Hero({ locale }: HeroProps) {
                 </span>
               </div>
 
-              {/* DAN Member */}
-              <div
-                className="inline-flex items-center gap-2 transition-colors"
-                style={{
-                  background: "#111111",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                  borderRadius: "8px",
-                  padding: "6px 12px",
-                  fontSize: "0.75rem",
-                  color: "#fff",
-                }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(86,219,132,0.3)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
-              >
-                <svg viewBox="0 0 16 16" width="14" height="14" fill="#56db84" style={{ flexShrink: 0 }}>
-                  <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm3.41 5.59L7 10l-2.41-2.41L5.7 6.47 7 7.76l3.29-3.29 1.12 1.12z" />
-                </svg>
-                <span>{locale === "de" ? "DAN-Mitglied" : "DAN Member"}</span>
-              </div>
-
               {/* GoodFirms */}
               <div
                 className="inline-flex items-center gap-2 transition-colors"
