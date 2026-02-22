@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { ProjectsGrid } from "@/components/sections/ProjectsGrid";
+import { ClientLogos } from "@/components/sections/ClientLogos";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildMetadata({
@@ -76,6 +77,8 @@ export default function ProiecteRoPage() {
             </p>
           </div>
         </section>
+
+        <ClientLogos label="Branduri care au avut încredere în noi" />
 
         {/* ── Filters + Grid ── */}
         <section className="relative" style={{ backgroundColor: "#050505" }}>
