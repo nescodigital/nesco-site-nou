@@ -241,7 +241,7 @@ export function Hero({ locale }: HeroProps) {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 mb-8">
+            <div className="flex flex-col sm:flex-row gap-6 mb-10">
               <Link href={r.contact} className="btn-primary group">
                 {h.cta1}
                 <ArrowRight size={16} className="group-hover:translate-x-0.5 transition-transform" />
@@ -254,6 +254,7 @@ export function Hero({ locale }: HeroProps) {
             {/* Trust badges */}
             <div
               className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10"
+              style={{ paddingTop: "16px" }}
             >
               {/* Clutch */}
               <div
