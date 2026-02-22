@@ -125,7 +125,7 @@ export function CtaBanner({ locale }: CtaBannerProps) {
           {[
             locale === "ro" ? "Răspuns în 24h" : locale === "en" ? "Response in 24h" : "Antwort in 24h",
             locale === "ro" ? "Analiză gratuită" : locale === "en" ? "Free analysis" : "Kostenlose Analyse",
-            locale === "ro" ? "Fără angajament" : locale === "en" ? "No commitment" : "Keine Verpflichtung",
+            locale === "ro" ? "Fără angajament financiar" : locale === "en" ? "No financial commitment" : "Keine finanzielle Verpflichtung",
           ].map((badge) => (
             <span key={badge} style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <span
