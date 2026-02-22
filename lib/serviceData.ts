@@ -9,7 +9,7 @@ export const googleAdsData: Record<"ro" | "en" | "de", ServicePageData> = {
       badge: "Google Ads",
       title: "Fii acolo când clientul tău te caută pe Google",
       subtitle:
-        "73% dintre oameni caută online înainte de orice achiziție. Cu Google Ads, afacerea ta apare exact când cineva caută ce oferi tu , nu mai aștepți să vă găsească, fiți acolo în momentul cheie.",
+        "73% dintre oameni caută online înainte de orice achiziție. Cu Google Ads, afacerea ta apare exact când cineva caută ce oferi tu, nu mai aștepți să te găsească, ești acolo în momentul cheie.",
     },
     problems: [
       { title: "Clienții te caută, dar găsesc concurenții", desc: "Apari pe pagina 3-4 a Google, unde nimeni nu ajunge. Clienții potențiali găsesc concurenții tăi în locul tău." },
