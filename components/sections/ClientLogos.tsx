@@ -11,6 +11,7 @@ const logos = [
   { src: "/clients/luxury-interiors.webp",  alt: "Luxury Interiors" },
   { src: "/clients/elvan.webp",             alt: "Elvan" },
   { src: "/clients/syndax.webp",            alt: "Syndax" },
+  { src: "/clients/metro-systems.png",      alt: "Metro Systems" },
 ];
 
 // Duplicate for seamless loop

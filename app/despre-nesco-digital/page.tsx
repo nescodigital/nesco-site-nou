@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -8,6 +8,7 @@ import { orgSchema } from "@/lib/seo";
 import { CheckCircle, Zap, TrendingUp, Users } from "lucide-react";
 import { StatsCounter } from "@/components/ui/StatsCounter";
 import { ClientLogos } from "@/components/sections/ClientLogos";
+import { GeometricAnimation } from "@/components/sections/GeometricAnimation";
 
 const stats = [
   { value: "+15 ani", label: "Experienta" },
@@ -80,17 +81,6 @@ const steps = [
   },
 ];
 
-const MILESTONES = [
-  { year: "2010", text: "Nesco Digital fondata - primii clienti" },
-  { year: "2013", text: "Primele campanii internationale" },
-  { year: "2016", text: "1M buget gestionat" },
-  { year: "2019", text: "Google Partner oficial" },
-  { year: "2021", text: "10M buget gestionat" },
-  { year: "2023", text: "Meta Business Partner + TikTok Partner" },
-  { year: "2025", text: "36M+ · 23.000+ campanii · 500+ clienti" },
-  { year: "2026", text: "GEO Optimization - primii din Romania" },
-];
-
 const PARTICLES = [
   { left: "8%",  top: "15%", size: 3, duration: 7,  delay: 0,   color: "rgba(86,219,132,0.35)" },
   { left: "18%", top: "60%", size: 2, duration: 9,  delay: 1.2, color: "rgba(86,219,132,0.2)" },
@@ -124,20 +114,6 @@ function TiltCard({ children, style }: { children: React.ReactNode; style?: Reac
 }
 
 export default function DespreNescoPage() {
-  const [lineH, setLineH] = useState(0);
-  const [visibleMilestones, setVisibleMilestones] = useState(0);
-
-  useEffect(() => {
-    const t = setTimeout(() => setLineH(100), 200);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    if (visibleMilestones >= MILESTONES.length) return;
-    const t = setTimeout(() => setVisibleMilestones(v => v + 1), 200);
-    return () => clearTimeout(t);
-  }, [visibleMilestones]);
-
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
@@ -232,45 +208,7 @@ export default function DespreNescoPage() {
                 </p>
               </div>
 
-              {/* Right: animated timeline (desktop only) */}
-              <div className="hidden lg:block" style={{ position: "relative", paddingLeft: 32, maxWidth: 320, flexShrink: 0, paddingTop: 8 }}>
-                {/* Vertical line track */}
-                <div style={{
-                  position: "absolute", left: 12, top: 0, bottom: 0,
-                  width: 2, background: "rgba(86,219,132,0.15)", borderRadius: 2,
-                }}>
-                  <div style={{
-                    width: "100%",
-                    background: "linear-gradient(to bottom, #56db84, rgba(86,219,132,0.2))",
-                    height: `${lineH}%`,
-                    transition: "height 2s ease",
-                    borderRadius: 2,
-                  }} />
-                </div>
-
-                {/* Milestones */}
-                {MILESTONES.map((m, i) => (
-                  <div key={i} style={{
-                    position: "relative", marginBottom: 20,
-                    opacity: i < visibleMilestones ? 1 : 0,
-                    transform: i < visibleMilestones ? "translateX(0)" : "translateX(12px)",
-                    transition: "all 0.4s ease",
-                  }}>
-                    {/* Dot on line */}
-                    <div style={{
-                      position: "absolute", left: -26, top: 4,
-                      width: 10, height: 10, borderRadius: "50%",
-                      background: i === MILESTONES.length - 1 ? "#56db84" : "rgba(86,219,132,0.5)",
-                      border: "2px solid rgba(86,219,132,0.3)",
-                      boxShadow: i === MILESTONES.length - 1 ? "0 0 8px rgba(86,219,132,0.5)" : "none",
-                    }} />
-                    {/* Year badge */}
-                    <div style={{ fontSize: "0.625rem", fontWeight: 700, color: "#56db84", letterSpacing: "0.08em", marginBottom: 2 }}>{m.year}</div>
-                    {/* Text */}
-                    <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.6)", lineHeight: 1.5 }}>{m.text}</div>
-                  </div>
-                ))}
-              </div>
+              <GeometricAnimation />
             </div>
           </div>
         </section>

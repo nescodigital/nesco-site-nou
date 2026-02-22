@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { buildMetadata, orgSchema } from "@/lib/seo";
+import { GeometricAnimation } from "@/components/sections/GeometricAnimation";
 import { CheckCircle, Zap, TrendingUp, Users } from "lucide-react";
 import { StatsCounter } from "@/components/ui/StatsCounter";
 
@@ -73,42 +74,47 @@ export default function UeberNescoDePage() {
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
           <div className="relative page-container">
-            <span className="badge mb-6">Über uns</span>
-            <h1
-              className="font-black text-white"
-              style={{
-                fontSize: "clamp(3rem, 7vw, 5.5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "16px",
-                marginBottom: "28px",
-                maxWidth: "800px",
-              }}
-            >
-              Über{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                Nesco Digital.
-              </span>
-            </h1>
-            <p
-              style={{
-                fontSize: "1.125rem",
-                color: "rgba(255,255,255,0.45)",
-                lineHeight: 1.7,
-                maxWidth: "560px",
-                letterSpacing: "0.01em",
-              }}
-            >
-              Wir sind nicht nur eine Agentur. Wir sind Ihr Premium-Ausführungspartner , von der Strategie bis zu Kampagnen, die echten Umsatz generieren.
-            </p>
+            <div className="flex items-start justify-between gap-12">
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <span className="badge mb-6">Über uns</span>
+                <h1
+                  className="font-black text-white"
+                  style={{
+                    fontSize: "clamp(3rem, 7vw, 5.5rem)",
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.03em",
+                    fontFeatureSettings: '"kern" 1, "liga" 1',
+                    marginTop: "16px",
+                    marginBottom: "28px",
+                    maxWidth: "800px",
+                  }}
+                >
+                  Über{" "}
+                  <span
+                    style={{
+                      background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    Nesco Digital.
+                  </span>
+                </h1>
+                <p
+                  style={{
+                    fontSize: "1.125rem",
+                    color: "rgba(255,255,255,0.45)",
+                    lineHeight: 1.7,
+                    maxWidth: "560px",
+                    letterSpacing: "0.01em",
+                  }}
+                >
+                  Wir sind nicht nur eine Agentur. Wir sind Ihr Premium-Ausführungspartner , von der Strategie bis zu Kampagnen, die echten Umsatz generieren.
+                </p>
+              </div>
+              <GeometricAnimation />
+            </div>
           </div>
         </section>
 
