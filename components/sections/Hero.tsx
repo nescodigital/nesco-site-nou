@@ -337,63 +337,66 @@ export function Hero({ locale }: HeroProps) {
             />
           </div>
 
-          {/* ── Right column: globe ── */}
+          {/* ── Right column: globe + badges ── */}
           <div
-            className="relative hidden lg:flex items-center justify-center opacity-0"
-            style={{
-              height: "min(540px, 48vw)",
-              animation: "fadeUp 1.1s ease forwards 0.35s",
-            }}
+            className="hidden lg:flex flex-col opacity-0"
+            style={{ animation: "fadeUp 1.1s ease forwards 0.35s" }}
           >
-            {/* Badge, horizontal, above the globe */}
+            {/* Globe container */}
             <div
-              className="absolute pointer-events-none select-none"
-              style={{
-                top: 0,
-                left: 0,
-                fontSize: "0.625rem",
-                fontWeight: 600,
-                letterSpacing: "0.2em",
-                textTransform: "uppercase",
-                color: "rgba(86,219,132,0.4)",
-                whiteSpace: "nowrap",
-                zIndex: 2,
-              }}
+              className="relative flex items-center justify-center"
+              style={{ height: "min(540px, 48vw)" }}
             >
-              {h.badge}
+              {/* Badge, horizontal, above the globe */}
+              <div
+                className="absolute pointer-events-none select-none"
+                style={{
+                  top: 0,
+                  left: 0,
+                  fontSize: "0.625rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  color: "rgba(86,219,132,0.4)",
+                  whiteSpace: "nowrap",
+                  zIndex: 2,
+                }}
+              >
+                {h.badge}
+              </div>
+
+              {/* Arrow watermark, centered on globe, above it */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo mare Nesco.svg"
+                alt=""
+                aria-hidden="true"
+                width={520}
+                height={520}
+                className="absolute pointer-events-none select-none"
+                style={{
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  width: 520,
+                  height: 520,
+                  opacity: 0.11,
+                  zIndex: 10,
+                  filter: "brightness(10)",
+                  border: "none",
+                  outline: "none",
+                  boxShadow: "none",
+                  background: "none",
+                }}
+              />
+
+              <GlobeCanvas />
             </div>
 
-            {/* Arrow watermark, centered on globe, above it */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/logo mare Nesco.svg"
-              alt=""
-              aria-hidden="true"
-              width={520}
-              height={520}
-              className="absolute pointer-events-none select-none"
-              style={{
-                top: "50%",
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                width: 520,
-                height: 520,
-                opacity: 0.11,
-                zIndex: 10,
-                filter: "brightness(10)",
-                border: "none",
-                outline: "none",
-                boxShadow: "none",
-                background: "none",
-              }}
-            />
-
-            <GlobeCanvas />
-
-            {/* Trust badges – desktop only, aligned with stats on left */}
+            {/* Trust badges – desktop, below globe, aligned with stats on left */}
             <div
-              className="absolute bottom-0 left-0 right-0 hidden lg:flex flex-wrap gap-3"
-              style={{ zIndex: 20 }}
+              className="flex flex-wrap gap-3 justify-end"
+              style={{ paddingTop: "16px" }}
             >
               {/* Clutch */}
               <div
