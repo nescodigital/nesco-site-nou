@@ -80,7 +80,7 @@ export const translations = {
     portfolio: {
       badge: "Portofoliu",
       headline: "Rezultate reale pentru clienți reali",
-      subheadline: "Iată câteva dintre proiectele cu care suntem mândri.",
+      subheadline: "Iată câteva dintre proiectele de care suntem mândri.",
       cta: "Vezi toate proiectele",
     },
     testimonials: {
