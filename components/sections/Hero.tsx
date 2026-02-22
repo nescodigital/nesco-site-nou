@@ -256,28 +256,24 @@ export function Hero({ locale }: HeroProps) {
               className="flex flex-col sm:flex-row flex-wrap gap-3 mb-10"
             >
               {/* Clutch */}
-              <a
-                href="https://clutch.co/profile/nesco-digital"
-                target="_blank"
-                rel="noopener noreferrer"
+              <div
                 className="inline-flex items-center gap-2 transition-colors"
                 style={{
                   background: "#111111",
                   border: "1px solid rgba(255,255,255,0.1)",
                   borderRadius: "8px",
                   padding: "6px 12px",
-                  textDecoration: "none",
                   fontSize: "0.75rem",
                   color: "#fff",
                 }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(86,219,132,0.3)"; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(86,219,132,0.3)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,255,255,0.1)"; }}
               >
                 <span style={{ fontWeight: 700, color: "#ff3d2e", fontSize: "0.8125rem" }}>clutch</span>
                 <span style={{ color: "rgba(255,255,255,0.5)" }}>|</span>
                 <span>{locale === "ro" ? "Top Digital Agency România" : locale === "en" ? "Top Digital Agency Romania" : "Top Digitalagentur Rumänien"}</span>
                 <span style={{ color: "#f59e0b", letterSpacing: "1px" }}>★★★★★</span>
-              </a>
+              </div>
 
               {/* Google Reviews */}
               <div
