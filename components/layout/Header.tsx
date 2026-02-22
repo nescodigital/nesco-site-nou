@@ -113,7 +113,9 @@ export function Header({ locale }: HeaderProps) {
             <nav className="hidden lg:flex items-center gap-3" ref={dropdownRef}>
               {navLinks.map((item, idx) => (
                 <div key={idx} className="relative">
-                  {item.children ? (
+                  {item.separator ? (
+                    <span style={{ color: "rgba(255,255,255,0.15)", fontSize: "1.125rem", fontWeight: 300, userSelect: "none", padding: "0 4px" }}>|</span>
+                  ) : item.children ? (
                     <button
                       onClick={() => setOpenDropdown(openDropdown === idx ? null : idx)}
                       className="flex items-center gap-1.5 px-4 py-2 rounded-lg transition-colors"
@@ -377,7 +379,7 @@ export function Header({ locale }: HeaderProps) {
           <div style={{ height: "80px" }} />
 
           {/* Nav list */}
-          {navLinks.map((item, idx) => (
+          {navLinks.filter((item) => !item.separator).map((item, idx) => (
             <div key={idx}>
               {item.children ? (
                 <>

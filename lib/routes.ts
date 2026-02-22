@@ -1,7 +1,7 @@
 import type { Locale } from "./translations";
 
 export type NavChild = { label: string; href: string; desc?: string; badge?: string };
-export type NavItem = { label: string; href: string; children?: NavChild[]; accent?: boolean };
+export type NavItem = { label: string; href: string; children?: NavChild[]; accent?: boolean; separator?: boolean };
 
 // Exact URL structure matching the existing nescodigital.com site
 export const routes = {
@@ -111,6 +111,39 @@ export function getHreflangAlternates(
 export function getNavLinks(locale: Locale): NavItem[] {
   const r = routes[locale];
   return [
+    {
+      label: "Growth Sprint",
+      href: r.growthSprintEducation,
+      accent: true,
+      children: [
+        {
+          label:
+            locale === "ro"
+              ? "Educație Online"
+              : locale === "en"
+                ? "Online Education"
+                : "Online-Bildung",
+          href: r.growthSprintEducation,
+          desc:
+            locale === "ro"
+              ? "10k–100k+/lună · 6 săptămâni"
+              : locale === "en"
+                ? "10k–100k+/month · 6 weeks"
+                : "10k–100k+/Monat · 6 Wochen",
+        },
+        {
+          label: "E-commerce",
+          href: r.growthSprintEcommerce,
+          desc:
+            locale === "ro"
+              ? "50k–500k+/lună · 6 săptămâni"
+              : locale === "en"
+                ? "50k–500k+/month · 6 weeks"
+                : "50k–500k+/Monat · 6 Wochen",
+        },
+      ],
+    },
+    { label: "", href: "", separator: true },
     {
       label:
         locale === "ro"
@@ -327,38 +360,6 @@ export function getNavLinks(locale: Locale): NavItem[] {
                 ? "Be visible in ChatGPT & Perplexity"
                 : "Sichtbar in ChatGPT & Perplexity",
           badge: locale === "ro" ? "NOU" : locale === "en" ? "NEW" : "NEU",
-        },
-      ],
-    },
-    {
-      label: "Growth Sprint",
-      href: r.growthSprintEducation,
-      accent: true,
-      children: [
-        {
-          label:
-            locale === "ro"
-              ? "Educație Online"
-              : locale === "en"
-                ? "Online Education"
-                : "Online-Bildung",
-          href: r.growthSprintEducation,
-          desc:
-            locale === "ro"
-              ? "10k–100k+/lună · 6 săptămâni"
-              : locale === "en"
-                ? "10k–100k+/month · 6 weeks"
-                : "10k–100k+/Monat · 6 Wochen",
-        },
-        {
-          label: "E-commerce",
-          href: r.growthSprintEcommerce,
-          desc:
-            locale === "ro"
-              ? "50k–500k+/lună · 6 săptămâni"
-              : locale === "en"
-                ? "50k–500k+/month · 6 weeks"
-                : "50k–500k+/Monat · 6 Wochen",
         },
       ],
     },
