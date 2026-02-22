@@ -88,7 +88,15 @@ export function Footer({ locale }: FooterProps) {
     { label: "Growth Sprint", href: r.growthSprintEducation },
     {
       label: locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner",
-      href: "/calculator",
+      href: r.calculator,
+    },
+    {
+      label: locale === "ro" ? "Cum Lucrăm" : locale === "en" ? "How We Work" : "Wie wir arbeiten",
+      href: r.howWeWork,
+    },
+    {
+      label: locale === "ro" ? "Cu Cine Nu Lucrăm" : locale === "en" ? "Who We Don't Work With" : "Mit wem wir nicht arbeiten",
+      href: r.whoWeDontWorkWith,
     },
   ];
 
