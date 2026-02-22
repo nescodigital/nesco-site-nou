@@ -255,8 +255,8 @@ export default function GrowthSprintEducatiePage() {
                     marginBottom: "32px",
                   }}
                 >
-                  Dar nu monetizezi{" "}
-                  <span style={{ color: "rgba(255,255,255,0.35)" }}>la capacitate maximă.</span>
+                  Ai audiență, ai ofertă,{" "}
+                  <span style={{ color: "rgba(255,255,255,0.35)" }}>dar nu monetizezi la capacitate maximă.</span>
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
