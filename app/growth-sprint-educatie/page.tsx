@@ -324,7 +324,7 @@ export default function GrowthSprintEducatiePage() {
                     marginBottom: "20px",
                   }}
                 >
-                  Nu îți oferim un plan de acțiune și dispărem — rămânem în execuție până la rezultat.
+                  Nu îți oferim un plan de acțiune și dispărem, rămânem în execuție până la rezultat.
                 </h2>
                 <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: "16px" }}>
                   Un angajament concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta, auditând întregul sistem de venituri și implementând cele mai importante soluții în funnel, email, structura ofertei și operațiuni.
