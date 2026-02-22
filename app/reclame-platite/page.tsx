@@ -696,9 +696,8 @@ export default function ReclamePlatitePage() {
                     marginBottom: "40px",
                   }}
                 >
-                  Nu gestionăm bugete. Construim sisteme de achiziție profitabile pe
-                  Google, Meta, TikTok și LinkedIn și suntem primii care îți spun
-                  dacă nu putem ajuta.
+                  Nu gestionăm doar bugete de ads. Construim sisteme de achiziție profitabile pe
+                  Google, Meta, TikTok și LinkedIn. Iar dacă nu există premise reale de scalare, spunem asta direct.
                 </p>
 
                 {/* CTAs */}
