@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 const LABELS: Record<string, string> = {
@@ -82,21 +81,10 @@ export function CrmLogoTicker({ locale = "ro" }: { locale?: string }) {
                   height: 44,
                   width: "auto",
                   objectFit: "contain",
-                  filter: "grayscale(100%)",
-                  opacity: 0.6,
-                  transition: "filter 0.3s ease, opacity 0.3s ease",
+                  filter: "brightness(0) invert(1)",
+                  opacity: 0.45,
+                  transition: "opacity 0.25s ease",
                   userSelect: "none",
-                  cursor: "default",
-                }}
-                onMouseEnter={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  img.style.filter = "grayscale(0%)";
-                  img.style.opacity = "1";
-                }}
-                onMouseLeave={(e) => {
-                  const img = e.currentTarget as HTMLImageElement;
-                  img.style.filter = "grayscale(100%)";
-                  img.style.opacity = "0.6";
                 }}
               />
             </div>
