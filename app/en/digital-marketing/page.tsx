@@ -15,6 +15,7 @@ import {
   Search,
   Share2,
 } from "lucide-react";
+import { MarketingOrbitMockup } from "@/components/sections/MarketingOrbitMockup";
 
 const r = routes.en;
 
@@ -253,6 +254,8 @@ export default function DigitalMarketingPage() {
           />
 
           <div className="relative page-container">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
             <span className="badge mb-6" style={{ display: "inline-flex" }}>
               Digital Marketing
             </span>
@@ -319,6 +322,11 @@ export default function DigitalMarketingPage() {
                   className="group-hover:translate-x-0.5 transition-transform"
                 />
               </Link>
+            </div>
+            </div>
+            <div className="hidden lg:flex lg:items-center lg:justify-center">
+              <MarketingOrbitMockup locale="en" />
+            </div>
             </div>
           </div>
         </section>

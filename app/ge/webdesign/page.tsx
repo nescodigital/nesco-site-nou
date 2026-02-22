@@ -6,6 +6,7 @@ import { ArrowRight, Monitor, Zap, ShoppingCart, Wrench } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { WebdesignBrowserMockup } from "@/components/sections/WebdesignBrowserMockup";
 import { routes } from "@/lib/routes";
 
 const r = routes.de;
@@ -317,148 +318,68 @@ export default function WebdesignHubDePage() {
           }}
         />
 
-        <div className="page-container" style={{ position: "relative", zIndex: 1, textAlign: "center" }}>
-          {/* Badge */}
-          <div style={{ display: "inline-flex", marginBottom: 24 }}>
-            <span className="badge">Premium Webdesign</span>
-          </div>
-
-          {/* H1 */}
-          <h1
-            style={{
-              fontFamily: "var(--font-satoshi, sans-serif)",
-              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-              fontWeight: 800,
-              lineHeight: 1.1,
-              color: "#fff",
-              margin: "0 auto 24px",
-              maxWidth: 800,
-            }}
-          >
-            Websites die{" "}
-            <span
-              style={{
-                display: "inline-block",
-                background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              konvertieren und performen.
-            </span>
-          </h1>
-
-          {/* Subtitle */}
-          <p
-            style={{
-              fontSize: "clamp(1rem, 2vw, 1.2rem)",
-              color: "rgba(255,255,255,0.55)",
-              maxWidth: 620,
-              margin: "0 auto 40px",
-              lineHeight: 1.7,
-            }}
-          >
-            Von Landing Pages mit Top-Conversion-Rate bis zu Online-Shops, die verkaufen.
-            Wir bauen mit Performance und Premium-Design, keine Templates.
-          </p>
-
-          {/* CTAs */}
-          <div style={{ display: "flex", gap: 16, justifyContent: "center", flexWrap: "wrap", marginBottom: 56 }}>
-            <Link href={r.contact} className="btn-primary">
-              Jetzt starten <ArrowRight size={16} />
-            </Link>
-            <Link href={r.projects} className="btn-ghost">
-              Projekte ansehen
-            </Link>
-          </div>
-
-          {/* Browser Mockup */}
-          <div
-            style={{
-              maxWidth: 680,
-              margin: "0 auto",
-              background: "#0a0a0a",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: 12,
-              overflow: "hidden",
-              boxShadow: "0 40px 80px rgba(0,0,0,0.6)",
-            }}
-          >
-            {/* Browser chrome */}
-            <div
-              style={{
-                background: "#111",
-                padding: "12px 16px",
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-                borderBottom: "1px solid rgba(255,255,255,0.06)",
-              }}
-            >
-              {/* Traffic light dots */}
-              <div style={{ display: "flex", gap: 6 }}>
-                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ef4444" }} />
-                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#f59e0b" }} />
-                <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#22c55e" }} />
+        <div className="page-container" style={{ position: "relative", zIndex: 1 }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left column */}
+            <div style={{ textAlign: "center" }} className="lg:[text-align:left]">
+              {/* Badge */}
+              <div style={{ display: "inline-flex", marginBottom: 24 }}>
+                <span className="badge">Premium Webdesign</span>
               </div>
-              {/* URL bar */}
-              <div
+
+              {/* H1 */}
+              <h1
                 style={{
-                  flex: 1,
-                  background: "rgba(255,255,255,0.05)",
-                  border: "1px solid rgba(255,255,255,0.08)",
-                  borderRadius: 6,
-                  padding: "4px 12px",
-                  fontSize: "0.75rem",
-                  color: "rgba(255,255,255,0.35)",
-                  textAlign: "left",
-                  fontFamily: "monospace",
+                  fontFamily: "var(--font-satoshi, sans-serif)",
+                  fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  color: "#fff",
+                  margin: "0 0 24px",
                 }}
               >
-                nescodigital.com
+                Websites die{" "}
+                <span
+                  style={{
+                    display: "inline-block",
+                    background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  konvertieren und performen.
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p
+                style={{
+                  fontSize: "clamp(1rem, 2vw, 1.2rem)",
+                  color: "rgba(255,255,255,0.55)",
+                  maxWidth: 520,
+                  margin: "0 0 40px",
+                  lineHeight: 1.7,
+                }}
+              >
+                Von Landing Pages mit Top-Conversion-Rate bis zu Online-Shops, die verkaufen.
+                Wir bauen mit Performance und Premium-Design, keine Templates.
+              </p>
+
+              {/* CTAs */}
+              <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }} className="lg:[justify-content:flex-start]">
+                <Link href={r.contact} className="btn-primary">
+                  Jetzt starten <ArrowRight size={16} />
+                </Link>
+                <Link href={r.projects} className="btn-ghost">
+                  Projekte ansehen
+                </Link>
               </div>
             </div>
 
-            {/* Browser content */}
-            <div style={{ padding: "36px 40px 40px", display: "flex", flexDirection: "column", gap: 16 }}>
-              {/* Fake nav */}
-              <div style={{ display: "flex", gap: 20, marginBottom: 8 }}>
-                {[60, 50, 55, 45].map((w, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: w,
-                      height: 8,
-                      background: "rgba(255,255,255,0.08)",
-                      borderRadius: 4,
-                    }}
-                  />
-                ))}
-              </div>
-              {/* Hero heading skeleton */}
-              <div style={{ width: "75%", height: 24, background: "rgba(255,255,255,0.1)", borderRadius: 6 }} />
-              <div style={{ width: "55%", height: 24, background: "rgba(86,219,132,0.25)", borderRadius: 6 }} />
-              {/* Body text skeletons */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 8, marginTop: 4 }}>
-                <div style={{ width: "90%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
-                <div style={{ width: "80%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
-                <div style={{ width: "65%", height: 10, background: "rgba(255,255,255,0.05)", borderRadius: 4 }} />
-              </div>
-              {/* CTA button */}
-              <div style={{ marginTop: 8 }}>
-                <div
-                  style={{
-                    display: "inline-block",
-                    background: "#56db84",
-                    borderRadius: 50,
-                    padding: "10px 24px",
-                    width: 140,
-                    height: 14,
-                    opacity: 0.85,
-                  }}
-                />
-              </div>
+            {/* Right column */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center" style={{ paddingRight: 24 }}>
+              <WebdesignBrowserMockup locale="de" />
             </div>
           </div>
         </div>
