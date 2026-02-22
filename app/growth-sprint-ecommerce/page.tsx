@@ -288,8 +288,7 @@ export default function GrowthSprintEcommercePage() {
                       fontWeight: 500,
                     }}
                   >
-                    Nu ai nevoie de o altă agenție care să-ți gestioneze campaniile. Ai nevoie de cineva care să intre în business, să găsească unde se pierd banii și să{" "}
-                    <span style={{ color: "#56db84" }}>închidă găurile.</span>
+                    Nu ai nevoie de o altă agenție care să-ți gestioneze campaniile. Ai nevoie de cineva care să intre în business, să identifice unde se pierd banii și să elimine pierderile de eficiență.
                   </p>
                 </div>
               </div>
