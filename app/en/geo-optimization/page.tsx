@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
 import { buildMetadata } from "@/lib/seo";
 import { ArrowRight, Brain, Search, FileText, Database, BarChart3, Shield } from "lucide-react";
+import { AiChatMockup } from "@/components/sections/AiChatMockup";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -81,6 +82,9 @@ export default function GeoOptimizationEnPage() {
           />
 
           <div className="page-container" style={{ position: "relative", zIndex: 1 }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* LEFT: Hero content */}
+            <div>
             {/* Badges row */}
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px", flexWrap: "wrap" }}>
               <span className="badge">Digital Marketing</span>
@@ -211,6 +215,12 @@ export default function GeoOptimizationEnPage() {
                   </span>
                 </div>
               ))}
+            </div>
+            </div>
+            {/* RIGHT: AI Chat Mockup */}
+            <div className="hidden lg:flex lg:items-center lg:justify-center" style={{ paddingTop: "40px" }}>
+              <AiChatMockup locale="en" />
+            </div>
             </div>
           </div>
         </section>
