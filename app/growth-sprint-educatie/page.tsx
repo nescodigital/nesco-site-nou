@@ -191,7 +191,7 @@ export default function GrowthSprintEducatiePage() {
             >
               Un angajament concentrat de{" "}
               <strong style={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}>6 săptămâni</strong>{" "}
-              în care operăm direct în afacerea ta. Nu rapoarte. Execuție.
+              în care operăm direct în afacerea ta. Implementare reală, nu doar recomandări.
             </p>
 
             <GrowthSprintCta source="growth-sprint-educatie" />
