@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { XCircle } from "lucide-react";
 import { ServicePageCtaButton } from "@/components/ServicePageCtaButton";
@@ -67,6 +68,7 @@ export interface ServicePageData {
 
 interface ServicePageProps {
   data: ServicePageData;
+  heroRightSlot?: ReactNode;
 }
 
 const RESULT_ACCENTS = [
@@ -78,7 +80,7 @@ const RESULT_ACCENTS = [
   { bg: "rgba(34,211,238,0.10)", border: "rgba(34,211,238,0.15)", text: "#22d3ee" },
 ];
 
-export function ServicePageTemplate({ data }: ServicePageProps) {
+export function ServicePageTemplate({ data, heroRightSlot }: ServicePageProps) {
   const { locale, breadcrumbCategory, hero, problems, solutions, cases, omnichannelServices, faq, testimonial, tools, toolsSectionTitle, freeAuditBadge } = data;
   const tr = t(locale);
   const r = routes[locale];
@@ -123,50 +125,107 @@ export function ServicePageTemplate({ data }: ServicePageProps) {
           style={{ background: "linear-gradient(to top, #050505, transparent)" }}
         />
         <div className="relative page-container">
-          {categoryInfo ? (
-            <Link href={categoryInfo.href} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-              ← {categoryInfo.label}
-            </Link>
+          {heroRightSlot ? (
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: text */}
+              <div>
+                {categoryInfo ? (
+                  <Link href={categoryInfo.href} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                    ← {categoryInfo.label}
+                  </Link>
+                ) : (
+                  <Link href={r.home} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                    ← {homeLabel}
+                  </Link>
+                )}
+                <h1
+                  className="font-black"
+                  style={{
+                    fontSize: "clamp(3rem, 7vw, 5rem)",
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.03em",
+                    fontFeatureSettings: '"kern" 1, "liga" 1',
+                    marginTop: "16px",
+                    marginBottom: "28px",
+                    background: "linear-gradient(135deg, #ffffff 20%, #56db84 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                  }}
+                >
+                  {hero.title}
+                </h1>
+                <p
+                  style={{
+                    fontSize: "1.0625rem",
+                    color: "rgba(255,255,255,0.45)",
+                    lineHeight: 1.7,
+                    maxWidth: "520px",
+                    letterSpacing: "0.01em",
+                    marginBottom: "40px",
+                  }}
+                >
+                  {hero.subtitle}
+                </p>
+                <ServicePageCtaButton
+                  locale={locale}
+                  source={hero.badge}
+                  label={tr.common.requestOffer}
+                />
+              </div>
+              {/* Right: slot */}
+              <div className="hidden lg:flex items-center justify-center">
+                {heroRightSlot}
+              </div>
+            </div>
           ) : (
-            <Link href={r.home} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
-              ← {homeLabel}
-            </Link>
+            <>
+              {categoryInfo ? (
+                <Link href={categoryInfo.href} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                  ← {categoryInfo.label}
+                </Link>
+              ) : (
+                <Link href={r.home} className="badge mb-6" style={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                  ← {homeLabel}
+                </Link>
+              )}
+              <h1
+                className="font-black"
+                style={{
+                  fontSize: "clamp(3rem, 7vw, 5rem)",
+                  lineHeight: 0.92,
+                  letterSpacing: "-0.03em",
+                  fontFeatureSettings: '"kern" 1, "liga" 1',
+                  marginTop: "16px",
+                  marginBottom: "28px",
+                  maxWidth: "800px",
+                  background: "linear-gradient(135deg, #ffffff 20%, #56db84 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}
+              >
+                {hero.title}
+              </h1>
+              <p
+                style={{
+                  fontSize: "1.0625rem",
+                  color: "rgba(255,255,255,0.45)",
+                  lineHeight: 1.7,
+                  maxWidth: "560px",
+                  letterSpacing: "0.01em",
+                  marginBottom: "40px",
+                }}
+              >
+                {hero.subtitle}
+              </p>
+              <ServicePageCtaButton
+                locale={locale}
+                source={hero.badge}
+                label={tr.common.requestOffer}
+              />
+            </>
           )}
-          <h1
-            className="font-black"
-            style={{
-              fontSize: "clamp(3rem, 7vw, 5rem)",
-              lineHeight: 0.92,
-              letterSpacing: "-0.03em",
-              fontFeatureSettings: '"kern" 1, "liga" 1',
-              marginTop: "16px",
-              marginBottom: "28px",
-              maxWidth: "800px",
-              background: "linear-gradient(135deg, #ffffff 20%, #56db84 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            {hero.title}
-          </h1>
-          <p
-            style={{
-              fontSize: "1.0625rem",
-              color: "rgba(255,255,255,0.45)",
-              lineHeight: 1.7,
-              maxWidth: "560px",
-              letterSpacing: "0.01em",
-              marginBottom: "40px",
-            }}
-          >
-            {hero.subtitle}
-          </p>
-          <ServicePageCtaButton
-            locale={locale}
-            source={hero.badge}
-            label={tr.common.requestOffer}
-          />
         </div>
       </section>
 

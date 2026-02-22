@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ServicePageTemplate } from "@/components/sections/ServicePage";
+import { GoogleAdsDashboardCard } from "@/components/sections/GoogleAdsDashboardCard";
 import { googleAdsData } from "@/lib/serviceData";
 import { buildMetadata, buildServiceSchema } from "@/lib/seo";
 
@@ -18,7 +19,7 @@ export default function GoogleAdsRoPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildServiceSchema({ name: "Google Ads Management", description: googleAdsData.ro.hero.subtitle, url: "https://nescodigital.com/reclame-platite/google-ads/" })) }} />
       <Header locale="ro" />
-      <main><ServicePageTemplate data={googleAdsData.ro} /></main>
+      <main><ServicePageTemplate data={googleAdsData.ro} heroRightSlot={<GoogleAdsDashboardCard />} /></main>
       <Footer locale="ro" />
     </>
   );
