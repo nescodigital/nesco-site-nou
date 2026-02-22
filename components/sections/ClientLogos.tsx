@@ -12,6 +12,7 @@ const logos = [
   { src: "/clients/elvan.webp",             alt: "Elvan" },
   { src: "/clients/syndax.webp",            alt: "Syndax" },
   { src: "/clients/metro-systems.png",      alt: "Metro Systems" },
+  { src: "/clients/foreo.webp",             alt: "Foreo" },
   { src: "/clients/Laufen.webp",            alt: "Laufen" },
   { src: "/clients/Loreal.webp",            alt: "L'Oréal" },
   { src: "/clients/Roca.webp",              alt: "Roca" },
