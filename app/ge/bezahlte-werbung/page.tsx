@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CtaBanner } from "@/components/sections/CtaBanner";
+import { AdsDashboardMockup } from "@/components/sections/AdsDashboardMockup";
 import { routes } from "@/lib/routes";
 
 const r = routes.de;
@@ -664,144 +665,153 @@ export default function BezahlteWerbungPage() {
           />
 
           <div className="relative page-container">
-            <span className="badge mb-6" style={{ display: "inline-flex" }}>
-              Bezahlte Werbung
-            </span>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              {/* LEFT -- all existing hero content */}
+              <div>
+                <span className="badge mb-6" style={{ display: "inline-flex" }}>
+                  Bezahlte Werbung
+                </span>
 
-            <h1
-              className="font-black"
-              style={{
-                fontSize: "clamp(3rem, 7vw, 5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "16px",
-                marginBottom: "28px",
-                maxWidth: "820px",
-                color: "#ffffff",
-              }}
-            >
-              Bezahlte Werbung die{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #56db84 0%, #34c46a 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                echten Umsatz erzeugt.
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: "1.0625rem",
-                color: "rgba(255,255,255,0.45)",
-                lineHeight: 1.7,
-                maxWidth: "560px",
-                letterSpacing: "0.01em",
-                marginBottom: "40px",
-              }}
-            >
-              Wir verwalten keine Budgets. Wir bauen profitable Akquisitionssysteme auf
-              Google, Meta, TikTok und LinkedIn und sagen Ihnen als Erste, wenn wir nicht
-              helfen können.
-            </p>
-
-            {/* CTAs */}
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "48px" }}>
-              <Link
-                href={r.contact}
-                className="group inline-flex items-center gap-3 btn-primary"
-                style={{ fontSize: "1rem", padding: "18px 40px" }}
-              >
-                Jetzt starten
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-0.5 transition-transform"
-                />
-              </Link>
-              <Link
-                href={r.projects}
-                className="group inline-flex items-center gap-3 btn-ghost"
-                style={{ fontSize: "1rem", padding: "18px 32px" }}
-              >
-                Projekte ansehen
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-0.5 transition-transform"
-                />
-              </Link>
-            </div>
-
-            {/* Live metrics ticker */}
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 0,
-                background: "rgba(10,10,10,0.8)",
-                border: "1px solid rgba(86,219,132,0.2)",
-                borderRadius: "10px",
-                overflow: "hidden",
-                backdropFilter: "blur(12px)",
-                maxWidth: "100%",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "8px",
-                  padding: "10px 16px",
-                  borderRight: "1px solid rgba(86,219,132,0.15)",
-                  flexShrink: 0,
-                }}
-              >
-                <span
+                <h1
+                  className="font-black"
                   style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    backgroundColor: "#56db84",
-                    flexShrink: 0,
-                    boxShadow: "0 0 6px rgba(86,219,132,0.8)",
-                    animation: "mobileGlowPulse 2s ease-in-out infinite",
-                  }}
-                />
-                <span
-                  style={{
-                    fontSize: "0.6875rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.12em",
-                    textTransform: "uppercase",
-                    color: "#56db84",
+                    fontSize: "clamp(3rem, 7vw, 5rem)",
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.03em",
+                    fontFeatureSettings: '"kern" 1, "liga" 1',
+                    marginTop: "16px",
+                    marginBottom: "28px",
+                    maxWidth: "820px",
+                    color: "#ffffff",
                   }}
                 >
-                  LIVE
-                </span>
+                  Bezahlte Werbung die{" "}
+                  <span
+                    style={{
+                      background: "linear-gradient(135deg, #56db84 0%, #34c46a 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    echten Umsatz erzeugt.
+                  </span>
+                </h1>
+
+                <p
+                  style={{
+                    fontSize: "1.0625rem",
+                    color: "rgba(255,255,255,0.45)",
+                    lineHeight: 1.7,
+                    maxWidth: "560px",
+                    letterSpacing: "0.01em",
+                    marginBottom: "40px",
+                  }}
+                >
+                  Wir verwalten keine Budgets. Wir bauen profitable Akquisitionssysteme auf
+                  Google, Meta, TikTok und LinkedIn und sagen Ihnen als Erste, wenn wir nicht
+                  helfen können.
+                </p>
+
+                {/* CTAs */}
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "16px", marginBottom: "48px" }}>
+                  <Link
+                    href={r.contact}
+                    className="group inline-flex items-center gap-3 btn-primary"
+                    style={{ fontSize: "1rem", padding: "18px 40px" }}
+                  >
+                    Jetzt starten
+                    <ArrowRight
+                      size={16}
+                      className="group-hover:translate-x-0.5 transition-transform"
+                    />
+                  </Link>
+                  <Link
+                    href={r.projects}
+                    className="group inline-flex items-center gap-3 btn-ghost"
+                    style={{ fontSize: "1rem", padding: "18px 32px" }}
+                  >
+                    Projekte ansehen
+                    <ArrowRight
+                      size={16}
+                      className="group-hover:translate-x-0.5 transition-transform"
+                    />
+                  </Link>
+                </div>
+
+                {/* Live metrics ticker */}
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 0,
+                    background: "rgba(10,10,10,0.8)",
+                    border: "1px solid rgba(86,219,132,0.2)",
+                    borderRadius: "10px",
+                    overflow: "hidden",
+                    backdropFilter: "blur(12px)",
+                    maxWidth: "100%",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "8px",
+                      padding: "10px 16px",
+                      borderRight: "1px solid rgba(86,219,132,0.15)",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: 7,
+                        height: 7,
+                        borderRadius: "50%",
+                        backgroundColor: "#56db84",
+                        flexShrink: 0,
+                        boxShadow: "0 0 6px rgba(86,219,132,0.8)",
+                        animation: "mobileGlowPulse 2s ease-in-out infinite",
+                      }}
+                    />
+                    <span
+                      style={{
+                        fontSize: "0.6875rem",
+                        fontWeight: 700,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "#56db84",
+                      }}
+                    >
+                      LIVE
+                    </span>
+                  </div>
+                  <div
+                    style={{
+                      padding: "10px 20px",
+                      minWidth: 280,
+                    }}
+                  >
+                    <span
+                      key={tickerIndex}
+                      style={{
+                        fontSize: "0.8125rem",
+                        color: "rgba(255,255,255,0.75)",
+                        fontWeight: 500,
+                        display: "block",
+                        opacity: tickerVisible ? 1 : 0,
+                        transform: tickerVisible ? "translateY(0)" : "translateY(6px)",
+                        transition: "opacity 0.3s ease, transform 0.3s ease",
+                      }}
+                    >
+                      {TICKER_STATS[tickerIndex]}
+                    </span>
+                  </div>
+                </div>
               </div>
-              <div
-                style={{
-                  padding: "10px 20px",
-                  minWidth: 280,
-                }}
-              >
-                <span
-                  key={tickerIndex}
-                  style={{
-                    fontSize: "0.8125rem",
-                    color: "rgba(255,255,255,0.75)",
-                    fontWeight: 500,
-                    display: "block",
-                    opacity: tickerVisible ? 1 : 0,
-                    transform: tickerVisible ? "translateY(0)" : "translateY(6px)",
-                    transition: "opacity 0.3s ease, transform 0.3s ease",
-                  }}
-                >
-                  {TICKER_STATS[tickerIndex]}
-                </span>
+              {/* RIGHT -- dashboard mockup, desktop only */}
+              <div className="hidden lg:flex lg:items-center lg:justify-center">
+                <AdsDashboardMockup locale="de" />
               </div>
             </div>
           </div>
