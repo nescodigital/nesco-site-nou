@@ -263,7 +263,7 @@ export default function GrowthSprintEducatiePage() {
                     Ai o audiență. Ai o ofertă. Generezi venituri. Dar undeva între funnel-ul tău, sistemul de email, structura de prețuri și operațiuni, există scurgeri de venituri.
                   </p>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Le simți. Creșterea a stagnat. Ratele de conversie nu sunt unde ar trebui. Cheltuiești pe reclame, dar cifrele nu se adună. Lista de email nu generează ce ar putea.
+                    Le simți. Creșterea a stagnat. Ratele de conversie nu sunt unde ar trebui. Cheltuiești pe reclame, dar cifrele nu sunt favorabile. Lista de email nu generează ce ar putea.
                   </p>
                   <p
                     style={{
@@ -273,7 +273,7 @@ export default function GrowthSprintEducatiePage() {
                       fontWeight: 500,
                     }}
                   >
-                    Problema reală nu e efortul. E că ai nevoie de cineva care să intre în mașinărie, să identifice exact ce e stricat și să repare.{" "}
+                    Problema reală nu este efortul depus. E că ai nevoie de cineva care să intre în mașinărie, să identifice exact ce e stricat și să repare.{" "}
                     <span style={{ color: "#56db84" }}>Să repare efectiv.</span>
                   </p>
                 </div>
