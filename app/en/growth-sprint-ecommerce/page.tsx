@@ -9,6 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 import { ShoppingBag, CheckCircle, XCircle, ArrowRight, Zap } from "lucide-react";
 import { GrowthSprintCta } from "@/components/GrowthSprintCta";
 import { GrowthSprintApplyButton } from "@/components/GrowthSprintApplyButton";
+import { TrustBadges } from "@/components/ui/TrustBadges";
 
 export const metadata: Metadata = buildMetadata({
   locale: "en",
@@ -236,6 +237,8 @@ export default function GrowthSprintEcommercePage() {
                 </div>
               ))}
             </div>
+
+            <TrustBadges locale="en" />
           </div>
         </section>
 

@@ -11,9 +11,9 @@ interface GrowthSprintCtaProps {
 }
 
 const CTA_TEXT: Record<Locale, { btn: string; pricing: string; pricingHref: string }> = {
-  ro: { btn: "Programează un Apel", pricing: "Vezi prețuri", pricingHref: "#investitie" },
-  en: { btn: "Book a Discovery Call", pricing: "See pricing", pricingHref: "#investment" },
-  de: { btn: "Discovery-Call buchen", pricing: "Preise ansehen", pricingHref: "#investition" },
+  ro: { btn: "Intră în legătură cu noi", pricing: "Vezi prețuri", pricingHref: "#investitie" },
+  en: { btn: "Get in touch", pricing: "See pricing", pricingHref: "#investment" },
+  de: { btn: "Kontakt aufnehmen", pricing: "Preise ansehen", pricingHref: "#investition" },
 };
 
 export function GrowthSprintCta({ source, locale = "ro" }: GrowthSprintCtaProps) {
