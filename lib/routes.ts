@@ -34,6 +34,7 @@ export const routes = {
     calculator: "/calculator/",
     howWeWork: "/cum-lucram/",
     whoWeDontWorkWith: "/cu-cine-nu-lucram/",
+    blog: "/blog/",
     privacy: "/politica-de-confidentialitate/",
     terms: "/termeni-si-conditii/",
   },
@@ -66,6 +67,7 @@ export const routes = {
     calculator: "/en/calculator/",
     howWeWork: "/en/how-we-work/",
     whoWeDontWorkWith: "/en/who-we-dont-work-with/",
+    blog: "/en/blog/",
     privacy: "/en/privacy-policy/",
     terms: "/en/terms-and-conditions/",
   },
@@ -98,6 +100,7 @@ export const routes = {
     calculator: "/ge/calculator/",
     howWeWork: "/ge/wie-wir-arbeiten/",
     whoWeDontWorkWith: "/ge/mit-wem-wir-nicht-arbeiten/",
+    blog: "/ge/blog/",
     privacy: "/ge/datenschutz/",
     terms: "/ge/nutzungsbedingungen/",
   },
@@ -375,20 +378,98 @@ export function getNavLinks(locale: Locale): NavItem[] {
     {
       label:
         locale === "ro"
-          ? "Proiecte"
+          ? "Companie"
           : locale === "en"
-            ? "Projects"
-            : "Projekte",
-      href: r.projects,
-    },
-    {
-      label:
-        locale === "ro"
-          ? "Despre Noi"
-          : locale === "en"
-            ? "About Us"
-            : "Über uns",
+            ? "Company"
+            : "Unternehmen",
       href: r.about,
+      children: [
+        {
+          label:
+            locale === "ro"
+              ? "Despre Noi"
+              : locale === "en"
+                ? "About Us"
+                : "Über uns",
+          href: r.about,
+          desc:
+            locale === "ro"
+              ? "Cine suntem și ce ne diferențiază"
+              : locale === "en"
+                ? "Who we are and what sets us apart"
+                : "Wer wir sind und was uns unterscheidet",
+        },
+        {
+          label:
+            locale === "ro"
+              ? "Proiecte"
+              : locale === "en"
+                ? "Projects"
+                : "Projekte",
+          href: r.projects,
+          desc:
+            locale === "ro"
+              ? "Studii de caz și rezultate reale"
+              : locale === "en"
+                ? "Case studies and real results"
+                : "Fallstudien und echte Ergebnisse",
+        },
+        {
+          label:
+            locale === "ro"
+              ? "Cum Lucrăm"
+              : locale === "en"
+                ? "How We Work"
+                : "Wie wir arbeiten",
+          href: r.howWeWork,
+          desc:
+            locale === "ro"
+              ? "Procesul nostru pas cu pas"
+              : locale === "en"
+                ? "Our step-by-step process"
+                : "Unser Schritt-für-Schritt-Prozess",
+        },
+        {
+          label:
+            locale === "ro"
+              ? "Cu Cine Nu Lucrăm"
+              : locale === "en"
+                ? "Who We Don't Work With"
+                : "Mit wem wir nicht arbeiten",
+          href: r.whoWeDontWorkWith,
+          desc:
+            locale === "ro"
+              ? "Transparență totală de la început"
+              : locale === "en"
+                ? "Total transparency from the start"
+                : "Totale Transparenz von Anfang an",
+        },
+        {
+          label:
+            locale === "ro"
+              ? "Calculator Cost"
+              : locale === "en"
+                ? "Cost Calculator"
+                : "Kostenrechner",
+          href: r.calculator,
+          desc:
+            locale === "ro"
+              ? "Estimare buget marketing"
+              : locale === "en"
+                ? "Marketing budget estimate"
+                : "Marketing-Budget-Schätzung",
+        },
+        {
+          label: "Blog",
+          href: r.blog,
+          desc:
+            locale === "ro"
+              ? "Insights și strategii de marketing"
+              : locale === "en"
+                ? "Marketing insights and strategies"
+                : "Marketing-Insights und Strategien",
+        },
+      ],
     },
   ];
 }

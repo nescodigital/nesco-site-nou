@@ -82,21 +82,25 @@ export function Footer({ locale }: FooterProps) {
   const companyLinks = [
     { label: tr.footer.about, href: r.about },
     {
-      label: locale === "ro" ? "Proiecte" : locale === "en" ? "Projects" : "Projekte",
-      href: r.projects,
-    },
-    { label: "Growth Sprint", href: r.growthSprintEducation },
-    {
-      label: locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner",
-      href: r.calculator,
-    },
-    {
       label: locale === "ro" ? "Cum Lucrăm" : locale === "en" ? "How We Work" : "Wie wir arbeiten",
       href: r.howWeWork,
     },
     {
       label: locale === "ro" ? "Cu Cine Nu Lucrăm" : locale === "en" ? "Who We Don't Work With" : "Mit wem wir nicht arbeiten",
       href: r.whoWeDontWorkWith,
+    },
+    {
+      label: locale === "ro" ? "Proiecte" : locale === "en" ? "Projects" : "Projekte",
+      href: r.projects,
+    },
+  ];
+
+  const resourceLinks = [
+    { label: "Blog", href: r.blog },
+    { label: "Growth Sprint", href: r.growthSprintEducation },
+    {
+      label: locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner",
+      href: r.calculator,
     },
   ];
 
@@ -140,7 +144,7 @@ export function Footer({ locale }: FooterProps) {
         </div>
 
         {/* Main grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
 
           {/* ── Brand ── */}
           <div>
@@ -228,6 +232,28 @@ export function Footer({ locale }: FooterProps) {
             <h4 style={HEADING_STYLE}>{tr.footer.company}</h4>
             <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="animated-underline"
+                    style={LINK_STYLE}
+                    onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "#fff"; }}
+                    onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.4)"; }}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* ── Resources ── */}
+          <div>
+            <h4 style={HEADING_STYLE}>
+              {locale === "ro" ? "Resurse" : locale === "en" ? "Resources" : "Ressourcen"}
+            </h4>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              {resourceLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

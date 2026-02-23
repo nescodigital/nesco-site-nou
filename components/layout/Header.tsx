@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
-import { ChevronDown, Menu, X, ArrowRight, Calculator } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowRight } from "lucide-react";
 import { type Locale } from "@/lib/translations";
 import { getNavLinks, routes } from "@/lib/routes";
 
@@ -167,7 +167,7 @@ export function Header({ locale }: HeaderProps) {
                     <div
                       className="dropdown-enter absolute top-full left-0 mt-2"
                       style={{
-                        minWidth: "260px",
+                        minWidth: "340px",
                         background: "#0a0a0a",
                         border: item.accent
                           ? "1px solid rgba(86,219,132,0.2)"
@@ -178,8 +178,8 @@ export function Header({ locale }: HeaderProps) {
                       }}
                     >
                       <div style={{ padding: "12px" }}>
-                        {/* "See all" hub link, hidden for accent groups (no hub page) */}
-                        {!item.accent && (
+                        {/* "See all" hub link for service dropdowns only */}
+                        {!item.accent && item.href !== routes[locale].about && (
                           <>
                             <Link
                               href={item.href}
@@ -240,7 +240,7 @@ export function Header({ locale }: HeaderProps) {
                                   )}
                                 </div>
                                 {child.desc && (
-                                  <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginTop: "2px" }}>
+                                  <div style={{ fontSize: "0.8125rem", color: "rgba(255,255,255,0.35)", marginTop: "2px", whiteSpace: "nowrap" }}>
                                     {child.desc}
                                   </div>
                                 )}
@@ -261,51 +261,6 @@ export function Header({ locale }: HeaderProps) {
 
             {/* Right: toolkit + lang + CTA */}
             <div className="hidden lg:flex items-center gap-3">
-              {/* Calculator icon with tooltip */}
-              <div className="relative group">
-                <Link
-                  href="/calculator/"
-                  className="flex items-center justify-center transition-all"
-                  style={{
-                    width: 36,
-                    height: 36,
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    borderRadius: "10px",
-                    cursor: "pointer",
-                  }}
-                  onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(86,219,132,0.3)";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(86,219,132,0.06)";
-                  }}
-                  onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.08)";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)";
-                  }}
-                  aria-label={locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
-                >
-                  <Calculator size={20} color="white" />
-                </Link>
-                {/* Tooltip */}
-                <div
-                  className="absolute left-1/2 top-full mt-2 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                  style={{
-                    transform: "translateX(-50%)",
-                    whiteSpace: "nowrap",
-                    background: "#1a1a1a",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: "8px",
-                    padding: "5px 10px",
-                    fontSize: "0.75rem",
-                    fontWeight: 500,
-                    color: "#fff",
-                    boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
-                  }}
-                >
-                  {locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
-                </div>
-              </div>
-
               {/* Language switcher */}
               <div className="relative" ref={langRef}>
                 <button
@@ -526,24 +481,6 @@ export function Header({ locale }: HeaderProps) {
               )}
             </div>
           ))}
-
-          {/* Calculator Cost – mobile */}
-          <Link
-            href="/calculator/"
-            onClick={() => { setMobileOpen(false); setOpenSection(null); }}
-            style={{
-              display: "flex",
-              alignItems: "center",
-              padding: "16px 24px",
-              fontSize: "1rem",
-              fontWeight: 500,
-              color: "#ffffff",
-              textDecoration: "none",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
-            }}
-          >
-            {locale === "ro" ? "Calculator Cost" : locale === "en" ? "Cost Calculator" : "Kostenrechner"}
-          </Link>
 
           {/* CTA + language switcher, flow naturally after nav */}
           <div style={{ padding: "24px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
