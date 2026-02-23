@@ -10,16 +10,15 @@ interface GrowthSprintCtaProps {
   locale?: Locale;
 }
 
-const CTA_TEXT: Record<Locale, { btn: string; pricing: string; pricingHref: string }> = {
-  ro: { btn: "Intră în legătură cu noi", pricing: "Vezi prețuri", pricingHref: "#investitie" },
-  en: { btn: "Get in touch", pricing: "See pricing", pricingHref: "#investment" },
-  de: { btn: "Kontakt aufnehmen", pricing: "Preise ansehen", pricingHref: "#investition" },
+const CTA_TEXT: Record<Locale, string> = {
+  ro: "Intră în legătură cu noi",
+  en: "Get in touch",
+  de: "Kontakt aufnehmen",
 };
 
 export function GrowthSprintCta({ source, locale = "ro" }: GrowthSprintCtaProps) {
   const [open, setOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<string | undefined>();
-  const c = CTA_TEXT[locale];
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -45,12 +44,9 @@ export function GrowthSprintCta({ source, locale = "ro" }: GrowthSprintCtaProps)
           style={{ border: "none", cursor: "pointer" }}
         >
           <Zap size={16} />
-          {c.btn}
+          {CTA_TEXT[locale]}
           <ArrowRight size={16} />
         </button>
-        <a href={c.pricingHref} className="btn-ghost">
-          {c.pricing}
-        </a>
       </div>
 
       {open && (
