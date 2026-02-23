@@ -124,13 +124,51 @@ const nextConfig: NextConfig = {
       { source: '/ro/projects/remediere-probleme-de-conversie/', destination: '/proiecte/remediere-conversie-eyeglasses24', permanent: true },
       { source: '/ro/projects/:path*', destination: '/proiecte', permanent: true },
 
-      // Blog vechi → homepage
-      { source: '/category/:path*', destination: '/', permanent: true },
-      { source: '/insights', destination: '/', permanent: true },
-      { source: '/insights/', destination: '/', permanent: true },
-      { source: '/digital-trends', destination: '/', permanent: true },
-      { source: '/digital-trends/', destination: '/', permanent: true },
-      { source: '/:path*/blog/:slug*', destination: '/', permanent: true },
+      // Blog vechi → blog hub
+      { source: '/category/:path*', destination: '/blog/', permanent: true },
+      { source: '/insights', destination: '/blog/', permanent: true },
+      { source: '/insights/', destination: '/blog/', permanent: true },
+      { source: '/digital-trends', destination: '/blog/', permanent: true },
+      { source: '/digital-trends/', destination: '/blog/', permanent: true },
+      { source: '/ro/blog/:slug*', destination: '/blog/', permanent: true },
+
+      // Old WordPress service pages
+      { source: '/services/brand-collateral', destination: '/marketing-digital/', permanent: true },
+      { source: '/services/brand-collateral/', destination: '/marketing-digital/', permanent: true },
+
+      // Old EN service pages
+      { source: '/en/tiktok-en', destination: '/en/paid-ads/', permanent: true },
+      { source: '/en/tiktok-en/', destination: '/en/paid-ads/', permanent: true },
+      { source: '/en/facebook-en', destination: '/en/paid-ads/', permanent: true },
+      { source: '/en/facebook-en/', destination: '/en/paid-ads/', permanent: true },
+      { source: '/en/lead-generation-website-en', destination: '/en/webdesign/', permanent: true },
+      { source: '/en/lead-generation-website-en/', destination: '/en/webdesign/', permanent: true },
+      { source: '/en/digital-marketing-services/influencer-marketing', destination: '/en/digital-marketing/', permanent: true },
+      { source: '/en/digital-marketing-services/influencer-marketing/', destination: '/en/digital-marketing/', permanent: true },
+      { source: '/en/project-type/visual', destination: '/en/projects/', permanent: true },
+      { source: '/en/project-type/visual/', destination: '/en/projects/', permanent: true },
+      { source: '/en/website-maintenance', destination: '/en/webdesign/', permanent: true },
+      { source: '/en/website-maintenance/', destination: '/en/webdesign/', permanent: true },
+
+      // Old blog articles → blog hub
+      { source: '/2021-guide-to-google-display-ad-sizes', destination: '/blog/', permanent: true },
+      { source: '/2021-guide-to-google-display-ad-sizes/', destination: '/blog/', permanent: true },
+      { source: '/ways-to-improve-your-customer-relationships-with-marketing-automation', destination: '/blog/', permanent: true },
+      { source: '/ways-to-improve-your-customer-relationships-with-marketing-automation/', destination: '/blog/', permanent: true },
+
+      // Old RO service pages
+      { source: '/ro/servicii-marketing/nume-slogan-de-brand', destination: '/marketing-digital/', permanent: true },
+      { source: '/ro/servicii-marketing/nume-slogan-de-brand/', destination: '/marketing-digital/', permanent: true },
+      { source: '/servicii-marketing-digital/marketing-automatizat', destination: '/solutii-email-marketing-ro/', permanent: true },
+      { source: '/servicii-marketing-digital/marketing-automatizat/', destination: '/solutii-email-marketing-ro/', permanent: true },
+
+      // Old project pages
+      { source: '/en/projects/bellacasa-ro-web-development', destination: '/en/projects/', permanent: true },
+      { source: '/en/projects/bellacasa-ro-web-development/', destination: '/en/projects/', permanent: true },
+
+      // Catch-all for old paths
+      { source: '/services/:slug*', destination: '/marketing-digital/', permanent: true },
+      { source: '/servicii-marketing-digital/:slug*', destination: '/marketing-digital/', permanent: true },
 
       // Servicii RO (primul set)
       { source: '/google-ro', destination: '/reclame-platite/google-ads', permanent: true },
