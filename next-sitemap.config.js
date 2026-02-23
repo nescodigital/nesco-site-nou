@@ -2,6 +2,7 @@
 module.exports = {
   siteUrl: "https://nescodigital.com",
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
   trailingSlash: true,
   changefreq: "weekly",
   priority: 0.7,
@@ -43,9 +44,6 @@ module.exports = {
         allow: "/",
         disallow: ["/api/", "/_next/", "/admin/"],
       },
-    ],
-    additionalSitemaps: [
-      "https://nescodigital.com/sitemap.xml",
     ],
   },
 
