@@ -37,7 +37,7 @@ export function GrowthSprintCta({ source, locale = "ro" }: GrowthSprintCtaProps)
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row gap-3 mb-16">
+      <div className="flex flex-col sm:flex-row gap-3 mb-6">
         <button
           onClick={() => { setSelectedPlan(undefined); setOpen(true); }}
           className="btn-primary"

@@ -164,7 +164,7 @@ export default function GrowthSprintEcommercePage() {
                 letterSpacing: "-0.03em",
                 fontFeatureSettings: '"kern" 1, "liga" 1',
                 marginTop: "16px",
-                marginBottom: "28px",
+                marginBottom: "14px",
                 maxWidth: "820px",
               }}
             >
@@ -186,10 +186,10 @@ export default function GrowthSprintEcommercePage() {
               style={{
                 fontSize: "1.125rem",
                 color: "rgba(255,255,255,0.45)",
-                lineHeight: 1.7,
+                lineHeight: 1.5,
                 maxWidth: "580px",
                 letterSpacing: "0.01em",
-                marginBottom: "12px",
+                marginBottom: "6px",
               }}
             >
               Pentru branduri de e-commerce cu vânzări de{" "}
@@ -200,9 +200,9 @@ export default function GrowthSprintEcommercePage() {
               style={{
                 fontSize: "1rem",
                 color: "rgba(255,255,255,0.35)",
-                lineHeight: 1.7,
+                lineHeight: 1.5,
                 maxWidth: "540px",
-                marginBottom: "40px",
+                marginBottom: "24px",
               }}
             >
               Un engagement concentrat de{" "}
@@ -218,7 +218,7 @@ export default function GrowthSprintEcommercePage() {
                 display: "grid",
                 gridTemplateColumns: "repeat(3, 1fr)",
                 gap: "16px",
-                paddingTop: "40px",
+                paddingTop: "16px",
                 maxWidth: "520px",
               }}
             >

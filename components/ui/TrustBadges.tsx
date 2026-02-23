@@ -24,7 +24,7 @@ function hoverOut(e: React.MouseEvent) {
 
 export function TrustBadges({ locale = "ro" }: TrustBadgesProps) {
   return (
-    <div className="flex flex-wrap gap-5 justify-center" style={{ paddingTop: "24px" }}>
+    <div className="flex flex-wrap gap-6 justify-center" style={{ paddingTop: "24px" }}>
       {/* Clutch */}
       <div
         className="inline-flex items-center gap-2 transition-colors"
