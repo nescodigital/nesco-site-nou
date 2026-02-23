@@ -92,164 +92,207 @@ export default function GrowthSprintEcommercePage() {
             }}
           />
 
-          {/* Logo watermark */}
-          <div
-            className="absolute hidden lg:block pointer-events-none select-none"
-            style={{
-              top: "50%",
-              right: "3%",
-              transform: "translateY(-50%)",
-              width: 480,
-              height: 480,
-              opacity: 0.05,
-              filter: "invert(1) hue-rotate(180deg) contrast(1.8)",
-              mixBlendMode: "screen",
-              zIndex: 0,
-            }}
-          >
-            <Image
-              src="/logo mare Nesco.avif"
-              alt=""
-              width={480}
-              height={480}
-              style={{ width: "100%", height: "100%", objectFit: "contain" }}
-            />
-          </div>
-
           <div
             className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
             style={{ background: "linear-gradient(to top, #050505, transparent)" }}
           />
 
           <div className="relative page-container" style={{ zIndex: 1 }}>
-            <div className="flex items-center flex-wrap gap-2 mb-6">
-              <span className="badge">Growth Sprint</span>
-              <span
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 600,
-                  padding: "4px 12px",
-                  borderRadius: "9999px",
-                  background: "rgba(251,146,60,0.08)",
-                  border: "1px solid rgba(251,146,60,0.2)",
-                  color: "#fb923c",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
-                E-Commerce
-              </span>
-              <span
-                style={{
-                  fontSize: "0.6875rem",
-                  fontWeight: 600,
-                  padding: "4px 12px",
-                  borderRadius: "9999px",
-                  background: "rgba(96,165,250,0.08)",
-                  border: "1px solid rgba(96,165,250,0.2)",
-                  color: "#60a5fa",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Scalare Profitabilă
-              </span>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-end">
 
-            <h1
-              className="font-black text-white"
-              style={{
-                fontSize: "clamp(3rem, 7vw, 5.5rem)",
-                lineHeight: 0.92,
-                letterSpacing: "-0.03em",
-                fontFeatureSettings: '"kern" 1, "liga" 1',
-                marginTop: "16px",
-                marginBottom: "14px",
-                maxWidth: "820px",
-              }}
-            >
-              Growth Sprint
-              <br />
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                E-commerce.
-              </span>
-            </h1>
-
-            <p
-              style={{
-                fontSize: "1.125rem",
-                color: "rgba(255,255,255,0.45)",
-                lineHeight: 1.5,
-                maxWidth: "580px",
-                letterSpacing: "0.01em",
-                marginBottom: "6px",
-              }}
-            >
-              Pentru branduri de e-commerce cu vânzări de{" "}
-              <strong style={{ color: "#ffffff", fontWeight: 700 }}>50k–500k+/lună</strong>{" "}
-              care scalează cheltuielile de ads dar nu scalează profitul.
-            </p>
-            <p
-              style={{
-                fontSize: "1rem",
-                color: "rgba(255,255,255,0.35)",
-                lineHeight: 1.5,
-                maxWidth: "540px",
-                marginBottom: "24px",
-              }}
-            >
-              Un engagement concentrat de{" "}
-              <strong style={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}>6 săptămâni</strong>{" "}
-              în care Nesco Digital operează direct în afacerea ta.
-            </p>
-
-            <GrowthSprintCta source="growth-sprint-ecommerce" />
-
-            {/* Stats */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3, 1fr)",
-                gap: "16px",
-                paddingTop: "16px",
-                maxWidth: "520px",
-              }}
-            >
-              {[
-                { value: "6 săptămâni", label: "implementare directă" },
-                { value: "50k–500k+", label: "venituri lunare target" },
-                { value: "100%", label: "executat, nu prezentat" },
-              ].map((s, i) => (
-                <div key={i}>
-                  <div
-                    className="font-black tabular-nums"
-                    style={{ fontSize: "1.375rem", color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "4px" }}
-                  >
-                    {s.value}
-                  </div>
-                  <div
+              {/* ── Left column ── */}
+              <div>
+                <div className="flex items-center flex-wrap gap-2 mb-6">
+                  <span className="badge">Growth Sprint</span>
+                  <span
                     style={{
                       fontSize: "0.6875rem",
-                      color: "rgba(255,255,255,0.3)",
-                      textTransform: "uppercase",
+                      fontWeight: 600,
+                      padding: "4px 12px",
+                      borderRadius: "9999px",
+                      background: "rgba(251,146,60,0.08)",
+                      border: "1px solid rgba(251,146,60,0.2)",
+                      color: "#fb923c",
                       letterSpacing: "0.08em",
-                      fontWeight: 500,
+                      textTransform: "uppercase",
                     }}
                   >
-                    {s.label}
-                  </div>
+                    E-Commerce
+                  </span>
+                  <span
+                    style={{
+                      fontSize: "0.6875rem",
+                      fontWeight: 600,
+                      padding: "4px 12px",
+                      borderRadius: "9999px",
+                      background: "rgba(96,165,250,0.08)",
+                      border: "1px solid rgba(96,165,250,0.2)",
+                      color: "#60a5fa",
+                      letterSpacing: "0.08em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    Scalare Profitabilă
+                  </span>
                 </div>
-              ))}
+
+                <h1
+                  className="font-black text-white"
+                  style={{
+                    fontSize: "clamp(3rem, 7vw, 5.5rem)",
+                    lineHeight: 0.92,
+                    letterSpacing: "-0.03em",
+                    fontFeatureSettings: '"kern" 1, "liga" 1',
+                    marginTop: "16px",
+                    marginBottom: "14px",
+                  }}
+                >
+                  Growth Sprint
+                  <br />
+                  <span
+                    style={{
+                      background: "linear-gradient(135deg, #fff 0%, #56db84 60%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    E-commerce.
+                  </span>
+                </h1>
+
+                <p
+                  style={{
+                    fontSize: "1.125rem",
+                    color: "rgba(255,255,255,0.45)",
+                    lineHeight: 1.5,
+                    maxWidth: "580px",
+                    letterSpacing: "0.01em",
+                    marginBottom: "6px",
+                  }}
+                >
+                  Pentru branduri de e-commerce cu vânzări de{" "}
+                  <strong style={{ color: "#ffffff", fontWeight: 700 }}>50k–500k+/lună</strong>{" "}
+                  care scalează cheltuielile de ads dar nu scalează profitul.
+                </p>
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    color: "rgba(255,255,255,0.35)",
+                    lineHeight: 1.5,
+                    maxWidth: "540px",
+                    marginBottom: "24px",
+                  }}
+                >
+                  Un engagement concentrat de{" "}
+                  <strong style={{ color: "rgba(255,255,255,0.65)", fontWeight: 600 }}>6 săptămâni</strong>{" "}
+                  în care Nesco Digital operează direct în afacerea ta.
+                </p>
+
+                <GrowthSprintCta source="growth-sprint-ecommerce" />
+
+                {/* Stats */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: "16px",
+                    paddingTop: "16px",
+                    maxWidth: "520px",
+                  }}
+                >
+                  {[
+                    { value: "6 săptămâni", label: "implementare directă" },
+                    { value: "50k–500k+", label: "venituri lunare target" },
+                    { value: "100%", label: "executat, nu prezentat" },
+                  ].map((s, i) => (
+                    <div key={i}>
+                      <div
+                        className="font-black tabular-nums"
+                        style={{ fontSize: "1.375rem", color: "#ffffff", letterSpacing: "-0.02em", marginBottom: "4px" }}
+                      >
+                        {s.value}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "0.6875rem",
+                          color: "rgba(255,255,255,0.3)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.08em",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* ── Right column: Nesco arrow + glow ── */}
+              <div
+                className="hidden lg:flex flex-col items-center justify-center"
+                style={{ position: "relative", height: "min(500px, 44vw)" }}
+              >
+                {/* Animated glow behind arrow */}
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: 420,
+                    height: 420,
+                    borderRadius: "50%",
+                    background: "radial-gradient(circle, rgba(86,219,132,0.10) 0%, rgba(86,219,132,0.03) 40%, transparent 70%)",
+                    animation: "heroGlow 6s ease-in-out infinite",
+                  }}
+                />
+                {/* Secondary glow ring */}
+                <div
+                  className="absolute pointer-events-none"
+                  style={{
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                    width: 560,
+                    height: 560,
+                    borderRadius: "50%",
+                    background: "radial-gradient(circle, rgba(86,219,132,0.04) 0%, transparent 60%)",
+                    animation: "heroGlow 10s ease-in-out infinite reverse",
+                  }}
+                />
+                {/* Nesco arrow */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/logo mare Nesco.svg"
+                  alt=""
+                  aria-hidden="true"
+                  width={400}
+                  height={400}
+                  className="pointer-events-none select-none"
+                  style={{
+                    width: 400,
+                    height: 400,
+                    opacity: 0.10,
+                    filter: "brightness(10)",
+                    position: "relative",
+                    zIndex: 1,
+                  }}
+                />
+
+                {/* Trust badges below arrow on desktop */}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0 }}>
+                  <TrustBadges />
+                </div>
+              </div>
+
             </div>
 
-            <TrustBadges />
+            {/* Trust badges – mobile only */}
+            <div className="lg:hidden">
+              <TrustBadges />
+            </div>
           </div>
         </section>
 
