@@ -687,7 +687,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_WATI"
+                      href="https://affiliates.wati.io/lox4ol1xmt09"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -714,7 +714,7 @@ export default function ArticlePage() {
                     want a dedicated WhatsApp solution that&apos;s fast to implement.
                   </p>
                   <a
-                    href="#AFFILIATE_WATI"
+                    href="https://affiliates.wati.io/lox4ol1xmt09"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{
@@ -753,7 +753,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_MANYCHAT"
+                      href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -781,7 +781,7 @@ export default function ArticlePage() {
                     with Instagram and Facebook in a unified strategy.
                   </p>
                   <a
-                    href="#AFFILIATE_MANYCHAT"
+                    href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{

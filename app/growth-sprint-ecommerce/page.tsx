@@ -54,12 +54,12 @@ export default function GrowthSprintEcommercePage() {
   return (
     <>
       <Header locale="ro" />
-      <main style={{ backgroundColor: "#050505" }}>
+      <main>
 
         {/* ── Hero ── */}
         <section
           className="relative overflow-hidden"
-          style={{ backgroundColor: "#050505", paddingTop: "140px", paddingBottom: "100px" }}
+          style={{ paddingTop: "140px", paddingBottom: "100px" }}
         >
           <div className="absolute inset-0 bg-grid pointer-events-none" />
 
@@ -265,7 +265,7 @@ export default function GrowthSprintEcommercePage() {
                 {/* Nesco arrow */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/logo mare Nesco.svg"
+                  src="/nesco-arrow.svg"
                   alt=""
                   aria-hidden="true"
                   width={400}
@@ -297,7 +297,7 @@ export default function GrowthSprintEcommercePage() {
         </section>
 
         {/* ── Problema ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <section className="relative" style={{ padding: "100px 0" }}>
           <div
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
@@ -343,7 +343,7 @@ export default function GrowthSprintEcommercePage() {
         </section>
 
         {/* ── Ce Este ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <section className="relative" style={{ padding: "100px 0" }}>
           <div
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
@@ -398,7 +398,7 @@ export default function GrowthSprintEcommercePage() {
         </section>
 
         {/* ── Ce Include ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <section className="relative" style={{ padding: "100px 0" }}>
           <div
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}
@@ -575,7 +575,7 @@ export default function GrowthSprintEcommercePage() {
         </section>
 
         {/* ── Cui se adresează ── */}
-        <section className="relative" style={{ backgroundColor: "#050505", padding: "100px 0" }}>
+        <section className="relative" style={{ padding: "100px 0" }}>
           <div
             className="absolute top-0 left-0 right-0 h-px"
             style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}

@@ -632,7 +632,7 @@ export default function ArticlePage() {
                   Automatisierungen.
                 </p>
                 <a
-                  href="#AFFILIATE_KARTRA"
+                  href="https://try.kartra.com/v4uqkepog1ti"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{

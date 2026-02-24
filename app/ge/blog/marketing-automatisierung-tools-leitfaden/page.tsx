@@ -536,7 +536,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_BREVO" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Brevo</a>{" "}
+                  <a href="https://get.brevo.com/bvspkphc2pke" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Brevo</a>{" "}
                   ist die ideale L&ouml;sung, wenn Sie E-Mail, SMS und WhatsApp
                   aus einer einzigen Plattform heraus verwalten m&ouml;chten. Der
                   kostenlose Plan umfasst 300 E-Mails/Tag und ein Basis-CRM
@@ -556,7 +556,7 @@ export default function ArticlePage() {
                   E-Mails. Der Business-Plan ($18/Monat) bietet zus&auml;tzlich
                   erweiterte Automatisierungen, A/B-Tests und Landing Pages.
                 </p>
-                <a href="#AFFILIATE_BREVO" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://get.brevo.com/bvspkphc2pke" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Brevo testen <ArrowRight size={14} />
                 </a>
               </div>
@@ -624,7 +624,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_MANYCHAT" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Manychat</a>{" "}
+                  <a href="https://manychat.partnerlinks.io/d3mbiuidqfda" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Manychat</a>{" "}
                   ist der Marktf&uuml;hrer f&uuml;r Chatbots auf Instagram,
                   Facebook Messenger und WhatsApp. Sie k&ouml;nnen automatisierte
                   Flows erstellen, die auf Kommentare, DMs und
@@ -644,7 +644,7 @@ export default function ArticlePage() {
                   E-Mail-Sammlung &uuml;ber DMs. Der kostenlose Plan deckt bis
                   zu 1.000 Kontakte ab. Pro beginnt bei $15/Monat.
                 </p>
-                <a href="#AFFILIATE_MANYCHAT" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://manychat.partnerlinks.io/d3mbiuidqfda" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Manychat testen <ArrowRight size={14} />
                 </a>
               </div>
@@ -798,7 +798,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_KARTRA" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Kartra</a>{" "}
+                  <a href="https://try.kartra.com/v4uqkepog1ti" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Kartra</a>{" "}
                   ersetzt 5&ndash;6 separate Tools: E-Mail-Marketing, Landing
                   Page Builder, Checkout und Zahlungen, Mitgliederbereich,
                   Automatisierungen und Analytics. Alles ist nativ verbunden,
@@ -817,7 +817,7 @@ export default function ArticlePage() {
                   alle Funktionen &mdash; keine versteckten Upsells, die nach
                   der Anmeldung auftauchen.
                 </p>
-                <a href="#AFFILIATE_KARTRA" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://try.kartra.com/v4uqkepog1ti" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Kartra testen <ArrowRight size={14} />
                 </a>
               </div>

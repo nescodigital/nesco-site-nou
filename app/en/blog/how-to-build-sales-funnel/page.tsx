@@ -557,7 +557,7 @@ export default function ArticlePage() {
                 >
                   Recommended tool:{" "}
                   <a
-                    href="#AFFILIATE_MANYCHAT"
+                    href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -581,7 +581,7 @@ export default function ArticlePage() {
                   for fast nurturing.
                 </p>
                 <a
-                  href="#AFFILIATE_MANYCHAT"
+                  href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{
@@ -708,7 +708,7 @@ export default function ArticlePage() {
                 >
                   Recommended BOFU tool:{" "}
                   <a
-                    href="#AFFILIATE_KARTRA"
+                    href="https://try.kartra.com/v4uqkepog1ti"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -732,7 +732,7 @@ export default function ArticlePage() {
                   want a complete funnel without technical complexity.
                 </p>
                 <a
-                  href="#AFFILIATE_KARTRA"
+                  href="https://try.kartra.com/v4uqkepog1ti"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{

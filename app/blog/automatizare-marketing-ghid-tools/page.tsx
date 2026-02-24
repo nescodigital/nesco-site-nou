@@ -528,7 +528,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_BREVO" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Brevo</a>{" "}
+                  <a href="https://get.brevo.com/bvspkphc2pke" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Brevo</a>{" "}
                   este solutia ideala daca vrei email, SMS si WhatsApp dintr-un
                   singur loc. Planul gratuit include 300 email-uri/zi si CRM
                   de baza &mdash; suficient pentru a incepe. Automatizarile
@@ -546,7 +546,7 @@ export default function ArticlePage() {
                   Planul Business ($18/luna) adauga automatizari avansate,
                   A/B testing si landing pages.
                 </p>
-                <a href="#AFFILIATE_BREVO" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://get.brevo.com/bvspkphc2pke" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Incearca Brevo <ArrowRight size={14} />
                 </a>
               </div>
@@ -613,7 +613,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_MANYCHAT" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Manychat</a>{" "}
+                  <a href="https://manychat.partnerlinks.io/d3mbiuidqfda" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Manychat</a>{" "}
                   este liderul de piata pentru chatbot-uri pe Instagram,
                   Facebook Messenger si WhatsApp. Poti crea flow-uri automate
                   care raspund la comentarii, DM-uri si mesaje WhatsApp &mdash;
@@ -632,7 +632,7 @@ export default function ArticlePage() {
                   email-uri prin DM. Planul gratuit acopera pana la 1.000
                   contacte. Pro incepe de la $15/luna.
                 </p>
-                <a href="#AFFILIATE_MANYCHAT" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://manychat.partnerlinks.io/d3mbiuidqfda" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Incearca Manychat <ArrowRight size={14} />
                 </a>
               </div>
@@ -785,7 +785,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_KARTRA" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Kartra</a>{" "}
+                  <a href="https://try.kartra.com/v4uqkepog1ti" target="_blank" rel="noopener noreferrer sponsored" style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}>Kartra</a>{" "}
                   inlocuieste 5&ndash;6 tool-uri separate: email marketing,
                   landing page builder, checkout si plati, membership site,
                   automatizari si analytics. Totul este conectat nativ, fara
@@ -804,7 +804,7 @@ export default function ArticlePage() {
                   functiile &mdash; nu exista upsell-uri ascunse pe care sa le
                   descoperi dupa ce te-ai abonat.
                 </p>
-                <a href="#AFFILIATE_KARTRA" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://try.kartra.com/v4uqkepog1ti" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: "#ec4899", fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Incearca Kartra <ArrowRight size={14} />
                 </a>
               </div>

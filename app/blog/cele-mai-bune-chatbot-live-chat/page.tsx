@@ -440,7 +440,7 @@ export default function ArticlePage() {
                   }}
                 >
                   <a
-                    href="#AFFILIATE_TIDIO"
+                    href="https://affiliate.tidio.com/siu8l0ono3pd"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{
@@ -484,7 +484,7 @@ export default function ArticlePage() {
                   la &euro;29/luna. AI Lyro e un add-on separat.
                 </p>
                 <a
-                  href="#AFFILIATE_TIDIO"
+                  href="https://affiliate.tidio.com/siu8l0ono3pd"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{
@@ -531,7 +531,7 @@ export default function ArticlePage() {
                   }}
                 >
                   <a
-                    href="#AFFILIATE_MANYCHAT"
+                    href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{
@@ -575,7 +575,7 @@ export default function ArticlePage() {
                   nelimitate si functii avansate.
                 </p>
                 <a
-                  href="#AFFILIATE_MANYCHAT"
+                  href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{
@@ -712,7 +712,7 @@ export default function ArticlePage() {
                   }}
                 >
                   <a
-                    href="#AFFILIATE_WATI"
+                    href="https://affiliates.wati.io/lox4ol1xmt09"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{
@@ -756,7 +756,7 @@ export default function ArticlePage() {
                   API oficial.
                 </p>
                 <a
-                  href="#AFFILIATE_WATI"
+                  href="https://affiliates.wati.io/lox4ol1xmt09"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{

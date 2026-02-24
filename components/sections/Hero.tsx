@@ -107,7 +107,7 @@ export function Hero({ locale }: HeroProps) {
         {/* Arrow watermark always visible, zero JS cost */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/logo mare Nesco.svg"
+          src="/nesco-arrow.svg"
           alt=""
           aria-hidden="true"
           width={240}
@@ -368,7 +368,7 @@ export function Hero({ locale }: HeroProps) {
               {/* Arrow watermark, centered on globe, above it */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/logo mare Nesco.svg"
+                src="/nesco-arrow.svg"
                 alt=""
                 aria-hidden="true"
                 width={520}

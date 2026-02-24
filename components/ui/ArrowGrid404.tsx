@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-const CELL          = 72;    // px square cell
-const ARROW_SIZE    = 57;    // px arrow drawn inside cell
+const ARROW_SIZE    = 80;    // px arrow drawn inside cell
+const GAP           = 20;    // px spacing between arrows
+const CELL          = ARROW_SIZE + GAP; // 100px per cell
 const LAUNCH_INTERVAL = 1800; // ms between bursts
 const LAUNCH_DURATION = 900;  // ms rocket flight time
 const BURST_COUNT   = 4;     // arrows per burst
@@ -135,7 +136,7 @@ export function ArrowGrid404() {
       raf = requestAnimationFrame(draw);
     };
     img.onerror = () => { /* silent blank canvas is fine */ };
-    img.src     = "/logo mare Nesco.svg";
+    img.src     = "/nesco-arrow.svg";
 
     window.addEventListener("resize", resize);
 

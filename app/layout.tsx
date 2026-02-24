@@ -3,9 +3,10 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LazyArrowPattern } from "@/components/ui/LazyArrowPattern";
 import { CookieConsent } from "@/components/CookieConsent";
-import { NewsletterPopup } from "@/components/NewsletterPopup";
+// import { NewsletterPopup } from "@/components/NewsletterPopup"; // dezactivat — inlocuit de ExitPopup
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
+import ExitPopup from "@/components/ExitPopup";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -106,8 +107,8 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"
         />
-        <link rel="icon" href="/logo mare Nesco.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/logo mare Nesco.svg" />
+        <link rel="icon" href="/nesco-arrow.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/nesco-arrow.svg" />
         <meta name="theme-color" content="#080b0f" />
         {/* theMarketer */}
         <script dangerouslySetInnerHTML={{ __html: `
@@ -146,11 +147,12 @@ export default function RootLayout({
   src="https://www.facebook.com/tr?id=1163980934680660&ev=PageView&noscript=1"/>
 ` }} />
       </head>
-      <body className="antialiased text-white" style={{ backgroundColor: "#050505" }}>
+      <body className="antialiased text-white">
         <LazyArrowPattern />
         <CookieConsent />
-        <NewsletterPopup />
+        {/* <NewsletterPopup /> — dezactivat, inlocuit de ExitPopup */}
         {children}
+        <ExitPopup />
         <SpeedInsights />
         <Analytics />
       </body>

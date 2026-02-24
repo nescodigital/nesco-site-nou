@@ -349,7 +349,7 @@ export default function ArticlePage() {
                     marginBottom: "8px",
                   }}
                 >
-                  <a href="#AFFILIATE_RANKPROMPT" target="_blank" rel="noopener noreferrer sponsored" style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}>Rank Prompt</a>
+                  <a href="https://join.rankprompt.com/b0u0vz5h65st" target="_blank" rel="noopener noreferrer sponsored" style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}>Rank Prompt</a>
                 </h3>
                 <p
                   style={{
@@ -368,7 +368,7 @@ export default function ArticlePage() {
                   Titeln, Meta-Beschreibungen und der internen
                   Artikelstruktur.
                 </p>
-                <a href="#AFFILIATE_RANKPROMPT" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: CATEGORY_COLOR, fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
+                <a href="https://join.rankprompt.com/b0u0vz5h65st" target="_blank" rel="noopener noreferrer sponsored" style={{ display: "inline-flex", alignItems: "center", gap: "6px", marginTop: "12px", padding: "8px 16px", background: "rgba(236,72,153,0.10)", border: "1px solid rgba(236,72,153,0.18)", borderRadius: "8px", color: CATEGORY_COLOR, fontSize: "0.8125rem", fontWeight: 600, textDecoration: "none" }}>
                   Rank Prompt testen <ArrowRight size={14} />
                 </a>
               </div>

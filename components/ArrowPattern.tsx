@@ -1,30 +1,45 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-const COLS  = 8;
-const ROWS  = 8;
-const COUNT = COLS * ROWS; // 64
+const ARROW_SIZE = 80; // px per arrow
+const GAP = 20; // px spacing between arrows
+const CELL = ARROW_SIZE + GAP; // 100px per cell
 
 const LAUNCH_INTERVAL = 4000; // ms between launches
 const LAUNCH_DURATION = 900;  // must match CSS animation duration
 
 export function ArrowPattern() {
-  // Stable random base opacities, generated once on mount, never change
-  const baseOpacities = useRef(
-    Array.from({ length: COUNT }, () => 0.05 + Math.random() * 0.12)
-  );
+  const [grid, setGrid] = useState({ cols: 0, rows: 0 });
+
+  // Calculate grid dimensions based on viewport
+  useEffect(() => {
+    function calc() {
+      const cols = Math.ceil(window.innerWidth / CELL) + 1;
+      const rows = Math.ceil(window.innerHeight / CELL) + 1;
+      setGrid({ cols, rows });
+    }
+    calc();
+    window.addEventListener("resize", calc);
+    return () => window.removeEventListener("resize", calc);
+  }, []);
+
+  const count = grid.cols * grid.rows;
+
+  // Stable random base opacities, regenerated when grid changes
+  const baseOpacities = useRef<number[]>([]);
+  if (baseOpacities.current.length !== count) {
+    baseOpacities.current = Array.from({ length: count }, () => 0.05 + Math.random() * 0.12);
+  }
 
   // Set of arrow indices currently mid-launch
   const [launching, setLaunching] = useState<Set<number>>(new Set());
 
   useEffect(() => {
+    if (count === 0) return;
+
     const launch = () => {
-      const idx = Math.floor(Math.random() * COUNT);
-
-      // Add to launching set
+      const idx = Math.floor(Math.random() * count);
       setLaunching(prev => new Set(prev).add(idx));
-
-      // Remove after animation completes
       setTimeout(() => {
         setLaunching(prev => {
           const next = new Set(prev);
@@ -34,16 +49,16 @@ export function ArrowPattern() {
       }, LAUNCH_DURATION);
     };
 
-    // First launch after short delay
     const first = setTimeout(launch, 800);
-    // Then every LAUNCH_INTERVAL, multiple can overlap
     const interval = setInterval(launch, LAUNCH_INTERVAL);
 
     return () => {
       clearTimeout(first);
       clearInterval(interval);
     };
-  }, []);
+  }, [count]);
+
+  if (count === 0) return null;
 
   return (
     <div
@@ -53,13 +68,16 @@ export function ArrowPattern() {
         inset: 0,
         zIndex: -1,
         display: "grid",
-        gridTemplateColumns: `repeat(${COLS}, 1fr)`,
-        gridTemplateRows: `repeat(${ROWS}, 1fr)`,
+        gridTemplateColumns: `repeat(${grid.cols}, ${ARROW_SIZE}px)`,
+        gridTemplateRows: `repeat(${grid.rows}, ${ARROW_SIZE}px)`,
+        gap: `${GAP}px`,
         pointerEvents: "none",
         overflow: "hidden",
+        justifyContent: "center",
+        alignContent: "center",
       }}
     >
-      {Array.from({ length: COUNT }).map((_, i) => {
+      {Array.from({ length: count }).map((_, i) => {
         const isLaunching = launching.has(i);
         return (
           <div
@@ -68,19 +86,21 @@ export function ArrowPattern() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              width: ARROW_SIZE,
+              height: ARROW_SIZE,
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo mare Nesco.svg"
+              src="/nesco-arrow.svg"
               alt=""
-              width={80}
-              height={80}
+              width={ARROW_SIZE}
+              height={ARROW_SIZE}
               className={isLaunching ? "launching" : undefined}
               style={{
                 "--base-opacity": baseOpacities.current[i],
-                width: 80,
-                height: 80,
+                width: ARROW_SIZE,
+                height: ARROW_SIZE,
                 display: "block",
                 filter: "grayscale(1) invert(1) brightness(0.5)",
                 opacity: isLaunching ? undefined : baseOpacities.current[i],

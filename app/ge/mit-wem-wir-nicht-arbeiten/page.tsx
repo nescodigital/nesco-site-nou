@@ -395,7 +395,6 @@ export default function MitWemWirNichtArbeitenPage() {
                     fontSize: "clamp(1.125rem, 2.5vw, 1.5rem)",
                     color: "rgba(255,255,255,0.7)",
                     lineHeight: 1.6,
-                    fontStyle: "italic",
                     fontWeight: 500,
                     marginBottom: "20px",
                   }}

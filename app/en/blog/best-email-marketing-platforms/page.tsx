@@ -394,7 +394,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_BREVO"
+                      href="https://get.brevo.com/bvspkphc2pke"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: "#ec4899", textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -423,7 +423,7 @@ export default function ArticlePage() {
                     separately for SMS and email.
                   </p>
                   <a
-                    href="#AFFILIATE_BREVO"
+                    href="https://get.brevo.com/bvspkphc2pke"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{

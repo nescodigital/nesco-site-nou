@@ -19,10 +19,10 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #050505;
 }
 
 body {
-  background-color: #050505;
   color: #ffffff;
   font-family: "Inter", sans-serif;
   overflow-x: clip;

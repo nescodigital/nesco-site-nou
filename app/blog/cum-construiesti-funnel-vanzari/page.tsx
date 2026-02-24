@@ -560,7 +560,7 @@ export default function ArticlePage() {
                 >
                   Tool recomandat:{" "}
                   <a
-                    href="#AFFILIATE_MANYCHAT"
+                    href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -584,7 +584,7 @@ export default function ArticlePage() {
                   ceea ce il face ideal pentru nurture rapid.
                 </p>
                 <a
-                  href="#AFFILIATE_MANYCHAT"
+                  href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{
@@ -711,7 +711,7 @@ export default function ArticlePage() {
                 >
                   Tool recomandat pentru BOFU:{" "}
                   <a
-                    href="#AFFILIATE_KARTRA"
+                    href="https://try.kartra.com/v4uqkepog1ti"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -736,7 +736,7 @@ export default function ArticlePage() {
                   complexitate tehnica.
                 </p>
                 <a
-                  href="#AFFILIATE_KARTRA"
+                  href="https://try.kartra.com/v4uqkepog1ti"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   style={{

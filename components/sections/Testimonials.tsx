@@ -61,7 +61,7 @@ export function Testimonials({ locale }: TestimonialsProps) {
   const tr = t(locale);
 
   return (
-    <section className="section relative" style={{ backgroundColor: "#050505" }}>
+    <section className="section relative">
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{ background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent)" }}

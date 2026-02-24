@@ -109,7 +109,7 @@ export default function GrowthSprintEcommercePage() {
             }}
           >
             <Image
-              src="/logo mare Nesco.avif"
+              src="/nesco-arrow.svg"
               alt=""
               width={480}
               height={480}

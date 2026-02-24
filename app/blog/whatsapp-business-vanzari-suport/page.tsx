@@ -687,7 +687,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_WATI"
+                      href="https://affiliates.wati.io/lox4ol1xmt09"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -715,7 +715,7 @@ export default function ArticlePage() {
                     rapida de implementat.
                   </p>
                   <a
-                    href="#AFFILIATE_WATI"
+                    href="https://affiliates.wati.io/lox4ol1xmt09"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{
@@ -754,7 +754,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_MANYCHAT"
+                      href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{ color: CATEGORY_COLOR, textDecoration: "underline", textUnderlineOffset: "3px" }}
@@ -782,7 +782,7 @@ export default function ArticlePage() {
                     Facebook intr-o strategie unificata.
                   </p>
                   <a
-                    href="#AFFILIATE_MANYCHAT"
+                    href="https://manychat.partnerlinks.io/d3mbiuidqfda"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{

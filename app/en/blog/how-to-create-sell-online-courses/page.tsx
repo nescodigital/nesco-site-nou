@@ -538,7 +538,7 @@ export default function ArticlePage() {
                     }}
                   >
                     <a
-                      href="#AFFILIATE_LEARNWORLDS"
+                      href="https://get.learnworlds.com/c6ygklqwgfl2"
                       target="_blank"
                       rel="noopener noreferrer sponsored"
                       style={{
@@ -570,7 +570,7 @@ export default function ArticlePage() {
                     without needing a developer.
                   </p>
                   <a
-                    href="#AFFILIATE_LEARNWORLDS"
+                    href="https://get.learnworlds.com/c6ygklqwgfl2"
                     target="_blank"
                     rel="noopener noreferrer sponsored"
                     style={{

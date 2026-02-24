@@ -300,7 +300,6 @@ export default function CuCineNuLucramPage() {
               <p
                 style={{
                   fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
-                  fontStyle: "italic",
                   color: "rgba(255,255,255,0.85)",
                   lineHeight: 1.6,
                   maxWidth: "720px",

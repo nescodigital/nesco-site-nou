@@ -15,7 +15,7 @@ export function CtaBanner({ locale }: CtaBannerProps) {
   return (
     <section
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#050505", padding: "160px 0", display: "flex", flexDirection: "column", alignItems: "center" }}
+      style={{ padding: "160px 0", display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       {/* Top separator */}
       <div
