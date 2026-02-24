@@ -16,8 +16,6 @@ const PARTNERS = [
   { src: "https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/12/T-footer.png?w=1080&ssl=1", alt: "TikTok Partner" },
   { src: "https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/12/S-footer.png?w=1080&ssl=1", alt: "Shopify Partner" },
   { src: "https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/12/W-footer.png?w=1080&ssl=1", alt: "WooCommerce Partner" },
-  { src: "https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/12/K-footer.png?w=1080&ssl=1", alt: "Klaviyo Partner" },
-  { src: "https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/12/Y-footer.png?w=1080&ssl=1", alt: "Yotpo Partner" },
 ];
 
 const AWARDS = [
