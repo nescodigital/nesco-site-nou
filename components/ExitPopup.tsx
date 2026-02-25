@@ -42,6 +42,8 @@ export default function ExitPopup() {
   }, []);
 
   useEffect(() => {
+    if (window.location.pathname.startsWith('/admin')) return;
+    if (sessionStorage.getItem('admin_auth') === 'true') return;
     const timer = setTimeout(openPopup, DELAY_MS);
     return () => clearTimeout(timer);
   }, [openPopup]);

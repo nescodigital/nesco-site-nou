@@ -38,6 +38,8 @@ export function NewsletterPopup() {
   const [profileStatus, setProfileStatus] = useState<"idle" | "loading" | "done" | "error">("idle");
 
   useEffect(() => {
+    if (window.location.pathname.startsWith("/admin")) return;
+    if (sessionStorage.getItem("admin_auth") === "true") return;
     const isRomanianPage = !window.location.pathname.startsWith("/en") && !window.location.pathname.startsWith("/ge");
     if (!isRomanianPage) return;
     if (sessionStorage.getItem(SESSION_KEY)) return;
