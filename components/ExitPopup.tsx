@@ -60,10 +60,18 @@ export default function ExitPopup() {
     if (!email || submitting) return;
     setSubmitting(true);
     try {
+      const params = new URLSearchParams(window.location.search);
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          utm_source: params.get('utm_source') || undefined,
+          utm_medium: params.get('utm_medium') || undefined,
+          utm_campaign: params.get('utm_campaign') || undefined,
+          referrer: document.referrer || undefined,
+          landingPage: window.location.pathname,
+        }),
       });
       if (!res.ok) throw new Error('failed');
       window.location.href = '/multumim?type=newsletter';

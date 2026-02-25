@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await request.json();
-    const { first_name, firstName, last_name, lastName, company, email, phone, website, services, budget, locale, source, qualification, qualifications, contactPrefs, message, selectedPlan } = body;
+    const { first_name, firstName, last_name, lastName, company, email, phone, website, services, budget, locale, source, qualification, qualifications, contactPrefs, message, selectedPlan, utm_source, utm_medium, utm_campaign, referrer, landingPage, industry } = body;
 
     const resolvedFirst = first_name || firstName || "";
     const resolvedLast = last_name || lastName || "";
@@ -22,6 +22,12 @@ export async function POST(request: Request) {
       services: services || selectedPlan || undefined,
       budget: budget || undefined,
       message: message || undefined,
+      utm_source: utm_source || undefined,
+      utm_medium: utm_medium || undefined,
+      utm_campaign: utm_campaign || undefined,
+      referrer: referrer || undefined,
+      landingPage: landingPage || undefined,
+      industry: industry || undefined,
     }).catch(() => {});
     const companyDisplay = company || "Necunoscută";
     const subject = source?.startsWith("growth-sprint-")

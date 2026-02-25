@@ -135,6 +135,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
       const firstName = nameParts[0] || "";
       const lastName = nameParts.slice(1).join(" ");
 
+      const params = new URLSearchParams(window.location.search);
       const payload = {
         firstName,
         lastName,
@@ -149,6 +150,11 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
           problem: answers.problem,
           timeline: answers.timeline,
         },
+        utm_source: params.get("utm_source") || undefined,
+        utm_medium: params.get("utm_medium") || undefined,
+        utm_campaign: params.get("utm_campaign") || undefined,
+        referrer: document.referrer || undefined,
+        landingPage: window.location.pathname,
       };
       const res = await fetch("/api/contact", {
         method: "POST",

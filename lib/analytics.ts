@@ -32,6 +32,15 @@ export interface StoredLead {
   budget?: string;
   message?: string;
   date: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  referrer?: string;
+  landingPage?: string;
+  industry?: string;
+  status?: "nou" | "contactat" | "convertit";
+  notes?: string;
+  dealValue?: string;
 }
 
 /** Store a new lead in Redis */
@@ -47,7 +56,7 @@ export async function storeLead(lead: Omit<StoredLead, "id" | "date">): Promise<
 
   const pipeline = r.pipeline();
   pipeline.lpush("nd:leads", JSON.stringify(entry));
-  pipeline.ltrim("nd:leads", 0, 199);
+  pipeline.ltrim("nd:leads", 0, 499);
   pipeline.incr(`nd:leads:count:${dateKey()}`);
   await pipeline.exec();
   return true;

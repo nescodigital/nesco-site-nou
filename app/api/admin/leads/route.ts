@@ -5,7 +5,7 @@ export async function GET(req: NextRequest) {
   const limit = Number(req.nextUrl.searchParams.get("limit") || "20");
 
   const [leads, stats] = await Promise.all([
-    getRecentLeads(Math.min(limit, 50)),
+    getRecentLeads(Math.min(limit, 500)),
     getLeadsStats(),
   ]);
 

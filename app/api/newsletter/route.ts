@@ -5,7 +5,7 @@ const REST_KEY   = 'BPAWOA46';
 const CUSTOMER_ID = '686292ccf87a2425120f1ac5';
 
 export async function POST(request: Request) {
-  const { email } = await request.json();
+  const { email, utm_source, utm_medium, utm_campaign, referrer, landingPage } = await request.json();
 
   // Store newsletter signup in Redis (fire-and-forget)
   storeLead({
@@ -13,6 +13,11 @@ export async function POST(request: Request) {
     name: '',
     email: email || '',
     source: 'newsletter-popup',
+    utm_source: utm_source || undefined,
+    utm_medium: utm_medium || undefined,
+    utm_campaign: utm_campaign || undefined,
+    referrer: referrer || undefined,
+    landingPage: landingPage || undefined,
   }).catch(() => {});
 
   try {

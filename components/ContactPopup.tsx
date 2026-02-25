@@ -147,6 +147,7 @@ export function ContactPopup({ source, locale = "ro", onClose }: ContactPopupPro
   const [step, setStep] = useState<1 | 2>(1);
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [budget, setBudget] = useState("");
+  const [industry, setIndustry] = useState("");
   const [fields, setFields] = useState({
     firstName: "", lastName: "", company: "", email: "", phone: "", website: "",
   });
@@ -195,6 +196,7 @@ export function ContactPopup({ source, locale = "ro", onClose }: ContactPopupPro
     setSubmitError(null);
     setSubmitting(true);
     try {
+      const params = new URLSearchParams(window.location.search);
       const payload = {
         firstName: fields.firstName.trim(),
         lastName: fields.lastName.trim(),
@@ -204,8 +206,14 @@ export function ContactPopup({ source, locale = "ro", onClose }: ContactPopupPro
         website: fields.website.trim(),
         services: selectedServices,
         budget,
+        industry: industry || undefined,
         source,
         locale,
+        utm_source: params.get("utm_source") || undefined,
+        utm_medium: params.get("utm_medium") || undefined,
+        utm_campaign: params.get("utm_campaign") || undefined,
+        referrer: document.referrer || undefined,
+        landingPage: window.location.pathname,
       };
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -339,7 +347,7 @@ export function ContactPopup({ source, locale = "ro", onClose }: ContactPopupPro
                     appearance: "none",
                     cursor: "pointer",
                     color: budget ? "#ffffff" : "rgba(255,255,255,0.35)",
-                    marginBottom: "28px",
+                    marginBottom: "16px",
                   }}
                 >
                   <option value="" disabled style={{ background: "#111", color: "rgba(255,255,255,0.35)" }}>
@@ -347,6 +355,29 @@ export function ContactPopup({ source, locale = "ro", onClose }: ContactPopupPro
                   </option>
                   {t.budgets.map((b) => (
                     <option key={b} value={b} style={{ background: "#111", color: "#fff" }}>{b}</option>
+                  ))}
+                </select>
+
+                {/* Industry dropdown */}
+                <p style={{ fontSize: "0.6875rem", fontWeight: 700, color: "rgba(255,255,255,0.35)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "10px" }}>
+                  {locale === "en" ? "Industry" : locale === "de" ? "Branche" : "Sector de activitate"}
+                </p>
+                <select
+                  value={industry}
+                  onChange={(e) => setIndustry(e.target.value)}
+                  style={{
+                    ...inputStyle,
+                    appearance: "none",
+                    cursor: "pointer",
+                    color: industry ? "#ffffff" : "rgba(255,255,255,0.35)",
+                    marginBottom: "28px",
+                  }}
+                >
+                  <option value="" style={{ background: "#111", color: "rgba(255,255,255,0.35)" }}>
+                    {locale === "en" ? "Select industry" : locale === "de" ? "Branche auswählen" : "Selectează sectorul"}
+                  </option>
+                  {["E-commerce", "SaaS / Tech", "Servicii profesionale", "HoReCa", "Retail", "Imobiliare", "Sănătate", "Educație", "Producție", "Auto", "Finanțe", "Turism", "Beauty / Wellness", "Altele"].map((ind) => (
+                    <option key={ind} value={ind} style={{ background: "#111", color: "#fff" }}>{ind}</option>
                   ))}
                 </select>
 

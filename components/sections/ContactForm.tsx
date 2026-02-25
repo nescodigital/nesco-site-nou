@@ -83,7 +83,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
   const [fields, setFields] = useState({
     first_name: "", last_name: "", company: "",
     email: "", phone: "", website: "",
-    services: [] as string[], budget: "",
+    services: [] as string[], budget: "", industry: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
@@ -171,11 +171,17 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
 
     setSubmitting(true);
     try {
+      const utmParams = new URLSearchParams(window.location.search);
       const payload = {
         ...fields,
         website: normalizeUrl(fields.website),
         locale,
         source,
+        utm_source: utmParams.get("utm_source") || undefined,
+        utm_medium: utmParams.get("utm_medium") || undefined,
+        utm_campaign: utmParams.get("utm_campaign") || undefined,
+        referrer: document.referrer || undefined,
+        landingPage: window.location.pathname,
       };
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -326,6 +332,20 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
           >
             <option value="">{l.budgetDefault}</option>
             {l.budgetList.map((b) => <option key={b} value={b}>{b}</option>)}
+          </select>
+        </div>
+
+        <div>
+          <label style={labelStyle}>{locale === "en" ? "Industry" : locale === "de" ? "Branche" : "Sector de activitate"}</label>
+          <select
+            name="industry" value={fields.industry}
+            onChange={handleChange} onFocus={onFocus} onBlur={onBlur}
+            style={{ ...inputStyle, color: fields.industry ? "#ffffff" : "rgba(255,255,255,0.45)", appearance: "none", borderColor: fieldBorder("industry") }}
+          >
+            <option value="">{locale === "en" ? "Select industry" : locale === "de" ? "Branche auswählen" : "Selectează sectorul"}</option>
+            {["E-commerce", "SaaS / Tech", "Servicii profesionale", "HoReCa", "Retail", "Imobiliare", "Sănătate", "Educație", "Producție", "Auto", "Finanțe", "Turism", "Beauty / Wellness", "Altele"].map((ind) => (
+              <option key={ind} value={ind}>{ind}</option>
+            ))}
           </select>
         </div>
 
