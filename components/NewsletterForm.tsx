@@ -15,10 +15,24 @@ const inputStyle: React.CSSProperties = {
   width: "100%",
 };
 
+const BUSINESS_TYPES = [
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "educatie-online", label: "Educație Online" },
+  { value: "b2b-servicii", label: "B2B / Servicii" },
+  { value: "sanatate-wellness", label: "Sănătate & Wellness" },
+  { value: "imobiliare", label: "Imobiliare" },
+  { value: "altul", label: "Altul" },
+];
+
 export function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [step, setStep] = useState<1 | 2>(1);
+  const [businessType, setBusinessType] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [profileStatus, setProfileStatus] = useState<"idle" | "loading" | "saved">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,11 +53,112 @@ export function NewsletterForm() {
         }),
       });
       if (!res.ok) throw new Error("failed");
-      window.location.href = "/multumim?type=newsletter";
+      setStep(2);
     } catch {
       setStatus("error");
     }
   };
+
+  const handleProfile = async () => {
+    setProfileStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, firstName, phone, businessType }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setProfileStatus("saved");
+      setTimeout(() => {
+        window.location.href = "/multumim?type=newsletter";
+      }, 1000);
+    } catch {
+      setProfileStatus("idle");
+    }
+  };
+
+  if (step === 2) {
+    return (
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        {profileStatus === "saved" ? (
+          <p style={{ fontSize: "0.875rem", color: "#56db84", margin: 0 }}>
+            ✓ Profil completat! Ne vedem în inbox.
+          </p>
+        ) : (
+          <>
+            <p style={{ fontSize: "0.875rem", color: "#56db84", margin: 0 }}>
+              ✓ Abonat! Completează profilul (opțional):
+            </p>
+            <select
+              value={businessType}
+              onChange={(e) => setBusinessType(e.target.value)}
+              style={{ ...inputStyle, flex: "none", cursor: "pointer", appearance: "none", WebkitAppearance: "none" }}
+            >
+              <option value="" disabled>Domeniu de activitate</option>
+              {BUSINESS_TYPES.map((bt) => (
+                <option key={bt.value} value={bt.value}>{bt.label}</option>
+              ))}
+            </select>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="Prenume"
+              style={{ ...inputStyle, flex: "none" }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+            />
+            <input
+              type="tel"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              placeholder="Telefon"
+              style={{ ...inputStyle, flex: "none" }}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+            />
+            <div style={{ display: "flex", gap: "8px" }}>
+              <button
+                onClick={handleProfile}
+                disabled={profileStatus === "loading"}
+                style={{
+                  flex: 1,
+                  padding: "10px 18px",
+                  borderRadius: "10px",
+                  background: "#56db84",
+                  color: "#050505",
+                  fontSize: "0.8125rem",
+                  fontWeight: 700,
+                  border: "none",
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                {profileStatus === "loading" ? "Se salvează..." : "Salvează"}
+              </button>
+              <button
+                onClick={() => { window.location.href = "/multumim?type=newsletter"; }}
+                style={{
+                  flex: 1,
+                  padding: "10px 18px",
+                  borderRadius: "10px",
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  color: "rgba(255,255,255,0.5)",
+                  fontSize: "0.8125rem",
+                  fontWeight: 600,
+                  cursor: "pointer",
+                  transition: "all 0.2s ease",
+                }}
+              >
+                Sari peste
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>

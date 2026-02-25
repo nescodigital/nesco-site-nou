@@ -17,11 +17,25 @@ const inputStyle: React.CSSProperties = {
   transition: "border-color 0.2s ease",
 };
 
+const BUSINESS_TYPES = [
+  { value: "ecommerce", label: "E-commerce" },
+  { value: "educatie-online", label: "Educație Online" },
+  { value: "b2b-servicii", label: "B2B / Servicii" },
+  { value: "sanatate-wellness", label: "Sănătate & Wellness" },
+  { value: "imobiliare", label: "Imobiliare" },
+  { value: "altul", label: "Altul" },
+];
+
 export function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [step, setStep] = useState<1 | 2>(1);
+  const [businessType, setBusinessType] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [profileStatus, setProfileStatus] = useState<"idle" | "loading" | "saved">("idle");
 
   useEffect(() => {
     if (window.location.pathname.startsWith("/admin")) return;
@@ -57,9 +71,27 @@ export function NewsletterPopup() {
         }),
       });
       if (!res.ok) throw new Error("failed");
-      window.location.href = "/multumim?type=newsletter";
+      setStep(2);
     } catch {
       setStatus("error");
+    }
+  };
+
+  const handleProfile = async () => {
+    setProfileStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter-profile", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, firstName, phone, businessType }),
+      });
+      if (!res.ok) throw new Error("failed");
+      setProfileStatus("saved");
+      setTimeout(() => {
+        window.location.href = "/multumim?type=newsletter";
+      }, 1000);
+    } catch {
+      setProfileStatus("idle");
     }
   };
 
@@ -142,44 +174,115 @@ export function NewsletterPopup() {
           Tips de marketing, studii de caz și strategii direct în inbox-ul tău. Fără spam.
         </p>
 
-        <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="adresa@email.com"
-            style={inputStyle}
-            onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
-            onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
-          />
-          <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", cursor: "pointer", userSelect: "none" }}>
+        {step === 1 ? (
+          <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <input
-              type="checkbox"
+              type="email"
               required
-              checked={agreed}
-              onChange={(e) => setAgreed(e.target.checked)}
-              style={{ marginTop: "3px", flexShrink: 0, accentColor: "#56db84", cursor: "pointer" }}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="adresa@email.com"
+              style={inputStyle}
+              onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+              onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
             />
-            <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", lineHeight: 1.5 }}>
-              Sunt de acord cu{" "}
-              <Link href="/politica-de-confidentialitate" onClick={dismiss} style={{ color: "rgba(86,219,132,0.6)", textDecoration: "underline" }}>
-                Politica de Confidențialitate
-              </Link>
-            </span>
-          </label>
-          {status === "error" && (
-            <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>A apărut o eroare. Încearcă din nou.</p>
-          )}
-          <button
-            type="submit"
-            disabled={status === "loading" || !agreed}
-            className="btn-primary"
-            style={{ marginTop: "4px", width: "100%", justifyContent: "center", opacity: agreed ? 1 : 0.45, cursor: agreed ? "pointer" : "not-allowed" }}
-          >
-            {status === "loading" ? "Se procesează..." : "Abonează-te"}
-          </button>
-        </form>
+            <label style={{ display: "flex", alignItems: "flex-start", gap: "8px", cursor: "pointer", userSelect: "none" }}>
+              <input
+                type="checkbox"
+                required
+                checked={agreed}
+                onChange={(e) => setAgreed(e.target.checked)}
+                style={{ marginTop: "3px", flexShrink: 0, accentColor: "#56db84", cursor: "pointer" }}
+              />
+              <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", lineHeight: 1.5 }}>
+                Sunt de acord cu{" "}
+                <Link href="/politica-de-confidentialitate" onClick={dismiss} style={{ color: "rgba(86,219,132,0.6)", textDecoration: "underline" }}>
+                  Politica de Confidențialitate
+                </Link>
+              </span>
+            </label>
+            {status === "error" && (
+              <p style={{ fontSize: "0.75rem", color: "rgba(255,100,100,0.8)", margin: 0 }}>A apărut o eroare. Încearcă din nou.</p>
+            )}
+            <button
+              type="submit"
+              disabled={status === "loading" || !agreed}
+              className="btn-primary"
+              style={{ marginTop: "4px", width: "100%", justifyContent: "center", opacity: agreed ? 1 : 0.45, cursor: agreed ? "pointer" : "not-allowed" }}
+            >
+              {status === "loading" ? "Se procesează..." : "Abonează-te"}
+            </button>
+          </form>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            {profileStatus === "saved" ? (
+              <p style={{ fontSize: "0.9375rem", color: "#56db84", margin: 0 }}>
+                ✓ Profil completat! Ne vedem în inbox.
+              </p>
+            ) : (
+              <>
+                <p style={{ fontSize: "0.9375rem", color: "#56db84", margin: 0, marginBottom: "4px" }}>
+                  ✓ Email confirmat! Completează profilul tău (opțional):
+                </p>
+                <select
+                  value={businessType}
+                  onChange={(e) => setBusinessType(e.target.value)}
+                  style={{ ...inputStyle, cursor: "pointer", appearance: "none", WebkitAppearance: "none" }}
+                >
+                  <option value="" disabled>Domeniu de activitate</option>
+                  {BUSINESS_TYPES.map((bt) => (
+                    <option key={bt.value} value={bt.value}>{bt.label}</option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Prenume"
+                  style={inputStyle}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                />
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Telefon"
+                  style={inputStyle}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "rgba(86,219,132,0.35)"; }}
+                  onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)"; }}
+                />
+                <div style={{ display: "flex", gap: "8px" }}>
+                  <button
+                    onClick={handleProfile}
+                    disabled={profileStatus === "loading"}
+                    className="btn-primary"
+                    style={{ flex: 1, justifyContent: "center" }}
+                  >
+                    {profileStatus === "loading" ? "Se salvează..." : "Salvează profilul"}
+                  </button>
+                  <button
+                    onClick={() => { window.location.href = "/multumim?type=newsletter"; }}
+                    style={{
+                      flex: 1,
+                      padding: "12px 20px",
+                      borderRadius: "10px",
+                      background: "rgba(255,255,255,0.06)",
+                      border: "1px solid rgba(255,255,255,0.08)",
+                      color: "rgba(255,255,255,0.5)",
+                      fontSize: "0.875rem",
+                      fontWeight: 600,
+                      cursor: "pointer",
+                      transition: "all 0.2s ease",
+                    }}
+                  >
+                    Sari peste
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+        )}
       </div>
 
       <style>{`
