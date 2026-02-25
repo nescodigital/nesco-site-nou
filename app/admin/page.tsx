@@ -1,6 +1,24 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+interface Lead {
+  id: string;
+  type: 'contact' | 'newsletter' | 'growth-sprint';
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  source?: string;
+  services?: string;
+  date: string;
+}
+
+interface LeadsData {
+  leads: Lead[];
+  stats: { total: number; today: number; thisWeek: number };
+}
 
 const cards = [
   {
@@ -69,8 +87,33 @@ const cards = [
   },
 ];
 
+const TYPE_LABELS: Record<string, { label: string; color: string }> = {
+  contact: { label: 'Contact', color: '#60a5fa' },
+  newsletter: { label: 'Newsletter', color: '#a78bfa' },
+  'growth-sprint': { label: 'Growth Sprint', color: '#56db84' },
+};
+
+function timeAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 1) return 'acum';
+  if (mins < 60) return `${mins}m`;
+  const hours = Math.floor(mins / 60);
+  if (hours < 24) return `${hours}h`;
+  const days = Math.floor(hours / 24);
+  return `${days}d`;
+}
+
 export default function AdminDashboard() {
   const router = useRouter();
+  const [leadsData, setLeadsData] = useState<LeadsData | null>(null);
+
+  useEffect(() => {
+    fetch('/api/admin/leads?limit=10')
+      .then((r) => r.ok ? r.json() : null)
+      .then((d) => setLeadsData(d))
+      .catch(() => {});
+  }, []);
 
   const handleLogout = () => {
     sessionStorage.removeItem('admin_auth');
@@ -270,6 +313,161 @@ export default function AdminDashboard() {
             </div>
           </div>
         </div>
+
+        {/* RECENT LEADS */}
+        {leadsData && (leadsData.stats.total > 0 || leadsData.leads.length > 0) && (
+          <div style={{
+            background: '#0a0a0a',
+            border: '1px solid #1a1a1a',
+            borderRadius: '12px',
+            padding: '28px',
+            marginBottom: '24px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}>
+            <div style={{
+              position: 'absolute',
+              top: 0, left: 0, right: 0,
+              height: '2px',
+              background: 'linear-gradient(90deg, #60a5fa, #a78bfa)',
+            }} />
+
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              marginBottom: '20px',
+            }}>
+              <div style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: '11px',
+                color: '#5a6872',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase' as const,
+              }}>
+                Formulare primite
+              </div>
+              <div style={{ display: 'flex', gap: '12px' }}>
+                <div style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '11px',
+                  color: '#60a5fa',
+                }}>
+                  Azi: <span style={{ fontWeight: 500 }}>{leadsData.stats.today}</span>
+                </div>
+                <div style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '11px',
+                  color: '#a78bfa',
+                }}>
+                  Saptamana: <span style={{ fontWeight: 500 }}>{leadsData.stats.thisWeek}</span>
+                </div>
+                <div style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '11px',
+                  color: '#5a6872',
+                }}>
+                  Total: <span style={{ fontWeight: 500 }}>{leadsData.stats.total}</span>
+                </div>
+              </div>
+            </div>
+
+            {leadsData.leads.length === 0 ? (
+              <div style={{ fontSize: '13px', color: '#3a3a3a', padding: '12px 0' }}>
+                Inca nu sunt lead-uri inregistrate. Vor aparea dupa prima trimitere de formular.
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+                {leadsData.leads.map((lead, i) => {
+                  const typeInfo = TYPE_LABELS[lead.type] || TYPE_LABELS.contact;
+                  return (
+                    <div key={lead.id} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px',
+                      padding: '12px 0',
+                      borderBottom: i < leadsData.leads.length - 1 ? '1px solid #111' : 'none',
+                    }}>
+                      {/* Type badge */}
+                      <div style={{
+                        fontFamily: "'DM Mono', monospace",
+                        fontSize: '9px',
+                        color: typeInfo.color,
+                        background: `${typeInfo.color}15`,
+                        border: `1px solid ${typeInfo.color}30`,
+                        padding: '3px 8px',
+                        borderRadius: '4px',
+                        letterSpacing: '0.06em',
+                        textTransform: 'uppercase' as const,
+                        flexShrink: 0,
+                        minWidth: '80px',
+                        textAlign: 'center' as const,
+                      }}>
+                        {typeInfo.label}
+                      </div>
+
+                      {/* Name + Email */}
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{
+                          fontSize: '13px',
+                          color: '#dce4e8',
+                          fontWeight: 500,
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          whiteSpace: 'nowrap',
+                        }}>
+                          {lead.name || lead.email}
+                        </div>
+                        {lead.name && (
+                          <div style={{
+                            fontSize: '11px',
+                            color: '#5a6872',
+                            fontFamily: "'DM Mono', monospace",
+                          }}>
+                            {lead.email}
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Company */}
+                      {lead.company && (
+                        <div style={{
+                          fontSize: '11px',
+                          color: '#5a6872',
+                          flexShrink: 0,
+                        }}>
+                          {lead.company}
+                        </div>
+                      )}
+
+                      {/* Source */}
+                      {lead.source && (
+                        <div style={{
+                          fontFamily: "'DM Mono', monospace",
+                          fontSize: '10px',
+                          color: '#3a3a3a',
+                          flexShrink: 0,
+                        }}>
+                          {lead.source}
+                        </div>
+                      )}
+
+                      {/* Time ago */}
+                      <div style={{
+                        fontFamily: "'DM Mono', monospace",
+                        fontSize: '10px',
+                        color: '#3a3a3a',
+                        flexShrink: 0,
+                      }}>
+                        {timeAgo(lead.date)}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* CARDS GRID */}
         <div style={{

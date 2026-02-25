@@ -1,10 +1,19 @@
 import { NextResponse } from 'next/server';
+import { storeLead } from '@/lib/analytics';
 
 const REST_KEY   = 'BPAWOA46';
 const CUSTOMER_ID = '686292ccf87a2425120f1ac5';
 
 export async function POST(request: Request) {
   const { email } = await request.json();
+
+  // Store newsletter signup in Redis (fire-and-forget)
+  storeLead({
+    type: 'newsletter',
+    name: '',
+    email: email || '',
+    source: 'newsletter-popup',
+  }).catch(() => {});
 
   try {
     const params = new URLSearchParams({

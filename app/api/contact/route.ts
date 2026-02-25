@@ -1,5 +1,6 @@
 import { Resend } from "resend";
 import { NextResponse } from "next/server";
+import { storeLead } from "@/lib/analytics";
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
@@ -9,6 +10,19 @@ export async function POST(request: Request) {
 
     const resolvedFirst = first_name || firstName || "";
     const resolvedLast = last_name || lastName || "";
+
+    // Store lead in Redis (fire-and-forget, don't block email sending)
+    storeLead({
+      type: source?.startsWith("growth-sprint-") ? "growth-sprint" : "contact",
+      name: `${resolvedFirst} ${resolvedLast}`.trim() || "—",
+      email: email || "",
+      company: company || undefined,
+      phone: phone || undefined,
+      source: source || locale || undefined,
+      services: services || selectedPlan || undefined,
+      budget: budget || undefined,
+      message: message || undefined,
+    }).catch(() => {});
     const companyDisplay = company || "Necunoscută";
     const subject = source?.startsWith("growth-sprint-")
       ? `Growth Sprint Discovery Call - ${resolvedFirst} ${resolvedLast}`.trim()
