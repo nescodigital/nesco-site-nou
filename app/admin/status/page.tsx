@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import Link from 'next/link';
 
 export default function AdminStatusPage() {
   const [activePage, setActivePage] = useState('home');
@@ -581,6 +582,19 @@ export default function AdminStatusPage() {
       `}} />
 
       <div className="canvas">
+
+        {/* BACK TO DASHBOARD */}
+        <Link href="/admin" style={{
+          fontFamily: "'DM Mono', monospace",
+          fontSize: '12px', color: '#5a6872',
+          textDecoration: 'none',
+          display: 'inline-flex', alignItems: 'center', gap: '6px',
+          marginBottom: '24px',
+          transition: 'color 0.2s',
+        }}>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Dashboard
+        </Link>
 
         {/* HEADER */}
         <div className="header">
