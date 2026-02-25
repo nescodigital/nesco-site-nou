@@ -45,7 +45,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/sales-funnel-aufbauen-anleitung/", title: "Wie man einen kompletten Sales Funnel aufbaut | Nesco Digital", description: "Schritt-fuer-Schritt-Anleitung zum Aufbau eines effektiven Sales Funnels — von TOFU bis BOFU — mit empfohlenen Tools in jeder Phase." },
   },
   {
-    image: "/blog/whatsapp-business-vanzari-suport.jpg",
+    image: "/blog/whatsapp-business-vanzari-suport.png",
     datePublished: "2026-03-02",
     section: "Automation",
     tags: ["WhatsApp Business", "sales", "customer support", "chatbot", "automation"],
@@ -75,7 +75,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/online-kurse-erstellen-verkaufen/", title: "Online-Kurse erstellen und verkaufen in 2026 | Nesco Digital", description: "Von der Ideenvalidierung bis zur Vermarktung — kompletter Leitfaden mit Plattformvergleich und getesteten Strategien für Online-Kurse." },
   },
   {
-    image: "/blog/cele-mai-bune-landing-page-builders.jpg",
+    image: "/blog/cele-mai-bune-landing-page-builders.png",
     datePublished: "2026-02-27",
     section: "Web Design",
     tags: ["landing page", "builder", "conversion", "web design", "tools"],
@@ -85,7 +85,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/beste-landing-page-builder/", title: "Beste Landing Page Builder für höhere Conversions | Nesco Digital", description: "Wann du einen Landing Page Builder brauchst, welche Features wichtig sind und welche die besten Optionen sind — mit Vergleich und Reviews." },
   },
   {
-    image: "/blog/automatizare-marketing-ghid-tools.jpg",
+    image: "/blog/automatizare-marketing-ghid-tools.png",
     datePublished: "2026-02-26",
     section: "Automation",
     tags: ["marketing automation", "tools", "email marketing", "chatbot", "analytics"],
@@ -95,7 +95,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/marketing-automatisierung-tools-leitfaden/", title: "Marketing automatisieren: Kompletter Tools-Leitfaden | Nesco Digital", description: "Was du in jeder Geschäftsphase automatisieren solltest und welche Tools du nutzen kannst — von E-Mail und Chatbots bis Analytics und Ad Management." },
   },
   {
-    image: "/blog/cele-mai-bune-chatbot-live-chat.jpg",
+    image: "/blog/cele-mai-bune-chatbot-live-chat.png",
     datePublished: "2026-02-25",
     section: "Automation",
     tags: ["chatbot", "live chat", "customer support", "website", "tools"],
@@ -105,7 +105,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/beste-chatbot-live-chat-tools/", title: "Beste Chatbot- und Live-Chat-Tools für Websites | Nesco Digital", description: "Kompletter Leitfaden mit Vergleich: wann Chatbot, wann Live-Chat und welche die besten Tools für jedes Szenario sind." },
   },
   {
-    image: "/blog/cele-mai-bune-platforme-email-marketing.jpg",
+    image: "/blog/cele-mai-bune-platforme-email-marketing.png",
     datePublished: "2026-02-24",
     section: "Automation",
     tags: ["email marketing", "platforms", "newsletter", "automation", "comparison"],
@@ -115,7 +115,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/beste-email-marketing-plattformen/", title: "Beste E-Mail-Marketing-Plattformen 2026 | Nesco Digital", description: "Detaillierter Vergleich der beliebtesten E-Mail-Marketing-Plattformen: Funktionen, Preise und für wen sie am besten geeignet sind." },
   },
   {
-    image: "/blog/geo-optimizare-ai-search.jpg",
+    image: "/blog/geo-optimizare-ai-search.png",
     datePublished: "2026-02-23",
     section: "SEO",
     tags: ["GEO", "AI search", "ChatGPT", "Google AI Overviews", "optimization"],
@@ -125,7 +125,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/geo-optimierung-ai-search/", title: "Wie man in ChatGPT und Google AI Overviews erscheint (GEO) | Nesco Digital", description: "Vollständiger Leitfaden zur Generative Engine Optimization: So optimierst du deinen Content für KI-Ergebnisse — von ChatGPT bis Google AI Overviews." },
   },
   {
-    image: "/blog/cat-costa-un-site-web.jpg",
+    image: "/blog/cat-costa-un-site-web.png",
     datePublished: "2026-02-22",
     section: "Web Design",
     tags: ["website cost", "web development", "pricing", "web design", "2026"],
@@ -135,7 +135,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/was-kostet-eine-website/", title: "Was kostet eine Website in 2026? Vollständiger Preisleitfaden | Nesco Digital", description: "Von der Präsentationswebsite bis zum Online-Shop — wir analysieren reale Webentwicklungspreise und was den Endpreis beeinflusst." },
   },
   {
-    image: "/blog/cat-costa-google-ads-romania.jpg",
+    image: "/blog/cat-costa-google-ads-romania.png",
     datePublished: "2026-02-21",
     section: "Paid Ads",
     tags: ["Google Ads", "cost", "CPC", "budget", "ROI"],
@@ -155,7 +155,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/kosten-interner-spezialist-vs-agentur/", title: "Was kostet ein interner Spezialist vs. eine Marketing-Agentur? | Nesco Digital", description: "Detaillierter Kostenvergleich: Gehalt, Steuern, Tools, Management — vs. ein All-Inclusive-Agenturpaket. Die echten Zahlen, die niemand zeigt." },
   },
   {
-    image: "/blog/abandon-cos-cumparaturi.jpg",
+    image: "/blog/abandon-cos-cumparaturi.png",
     datePublished: "2026-02-19",
     section: "E-commerce",
     tags: ["cart abandonment", "e-commerce", "conversion", "recovery", "optimization"],
@@ -175,7 +175,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/warum-meta-ads-nicht-funktionieren/", title: "Warum funktionieren deine Meta Ads nicht? 7 häufige Fehler | Nesco Digital", description: "Wenn du Geld für Facebook- und Instagram-Ads ohne Ergebnisse ausgibst, ist die Plattform nicht das Problem. Entdecke die 7 Fehler, die deine Kampagnen sabotieren." },
   },
   {
-    image: "/blog/seo-local-google-maps.jpg",
+    image: "/blog/seo-local-google-maps.png",
     datePublished: "2026-02-17",
     section: "SEO",
     tags: ["local SEO", "Google Maps", "Google Business Profile", "local search", "citations"],
@@ -185,7 +185,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/lokales-seo-google-maps/", title: "Lokales SEO: Wie man in seiner Stadt auf Google Platz 1 erreicht | Nesco Digital", description: "Von Google Business Profile bis Bewertungen und lokale Zitate — Schritt-für-Schritt-Anleitung zur Dominanz in lokalen Ergebnissen und Google Maps." },
   },
   {
-    image: "/blog/facebook-ads-vs-google-ads-ecommerce.jpg",
+    image: "/blog/facebook-ads-vs-google-ads-ecommerce.png",
     datePublished: "2026-02-16",
     section: "Paid Ads",
     tags: ["Facebook Ads", "Google Ads", "e-commerce", "comparison", "advertising"],
@@ -205,7 +205,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/seo-vs-google-ads/", title: "SEO vs. Google Ads: Was wählen bei begrenztem Budget? | Nesco Digital", description: "Organischer oder bezahlter Traffic? Wir analysieren Kosten, Timeline und ROI jeder Strategie, damit du die richtige Entscheidung für dein Unternehmen triffst." },
   },
   {
-    image: "/blog/ai-overviews-impact-seo.jpg",
+    image: "/blog/ai-overviews-impact-seo.png",
     datePublished: "2026-02-14",
     section: "SEO",
     tags: ["AI Overviews", "SEO", "Google", "organic traffic", "AI search"],
@@ -215,7 +215,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/ai-overviews-seo-auswirkungen/", title: "Wie AI Overviews SEO beeinflussen und was du tun solltest | Nesco Digital", description: "Google AI Overviews ändern die Spielregeln. Erfahre, wie sie den organischen Traffic beeinflussen und welche neuen Strategien du anwenden musst." },
   },
   {
-    image: "/blog/ce-este-growth-sprint.jpg",
+    image: "/blog/ce-este-growth-sprint.png",
     datePublished: "2026-02-13",
     section: "Strategy",
     tags: ["growth sprint", "framework", "strategy", "execution", "optimization"],
@@ -225,7 +225,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/was-ist-growth-sprint/", title: "Was ist ein Growth Sprint und wie beschleunigt er das Wachstum | Nesco Digital", description: "Das 6-Wochen-Framework, das Strategie, Ausführung und Optimierung in einem einzigen Sprint kombiniert, der auf messbare Ergebnisse fokussiert ist." },
   },
   {
-    image: "/blog/reclame-tiktok-romania.jpg",
+    image: "/blog/reclame-tiktok-romania.png",
     datePublished: "2026-02-12",
     section: "Paid Ads",
     tags: ["TikTok Ads", "advertising", "social media", "creative", "targeting"],
@@ -235,7 +235,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/tiktok-ads-anleitung/", title: "TikTok Ads schalten: Vollständiger Leitfaden für 2026 | Nesco Digital", description: "Vom Konto-Setup bis zu kreativen Formaten und Targeting — alles, was du wissen musst, um profitable TikTok-Ads-Kampagnen zu starten." },
   },
   {
-    image: "/blog/cum-alegi-agentie-marketing.jpg",
+    image: "/blog/cum-alegi-agentie-marketing.png",
     datePublished: "2026-02-11",
     section: "Strategy",
     tags: ["marketing agency", "selection", "checklist", "digital marketing", "hiring"],
@@ -255,7 +255,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/conversion-rate-leitfaden/", title: "Conversion Rate: Was sie ist, wie man sie berechnet und verbessert | Nesco Digital", description: "Vollständiger CRO-Leitfaden: von Definition und Branchen-Benchmarks bis zu 12 getesteten Techniken zur Steigerung der Conversion Rate." },
   },
   {
-    image: "/blog/creste-vanzari-magazin-online.jpg",
+    image: "/blog/creste-vanzari-magazin-online.png",
     datePublished: "2026-02-08",
     section: "E-commerce",
     tags: ["e-commerce", "sales", "online store", "strategies", "optimization"],
@@ -275,7 +275,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/digitale-marketing-strategie-leitfaden/", title: "Digitale Marketing-Strategie Schritt für Schritt (Leitfaden 2026) | Nesco Digital", description: "Wie du eine digitale Marketing-Strategie von Grund auf aufbaust: Ziele, Kanäle, Budget, KPIs und Ausführungskalender — alles in einem Framework." },
   },
   {
-    image: "/blog/email-marketing-ecommerce.jpg",
+    image: "/blog/email-marketing-ecommerce.png",
     datePublished: "2026-02-05",
     section: "Automation",
     tags: ["email marketing", "e-commerce", "newsletter", "automation", "flows"],
@@ -285,7 +285,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/email-marketing-ecommerce/", title: "E-Mail-Marketing für E-Commerce: Wie man den Umsatz mit Newslettern steigert | Nesco Digital", description: "Automatisierte Flows, Segmentierung, A/B-Testing und die 7 wichtigsten E-Mails, die jeder Online-Shop konfiguriert haben sollte." },
   },
   {
-    image: "/blog/de-ce-nu-functioneaza-marketingul.jpg",
+    image: "/blog/de-ce-nu-functioneaza-marketingul.png",
     datePublished: "2026-02-03",
     section: "Strategy",
     tags: ["digital marketing", "problems", "troubleshooting", "campaigns", "solutions"],
@@ -295,7 +295,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/warum-digitales-marketing-nicht-funktioniert/", title: "Warum dein digitales Marketing nicht funktioniert | Nesco Digital", description: "10 echte Gründe, warum deine Kampagnen keine Ergebnisse liefern — und konkrete Lösungen für jedes Problem, getestet bei dutzenden Kunden." },
   },
   {
-    image: "/blog/linkedin-ads-b2b-romania.jpg",
+    image: "/blog/linkedin-ads-b2b-romania.png",
     datePublished: "2026-02-01",
     section: "Paid Ads",
     tags: ["LinkedIn Ads", "B2B", "lead generation", "advertising", "targeting"],
@@ -305,7 +305,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/linkedin-ads-b2b/", title: "LinkedIn Ads für B2B: Lohnt sich die Investition? | Nesco Digital", description: "Echte Kosten, Anzeigenformate, erweitertes Targeting und Fallstudien — alles über LinkedIn Ads zur B2B-Leadgenerierung." },
   },
   {
-    image: "/blog/performance-max-ecommerce.jpg",
+    image: "/blog/performance-max-ecommerce.png",
     datePublished: "2026-01-30",
     section: "Paid Ads",
     tags: ["Performance Max", "Google Ads", "e-commerce", "campaigns", "optimization"],
@@ -315,7 +315,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/performance-max-ecommerce/", title: "Performance Max 2026: Vollständiger Leitfaden für Online-Shops | Nesco Digital", description: "Wie Performance Max Kampagnen funktionieren, wie man sie richtig für E-Commerce einrichtet und die 5 Fehler, die dein Budget verschwenden." },
   },
   {
-    image: "/blog/ai-in-marketing-2026.jpg",
+    image: "/blog/ai-in-marketing-2026.png",
     datePublished: "2026-01-28",
     section: "Automation",
     tags: ["AI", "marketing", "artificial intelligence", "automation", "2026"],
@@ -325,7 +325,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/ki-im-marketing-2026/", title: "Wie Unternehmen KI im Marketing 2026 einsetzen | Nesco Digital", description: "Von Content-Erstellung bis Kampagnenoptimierung — wie du künstliche Intelligenz in dein Marketing implementierst, ohne die Kontrolle zu verlieren." },
   },
   {
-    image: "/blog/retargeting-remarketing-ghid.jpg",
+    image: "/blog/retargeting-remarketing.png",
     datePublished: "2026-01-26",
     section: "Paid Ads",
     tags: ["retargeting", "remarketing", "advertising", "conversion", "audiences"],
@@ -335,7 +335,7 @@ const ARTICLE_GROUPS: ArticleGroup[] = [
     de: { slug: "/ge/blog/retargeting-remarketing-leitfaden/", title: "Retargeting und Remarketing: Wie man verlorene Kunden zurückgewinnt | Nesco Digital", description: "Retargeting-Strategien auf Google, Meta und E-Mail, die abgesprungene Besucher in zahlende Kunden verwandeln — mit konkreten Zielgruppen-Beispielen." },
   },
   {
-    image: "/blog/cum-alegi-crm.jpg",
+    image: "/blog/cum-alegi-crm.png",
     datePublished: "2026-01-24",
     section: "Automation",
     tags: ["CRM", "HubSpot", "Salesforce", "Pipedrive", "implementation"],
