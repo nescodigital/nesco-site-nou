@@ -192,7 +192,7 @@ export default function AnalyticsPage() {
         return r.json();
       })
       .then((d) => { setData(d); setError(''); })
-      .catch(() => setError('Redis nu e configurat. Adauga UPSTASH_REDIS_REST_URL si UPSTASH_REDIS_REST_TOKEN in .env.local'))
+      .catch(() => setError('GA4 nu e configurat. Adauga GA4_PROPERTY_ID, GA_CLIENT_EMAIL si GA_PRIVATE_KEY in env vars.'))
       .finally(() => setLoading(false));
   }, [days]);
 
@@ -384,8 +384,9 @@ export default function AnalyticsPage() {
               lineHeight: 1.8,
             }}>
               <div style={{ color: '#56db84', marginBottom: '4px' }}># .env.local</div>
-              UPSTASH_REDIS_REST_URL=https://...upstash.io<br />
-              UPSTASH_REDIS_REST_TOKEN=AX...
+              GA4_PROPERTY_ID=123456789<br />
+              GA_CLIENT_EMAIL=...@...iam.gserviceaccount.com<br />
+              GA_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----...
             </div>
           </div>
         ) : data ? (

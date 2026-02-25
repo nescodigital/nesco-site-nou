@@ -343,7 +343,7 @@ export default function AdminDashboard() {
               textAlign: 'center',
             }}>
               <div style={{ fontSize: '13px', color: '#5a6872', marginBottom: '16px' }}>
-                Redis nu e configurat. Adauga env vars pentru a activa analytics.
+                GA4 nu e configurat. Adauga env vars pentru a activa analytics.
               </div>
               <div style={{
                 fontFamily: "'DM Mono', monospace",
@@ -357,9 +357,10 @@ export default function AdminDashboard() {
                 lineHeight: 1.8,
                 display: 'inline-block',
               }}>
-                <div style={{ color: '#56db84', marginBottom: '2px' }}># .env.local</div>
-                UPSTASH_REDIS_REST_URL=https://...upstash.io<br />
-                UPSTASH_REDIS_REST_TOKEN=AX...
+                <div style={{ color: '#56db84', marginBottom: '2px' }}># .env.local / Vercel</div>
+                GA4_PROPERTY_ID=123456789<br />
+                GA_CLIENT_EMAIL=...@...iam.gserviceaccount.com<br />
+                GA_PRIVATE_KEY=-----BEGIN PRIVATE KEY-----...
               </div>
             </div>
           ) : analytics ? (
