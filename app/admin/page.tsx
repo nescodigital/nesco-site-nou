@@ -72,6 +72,11 @@ const cards = [
 export default function AdminDashboard() {
   const router = useRouter();
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('admin_auth');
+    window.location.reload();
+  };
+
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -116,18 +121,40 @@ export default function AdminDashboard() {
             />
             <span style={{ fontWeight: 300, fontSize: '14px', color: '#5a6872' }}>/ admin</span>
           </div>
-          <div style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: '10px',
-            color: '#5a6872',
-            background: '#0a0a0a',
-            border: '1px solid #1a1a1a',
-            padding: '5px 10px',
-            borderRadius: '4px',
-            letterSpacing: '0.06em',
-            textTransform: 'uppercase' as const,
-          }}>
-            Admin Panel
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: '10px',
+              color: '#5a6872',
+              background: '#0a0a0a',
+              border: '1px solid #1a1a1a',
+              padding: '5px 10px',
+              borderRadius: '4px',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase' as const,
+            }}>
+              Admin Panel
+            </div>
+            <button
+              onClick={handleLogout}
+              style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: '10px',
+                color: '#f14a4a',
+                background: 'rgba(241,74,74,0.08)',
+                border: '1px solid rgba(241,74,74,0.2)',
+                padding: '5px 10px',
+                borderRadius: '4px',
+                letterSpacing: '0.06em',
+                textTransform: 'uppercase' as const,
+                cursor: 'pointer',
+                transition: 'all 0.2s ease',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(241,74,74,0.15)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(241,74,74,0.08)'; }}
+            >
+              Logout
+            </button>
           </div>
         </div>
 
@@ -154,6 +181,98 @@ export default function AdminDashboard() {
             Admin Dashboard
           </h1>
         </div>
+
+        {/* VERCEL ANALYTICS */}
+        <a
+          href="https://vercel.com/team-xytn-nbzca-k9ga-y28-gqz-vvyw-os-projects/nesco-site-nou/analytics"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'block',
+            background: '#0a0a0a',
+            border: '1px solid #1a1a1a',
+            borderRadius: '12px',
+            padding: '32px',
+            marginBottom: '24px',
+            textDecoration: 'none',
+            position: 'relative',
+            overflow: 'hidden',
+            transition: 'all 0.2s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(86,219,132,0.3)';
+            e.currentTarget.style.transform = 'translateY(-2px)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = '#1a1a1a';
+            e.currentTarget.style.transform = 'translateY(0)';
+          }}
+        >
+          {/* Top accent bar */}
+          <div style={{
+            position: 'absolute',
+            top: 0, left: 0, right: 0,
+            height: '2px',
+            background: 'linear-gradient(90deg, #56db84, #3b82f6)',
+          }} />
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              {/* Vercel triangle icon */}
+              <div style={{
+                width: '48px',
+                height: '48px',
+                borderRadius: '12px',
+                background: 'rgba(86,219,132,0.1)',
+                border: '1px solid rgba(86,219,132,0.2)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#56db84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M3 3v18h18" />
+                  <path d="M7 16l4-8 4 6 5-10" />
+                </svg>
+              </div>
+              <div>
+                <div style={{
+                  fontFamily: "'Satoshi', sans-serif",
+                  fontSize: '18px',
+                  fontWeight: 700,
+                  color: '#dce4e8',
+                  marginBottom: '4px',
+                }}>
+                  Vercel Analytics
+                </div>
+                <div style={{
+                  fontSize: '13px',
+                  color: '#5a6872',
+                  lineHeight: 1.5,
+                }}>
+                  Trafic, vizitatori, page views, top pagini — date live din Vercel
+                </div>
+              </div>
+            </div>
+            <div style={{
+              fontFamily: "'DM Mono', monospace",
+              fontSize: '11px',
+              color: '#56db84',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              letterSpacing: '0.04em',
+              flexShrink: 0,
+            }}>
+              Deschide Analytics
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56db84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M7 7h10v10" />
+              </svg>
+            </div>
+          </div>
+        </a>
 
         {/* CARDS GRID */}
         <div style={{
