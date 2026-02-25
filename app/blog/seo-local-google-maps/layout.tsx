@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/blog/seo-local-google-maps/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "SEO local: Cum să apari primul pe Google în orașul tău | Nesco Digital",
     description:
       "Ghid complet de SEO local: Google Business Profile, recenzii, citări locale și strategii pentru a domina rezultatele Google Maps în orașul tău.",
-    path: "/blog/seo-local-google-maps/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

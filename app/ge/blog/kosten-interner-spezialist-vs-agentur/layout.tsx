@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/ge/blog/kosten-interner-spezialist-vs-agentur/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "Was kostet ein interner Spezialist vs. eine Marketing-Agentur? | Nesco Digital",
     description:
       "Detaillierter Kostenvergleich: interner Marketing-Spezialist vs. Agentur. Gehalt, Steuern, Tools, Management — die echten Zahlen, die niemand zeigt.",
-    path: "/ge/blog/kosten-interner-spezialist-vs-agentur/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

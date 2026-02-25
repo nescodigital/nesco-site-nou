@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/blog/email-marketing-ecommerce/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "Email Marketing pentru Ecommerce: Cum Cresti Vanzarile cu Newslettere | Nesco Digital",
     description:
       "Ghid complet de email marketing pentru magazine online: cele 7 emailuri esentiale, segmentare, A/B testing si tool-uri recomandate. ROI de 36-42x per $1 investit.",
-    path: "/blog/email-marketing-ecommerce/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

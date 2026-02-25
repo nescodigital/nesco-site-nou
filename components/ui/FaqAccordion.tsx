@@ -10,7 +10,7 @@ export function FaqAccordion({ items }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+    <dl style={{ display: "flex", flexDirection: "column", gap: "0", margin: 0 }}>
       {items.map((item, idx) => {
         const isOpen = openIndex === idx;
         return (
@@ -27,7 +27,7 @@ export function FaqAccordion({ items }: Props) {
             }}
             onClick={() => setOpenIndex(isOpen ? null : idx)}
           >
-            <div
+            <dt
               style={{
                 display: "flex",
                 justifyContent: "space-between",
@@ -59,13 +59,14 @@ export function FaqAccordion({ items }: Props) {
               >
                 +
               </span>
-            </div>
-            <div
+            </dt>
+            <dd
               style={{
                 overflow: "hidden",
                 maxHeight: isOpen ? "500px" : "0px",
                 transition: "max-height 0.3s ease, opacity 0.3s ease",
                 opacity: isOpen ? 1 : 0,
+                margin: 0,
               }}
             >
               <p
@@ -78,10 +79,10 @@ export function FaqAccordion({ items }: Props) {
               >
                 {item.a}
               </p>
-            </div>
+            </dd>
           </div>
         );
       })}
-    </div>
+    </dl>
   );
 }

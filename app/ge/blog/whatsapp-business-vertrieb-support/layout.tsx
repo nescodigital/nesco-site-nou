@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/ge/blog/whatsapp-business-vertrieb-support/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "WhatsApp Business fuer Vertrieb und Support nutzen | Nesco Digital",
     description:
       "Vollstaendiger Leitfaden zur WhatsApp Business API: Setup, Automatisierungs-Flows, Konversionsstrategien und Best Practices fuer Vertrieb und Kundensupport.",
-    path: "/ge/blog/whatsapp-business-vertrieb-support/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

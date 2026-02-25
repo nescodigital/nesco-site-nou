@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/blog/retargeting-remarketing-ghid/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "Retargeting si Remarketing: Cum Recuperezi Clientii Pierduti | Nesco Digital",
     description:
       "Ghid complet de retargeting si remarketing — strategii, platforme, segmente de audienta si bugete recomandate. Recupereaza vizitatorii care au plecat fara sa cumpere.",
-    path: "/blog/retargeting-remarketing-ghid/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +38,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

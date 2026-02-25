@@ -2,10 +2,12 @@
 
 import { useState, useEffect, ReactNode } from 'react';
 
+const ADMIN_USERNAME = 'we_grow_100x';
 const ADMIN_PASSWORD = 'N3sc0$Digital!2026';
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -22,7 +24,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
       setIsAuthenticated(true);
       sessionStorage.setItem('admin_auth', 'true');
       setError(false);
@@ -77,7 +79,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             <img
               src="https://i0.wp.com/nescodigital.com/wp-content/uploads/2024/09/nescodigital-logo-invert.png"
               alt="Nesco Digital"
-              style={{ height: '24px', width: 'auto', marginBottom: '32px' }}
+              style={{ height: '24px', width: 'auto', marginBottom: '32px', display: 'block', margin: '0 auto 32px' }}
             />
             <div style={{
               fontFamily: "'DM Mono', monospace",
@@ -91,11 +93,32 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
             </div>
             <form onSubmit={handleLogin}>
               <input
+                type="text"
+                value={username}
+                onChange={(e) => { setUsername(e.target.value); setError(false); }}
+                placeholder="Username..."
+                autoFocus
+                autoComplete="username"
+                style={{
+                  width: '100%',
+                  padding: '12px 16px',
+                  background: '#111111',
+                  border: error ? '1px solid #f14a4a' : '1px solid #222222',
+                  borderRadius: '8px',
+                  color: '#dce4e8',
+                  fontSize: '14px',
+                  fontFamily: "'Inter', sans-serif",
+                  outline: 'none',
+                  marginBottom: '12px',
+                  boxSizing: 'border-box',
+                }}
+              />
+              <input
                 type="password"
                 value={password}
                 onChange={(e) => { setPassword(e.target.value); setError(false); }}
                 placeholder="Parola admin..."
-                autoFocus
+                autoComplete="current-password"
                 style={{
                   width: '100%',
                   padding: '12px 16px',
@@ -112,7 +135,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
               />
               {error && (
                 <div style={{ color: '#f14a4a', fontSize: '12px', marginBottom: '12px' }}>
-                  Parola incorecta
+                  Username sau parola incorecta
                 </div>
               )}
               <button

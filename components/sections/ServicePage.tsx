@@ -7,6 +7,7 @@ import { type Locale, t } from "@/lib/translations";
 import { routes } from "@/lib/routes";
 import { FadeInSection } from "@/components/ui/FadeInSection";
 import { FaqAccordion } from "@/components/ui/FaqAccordion";
+import { buildFaqSchema, buildReviewSchema } from "@/lib/seo";
 
 type BreadcrumbCategory = "paidAds" | "webdesign" | "digitalMarketing";
 
@@ -97,6 +98,34 @@ export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: Serv
 
   return (
     <>
+      {/* ── Structured Data ── */}
+      {faq && faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(buildFaqSchema(faq)) }}
+        />
+      )}
+      {testimonial && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              buildReviewSchema({
+                reviewBody: testimonial.quote,
+                authorName: testimonial.name,
+                ratingValue: 5,
+                itemReviewed: {
+                  name: hero.title,
+                  url: `https://nescodigital.com${
+                    locale === "ro" ? "" : locale === "en" ? "/en" : "/ge"
+                  }`,
+                },
+              })
+            ),
+          }}
+        />
+      )}
+
       {/* ── Hero ── */}
       <section
         className="relative overflow-hidden"
@@ -577,7 +606,7 @@ export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: Serv
                   >
                     &ldquo;
                   </div>
-                  <p
+                  <blockquote
                     style={{
                       fontSize: "1.125rem",
                       color: "#ffffff",
@@ -585,10 +614,13 @@ export function ServicePageTemplate({ data, heroRightSlot, afterHeroSlot }: Serv
                       fontStyle: "italic",
                       marginBottom: "28px",
                       letterSpacing: "0.01em",
+                      margin: "0 0 28px 0",
+                      padding: 0,
+                      border: "none",
                     }}
                   >
                     {testimonial.quote}
-                  </p>
+                  </blockquote>
                   <div>
                     <span
                       style={{

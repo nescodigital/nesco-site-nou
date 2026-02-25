@@ -1,14 +1,27 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/en/blog/how-to-build-sales-funnel/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
     locale: "en",
-    title:
-      "How to Build a Complete Sales Funnel | Nesco Digital",
+    title: "How to Build a Complete Sales Funnel | Nesco Digital",
     description:
       "Step-by-step guide to building an effective sales funnel — from TOFU to BOFU — with recommended tools at every stage.",
-    path: "/en/blog/how-to-build-sales-funnel/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical:
@@ -24,5 +37,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

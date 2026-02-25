@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/blog/ce-este-growth-sprint/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "Ce este un Growth Sprint și cum accelerează creșterea | Nesco Digital",
     description:
       "Descopera modelul Growth Sprint: 6 saptamani intensive de audit, strategie, executie si optimizare. Afla cum comprimi luni de munca intr-un sprint focusat pe rezultate.",
-    path: "/blog/ce-este-growth-sprint/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical: "https://nescodigital.com/blog/ce-este-growth-sprint/",
@@ -22,5 +36,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }

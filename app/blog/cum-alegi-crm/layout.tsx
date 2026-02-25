@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { BlogArticleSchema } from "@/components/BlogArticleSchema";
+import { getArticleByPath } from "@/lib/blogArticles";
+
+const PATH = "/blog/cum-alegi-crm/";
+const article = getArticleByPath(PATH);
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -8,7 +13,16 @@ export const metadata: Metadata = {
       "Cum sa alegi si sa implementezi un CRM in 2026 | Nesco Digital",
     description:
       "Ghid complet pentru alegerea si implementarea unui CRM: comparatie HubSpot, Salesforce, Pipedrive, Monday, Zoho. Criterii de selectie, pasi de implementare si greseli frecvente.",
-    path: "/blog/cum-alegi-crm/",
+    path: PATH,
+    ...(article && {
+      image: article.image,
+      article: {
+        publishedTime: article.datePublished,
+        authors: ["Nesco Digital Team"],
+        section: article.section,
+        tags: article.tags,
+      },
+    }),
   }),
   alternates: {
     canonical: "https://nescodigital.com/blog/cum-alegi-crm/",
@@ -22,5 +36,10 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>;
+  return (
+    <>
+      <BlogArticleSchema path={PATH} />
+      {children}
+    </>
+  );
 }
