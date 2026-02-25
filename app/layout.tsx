@@ -7,6 +7,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
 import ExitPopup from "@/components/ExitPopup";
+import { PageTracker } from "@/components/PageTracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -153,6 +154,7 @@ export default function RootLayout({
         {/* <NewsletterPopup /> — dezactivat, inlocuit de ExitPopup */}
         {children}
         <ExitPopup />
+        <PageTracker />
         <SpeedInsights />
         <Analytics />
       </body>

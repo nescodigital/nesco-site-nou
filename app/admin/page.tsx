@@ -182,11 +182,9 @@ export default function AdminDashboard() {
           </h1>
         </div>
 
-        {/* VERCEL ANALYTICS */}
-        <a
-          href="https://vercel.com/team-xytn-nbzca-k9ga-y28-gqz-vvyw-os-projects/nesco-site-nou/analytics"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* SITE ANALYTICS */}
+        <div
+          onClick={() => router.push('/admin/analytics')}
           style={{
             display: 'block',
             background: '#0a0a0a',
@@ -194,7 +192,7 @@ export default function AdminDashboard() {
             borderRadius: '12px',
             padding: '32px',
             marginBottom: '24px',
-            textDecoration: 'none',
+            cursor: 'pointer',
             position: 'relative',
             overflow: 'hidden',
             transition: 'all 0.2s ease',
@@ -221,7 +219,6 @@ export default function AdminDashboard() {
             justifyContent: 'space-between',
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              {/* Vercel triangle icon */}
               <div style={{
                 width: '48px',
                 height: '48px',
@@ -245,14 +242,14 @@ export default function AdminDashboard() {
                   color: '#dce4e8',
                   marginBottom: '4px',
                 }}>
-                  Vercel Analytics
+                  Site Analytics
                 </div>
                 <div style={{
                   fontSize: '13px',
                   color: '#5a6872',
                   lineHeight: 1.5,
                 }}>
-                  Trafic, vizitatori, page views, top pagini — date live din Vercel
+                  Trafic, vizitatori, page views, top pagini — grafice si date live
                 </div>
               </div>
             </div>
@@ -268,11 +265,11 @@ export default function AdminDashboard() {
             }}>
               Deschide Analytics
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56db84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M7 17L17 7M7 7h10v10" />
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </div>
           </div>
-        </a>
+        </div>
 
         {/* CARDS GRID */}
         <div style={{
