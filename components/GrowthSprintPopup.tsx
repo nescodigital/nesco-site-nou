@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { X, ArrowRight, CheckCircle, Loader2 } from "lucide-react";
+import { X, ArrowRight, Loader2 } from "lucide-react";
 
 type Locale = "ro" | "en" | "de";
 
@@ -100,7 +100,6 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
   const [contactPrefs, setContactPrefs] = useState<string[]>([]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [success, setSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const allAnswered = t.questions.every((q) => answers[q.id]);
@@ -160,7 +159,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error || `HTTP ${res.status}`);
       }
-      setSuccess(true);
+      window.location.href = "/multumim?type=growth-sprint";
     } catch {
       setSubmitError(t.errGeneral);
     } finally {
@@ -258,36 +257,7 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
           <X size={18} />
         </button>
 
-        {/* Success state */}
-        {success ? (
-          <div style={{ textAlign: "center", padding: "20px 0" }}>
-            <div
-              style={{
-                width: 64, height: 64, borderRadius: "50%",
-                background: "rgba(86,219,132,0.1)",
-                border: "1px solid rgba(86,219,132,0.2)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                margin: "0 auto 24px",
-              }}
-            >
-              <CheckCircle size={28} style={{ color: "#56db84" }} />
-            </div>
-            <h3
-              className="font-black text-white"
-              style={{ fontSize: "1.5rem", letterSpacing: "-0.02em", marginBottom: "12px" }}
-            >
-              {t.successTitle}
-            </h3>
-            <p style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "28px" }}>
-              {t.successText}
-            </p>
-            <button onClick={onClose} className="btn-primary" style={{ margin: "0 auto", justifyContent: "center", border: "none", cursor: "pointer" }}>
-              {t.closeBtn}
-            </button>
-          </div>
-        ) : (
-          <>
-            {/* Step indicator */}
+        {/* Step indicator */}
             <div style={{ marginBottom: "28px" }}>
               <span
                 style={{
@@ -540,9 +510,6 @@ export function GrowthSprintPopup({ source, onClose, selectedPlan, locale = "ro"
                 </div>
               </form>
             )}
-          </>
-        )}
-
         <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
       </div>
     </div>

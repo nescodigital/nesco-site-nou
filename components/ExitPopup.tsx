@@ -13,27 +13,14 @@ import { useState, useEffect, useCallback } from 'react';
 const STORAGE_KEY = 'nd_popup_dismissed';
 const DELAY_MS = 60_000; // 60 seconds
 
-type Step = 'question' | 'fit' | 'guide' | 'guide-profile' | 'closed';
-
-const BUSINESS_TYPES = [
-  { value: 'ecommerce', label: 'E-commerce' },
-  { value: 'educatie-online', label: 'Educație Online' },
-  { value: 'b2b-servicii', label: 'B2B / Servicii' },
-  { value: 'sanatate-wellness', label: 'Sănătate & Wellness' },
-  { value: 'imobiliare', label: 'Imobiliare' },
-  { value: 'altul', label: 'Altul' },
-];
+type Step = 'question' | 'fit' | 'guide' | 'closed';
 
 export default function ExitPopup() {
   const [step, setStep] = useState<Step>('closed');
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState<string | null>(null);
   const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [firstName, setFirstName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [businessType, setBusinessType] = useState('');
-  const [profileDone, setProfileDone] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const openPopup = useCallback(() => {
     if (sessionStorage.getItem(STORAGE_KEY)) return;
@@ -68,17 +55,21 @@ export default function ExitPopup() {
     setSelected(null);
   };
 
-  const handleGuideSubmit = (e: React.FormEvent) => {
+  const handleGuideSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: conecteaza la MailerLite / API — trimite email
-    setSubmitted(true);
-    setStep('guide-profile');
-  };
-
-  const handleProfileSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: conecteaza la MailerLite / API — update profil cu firstName, phone, businessType
-    setProfileDone(true);
+    if (!email || submitting) return;
+    setSubmitting(true);
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error('failed');
+      window.location.href = '/multumim?type=newsletter';
+    } catch {
+      setSubmitting(false);
+    }
   };
 
   if (step === 'closed') return null;
@@ -433,65 +424,6 @@ export default function ExitPopup() {
         }
         .nd-form-btn:hover { background: #6ee89a; }
 
-        .nd-select {
-          width: 100%;
-          background: var(--nd-card);
-          border: 1px solid var(--nd-border);
-          border-radius: 8px;
-          padding: 12px 14px;
-          font-family: 'Inter', sans-serif;
-          font-size: 14px;
-          color: var(--nd-text);
-          outline: none;
-          transition: border-color 0.2s;
-          appearance: none;
-          -webkit-appearance: none;
-          cursor: pointer;
-        }
-        .nd-select:focus { border-color: rgba(86,219,132,0.4); }
-
-        .nd-profile-form {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          margin-bottom: 12px;
-        }
-
-        .nd-profile-label {
-          font-family: 'Inter', sans-serif;
-          font-size: 12px;
-          color: var(--nd-muted);
-          margin-bottom: 4px;
-          display: block;
-        }
-
-        .nd-profile-confirmed {
-          font-family: 'Inter', sans-serif;
-          font-size: 14px;
-          color: var(--nd-accent);
-          font-weight: 600;
-          margin-bottom: 20px;
-        }
-
-        .nd-profile-btns {
-          display: flex;
-          gap: 8px;
-          margin-top: 4px;
-        }
-
-        .nd-profile-skip {
-          padding: 12px 16px;
-          border-radius: 8px;
-          border: 1px solid var(--nd-border);
-          background: transparent;
-          color: var(--nd-muted);
-          font-family: 'Inter', sans-serif;
-          font-size: 13px;
-          cursor: pointer;
-          transition: all 0.2s;
-        }
-        .nd-profile-skip:hover { color: var(--nd-text); border-color: var(--nd-muted); }
-
         .nd-disclaimer {
           font-family: 'Inter', sans-serif;
           font-size: 12px;
@@ -499,29 +431,6 @@ export default function ExitPopup() {
           line-height: 1.5;
         }
 
-        /* ── STEP: SUCCESS ── */
-        .nd-success {
-          text-align: center;
-          padding: 8px 0 4px;
-        }
-        .nd-success-icon {
-          font-size: 40px;
-          margin-bottom: 16px;
-        }
-        .nd-success-title {
-          font-family: 'Satoshi', sans-serif;
-          font-size: 22px;
-          font-weight: 800;
-          color: var(--nd-text);
-          margin-bottom: 8px;
-        }
-        .nd-success-sub {
-          font-family: 'Inter', sans-serif;
-          font-size: 14px;
-          color: var(--nd-muted);
-          line-height: 1.6;
-          margin-bottom: 24px;
-        }
       `}</style>
 
       <div
@@ -638,8 +547,8 @@ export default function ExitPopup() {
                     required
                     aria-label="Email"
                   />
-                  <button className="nd-form-btn" type="submit">
-                    Vreau ghidul
+                  <button className="nd-form-btn" type="submit" disabled={submitting}>
+                    {submitting ? '...' : 'Vreau ghidul'}
                   </button>
                 </form>
 
@@ -650,74 +559,6 @@ export default function ExitPopup() {
                   Nu acum
                 </button>
               </>
-            )}
-
-            {/* ── STEP: GUIDE-PROFILE — prenume, telefon, tip business ── */}
-            {step === 'guide-profile' && !profileDone && (
-              <>
-                <div className="nd-profile-confirmed">
-                  {'\u2713'} Email confirmat! Completează profilul tău (opțional):
-                </div>
-
-                <form className="nd-profile-form" onSubmit={handleProfileSubmit}>
-                  <div>
-                    <label className="nd-profile-label">Tipul tău de business</label>
-                    <select
-                      className="nd-select"
-                      value={businessType}
-                      onChange={(e) => setBusinessType(e.target.value)}
-                    >
-                      <option value="" disabled>Selectează tipul de business</option>
-                      {BUSINESS_TYPES.map(({ value, label }) => (
-                        <option key={value} value={value}>{label}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <input
-                    className="nd-input"
-                    type="text"
-                    placeholder="Prenume"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    aria-label="Prenume"
-                  />
-                  <input
-                    className="nd-input"
-                    type="tel"
-                    placeholder="Telefon"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    aria-label="Telefon"
-                  />
-                  <div className="nd-profile-btns">
-                    <button className="nd-form-btn" type="submit" style={{ flex: 1 }}>
-                      Salvează profilul
-                    </button>
-                    <button className="nd-profile-skip" type="button" onClick={dismiss}>
-                      Sari peste
-                    </button>
-                  </div>
-                </form>
-              </>
-            )}
-
-            {/* ── STEP: PROFILE DONE ── */}
-            {step === 'guide-profile' && profileDone && (
-              <div className="nd-success">
-                <div className="nd-success-icon">{'\u2705'}</div>
-                <div className="nd-success-title">Profil completat!</div>
-                <div className="nd-success-sub">
-                  Ghidul e pe drum — verifică inbox-ul în câteva minute.
-                  <br />Dacă nu îl găsești, uită-te și în Spam.
-                </div>
-                <button
-                  className="nd-btn nd-active"
-                  onClick={dismiss}
-                  style={{ maxWidth: '280px', margin: '0 auto' }}
-                >
-                  Continuă pe site {'\u2192'}
-                </button>
-              </div>
             )}
 
           </div>

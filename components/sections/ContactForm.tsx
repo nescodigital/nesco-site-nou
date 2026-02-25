@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { ArrowRight, X, CheckCircle, Loader2 } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 
 type Locale = "ro" | "en" | "de";
 
@@ -87,7 +87,6 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
-  const [showSuccess, setShowSuccess] = useState(false);
   const [source, setSource] = useState("");
   const firstErrorRef = useRef<HTMLDivElement>(null);
 
@@ -184,9 +183,7 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
         body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Submit failed");
-      setShowSuccess(true);
-      setTimeout(() => setShowSuccess(false), 5000);
-      setFields({ first_name: "", last_name: "", company: "", email: "", phone: "", website: "", services: [], budget: "" });
+      window.location.href = "/multumim?type=contact";
     } catch {
       // silent, form stays open for retry
     } finally {
@@ -199,80 +196,6 @@ export function ContactForm({ locale = "ro" }: ContactFormProps) {
 
   return (
     <>
-      {/* ── Success Modal ── */}
-      {showSuccess && (
-        <div
-          style={{
-            position: "fixed", inset: 0, zIndex: 9999,
-            background: "rgba(0,0,0,0.75)",
-            backdropFilter: "blur(8px)",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            padding: "20px",
-          }}
-          onClick={() => setShowSuccess(false)}
-        >
-          <div
-            style={{
-              position: "relative",
-              background: "#0a0a0a",
-              border: "1px solid rgba(86,219,132,0.2)",
-              borderRadius: "24px",
-              padding: "48px 40px",
-              maxWidth: "440px",
-              width: "100%",
-              textAlign: "center",
-            }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div
-              className="absolute top-0 left-0 right-0 h-px"
-              style={{ background: "linear-gradient(90deg, transparent, rgba(86,219,132,0.5), transparent)" }}
-            />
-            <button
-              onClick={() => setShowSuccess(false)}
-              style={{
-                position: "absolute", top: 16, right: 16,
-                background: "transparent", border: "none", cursor: "pointer",
-                color: "rgba(255,255,255,0.3)", padding: 4,
-              }}
-            >
-              <X size={18} />
-            </button>
-
-            <div
-              style={{
-                width: 64, height: 64, borderRadius: "50%",
-                background: "rgba(86,219,132,0.1)",
-                border: "1px solid rgba(86,219,132,0.2)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                margin: "0 auto 24px",
-              }}
-            >
-              <CheckCircle size={28} style={{ color: "#56db84" }} />
-            </div>
-
-
-
-            <h3
-              className="font-black text-white"
-              style={{ fontSize: "1.5rem", letterSpacing: "-0.02em", marginBottom: "12px" }}
-            >
-              {l.successTitle}
-            </h3>
-            <p style={{ fontSize: "0.9375rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.7, marginBottom: "28px" }}>
-              {l.successText}
-            </p>
-            <button
-              onClick={() => setShowSuccess(false)}
-              className="btn-primary"
-              style={{ margin: "0 auto", justifyContent: "center" }}
-            >
-              {l.closeBtn}
-            </button>
-          </div>
-        </div>
-      )}
-
       {/* ── Form ── */}
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }} noValidate>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
