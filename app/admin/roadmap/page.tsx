@@ -26,12 +26,14 @@ interface Section {
 const sections: Section[] = [
   {
     id: 'p1',
-    title: 'Prioritate 1 \u2014 De rezolvat',
-    description: 'Elemente critice care lipsesc sau blocheaza fluxurile existente.',
+    title: 'Prioritate 1 \u2014 Probleme critice',
+    description: 'Probleme active care afecteaza conversiile si vizibilitatea site-ului.',
     defaultOpen: true,
     items: [
-      { label: 'Thank You page (/multumim)', detail: 'Pagina de confirmare dupa optin', status: 'urgent' },
-      { label: 'ActiveCampaign affiliate link', detail: 'Inlocuieste placeholder in blog', status: 'urgent' },
+      { label: 'Affiliate Links \u2014 0 active din 11', detail: '0 linkuri functionale, 8 pending, 3 fara URL. Niciun link de afiliat nu genereaza venituri acum.', status: 'urgent' },
+      { label: 'Blog Images \u2014 66 lipsa din 93', detail: 'Articolele fara imagini arata slab in Google si scad CTR-ul. Vezi admin/blog-images pentru lista completa.', status: 'urgent' },
+      { label: 'Thank You page (/multumim)', detail: 'Pagina de confirmare dupa optin \u2014 lipseste complet, userii nu primesc confirmare', status: 'urgent' },
+      { label: 'ActiveCampaign affiliate link', detail: 'Inlocuieste placeholder in articolele de blog', status: 'urgent' },
       { label: 'Unbounce affiliate link', status: 'todo' },
       { label: 'Supermetrics affiliate link', status: 'todo' },
       { label: 'Landbot affiliate link', status: 'todo' },
@@ -43,16 +45,7 @@ const sections: Section[] = [
   },
   {
     id: 'p2',
-    title: 'Prioritate 2 \u2014 Imagini blog',
-    description: 'Articole de blog care au nevoie de imagini.',
-    defaultOpen: true,
-    items: [
-      { label: '22 imagini lipsa pentru articole blog', detail: 'Lista articolelor fara imagine de verificat in admin/blog-images', status: 'todo' },
-    ],
-  },
-  {
-    id: 'p3',
-    title: 'Prioritate 3 \u2014 Imbunatatiri',
+    title: 'Prioritate 2 \u2014 Imbunatatiri',
     description: 'Optimizari si features noi pentru cresterea performantei.',
     defaultOpen: true,
     items: [
@@ -60,7 +53,7 @@ const sections: Section[] = [
       { label: 'A/B testing pe landing pages', status: 'todo' },
       { label: 'More blog articles for SEO', status: 'todo' },
       { label: 'Performance optimization', detail: 'Image lazy loading, bundle size', status: 'todo' },
-      { label: 'Structured data for blog articles', detail: 'Article schema', status: 'todo' },
+      { label: 'Upstash Redis setup', detail: 'Configureaza UPSTASH_REDIS_REST_URL + TOKEN pentru analytics si leads', status: 'todo' },
     ],
   },
   {
@@ -69,6 +62,12 @@ const sections: Section[] = [
     description: 'Tot ce s-a finalizat pana acum.',
     defaultOpen: false,
     items: [
+      { label: 'Structured data (GEO)', detail: 'Article, FAQ, HowTo, Review schema + og:image pe toate paginile', status: 'done' },
+      { label: 'Self-hosted analytics dashboard', detail: 'Page views, unique visitors, top pages, referrers cu grafice SVG', status: 'done' },
+      { label: 'Lead forms storage in admin', detail: 'Formulare de contact si newsletter stocate in Redis cu widget pe dashboard', status: 'done' },
+      { label: 'Admin username + password login', status: 'done' },
+      { label: 'Admin logout button', status: 'done' },
+      { label: 'Disable popups on admin pages', status: 'done' },
       { label: 'Pagini principale (Homepage RO/EN/DE)', status: 'done' },
       { label: 'Growth Sprint Educatie (RO/EN/DE)', status: 'done' },
       { label: 'Growth Sprint E-commerce (RO/EN/DE)', status: 'done' },
