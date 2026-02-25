@@ -64,54 +64,6 @@ const linkGroups: LinkGroup[] = [
       },
     ],
   },
-  {
-    category: 'Booking & CRM',
-    color: '#fb923c',
-    links: [
-      {
-        name: 'TidyCal (30 min)',
-        url: 'https://tidycal.com/1y0qx6o/30-minute-meeting',
-        badge: '30 min session',
-        icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6v6l4 2',
-      },
-      {
-        name: 'TidyCal (60 min)',
-        url: 'https://tidycal.com/1y0qx6o/60-minute-meeting',
-        badge: '60 min session',
-        icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 6v6l4 2',
-      },
-    ],
-  },
-  {
-    category: 'Design & Fonts',
-    color: '#f472b6',
-    links: [
-      {
-        name: 'Fontshare (Satoshi)',
-        url: 'https://www.fontshare.com/fonts/satoshi',
-        badge: 'Satoshi',
-        icon: 'M4 7V4h16v3 M9 20h6 M12 4v16',
-      },
-      {
-        name: 'Google Fonts (Inter)',
-        url: 'https://fonts.google.com/specimen/Inter',
-        badge: 'Inter',
-        icon: 'M4 7V4h16v3 M9 20h6 M12 4v16',
-      },
-    ],
-  },
-  {
-    category: 'Old Site',
-    color: '#5a6872',
-    links: [
-      {
-        name: 'WordPress (old)',
-        url: 'https://nescodigital.com/wp-admin',
-        badge: 'Legacy',
-        icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M2 12h20 M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z',
-      },
-    ],
-  },
 ];
 
 export default function AdminLinksPage() {

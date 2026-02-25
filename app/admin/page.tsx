@@ -3,6 +3,21 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
+/* ─── Types ───────────────────────────────────────────────── */
+
+interface DailyStats { date: string; pageViews: number; uniqueVisitors: number; }
+
+interface AnalyticsData {
+  daily: DailyStats[];
+  totalPageViews: number;
+  totalUniqueVisitors: number;
+  avgPageViewsPerDay: number;
+  todayPageViews: number;
+  todayUniqueVisitors: number;
+  topPages: { path: string; count: number }[];
+  topReferrers: { referrer: string; count: number }[];
+}
+
 interface Lead {
   id: string;
   type: 'contact' | 'newsletter' | 'growth-sprint';
@@ -20,71 +35,96 @@ interface LeadsData {
   stats: { total: number; today: number; thisWeek: number };
 }
 
+/* ─── SVG Line Chart ──────────────────────────────────────── */
+
+function LineChart({ data, width = 800, height = 220 }: { data: DailyStats[]; width?: number; height?: number }) {
+  if (!data.length) return null;
+
+  const padL = 48, padR = 16, padT = 16, padB = 36;
+  const chartW = width - padL - padR;
+  const chartH = height - padT - padB;
+
+  const pvValues = data.map((d) => d.pageViews);
+  const uvValues = data.map((d) => d.uniqueVisitors);
+  const maxVal = Math.max(...pvValues, ...uvValues, 1);
+  const yMax = Math.ceil(maxVal / 10) * 10 || 10;
+  const xStep = data.length > 1 ? chartW / (data.length - 1) : chartW;
+
+  const toPath = (values: number[]) =>
+    values.map((v, i) => {
+      const x = padL + i * xStep;
+      const y = padT + chartH - (v / yMax) * chartH;
+      return `${i === 0 ? 'M' : 'L'}${x},${y}`;
+    }).join(' ');
+
+  const toArea = (values: number[]) => {
+    const path = values.map((v, i) => {
+      const x = padL + i * xStep;
+      const y = padT + chartH - (v / yMax) * chartH;
+      return `${i === 0 ? 'M' : 'L'}${x},${y}`;
+    }).join(' ');
+    const lastX = padL + (values.length - 1) * xStep;
+    return `${path} L${lastX},${padT + chartH} L${padL},${padT + chartH} Z`;
+  };
+
+  const yLabels = Array.from({ length: 5 }, (_, i) => Math.round((yMax / 4) * i));
+  const step = Math.max(1, Math.floor(data.length / 6));
+  const xLabels = data.filter((_, i) => i % step === 0 || i === data.length - 1);
+
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} style={{ width: '100%', height: 'auto' }} preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <linearGradient id="pvGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#56db84" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="#56db84" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="uvGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.15" />
+          <stop offset="100%" stopColor="#60a5fa" stopOpacity="0" />
+        </linearGradient>
+      </defs>
+      {yLabels.map((val) => {
+        const y = padT + chartH - (val / yMax) * chartH;
+        return (
+          <g key={val}>
+            <line x1={padL} y1={y} x2={padL + chartW} y2={y} stroke="#1a1a1a" strokeWidth="1" />
+            <text x={padL - 8} y={y + 4} textAnchor="end" fill="#5a6872" fontSize="10" fontFamily="'DM Mono', monospace">{val}</text>
+          </g>
+        );
+      })}
+      <path d={toArea(pvValues)} fill="url(#pvGrad)" />
+      <path d={toArea(uvValues)} fill="url(#uvGrad)" />
+      <path d={toPath(pvValues)} fill="none" stroke="#56db84" strokeWidth="2" strokeLinejoin="round" />
+      <path d={toPath(uvValues)} fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinejoin="round" strokeDasharray="4 3" />
+      {pvValues.map((v, i) => {
+        const x = padL + i * xStep;
+        const y = padT + chartH - (v / yMax) * chartH;
+        return <circle key={i} cx={x} cy={y} r="2.5" fill="#56db84" />;
+      })}
+      {xLabels.map((d) => {
+        const i = data.indexOf(d);
+        const x = padL + i * xStep;
+        return (
+          <text key={d.date} x={x} y={padT + chartH + 18} textAnchor="middle" fill="#5a6872" fontSize="10" fontFamily="'DM Mono', monospace">
+            {d.date.slice(5)}
+          </text>
+        );
+      })}
+    </svg>
+  );
+}
+
+/* ─── Helpers ─────────────────────────────────────────────── */
+
 const cards = [
-  {
-    title: 'Status',
-    desc: 'Radiografie site — pagini active, status, conexiuni',
-    href: '/admin/status',
-    color: '#56db84',
-    label: 'Deschide radiografia',
-    icon: 'M22 12h-4l-3 9L9 3l-3 9H2',
-  },
-  {
-    title: 'Leads Overview',
-    desc: 'Surse de lead-uri, Pixel events, CTAs pe fiecare pagina',
-    href: '/admin/leads',
-    color: '#60a5fa',
-    label: 'Vezi lead-urile',
-    icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4l3 3',
-  },
-  {
-    title: 'Todo / Roadmap',
-    desc: 'Ce mai e de facut — pagini, features, content',
-    href: '/admin/roadmap',
-    color: '#fb923c',
-    label: 'Vezi roadmap',
-    icon: 'M9 11l3 3L22 4 M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11',
-  },
-  {
-    title: 'Quick Links',
-    desc: 'Acces rapid — GA, Meta, TidyCal, Vercel, Search Console',
-    href: '/admin/links',
-    color: '#a78bfa',
-    label: 'Deschide linkuri',
-    icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71 M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71',
-  },
-  {
-    title: 'SEO Audit',
-    desc: 'Meta titles, descriptions, lungime, pagini indexate',
-    href: '/admin/seo',
-    color: '#facc15',
-    label: 'Auditeaza SEO',
-    icon: 'M11 19a8 8 0 100-16 8 8 0 000 16z M21 21l-4.35-4.35',
-  },
-  {
-    title: 'Blog Images',
-    desc: 'Status imagini blog — prezente, lipsa, placeholder',
-    href: '/admin/blog-images',
-    color: '#f472b6',
-    label: 'Vezi imaginile',
-    icon: 'M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z M12 17a4 4 0 100-8 4 4 0 000 8z',
-  },
-  {
-    title: 'Conversion Funnels',
-    desc: 'Flow-uri vizuale — cum ajung userii la conversie',
-    href: '/admin/funnels',
-    color: '#22d3ee',
-    label: 'Vezi funnels',
-    icon: 'M6 3v12 M18 9a3 3 0 100-6 3 3 0 000 6z M6 21a3 3 0 100-6 3 3 0 000 6z M18 9a9 9 0 01-9 9',
-  },
-  {
-    title: 'Affiliate Links',
-    desc: 'Linkuri afiliate — status, clickuri, placeholdere',
-    href: '/admin/affiliates',
-    color: '#4ade80',
-    label: 'Vezi affiliate',
-    icon: 'M12 1v22 M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6',
-  },
+  { title: 'Status', desc: 'Radiografie site — pagini active, status, conexiuni', href: '/admin/status', color: '#56db84', label: 'Deschide radiografia', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
+  { title: 'Leads Overview', desc: 'Surse de lead-uri, Pixel events, CTAs pe fiecare pagina', href: '/admin/leads', color: '#60a5fa', label: 'Vezi lead-urile', icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4l3 3' },
+  { title: 'Todo / Roadmap', desc: 'Ce mai e de facut — pagini, features, content', href: '/admin/roadmap', color: '#fb923c', label: 'Vezi roadmap', icon: 'M9 11l3 3L22 4 M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11' },
+  { title: 'Quick Links', desc: 'Acces rapid — GA, Meta, TidyCal, Vercel, Search Console', href: '/admin/links', color: '#a78bfa', label: 'Deschide linkuri', icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71 M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71' },
+  { title: 'SEO Audit', desc: 'Meta titles, descriptions, lungime, pagini indexate', href: '/admin/seo', color: '#facc15', label: 'Auditeaza SEO', icon: 'M11 19a8 8 0 100-16 8 8 0 000 16z M21 21l-4.35-4.35' },
+  { title: 'Blog Images', desc: 'Status imagini blog — prezente, lipsa, placeholder', href: '/admin/blog-images', color: '#f472b6', label: 'Vezi imaginile', icon: 'M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z M12 17a4 4 0 100-8 4 4 0 000 8z' },
+  { title: 'Conversion Funnels', desc: 'Flow-uri vizuale — cum ajung userii la conversie', href: '/admin/funnels', color: '#22d3ee', label: 'Vezi funnels', icon: 'M6 3v12 M18 9a3 3 0 100-6 3 3 0 000 6z M6 21a3 3 0 100-6 3 3 0 000 6z M18 9a9 9 0 01-9 9' },
+  { title: 'Affiliate Links', desc: 'Linkuri afiliate — status, clickuri, placeholdere', href: '/admin/affiliates', color: '#4ade80', label: 'Vezi affiliate', icon: 'M12 1v22 M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6' },
 ];
 
 const TYPE_LABELS: Record<string, { label: string; color: string }> = {
@@ -104,9 +144,14 @@ function timeAgo(dateStr: string): string {
   return `${days}d`;
 }
 
+/* ─── Page ────────────────────────────────────────────────── */
+
 export default function AdminDashboard() {
   const router = useRouter();
   const [leadsData, setLeadsData] = useState<LeadsData | null>(null);
+  const [analytics, setAnalytics] = useState<AnalyticsData | null>(null);
+  const [analyticsError, setAnalyticsError] = useState(false);
+  const [days, setDays] = useState(30);
 
   useEffect(() => {
     fetch('/api/admin/leads?limit=10')
@@ -114,6 +159,13 @@ export default function AdminDashboard() {
       .then((d) => setLeadsData(d))
       .catch(() => {});
   }, []);
+
+  useEffect(() => {
+    fetch(`/api/admin/analytics?days=${days}`)
+      .then((r) => { if (!r.ok) throw new Error(); return r.json(); })
+      .then((d) => { setAnalytics(d); setAnalyticsError(false); })
+      .catch(() => setAnalyticsError(true));
+  }, [days]);
 
   const handleLogout = () => {
     sessionStorage.removeItem('admin_auth');
@@ -201,120 +253,246 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* TITLE */}
-        <div style={{ marginBottom: '40px' }}>
-          <div style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: '10px',
-            color: '#5a6872',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase' as const,
-            marginBottom: '8px',
-          }}>
-            DASHBOARD
-          </div>
-          <h1 style={{
-            fontFamily: "'Satoshi', sans-serif",
-            fontSize: '28px',
-            fontWeight: 800,
-            color: '#dce4e8',
-            letterSpacing: '-0.5px',
-            margin: 0,
-          }}>
-            Admin Dashboard
-          </h1>
-        </div>
-
-        {/* SITE ANALYTICS */}
-        <div
-          onClick={() => router.push('/admin/analytics')}
-          style={{
-            display: 'block',
-            background: '#0a0a0a',
-            border: '1px solid #1a1a1a',
-            borderRadius: '12px',
-            padding: '32px',
-            marginBottom: '24px',
-            cursor: 'pointer',
-            position: 'relative',
-            overflow: 'hidden',
-            transition: 'all 0.2s ease',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(86,219,132,0.3)';
-            e.currentTarget.style.transform = 'translateY(-2px)';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = '#1a1a1a';
-            e.currentTarget.style.transform = 'translateY(0)';
-          }}
-        >
-          {/* Top accent bar */}
+        {/* ═══ ANALYTICS INLINE ═══ */}
+        <div style={{
+          background: '#0a0a0a',
+          border: '1px solid #1a1a1a',
+          borderRadius: '12px',
+          padding: '28px',
+          marginBottom: '24px',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
           <div style={{
             position: 'absolute',
             top: 0, left: 0, right: 0,
             height: '2px',
             background: 'linear-gradient(90deg, #56db84, #3b82f6)',
           }} />
+
+          {/* Header row */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            marginBottom: '20px',
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <div style={{
-                width: '48px',
-                height: '48px',
-                borderRadius: '12px',
-                background: 'rgba(86,219,132,0.1)',
-                border: '1px solid rgba(86,219,132,0.2)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#56db84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 3v18h18" />
-                  <path d="M7 16l4-8 4 6 5-10" />
-                </svg>
-              </div>
-              <div>
-                <div style={{
-                  fontFamily: "'Satoshi', sans-serif",
-                  fontSize: '18px',
-                  fontWeight: 700,
-                  color: '#dce4e8',
-                  marginBottom: '4px',
-                }}>
-                  Site Analytics
-                </div>
-                <div style={{
-                  fontSize: '13px',
-                  color: '#5a6872',
-                  lineHeight: 1.5,
-                }}>
-                  Trafic, vizitatori, page views, top pagini — grafice si date live
-                </div>
-              </div>
-            </div>
             <div style={{
               fontFamily: "'DM Mono', monospace",
               fontSize: '11px',
-              color: '#56db84',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-              letterSpacing: '0.04em',
-              flexShrink: 0,
+              color: '#5a6872',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase' as const,
             }}>
-              Deschide Analytics
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#56db84" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              Site Analytics
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {/* Period selector */}
+              <div style={{ display: 'flex', gap: '4px' }}>
+                {[7, 30, 60].map((d) => (
+                  <button
+                    key={d}
+                    onClick={() => setDays(d)}
+                    style={{
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: '10px',
+                      padding: '4px 10px',
+                      borderRadius: '4px',
+                      border: `1px solid ${days === d ? 'rgba(86,219,132,0.3)' : '#1a1a1a'}`,
+                      background: days === d ? 'rgba(86,219,132,0.1)' : 'transparent',
+                      color: days === d ? '#56db84' : '#5a6872',
+                      cursor: 'pointer',
+                      letterSpacing: '0.04em',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    {d}d
+                  </button>
+                ))}
+              </div>
+              {/* Link to full analytics page */}
+              <div
+                onClick={() => router.push('/admin/analytics')}
+                style={{
+                  fontFamily: "'DM Mono', monospace",
+                  fontSize: '10px',
+                  color: '#5a6872',
+                  cursor: 'pointer',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                  padding: '4px 8px',
+                  borderRadius: '4px',
+                  transition: 'color 0.2s ease',
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.color = '#56db84'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = '#5a6872'; }}
+              >
+                Detalii
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
           </div>
+
+          {analyticsError ? (
+            /* Redis not configured */
+            <div style={{
+              padding: '24px',
+              textAlign: 'center',
+            }}>
+              <div style={{ fontSize: '13px', color: '#5a6872', marginBottom: '16px' }}>
+                Redis nu e configurat. Adauga env vars pentru a activa analytics.
+              </div>
+              <div style={{
+                fontFamily: "'DM Mono', monospace",
+                fontSize: '11px',
+                color: '#5a6872',
+                background: '#111',
+                border: '1px solid #1a1a1a',
+                borderRadius: '8px',
+                padding: '14px 20px',
+                textAlign: 'left',
+                lineHeight: 1.8,
+                display: 'inline-block',
+              }}>
+                <div style={{ color: '#56db84', marginBottom: '2px' }}># .env.local</div>
+                UPSTASH_REDIS_REST_URL=https://...upstash.io<br />
+                UPSTASH_REDIS_REST_TOKEN=AX...
+              </div>
+            </div>
+          ) : analytics ? (
+            <>
+              {/* Stats row */}
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(4, 1fr)',
+                gap: '10px',
+                marginBottom: '20px',
+              }}>
+                {[
+                  { label: 'Page Views', value: analytics.totalPageViews, color: '#56db84' },
+                  { label: 'Vizitatori', value: analytics.totalUniqueVisitors, color: '#60a5fa' },
+                  { label: 'Media / zi', value: analytics.avgPageViewsPerDay, color: '#fb923c' },
+                  { label: 'Azi', value: analytics.todayPageViews, color: '#a78bfa' },
+                ].map((stat) => (
+                  <div key={stat.label} style={{
+                    background: '#111',
+                    borderRadius: '8px',
+                    padding: '14px 16px',
+                    borderLeft: `2px solid ${stat.color}`,
+                  }}>
+                    <div style={{
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: '9px',
+                      color: '#5a6872',
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase' as const,
+                      marginBottom: '4px',
+                    }}>
+                      {stat.label}
+                    </div>
+                    <div style={{
+                      fontFamily: "'Satoshi', sans-serif",
+                      fontSize: '22px',
+                      fontWeight: 800,
+                      color: '#dce4e8',
+                    }}>
+                      {stat.value.toLocaleString('ro-RO')}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Chart */}
+              <div style={{ marginBottom: '16px' }}>
+                <div style={{ display: 'flex', gap: '16px', marginBottom: '8px', justifyContent: 'flex-end' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ width: '12px', height: '2px', background: '#56db84', borderRadius: '1px' }} />
+                    <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', color: '#5a6872' }}>Page Views</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <div style={{ width: '12px', height: '2px', background: '#60a5fa', borderRadius: '1px' }} />
+                    <span style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', color: '#5a6872' }}>Vizitatori</span>
+                  </div>
+                </div>
+                <LineChart data={analytics.daily} />
+              </div>
+
+              {/* Top pages + referrers inline */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div style={{ background: '#111', borderRadius: '8px', padding: '16px' }}>
+                  <div style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: '9px',
+                    color: '#5a6872',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase' as const,
+                    marginBottom: '10px',
+                  }}>
+                    Top Pagini (7 zile)
+                  </div>
+                  {analytics.topPages.length === 0 ? (
+                    <div style={{ fontSize: '12px', color: '#333' }}>Inca nu sunt date</div>
+                  ) : analytics.topPages.slice(0, 8).map((p, i) => (
+                    <div key={p.path} style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      padding: '5px 0',
+                      borderBottom: i < Math.min(analytics.topPages.length, 8) - 1 ? '1px solid #1a1a1a' : 'none',
+                    }}>
+                      <div style={{
+                        fontSize: '11px', color: '#dce4e8', fontFamily: "'DM Mono', monospace",
+                        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '180px',
+                      }}>{p.path}</div>
+                      <div style={{ fontSize: '11px', color: '#56db84', fontFamily: "'DM Mono', monospace", fontWeight: 500 }}>{p.count}</div>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ background: '#111', borderRadius: '8px', padding: '16px' }}>
+                  <div style={{
+                    fontFamily: "'DM Mono', monospace",
+                    fontSize: '9px',
+                    color: '#5a6872',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase' as const,
+                    marginBottom: '10px',
+                  }}>
+                    Top Referreri (7 zile)
+                  </div>
+                  {analytics.topReferrers.length === 0 ? (
+                    <div style={{ fontSize: '12px', color: '#333' }}>Inca nu sunt date</div>
+                  ) : analytics.topReferrers.slice(0, 8).map((r, i) => (
+                    <div key={r.referrer} style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      padding: '5px 0',
+                      borderBottom: i < Math.min(analytics.topReferrers.length, 8) - 1 ? '1px solid #1a1a1a' : 'none',
+                    }}>
+                      <div style={{ fontSize: '11px', color: '#dce4e8', fontFamily: "'DM Mono', monospace" }}>{r.referrer}</div>
+                      <div style={{ fontSize: '11px', color: '#60a5fa', fontFamily: "'DM Mono', monospace", fontWeight: 500 }}>{r.count}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </>
+          ) : (
+            /* Loading */
+            <div style={{ display: 'flex', justifyContent: 'center', padding: '40px 0' }}>
+              <div style={{
+                width: '20px', height: '20px',
+                border: '2px solid rgba(86,219,132,0.2)',
+                borderTopColor: '#56db84',
+                borderRadius: '50%',
+                animation: 'spin 0.8s linear infinite',
+              }} />
+              <style dangerouslySetInnerHTML={{ __html: `@keyframes spin { to { transform: rotate(360deg); } }` }} />
+            </div>
+          )}
         </div>
 
-        {/* RECENT LEADS */}
+        {/* ═══ RECENT LEADS ═══ */}
         {leadsData && (leadsData.stats.total > 0 || leadsData.leads.length > 0) && (
           <div style={{
             background: '#0a0a0a',
@@ -348,25 +526,13 @@ export default function AdminDashboard() {
                 Formulare primite
               </div>
               <div style={{ display: 'flex', gap: '12px' }}>
-                <div style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: '11px',
-                  color: '#60a5fa',
-                }}>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '11px', color: '#60a5fa' }}>
                   Azi: <span style={{ fontWeight: 500 }}>{leadsData.stats.today}</span>
                 </div>
-                <div style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: '11px',
-                  color: '#a78bfa',
-                }}>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '11px', color: '#a78bfa' }}>
                   Saptamana: <span style={{ fontWeight: 500 }}>{leadsData.stats.thisWeek}</span>
                 </div>
-                <div style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: '11px',
-                  color: '#5a6872',
-                }}>
+                <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '11px', color: '#5a6872' }}>
                   Total: <span style={{ fontWeight: 500 }}>{leadsData.stats.total}</span>
                 </div>
               </div>
@@ -377,7 +543,7 @@ export default function AdminDashboard() {
                 Inca nu sunt lead-uri inregistrate. Vor aparea dupa prima trimitere de formular.
               </div>
             ) : (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+              <div style={{ display: 'flex', flexDirection: 'column' }}>
                 {leadsData.leads.map((lead, i) => {
                   const typeInfo = TYPE_LABELS[lead.type] || TYPE_LABELS.contact;
                   return (
@@ -388,7 +554,6 @@ export default function AdminDashboard() {
                       padding: '12px 0',
                       borderBottom: i < leadsData.leads.length - 1 ? '1px solid #111' : 'none',
                     }}>
-                      {/* Type badge */}
                       <div style={{
                         fontFamily: "'DM Mono', monospace",
                         fontSize: '9px',
@@ -405,60 +570,26 @@ export default function AdminDashboard() {
                       }}>
                         {typeInfo.label}
                       </div>
-
-                      {/* Name + Email */}
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{
-                          fontSize: '13px',
-                          color: '#dce4e8',
-                          fontWeight: 500,
-                          overflow: 'hidden',
-                          textOverflow: 'ellipsis',
-                          whiteSpace: 'nowrap',
+                          fontSize: '13px', color: '#dce4e8', fontWeight: 500,
+                          overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
                         }}>
                           {lead.name || lead.email}
                         </div>
                         {lead.name && (
-                          <div style={{
-                            fontSize: '11px',
-                            color: '#5a6872',
-                            fontFamily: "'DM Mono', monospace",
-                          }}>
+                          <div style={{ fontSize: '11px', color: '#5a6872', fontFamily: "'DM Mono', monospace" }}>
                             {lead.email}
                           </div>
                         )}
                       </div>
-
-                      {/* Company */}
                       {lead.company && (
-                        <div style={{
-                          fontSize: '11px',
-                          color: '#5a6872',
-                          flexShrink: 0,
-                        }}>
-                          {lead.company}
-                        </div>
+                        <div style={{ fontSize: '11px', color: '#5a6872', flexShrink: 0 }}>{lead.company}</div>
                       )}
-
-                      {/* Source */}
                       {lead.source && (
-                        <div style={{
-                          fontFamily: "'DM Mono', monospace",
-                          fontSize: '10px',
-                          color: '#3a3a3a',
-                          flexShrink: 0,
-                        }}>
-                          {lead.source}
-                        </div>
+                        <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', color: '#3a3a3a', flexShrink: 0 }}>{lead.source}</div>
                       )}
-
-                      {/* Time ago */}
-                      <div style={{
-                        fontFamily: "'DM Mono', monospace",
-                        fontSize: '10px',
-                        color: '#3a3a3a',
-                        flexShrink: 0,
-                      }}>
+                      <div style={{ fontFamily: "'DM Mono', monospace", fontSize: '10px', color: '#3a3a3a', flexShrink: 0 }}>
                         {timeAgo(lead.date)}
                       </div>
                     </div>
@@ -469,7 +600,7 @@ export default function AdminDashboard() {
           </div>
         )}
 
-        {/* CARDS GRID */}
+        {/* ═══ CARDS GRID ═══ */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
@@ -498,58 +629,33 @@ export default function AdminDashboard() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              {/* Top accent bar */}
               <div style={{
                 position: 'absolute',
                 top: 0, left: 0, right: 0,
                 height: '2px',
                 background: `linear-gradient(90deg, ${card.color}, ${card.color}33)`,
               }} />
-
-              {/* Icon */}
               <div style={{
-                width: '40px',
-                height: '40px',
-                borderRadius: '10px',
-                background: `${card.color}1a`,
-                border: `1px solid ${card.color}33`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom: '16px',
+                width: '40px', height: '40px', borderRadius: '10px',
+                background: `${card.color}1a`, border: `1px solid ${card.color}33`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px',
               }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={card.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d={card.icon} />
                 </svg>
               </div>
-
               <div style={{
-                fontFamily: "'Satoshi', sans-serif",
-                fontSize: '18px',
-                fontWeight: 700,
-                color: '#dce4e8',
-                marginBottom: '8px',
+                fontFamily: "'Satoshi', sans-serif", fontSize: '18px', fontWeight: 700,
+                color: '#dce4e8', marginBottom: '8px',
               }}>
                 {card.title}
               </div>
-
-              <div style={{
-                fontSize: '13px',
-                color: '#5a6872',
-                lineHeight: 1.6,
-                marginBottom: '20px',
-              }}>
+              <div style={{ fontSize: '13px', color: '#5a6872', lineHeight: 1.6, marginBottom: '20px' }}>
                 {card.desc}
               </div>
-
               <div style={{
-                fontFamily: "'DM Mono', monospace",
-                fontSize: '11px',
-                color: card.color,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                letterSpacing: '0.04em',
+                fontFamily: "'DM Mono', monospace", fontSize: '11px', color: card.color,
+                display: 'flex', alignItems: 'center', gap: '6px', letterSpacing: '0.04em',
               }}>
                 {card.label}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={card.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

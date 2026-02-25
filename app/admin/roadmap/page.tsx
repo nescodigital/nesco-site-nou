@@ -49,6 +49,7 @@ const sections: Section[] = [
     description: 'Optimizari si features noi pentru cresterea performantei.',
     defaultOpen: true,
     items: [
+      { label: 'Conversion Funnels \u2014 pagina dedicata', detail: 'Fluxul de conversie (Meta Ads \u2192 Quiz \u2192 Segment \u2192 Calendly \u2192 Close) dezvoltat ca feature separat, interactiv', status: 'todo' },
       { label: 'Email marketing integration', detail: 'Optin forms \u2192 email provider', status: 'todo' },
       { label: 'A/B testing pe landing pages', status: 'todo' },
       { label: 'More blog articles for SEO', status: 'todo' },
