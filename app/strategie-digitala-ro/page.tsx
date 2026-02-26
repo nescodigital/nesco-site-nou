@@ -27,7 +27,7 @@ const data: ServicePageData = {
     { title: "Definirea Obiectivelor", desc: "Obiective SMART aliniate cu viziunea ta de business." },
     { title: "Identificarea Publicului Țintă", desc: "Profiluri detaliate de buyer persona." },
     { title: "Alegerea Canalelor de Promovare", desc: "Alegem canalele cu cel mai mare potențial pentru tine." },
-    { title: "Crearea Planului de Acțiune", desc: "Roadmap clar cu pași, termene și KPI-uri." },
+    { title: "Crearea Planului de Acțiune", desc: "Plan de acțiune clar cu pași, termene și KPI-uri." },
     { title: "Monitorizare și Optimizare", desc: "Urmărim progresul și ajustăm continuu." },
   ],
   cases: [

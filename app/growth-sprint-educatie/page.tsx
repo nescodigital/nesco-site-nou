@@ -22,7 +22,7 @@ export const metadata: Metadata = buildMetadata({
 
 const included = {
   audit: [
-    ["Revizuirea arhitecturii funnel-ului", "Unde se pierd lead-urile și de ce"],
+    ["Revizuirea arhitecturii fluxului de conversie", "Unde se pierd lead-urile și de ce"],
     ["Analiza sistemului de email", "Rate de deschidere, click-uri, venituri per abonat"],
     ["Revizuirea ofertei și prețurilor", "Lași bani pe masă?"],
     ["Eficiența achiziției plătite", "Reclamele generează profit sau doar trafic?"],
@@ -31,7 +31,7 @@ const included = {
   ],
   impl: [
     ["Rezolvarea scurgerilor de venituri", "Cele mai importante găsite în audit"],
-    ["Reconstruirea etapelor de funnel", "Optimizare etape cu performanță slabă"],
+    ["Reconstruirea etapelor fluxului de conversie", "Optimizare etape cu performanță slabă"],
     ["Restructurarea secvențelor de email", "Pentru venituri mai mari"],
     ["Implementarea structurii de tracking", "Raportare pe care poți acționa"],
     ["Curățarea proceselor operaționale", "Eliminăm fricțiunea din execuție"],
@@ -306,7 +306,7 @@ export default function GrowthSprintEducatiePage() {
                 </h2>
                 <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Ai o audiență. Ai o ofertă. Generezi venituri. Dar undeva între funnel-ul tău, sistemul de email, structura de prețuri și operațiuni, există scurgeri de venituri.
+                    Ai o audiență. Ai o ofertă. Generezi venituri. Dar undeva între fluxul tău de conversie, sistemul de email, structura de prețuri și operațiuni, există scurgeri de venituri.
                   </p>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
                     Le simți. Creșterea a stagnat. Ratele de conversie nu sunt unde ar trebui. Cheltuiești pe reclame, dar cifrele nu sunt favorabile. Lista de email nu generează ce ar putea.
@@ -373,7 +373,7 @@ export default function GrowthSprintEducatiePage() {
                   Nu îți oferim un plan de acțiune și dispărem, rămânem în execuție până la rezultat.
                 </h2>
                 <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Un angajament concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta, auditând întregul sistem de venituri și implementând cele mai importante soluții în funnel, email, structura ofertei și operațiuni.
+                  Un angajament concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta, auditând întregul sistem de venituri și implementând cele mai importante soluții în fluxul de conversie, email, structura ofertei și operațiuni.
                 </p>
                 <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600 }}>
                   Depășim zona de consultanță, intrăm în implementare.
@@ -406,7 +406,7 @@ export default function GrowthSprintEducatiePage() {
                   6 săptămâni de implementare directă
                 </h2>
                 <p style={{ color: "rgba(255,255,255,0.35)", fontSize: "1rem" }}>
-                  Două faze clare. Un singur obiectiv: mai mult revenue.
+                  Două faze clare. Un singur obiectiv: mai multe venituri.
                 </p>
               </div>
             </FadeInSection>

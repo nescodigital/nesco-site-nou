@@ -10,7 +10,7 @@ import { Footer } from "@/components/layout/Footer";
 const CHECKLIST = [
   "Apel de discovery (30 min)",
   "Audit \u0219i propunere",
-  "Onboarding \u0219i acces conturi",
+  "Proces de start \u0219i acces conturi",
   "Primele campanii live",
   "Optimizare continu\u0103",
   "Scalare \u0219i cre\u0219tere",
@@ -362,7 +362,7 @@ export default function CumLucramPage() {
                   "\u00cen\u021belegem business-ul t\u0103u, obiectivele \u0219i situa\u021bia actual\u0103",
                   "\u00ce\u021bi spunem sincer dac\u0103 \u0219i cum te putem ajuta",
                   "Dac\u0103 nu exist\u0103 poten\u021bial real de colaborare, \u00ee\u021bi spunem direct",
-                  "F\u0103r\u0103 pitch, f\u0103r\u0103 presiune, f\u0103r\u0103 prezent\u0103ri PowerPoint",
+                  "F\u0103r\u0103 prezentare, f\u0103r\u0103 presiune, f\u0103r\u0103 prezent\u0103ri PowerPoint",
                 ].map((item, i) => (
                   <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
                     <span style={{ color: "#56db84", fontWeight: 700, flexShrink: 0, marginTop: "2px" }}>&bull;</span>

@@ -24,7 +24,7 @@ const data: ServicePageData = {
   ],
   solutions: [
     { title: "Analiză și Consultanță", desc: "Mapăm procesele actuale și identificăm soluția CRM potrivită." },
-    { title: "Configurare și Personalizare", desc: "Configurăm CRM-ul pentru a se potrivi cu workflow-urile tale." },
+    { title: "Configurare și Personalizare", desc: "Configurăm CRM-ul pentru a se potrivi cu fluxurile tale de lucru." },
     { title: "Integrare cu alte sisteme", desc: "Conectăm cu email, instrumente marketing, ERP și altele." },
     { title: "Migrare Date", desc: "Migrare sigură și completă a tuturor datelor existente." },
     { title: "Training și Suport", desc: "Echipa ta instruită și încrezătoare din prima zi." },

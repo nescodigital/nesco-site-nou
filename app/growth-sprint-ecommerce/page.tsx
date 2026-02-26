@@ -15,15 +15,15 @@ export const metadata: Metadata = buildMetadata({
   locale: "ro",
   title: "Growth Sprint E-commerce | Scalare Profitabilă 50k–500k+/lună | Nesco Digital",
   description:
-    "Un angajament de 6 săptămâni pentru branduri e-commerce cu vânzări de 50k–500k+/lună. Audităm fiecare sistem de revenue și implementăm fix-urile cu cel mai mare impact în achiziție, conversie, retenție și operațiuni.",
+    "Un angajament de 6 săptămâni pentru branduri e-commerce cu vânzări de 50k–500k+/lună. Audităm fiecare sistem de venituri și implementăm fix-urile cu cel mai mare impact în achiziție, conversie, retenție și operațiuni.",
   path: "/growth-sprint-ecommerce/",
   routeKey: "growthSprintEcommerce",
 });
 
 const auditItems = [
-  "Audit achiziție plătită, ROAS, CPM, eficiența funnel-ului, alocarea bugetului",
-  "Analiza conversiei pe pagini de produs și checkout, unde pierzi cumpărători",
-  "Audit revenue email și SMS, flow-uri, secvențe, revenue per subscriber",
+  "Audit achiziție plătită, ROAS, CPM, eficiența fluxului de conversie, alocarea bugetului",
+  "Analiza conversiei pe pagini de produs și finalizare comandă, unde pierzi cumpărători",
+  "Audit venituri email și SMS, flow-uri, secvențe, venituri per subscriber",
   "Structura AOV și LTV, upsell-uri, bundle-uri, rate de reachizitie",
   "Review operațional, fricțiune fulfillment, blocaje echipă, gaps de proces",
   "Structura KPI și tracking, măsori ce contează cu adevărat?",
@@ -45,7 +45,7 @@ const forList = [
 ];
 
 const notForList = [
-  "Branduri fără revenue lunar consistent",
+  "Branduri fără venituri lunare consistente",
   "Businesses care caută pe cineva să le gestioneze ads-urile zilnic",
   "Fondatori care vor slide-uri de strategie, nu implementare",
 ];
@@ -324,7 +324,7 @@ export default function GrowthSprintEcommercePage() {
                     Rulezi campanii. Procesezi comenzi. Dar marginile sunt mai mici decât ar trebui, ROAS-ul scade constant, și cu cât cheltuiești mai mult, cu atât pare mai puțin profitabil.
                   </p>
                   <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8 }}>
-                    Ai optimizat ce poți vedea, reclamele, poate homepage-ul. Dar pierderile reale sunt ascunse: în drop-off-urile din funnel, în performanța slabă a emailului și SMS-ului, în gap-urile de AOV și LTV, și în fricțiunea operațională care îți mănâncă eficiența.
+                    Ai optimizat ce poți vedea, reclamele, poate homepage-ul. Dar pierderile reale sunt ascunse: în drop-off-urile din fluxul de conversie, în performanța slabă a emailului și SMS-ului, în gap-urile de AOV și LTV, și în fricțiunea operațională care îți mănâncă eficiența.
                   </p>
                   <p
                     style={{
@@ -387,7 +387,7 @@ export default function GrowthSprintEcommercePage() {
                   Nu îți oferim un plan de acțiune și dispărem.
                 </h2>
                 <p style={{ fontSize: "1.0625rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.8, marginBottom: "16px" }}>
-                  Un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta e-commerce, auditând fiecare sistem de revenue și implementând cele mai importante fix-uri în achiziție, conversie, retenție și operațiuni.
+                  Un engagement concentrat de 6 săptămâni în care Nesco Digital operează direct în afacerea ta e-commerce, auditând fiecare sistem de venituri și implementând cele mai importante fix-uri în achiziție, conversie, retenție și operațiuni.
                 </p>
                 <p style={{ fontSize: "1rem", color: "#56db84", fontWeight: 600 }}>
                   Acesta nu este consultanță. Noi executăm.
@@ -460,7 +460,7 @@ export default function GrowthSprintEcommercePage() {
                     className="font-black text-white"
                     style={{ fontSize: "1.25rem", letterSpacing: "-0.01em", marginBottom: "24px" }}
                   >
-                    Audit Complet al Revenue-ului
+                    Audit Complet al Veniturilor
                   </h3>
                   <ul style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                     {auditItems.map((item, i) => (
@@ -565,7 +565,7 @@ export default function GrowthSprintEcommercePage() {
                     Livrabil Final
                   </div>
                   <p style={{ fontSize: "0.875rem", color: "rgba(255,255,255,0.4)", lineHeight: 1.7 }}>
-                    Un sistem de revenue mai profitabil și mai bine convertit, implementat, documentat și pregătit să scaleze.{" "}
+                    Un sistem de venituri mai profitabil și mai bine convertit, implementat, documentat și pregătit să scaleze.{" "}
                     <strong style={{ color: "#ffffff" }}>Păstrezi tot ce construim.</strong>
                   </p>
                 </div>
