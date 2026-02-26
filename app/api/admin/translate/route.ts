@@ -76,7 +76,8 @@ export async function POST(request: Request) {
       } catch {
         // file doesn't exist yet
       }
-      existing[pageKey] = results[lang];
+      const existingPage = (existing[pageKey] as Record<string, string>) || {};
+      existing[pageKey] = { ...existingPage, ...results[lang] };
       await writeFile(filePath, JSON.stringify(existing, null, 2) + '\n', 'utf-8');
     }
 

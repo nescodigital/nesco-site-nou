@@ -86,6 +86,58 @@ function fileToPageName(filePath: string): string {
   return dir.replace(/\//g, '-').replace(/\\/g, '-');
 }
 
+function flattenObject(obj: Record<string, unknown>, prefix = ''): Record<string, string> {
+  const result: Record<string, string> = {};
+  for (const [key, value] of Object.entries(obj)) {
+    const fullKey = prefix ? `${prefix}.${key}` : key;
+    if (typeof value === 'string') {
+      result[fullKey] = value;
+    } else if (Array.isArray(value)) {
+      value.forEach((item, i) => {
+        if (typeof item === 'string') {
+          result[`${fullKey}[${i}]`] = item;
+        } else if (typeof item === 'object' && item !== null) {
+          Object.assign(result, flattenObject(item as Record<string, unknown>, `${fullKey}[${i}]`));
+        }
+      });
+    } else if (typeof value === 'object' && value !== null) {
+      Object.assign(result, flattenObject(value as Record<string, unknown>, fullKey));
+    }
+  }
+  return result;
+}
+
+function parseTranslationsRo(): Record<string, string> | null {
+  if (!fs.existsSync(TRANSLATIONS_FILE)) return null;
+  const raw = fs.readFileSync(TRANSLATIONS_FILE, 'utf-8');
+
+  // Find the start of the translations object
+  const startMatch = raw.indexOf('export const translations = {');
+  if (startMatch === -1) return null;
+
+  const objStart = raw.indexOf('{', startMatch);
+  let depth = 0;
+  let objEnd = -1;
+  for (let i = objStart; i < raw.length; i++) {
+    if (raw[i] === '{') depth++;
+    else if (raw[i] === '}') {
+      depth--;
+      if (depth === 0) { objEnd = i; break; }
+    }
+  }
+  if (objEnd === -1) return null;
+
+  const objStr = raw.slice(objStart, objEnd + 1);
+  try {
+    const translations = new Function('return ' + objStr)();
+    if (!translations.ro) return null;
+    return flattenObject(translations.ro);
+  } catch (err) {
+    console.error('Failed to parse translations:', err);
+    return null;
+  }
+}
+
 function toFieldKey(text: string, index: number): string {
   // Create a readable key from the text
   const slug = text
@@ -109,6 +161,19 @@ function main() {
 
   const result: Record<string, Record<string, string>> = {};
 
+  // Parse lib/translations.ts FIRST — so hero.* fields appear at top of homepage
+  const roTranslations = parseTranslationsRo();
+  if (roTranslations) {
+    result['homepage'] = {};
+    for (const [key, value] of Object.entries(roTranslations)) {
+      result['homepage'][key] = value;
+    }
+    console.log(`  homepage (lib/translations.ts): ${Object.keys(roTranslations).length} fields from ro section`);
+  }
+
+  // Collect homepage entries from app/ separately to append after translations
+  let appHomepageEntries: Record<string, string> = {};
+
   for (const file of files) {
     const content = fs.readFileSync(file, 'utf-8');
     const strings = extractStrings(content);
@@ -116,13 +181,27 @@ function main() {
     if (strings.length === 0) continue;
 
     const pageName = fileToPageName(file);
-    if (!result[pageName]) result[pageName] = {};
 
+    if (pageName === 'homepage') {
+      // Collect app/ homepage entries to append later
+      const existingKeys = new Set(Object.keys(appHomepageEntries));
+      strings.forEach((str, i) => {
+        let key = toFieldKey(str, i);
+        if (existingKeys.has(key)) {
+          key = `${key}_${i}`;
+        }
+        existingKeys.add(key);
+        appHomepageEntries[key] = str;
+      });
+      console.log(`  ${pageName} (app/): ${strings.length} Romanian strings found`);
+      continue;
+    }
+
+    if (!result[pageName]) result[pageName] = {};
     const existingKeys = new Set(Object.keys(result[pageName]));
 
     strings.forEach((str, i) => {
       let key = toFieldKey(str, i);
-      // Avoid duplicates
       if (existingKeys.has(key)) {
         key = `${key}_${i}`;
       }
@@ -133,22 +212,14 @@ function main() {
     console.log(`  ${pageName}: ${strings.length} Romanian strings found`);
   }
 
-  // Scan lib/translations.ts and map to "homepage"
-  if (fs.existsSync(TRANSLATIONS_FILE)) {
-    const transContent = fs.readFileSync(TRANSLATIONS_FILE, 'utf-8');
-    const transStrings = extractStrings(transContent);
-    if (transStrings.length > 0) {
-      if (!result['homepage']) result['homepage'] = {};
-      const existingKeys = new Set(Object.keys(result['homepage']));
-      transStrings.forEach((str, i) => {
-        let key = toFieldKey(str, i);
-        if (existingKeys.has(key)) {
-          key = `${key}_trans_${i}`;
-        }
-        existingKeys.add(key);
-        result['homepage'][key] = str;
-      });
-      console.log(`  homepage (lib/translations.ts): ${transStrings.length} Romanian strings found`);
+  // Append app/ homepage entries after translations.ts entries
+  if (Object.keys(appHomepageEntries).length > 0) {
+    if (!result['homepage']) result['homepage'] = {};
+    const existingKeys = new Set(Object.keys(result['homepage']));
+    for (const [key, value] of Object.entries(appHomepageEntries)) {
+      if (!existingKeys.has(key)) {
+        result['homepage'][key] = value;
+      }
     }
   }
 
