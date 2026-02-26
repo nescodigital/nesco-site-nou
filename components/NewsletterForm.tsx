@@ -21,6 +21,10 @@ const BUSINESS_TYPES = [
   { value: "b2b-servicii", label: "B2B / Servicii" },
   { value: "sanatate-wellness", label: "Sănătate & Wellness" },
   { value: "imobiliare", label: "Imobiliare" },
+  { value: "productie-industrie", label: "Producție / Industrie" },
+  { value: "horeca", label: "HoReCa" },
+  { value: "retail-fizic", label: "Retail Fizic" },
+  { value: "consultanta-coaching", label: "Consultanță / Coaching" },
   { value: "altul", label: "Altul" },
 ];
 
