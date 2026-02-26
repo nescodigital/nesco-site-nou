@@ -114,8 +114,6 @@ const nextConfig: NextConfig = {
       { source: '/project-type/visual', destination: '/proiecte', permanent: true },
       { source: '/projects/labianca-architectura', destination: '/proiecte', permanent: true },
       { source: '/project-type/web', destination: '/proiecte', permanent: true },
-      { source: '/contact', destination: '/contact', permanent: false },
-
       // Catch-all patterns
       { source: '/services/:slug*', destination: '/marketing-digital', permanent: true },
       { source: '/ro/:slug*', destination: '/', permanent: true },
