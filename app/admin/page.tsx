@@ -192,6 +192,7 @@ function LineChart({ data, width = 800, height = 220 }: { data: DailyStats[]; wi
 
 const navItems = [
   { title: 'Status', href: '/admin/status', color: '#56db84', icon: 'M22 12h-4l-3 9L9 3l-3 9H2' },
+  { title: 'Editor', href: '/admin/editor', color: '#e879f9', icon: 'M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7 M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z' },
   { title: 'Leads CRM', href: '/admin/leads-crm', color: '#60a5fa', icon: 'M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z M12 8v4l3 3' },
   { title: 'Roadmap', href: '/admin/roadmap', color: '#fb923c', icon: 'M9 11l3 3L22 4 M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11' },
   { title: 'Links', href: '/admin/links', color: '#a78bfa', icon: 'M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71 M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71' },

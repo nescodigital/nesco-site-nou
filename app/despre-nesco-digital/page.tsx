@@ -204,7 +204,7 @@ export default function DespreNescoPage() {
                     letterSpacing: "0.01em",
                   }}
                 >
-                  Nu suntem o agenție obișnuită. Suntem partenerul tău premium de execuție, de la strategie la campanii care generează revenue real.
+                  Nu suntem o agenție obișnuită. Suntem partenerul tău premium de execuție, de la strategie la campanii care generează venituri reale.
                 </p>
               </div>
 

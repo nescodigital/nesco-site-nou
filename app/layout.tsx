@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Nesco Digital",
   },
   description:
-    "Partener premium de execuție digitală, de la strategie la campanii care generează revenue real. Google Ads, Facebook Ads, Web Design, SEO.",
+    "Partener premium de execuție digitală, de la strategie la campanii care generează venituri reale. Google Ads, Facebook Ads, Web Design, SEO.",
   keywords: [
     "marketing digital",
     "google ads",

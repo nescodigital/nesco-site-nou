@@ -31,7 +31,7 @@ export const translations = {
       headline2: "performanța",
       headline3: "ta online",
       subheadline:
-        "Nu suntem o agenție obișnuită. Suntem partenerul tău de execuție, de la strategie la campanii care generează revenue real.",
+        "Nu suntem o agenție obișnuită. Suntem partenerul tău de execuție, de la strategie la campanii care generează venituri reale.",
       cta1: "Hai să vorbim",
       cta2: "Vezi proiecte",
       stat1Value: "+15 ani",
@@ -47,7 +47,7 @@ export const translations = {
       items: [
         {
           icon: "trending-up",
-          title: "Vreau mai mult revenue",
+          title: "Vreau mai multe venituri",
           desc: "Dacă vrei să crești vânzările și să scalezi magazinul tău ecommerce, te ajutăm.",
           cta: "Discută cu noi",
         },

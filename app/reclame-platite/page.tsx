@@ -682,7 +682,7 @@ export default function ReclamePlatitePage() {
                       backgroundClip: "text",
                     }}
                   >
-                    revenue real.
+                    venituri reale.
                   </span>
                 </h1>
 
